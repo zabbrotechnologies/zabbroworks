@@ -1,0 +1,2064 @@
+/* ============================================================================
+   ATELIER — Architecture & Interior Studio Stylesheet
+   Design Philosophy: The Architectural Field Journal
+   Color Identity: Soft Lilac Paper, Moss Olive, Deep Olive Bronze, Raw Ochre, Honey Gold
+   ============================================================================ */
+
+:root {
+  --atelier-paper: #F4F2F6;
+  --atelier-paper-warm: #ECE8F0;
+  --atelier-paper-light: #F9F8FB;
+  --atelier-white: #FFFFFF;
+  --atelier-graphite: #252811;
+  --atelier-graphite-muted: #53573D;
+  --atelier-graphite-subtle: #7F846E;
+  --atelier-blueprint: #4C511B;
+  --atelier-blueprint-dark: #373B13;
+  --atelier-blueprint-light: #EEF1E4;
+  --atelier-oxide: #B37114;
+  --atelier-oxide-dark: #8E570D;
+  --atelier-gold: #DEA628;
+  --atelier-gold-light: #FDF5E1;
+  --atelier-concrete: #B6B0BE;
+  --atelier-concrete-dark: #8E8797;
+  --atelier-line: rgba(37, 40, 17, 0.12);
+  --atelier-line-subtle: rgba(37, 40, 17, 0.06);
+  --atelier-line-dark: rgba(37, 40, 17, 0.28);
+  --atelier-blueprint-line: rgba(76, 81, 27, 0.22);
+
+  --atelier-font-serif: 'Instrument Serif', 'Cormorant Garamond', 'Playfair Display', Didot, Georgia, serif;
+  --atelier-font-sans: 'IBM Plex Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --atelier-font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+  --atelier-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --atelier-shadow-sheet: 0 12px 32px rgba(37, 39, 36, 0.08);
+  --atelier-shadow-elevated: 0 20px 50px rgba(37, 39, 36, 0.12);
+}
+
+/* Base Studio Container */
+.atelier-studio-root {
+  background-color: var(--atelier-paper);
+  color: var(--atelier-graphite);
+  font-family: var(--atelier-font-sans);
+  line-height: 1.6;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  display: block;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.atelier-studio-root *,
+.atelier-studio-root *::before,
+.atelier-studio-root *::after {
+  box-sizing: border-box;
+}
+
+/* Subtle Architectural Blueprint Grid Background */
+.atelier-blueprint-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(76, 81, 27, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(76, 81, 27, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Architectural Registration Mark (+) */
+.atelier-reg-mark {
+  position: absolute;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.75rem;
+  color: var(--atelier-graphite-subtle);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ============================================================================
+   1. STUDIO MASTHEAD & TECHNICAL UTILITY LINE
+   ============================================================================ */
+.atelier-masthead-wrapper {
+  background-color: var(--atelier-paper);
+  border-bottom: 1px solid var(--atelier-line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.atelier-top-utility-wire {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 2.5rem;
+  border-bottom: 1px solid var(--atelier-line-subtle);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-muted);
+}
+
+.atelier-wire-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--atelier-oxide);
+  margin-right: 0.4rem;
+}
+
+.atelier-main-masthead {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.atelier-brand-lockup {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.atelier-brand-wordmark {
+  font-family: var(--atelier-font-serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  color: var(--atelier-graphite);
+}
+
+.atelier-brand-discipline {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--atelier-blueprint);
+  border-left: 1px solid var(--atelier-line-dark);
+  padding-left: 1.25rem;
+  line-height: 1.2;
+}
+
+.atelier-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.atelier-nav-item button {
+  background: none;
+  border: none;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-muted);
+  cursor: pointer;
+  padding: 0.35rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.atelier-nav-item button:hover {
+  color: var(--atelier-blueprint);
+}
+
+.atelier-nav-item button.active {
+  color: var(--atelier-oxide);
+}
+
+.atelier-nav-item button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--atelier-oxide);
+}
+
+.atelier-enquiry-header-cta {
+  background-color: var(--atelier-graphite);
+  color: var(--atelier-paper);
+  border: 1px solid var(--atelier-graphite);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.25s var(--atelier-ease);
+}
+
+.atelier-enquiry-header-cta:hover {
+  background-color: var(--atelier-blueprint);
+  border-color: var(--atelier-blueprint);
+  transform: translateY(-1px);
+}
+
+/* ============================================================================
+   2. UNCONVENTIONAL HOMEPAGE HERO — ARCHITECTURAL PRESENTATION BOARD
+   ============================================================================ */
+.atelier-presentation-board-hero {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 4rem;
+  display: grid;
+  grid-template-columns: 80px 1fr 240px;
+  gap: 2.5rem;
+  min-height: 720px;
+}
+
+/* Zone A: Left Studio Index Rail */
+.atelier-hero-index-rail {
+  border-right: 1px solid var(--atelier-line);
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.atelier-rail-top-tag {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--atelier-blueprint);
+  font-weight: 600;
+}
+
+.atelier-rail-divider {
+  width: 1px;
+  height: 100px;
+  background-color: var(--atelier-line-dark);
+}
+
+.atelier-rail-coordinates {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  color: var(--atelier-graphite-subtle);
+}
+
+/* Zone B: Main Architectural Composition Sheet */
+.atelier-hero-composition-sheet {
+  background-color: var(--atelier-white);
+  border: 1px solid var(--atelier-line);
+  border-radius: 3px;
+  padding: 2.5rem 3rem 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--atelier-shadow-sheet);
+  overflow: hidden;
+}
+
+.atelier-sheet-header-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--atelier-line);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.atelier-sheet-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-sheet-prj-num {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-sheet-prj-name {
+  font-family: var(--atelier-font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin: 0.35rem 0 0.5rem;
+  color: var(--atelier-graphite);
+}
+
+.atelier-sheet-prj-location {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-muted);
+}
+
+.atelier-sheet-specs-table {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.atelier-sheet-spec-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-spec-cell-label {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-subtle);
+}
+
+.atelier-spec-cell-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--atelier-blueprint);
+}
+
+/* Offset Overlapping Imagery Stage */
+.atelier-sheet-imagery-stage {
+  position: relative;
+  min-height: 380px;
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.atelier-dominant-photo-frame {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(37, 39, 36, 0.12);
+  border: 1px solid var(--atelier-line);
+}
+
+.atelier-dominant-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--atelier-ease);
+}
+
+.atelier-dominant-photo-frame:hover .atelier-dominant-photo {
+  transform: scale(1.03);
+}
+
+.atelier-overlapping-assets-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.atelier-detail-photo-frame {
+  position: relative;
+  aspect-ratio: 4/3;
+  width: 85%;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--atelier-line);
+  box-shadow: 0 10px 24px rgba(37, 39, 36, 0.08);
+}
+
+.atelier-detail-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Technical Architectural SVG Drawing Frame */
+.atelier-plan-drawing-frame {
+  background-color: var(--atelier-paper-light);
+  border: 1px dashed var(--atelier-blueprint-line);
+  padding: 1.25rem;
+  border-radius: 2px;
+  position: relative;
+}
+
+.atelier-plan-legend-tag {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--atelier-blueprint);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.atelier-svg-cad-drawing {
+  width: 100%;
+  height: 110px;
+}
+
+/* Sheet Footer Statement */
+.atelier-sheet-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--atelier-line);
+  padding-top: 1.5rem;
+  gap: 2rem;
+}
+
+.atelier-sheet-manifesto-quote {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--atelier-graphite);
+  max-width: 680px;
+  line-height: 1.4;
+}
+
+.atelier-sheet-action-cta {
+  background: none;
+  border: 1px solid var(--atelier-graphite);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  color: var(--atelier-graphite);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.atelier-sheet-action-cta:hover {
+  background-color: var(--atelier-graphite);
+  color: var(--atelier-white);
+}
+
+/* Zone C: Right Edge Project Navigator */
+.atelier-hero-navigator-rail {
+  border-left: 1px solid var(--atelier-line);
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-nav-rail-header {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-muted);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--atelier-line);
+}
+
+.atelier-nav-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.atelier-nav-project-btn {
+  background: var(--atelier-paper-warm);
+  border: 1px solid var(--atelier-line);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s var(--atelier-ease);
+}
+
+.atelier-nav-project-btn:hover {
+  background-color: var(--atelier-white);
+  border-color: var(--atelier-blueprint);
+  transform: translateX(4px);
+}
+
+.atelier-nav-project-btn.active {
+  background-color: var(--atelier-blueprint);
+  color: var(--atelier-white);
+  border-color: var(--atelier-blueprint);
+  box-shadow: 0 4px 16px rgba(76, 81, 27, 0.28);
+}
+
+.atelier-nav-btn-num {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-nav-project-btn.active .atelier-nav-btn-num {
+  color: var(--atelier-gold);
+}
+
+.atelier-nav-btn-title {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.2rem 0;
+  line-height: 1.15;
+}
+
+.atelier-nav-btn-meta {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--atelier-graphite-subtle);
+}
+
+.atelier-nav-project-btn.active .atelier-nav-btn-meta {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================================================
+   3. THE INTERACTIVE PROJECT ARCHIVE (SIGNATURE CORE FEATURE)
+   ============================================================================ */
+.atelier-project-archive-section {
+  padding: 6rem 2.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.atelier-archive-top-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--atelier-line-dark);
+  padding-bottom: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.atelier-archive-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-archive-section-tag {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-archive-headline {
+  font-family: var(--atelier-font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  margin-top: 0.35rem;
+}
+
+/* Mode Switcher (Composition | Index | Material) */
+.atelier-mode-switcher-pill {
+  display: inline-flex;
+  background-color: var(--atelier-paper-warm);
+  border: 1px solid var(--atelier-line);
+  padding: 0.3rem;
+  border-radius: 2px;
+  gap: 0.25rem;
+}
+
+.atelier-mode-btn {
+  background: none;
+  border: none;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  cursor: pointer;
+  border-radius: 2px;
+  color: var(--atelier-graphite-muted);
+  transition: all 0.2s ease;
+}
+
+.atelier-mode-btn.active {
+  background-color: var(--atelier-graphite);
+  color: var(--atelier-paper);
+}
+
+/* MODE 1: COMPOSITION MODE (ASYMMETRIC ART-DIRECTED) */
+.atelier-archive-composition-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.atelier-comp-card {
+  background-color: var(--atelier-white);
+  border: 1px solid var(--atelier-line);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--atelier-shadow-sheet);
+  transition: all 0.3s var(--atelier-ease);
+  cursor: pointer;
+}
+
+.atelier-comp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--atelier-shadow-elevated);
+  border-color: var(--atelier-blueprint);
+}
+
+/* Varied spans for asymmetric architectural rhythm */
+.atelier-comp-span-7 {
+  grid-column: span 7;
+}
+
+.atelier-comp-span-5 {
+  grid-column: span 5;
+}
+
+.atelier-comp-span-4 {
+  grid-column: span 4;
+}
+
+.atelier-comp-span-8 {
+  grid-column: span 8;
+}
+
+.atelier-comp-card-visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background-color: var(--atelier-paper-warm);
+}
+
+.atelier-comp-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--atelier-ease);
+}
+
+.atelier-comp-card:hover .atelier-comp-card-img {
+  transform: scale(1.04);
+}
+
+.atelier-comp-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(37, 39, 36, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--atelier-paper);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+}
+
+.atelier-comp-card-info {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.atelier-comp-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.atelier-comp-num {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-comp-year {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--atelier-graphite-subtle);
+}
+
+.atelier-comp-name {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--atelier-graphite);
+  margin-bottom: 0.5rem;
+}
+
+.atelier-comp-desc {
+  font-size: 0.85rem;
+  color: var(--atelier-graphite-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.atelier-comp-footer-specs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--atelier-line-subtle);
+  padding-top: 1rem;
+  margin-top: auto;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--atelier-blueprint);
+}
+
+/* MODE 2: INDEX MODE (TYPOGRAPHIC REGISTER TABLE) */
+.atelier-archive-index-table {
+  background-color: var(--atelier-white);
+  border: 1px solid var(--atelier-line);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: var(--atelier-shadow-sheet);
+}
+
+.atelier-index-table-header {
+  display: grid;
+  grid-template-columns: 80px 2fr 1.2fr 1.2fr 100px 1.5fr 120px;
+  padding: 1rem 2rem;
+  background-color: var(--atelier-paper-warm);
+  border-bottom: 1px solid var(--atelier-line);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-muted);
+  font-weight: 700;
+}
+
+.atelier-index-table-row {
+  display: grid;
+  grid-template-columns: 80px 2fr 1.2fr 1.2fr 100px 1.5fr 120px;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--atelier-line-subtle);
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.atelier-index-table-row:hover {
+  background-color: var(--atelier-paper-light);
+  border-left: 3px solid var(--atelier-oxide);
+}
+
+.atelier-index-col-num {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-index-col-title {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--atelier-graphite);
+}
+
+.atelier-index-col-meta {
+  font-size: 0.8rem;
+  color: var(--atelier-graphite-muted);
+}
+
+.atelier-index-col-action button {
+  background: none;
+  border: 1px solid var(--atelier-line);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.atelier-index-table-row:hover .atelier-index-col-action button {
+  background-color: var(--atelier-blueprint);
+  color: var(--atelier-white);
+  border-color: var(--atelier-blueprint);
+}
+
+/* MODE 3: MATERIAL ARCHIVE MODE */
+.atelier-archive-material-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.atelier-material-group-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--atelier-line);
+  padding-bottom: 0.75rem;
+}
+
+.atelier-mat-group-title {
+  font-family: var(--atelier-font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--atelier-blueprint);
+}
+
+.atelier-mat-group-count {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-subtle);
+}
+
+.atelier-mat-group-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ============================================================================
+   4. ARCHITECTURAL SCROLL NARRATIVE ("HOW ATELIER THINKS & WORKS")
+   ============================================================================ */
+.atelier-narrative-section {
+  background-color: var(--atelier-graphite);
+  color: var(--atelier-paper);
+  padding: 7rem 2.5rem;
+  position: relative;
+}
+
+.atelier-narrative-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.atelier-narrative-top-bar {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 5rem;
+}
+
+.atelier-narrative-tag {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-narrative-headline {
+  font-family: var(--atelier-font-serif);
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0.5rem 0 1rem;
+}
+
+.atelier-narrative-sub {
+  color: var(--atelier-concrete);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 4 Sequence Stages: Observe, Interpret, Construct, Inhabit */
+.atelier-narrative-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.atelier-timeline-stage {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 4rem;
+}
+
+.atelier-timeline-stage:nth-child(even) {
+  grid-template-columns: 1.25fr 1fr;
+}
+
+.atelier-timeline-stage:nth-child(even) .atelier-stage-visual {
+  order: 1;
+}
+
+.atelier-timeline-stage:nth-child(even) .atelier-stage-copy {
+  order: 2;
+}
+
+.atelier-stage-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-stage-step-tag {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.atelier-stage-title {
+  font-family: var(--atelier-font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--atelier-white);
+  margin-bottom: 1.25rem;
+}
+
+.atelier-stage-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--atelier-concrete);
+  margin-bottom: 1.5rem;
+}
+
+.atelier-stage-annotations-box {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid var(--atelier-oxide);
+  padding: 1rem 1.25rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.atelier-anno-item {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.atelier-stage-visual {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.atelier-stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================================
+   5. TACTILE MATERIAL LIBRARY
+   ============================================================================ */
+.atelier-material-library-section {
+  padding: 6.5rem 2.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.atelier-material-header {
+  max-width: 680px;
+  margin-bottom: 3.5rem;
+}
+
+.atelier-material-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.atelier-material-specimen-card {
+  background-color: var(--atelier-white);
+  border: 1px solid var(--atelier-line);
+  border-radius: 2px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s var(--atelier-ease);
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-material-specimen-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--atelier-blueprint);
+  box-shadow: var(--atelier-shadow-sheet);
+}
+
+.atelier-material-specimen-card.active {
+  border-color: var(--atelier-oxide);
+  background-color: var(--atelier-paper-light);
+  box-shadow: 0 8px 24px rgba(179, 113, 20, 0.18);
+}
+
+.atelier-mat-sample-thumb {
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--atelier-line);
+}
+
+.atelier-mat-sample-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.atelier-mat-specimen-id {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-mat-specimen-name {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--atelier-graphite);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.atelier-mat-specimen-finish {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  color: var(--atelier-graphite-muted);
+  margin-bottom: 0.75rem;
+}
+
+.atelier-mat-specimen-desc {
+  font-size: 0.8rem;
+  color: var(--atelier-graphite-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.atelier-mat-matched-projects {
+  border-top: 1px solid var(--atelier-line-subtle);
+  padding-top: 0.85rem;
+  margin-top: auto;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--atelier-blueprint);
+}
+
+/* ============================================================================
+   6. INTERACTIVE STUDIO SERVICES (ARCHITECTURAL PROCESS DIAGRAM)
+   ============================================================================ */
+.atelier-services-section {
+  background-color: var(--atelier-paper-warm);
+  border-top: 1px solid var(--atelier-line);
+  border-bottom: 1px solid var(--atelier-line);
+  padding: 6.5rem 2.5rem;
+}
+
+.atelier-services-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.atelier-services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--atelier-line);
+  padding-bottom: 1.5rem;
+}
+
+.atelier-services-diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.atelier-service-stage-card {
+  background-color: var(--atelier-white);
+  border: 1px solid var(--atelier-line);
+  border-radius: 2px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.25s var(--atelier-ease);
+  position: relative;
+}
+
+.atelier-service-stage-card:hover {
+  border-color: var(--atelier-blueprint);
+  transform: translateY(-4px);
+  box-shadow: var(--atelier-shadow-sheet);
+}
+
+.atelier-service-stage-card.active {
+  background-color: var(--atelier-blueprint);
+  color: var(--atelier-white);
+  border-color: var(--atelier-blueprint);
+}
+
+.atelier-svc-step-badge {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--atelier-oxide);
+  margin-bottom: 1rem;
+}
+
+.atelier-service-stage-card.active .atelier-svc-step-badge {
+  color: var(--atelier-gold);
+}
+
+.atelier-svc-title {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.atelier-svc-desc {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--atelier-graphite-muted);
+  margin-bottom: 1.25rem;
+}
+
+.atelier-service-stage-card.active .atelier-svc-desc {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.atelier-svc-deliverables {
+  border-top: 1px solid var(--atelier-line-subtle);
+  padding-top: 0.85rem;
+  margin-top: auto;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--atelier-blueprint);
+}
+
+.atelier-service-stage-card.active .atelier-svc-deliverables {
+  color: var(--atelier-gold);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================================================
+   7. STUDIO PHILOSOPHY & DEMONSTRATION TEAM PROFILES
+   ============================================================================ */
+.atelier-philosophy-section {
+  padding: 6.5rem 2.5rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.atelier-philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.atelier-manifesto-large-text {
+  font-family: var(--atelier-font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--atelier-graphite);
+  margin-bottom: 2rem;
+}
+
+.atelier-philosophy-body-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--atelier-graphite-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.atelier-team-profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--atelier-line);
+  padding-top: 3rem;
+}
+
+.atelier-team-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-team-name {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--atelier-graphite);
+}
+
+.atelier-team-role {
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--atelier-oxide);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.atelier-team-bio {
+  font-size: 0.8rem;
+  color: var(--atelier-graphite-muted);
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   8. PROFESSIONAL PROJECT ENQUIRY JOURNEY (MULTI-STEP WIZARD)
+   ============================================================================ */
+.atelier-enquiry-section {
+  background-color: var(--atelier-paper-warm);
+  border-top: 1px solid var(--atelier-line);
+  padding: 6.5rem 2.5rem;
+}
+
+.atelier-enquiry-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: var(--atelier-white);
+  border: 1px solid var(--atelier-line);
+  border-radius: 3px;
+  box-shadow: var(--atelier-shadow-elevated);
+  padding: 3.5rem;
+}
+
+.atelier-enquiry-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--atelier-line);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.atelier-step-bullet {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--atelier-graphite-subtle);
+}
+
+.atelier-step-bullet.active {
+  color: var(--atelier-oxide);
+  font-weight: 700;
+}
+
+.atelier-step-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--atelier-line);
+  font-size: 0.65rem;
+}
+
+.atelier-step-bullet.active .atelier-step-circle {
+  background-color: var(--atelier-oxide);
+  color: var(--atelier-white);
+  border-color: var(--atelier-oxide);
+}
+
+.atelier-form-group {
+  margin-bottom: 2rem;
+}
+
+.atelier-form-label {
+  display: block;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--atelier-graphite);
+  margin-bottom: 0.6rem;
+}
+
+.atelier-form-input,
+.atelier-form-select,
+.atelier-form-textarea {
+  width: 100%;
+  border: 1px solid var(--atelier-line);
+  background-color: var(--atelier-paper-light);
+  padding: 0.85rem 1.25rem;
+  font-family: var(--atelier-font-sans);
+  font-size: 0.9rem;
+  color: var(--atelier-graphite);
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.atelier-form-input:focus,
+.atelier-form-select:focus,
+.atelier-form-textarea:focus {
+  border-color: var(--atelier-blueprint);
+  background-color: var(--atelier-white);
+}
+
+.atelier-form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.atelier-typology-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.atelier-typology-btn {
+  background: var(--atelier-paper-light);
+  border: 1px solid var(--atelier-line);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.atelier-typology-btn:hover {
+  border-color: var(--atelier-blueprint);
+  background-color: var(--atelier-white);
+}
+
+.atelier-typology-btn.active {
+  background-color: var(--atelier-blueprint);
+  color: var(--atelier-white);
+  border-color: var(--atelier-blueprint);
+}
+
+.atelier-enquiry-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--atelier-line);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.atelier-btn-secondary {
+  background: none;
+  border: 1px solid var(--atelier-line);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  color: var(--atelier-graphite-muted);
+}
+
+.atelier-btn-primary {
+  background-color: var(--atelier-graphite);
+  color: var(--atelier-white);
+  border: 1px solid var(--atelier-graphite);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.atelier-btn-primary:hover {
+  background-color: var(--atelier-oxide);
+  border-color: var(--atelier-oxide);
+}
+
+/* ============================================================================
+   9. PROJECT DETAIL MODAL / ARCHITECTURAL DOSSIER
+   ============================================================================ */
+.atelier-dossier-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(37, 39, 36, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.atelier-dossier-sheet-window {
+  background-color: var(--atelier-paper);
+  border-radius: 3px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--atelier-line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.atelier-dossier-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background-color: var(--atelier-paper-warm);
+  border-bottom: 1px solid var(--atelier-line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.atelier-dossier-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.atelier-dossier-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+
+/* ============================================================================
+   10. SHOWCASE GALLERY PREVIEW CARD (AtelierPreview.jsx)
+   ============================================================================ */
+.atelier-card-preview-root {
+  background-color: var(--atelier-paper);
+  color: var(--atelier-graphite);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--atelier-font-sans);
+}
+
+.preview-atelier-top-wire {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--atelier-line);
+  background-color: var(--atelier-paper-warm);
+}
+
+.preview-atelier-title {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
+.preview-atelier-composition {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--atelier-white);
+}
+
+.preview-atelier-copy {
+  padding: 1.25rem 1rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.preview-atelier-headline {
+  font-family: var(--atelier-font-serif);
+  font-size: 1.45rem;
+  line-height: 1.05;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.preview-atelier-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-atelier-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-atelier-bottom-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 1rem;
+  border-top: 1px solid var(--atelier-line);
+  font-family: var(--atelier-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--atelier-blueprint);
+  background-color: var(--atelier-paper-warm);
+}
+
+/* ============================================================================
+   11. FOOTER & COLOPHON
+   ============================================================================ */
+.atelier-footer-colophon {
+  background-color: var(--atelier-graphite);
+  color: var(--atelier-paper);
+  border-top: 1px solid var(--atelier-line-dark);
+  padding: 5rem 2.5rem 3rem;
+}
+
+.atelier-footer-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3.5rem;
+}
+
+.atelier-footer-bottom {
+  max-width: 1600px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--atelier-font-mono);
+  font-size: 0.65rem;
+  color: var(--atelier-concrete);
+}
+
+/* ============================================================================
+   12. COMPREHENSIVE RESPONSIVE DESIGN (Standard Breakpoints + Viewer Overrides)
+   ============================================================================ */
+
+/* Tablet & Medium Screens (<= 1024px) */
+@media (max-width: 1024px) {
+  .atelier-studio-root {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .atelier-presentation-board-hero {
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+  }
+
+  .atelier-hero-navigator-rail {
+    display: none;
+  }
+
+  .atelier-archive-composition-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .atelier-comp-span-7,
+  .atelier-comp-span-5,
+  .atelier-comp-span-4,
+  .atelier-comp-span-8 {
+    grid-column: span 1;
+  }
+
+  .atelier-material-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .atelier-services-diagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .atelier-philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atelier-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .atelier-studio-root {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .atelier-top-utility-wire {
+    display: flex;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.52rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: space-between;
+    scrollbar-width: none;
+  }
+  .atelier-top-utility-wire::-webkit-scrollbar {
+    display: none;
+  }
+
+  .atelier-hero-index-rail,
+  .atelier-hero-navigator-rail {
+    display: none;
+  }
+
+  .atelier-brand-discipline {
+    display: block;
+    border-left: none;
+    padding-left: 0;
+    font-size: 0.52rem;
+    margin-top: 0.15rem;
+    letter-spacing: 0.1em;
+  }
+
+  .atelier-brand-lockup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .atelier-main-masthead {
+    padding: 0.85rem 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .atelier-nav-links {
+    display: none;
+  }
+
+  .atelier-presentation-board-hero {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 2rem;
+    gap: 1rem;
+    min-height: auto;
+  }
+
+  .atelier-hero-composition-sheet {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .atelier-sheet-header-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .atelier-sheet-specs-table {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .atelier-sheet-imagery-stage {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .atelier-detail-photo-frame {
+    width: 100%;
+  }
+
+  .atelier-sheet-footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .atelier-archive-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .atelier-project-archive-section,
+  .atelier-narrative-section,
+  .atelier-material-library-section,
+  .atelier-services-section,
+  .atelier-philosophy-section,
+  .atelier-enquiry-section,
+  .atelier-footer-colophon {
+    padding: 3.5rem 1rem;
+  }
+
+  .atelier-archive-composition-grid,
+  .atelier-mat-group-grid,
+  .atelier-material-grid,
+  .atelier-services-diagram-grid,
+  .atelier-team-profiles-grid,
+  .atelier-footer-inner,
+  .atelier-form-grid-2col,
+  .atelier-typology-selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atelier-timeline-stage,
+  .atelier-timeline-stage:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .atelier-enquiry-inner {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .atelier-index-table-header {
+    display: none;
+  }
+
+  .atelier-index-table-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.25rem;
+  }
+
+  .atelier-brand-wordmark {
+    font-size: 1.55rem;
+    letter-spacing: 0.12em;
+  }
+
+  .atelier-enquiry-header-cta {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.58rem;
+    gap: 0.35rem;
+  }
+
+  .atelier-philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .atelier-footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .atelier-enquiry-step-indicator {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .atelier-services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .atelier-narrative-headline,
+  .atelier-archive-headline,
+  .atelier-manifesto-large-text,
+  .atelier-enquiry-headline {
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .atelier-studio-root,
+  .atelier-studio-root * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Small Mobile Screens (<= 360px) */
+@media (max-width: 360px) {
+  .atelier-brand-wordmark {
+    font-size: 1.35rem;
+  }
+  .atelier-hero-composition-sheet {
+    padding: 1rem 0.75rem;
+  }
+  .atelier-narrative-headline,
+  .atelier-archive-headline,
+  .atelier-manifesto-large-text,
+  .atelier-enquiry-headline {
+    font-size: 1.55rem;
+  }
+}
+
+/* Specific Viewer Overrides */
+
+/* Tablet (768px) */
+.viewer-container-frame[style*="768px"] .atelier-studio-root {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-presentation-board-hero {
+  grid-template-columns: 60px 1fr !important;
+  gap: 1.5rem !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-hero-navigator-rail {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-archive-composition-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-comp-span-7,
+.viewer-container-frame[style*="768px"] .atelier-comp-span-5,
+.viewer-container-frame[style*="768px"] .atelier-comp-span-4,
+.viewer-container-frame[style*="768px"] .atelier-comp-span-8 {
+  grid-column: span 1 !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-material-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-services-diagram-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-philosophy-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="768px"] .atelier-footer-inner {
+  grid-template-columns: 1fr 1fr !important;
+}
+
+/* Mobile (390px) */
+.viewer-container-frame[style*="390px"] .atelier-studio-root {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-top-utility-wire,
+.viewer-container-frame[style*="390px"] .atelier-hero-index-rail,
+.viewer-container-frame[style*="390px"] .atelier-hero-navigator-rail,
+.viewer-container-frame[style*="390px"] .atelier-brand-discipline {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-main-masthead {
+  padding: 0.85rem 1rem !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-nav-links {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-presentation-board-hero {
+  grid-template-columns: 1fr !important;
+  padding: 1rem 1rem 2rem !important;
+  gap: 1rem !important;
+  min-height: auto !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-hero-composition-sheet {
+  padding: 1.5rem 1.25rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-sheet-header-meta {
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-sheet-specs-table {
+  gap: 1.25rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-sheet-imagery-stage {
+  grid-template-columns: 1fr !important;
+  min-height: auto !important;
+  gap: 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-detail-photo-frame {
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-sheet-footer-bar {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+.atelier-archive-top-bar {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-project-archive-section,
+.viewer-container-frame[style*="390px"] .atelier-narrative-section,
+.viewer-container-frame[style*="390px"] .atelier-material-library-section,
+.viewer-container-frame[style*="390px"] .atelier-services-section,
+.viewer-container-frame[style*="390px"] .atelier-philosophy-section,
+.viewer-container-frame[style*="390px"] .atelier-enquiry-section,
+.viewer-container-frame[style*="390px"] .atelier-footer-colophon {
+  padding: 3.5rem 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-archive-composition-grid,
+.viewer-container-frame[style*="390px"] .atelier-mat-group-grid,
+.viewer-container-frame[style*="390px"] .atelier-material-grid,
+.viewer-container-frame[style*="390px"] .atelier-services-diagram-grid,
+.viewer-container-frame[style*="390px"] .atelier-team-profiles-grid,
+.viewer-container-frame[style*="390px"] .atelier-footer-inner,
+.viewer-container-frame[style*="390px"] .atelier-form-grid-2col,
+.viewer-container-frame[style*="390px"] .atelier-typology-selector-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-comp-span-7,
+.viewer-container-frame[style*="390px"] .atelier-comp-span-5,
+.viewer-container-frame[style*="390px"] .atelier-comp-span-4,
+.viewer-container-frame[style*="390px"] .atelier-comp-span-8 {
+  grid-column: span 1 !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-timeline-stage {
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-timeline-stage:nth-child(even) {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-enquiry-inner {
+  padding: 1.5rem 1.25rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-index-table-header {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-index-table-row {
+  grid-template-columns: 1fr !important;
+  gap: 0.5rem !important;
+  padding: 1.25rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-brand-wordmark {
+  font-size: 1.55rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-enquiry-header-cta {
+  padding: 0.45rem 0.75rem !important;
+  font-size: 0.58rem !important;
+  gap: 0.35rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-philosophy-grid {
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-footer-bottom {
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  align-items: flex-start !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-enquiry-step-indicator {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.6rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-services-header {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-narrative-headline,
+.viewer-container-frame[style*="390px"] .atelier-archive-headline,
+.viewer-container-frame[style*="390px"] .atelier-manifesto-large-text,
+.viewer-container-frame[style*="390px"] .atelier-enquiry-headline {
+  font-size: clamp(1.75rem, 6.5vw, 2.2rem) !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.viewer-container-frame[style*="390px"] .atelier-studio-root,
+.viewer-container-frame[style*="390px"] .atelier-studio-root * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}

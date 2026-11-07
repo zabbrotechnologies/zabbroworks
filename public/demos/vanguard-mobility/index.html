@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD MOBILITY &mdash; Hydrogen-Electric Regional Flight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #FFFFFF;
+      color: #0F1012;
+      line-height: 1.5;
+    }
+    header {
+      padding: 1.25rem 3rem;
+      border-bottom: 1px solid #ECEBE7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #666;
+    }
+    .nav-links a { color: inherit; text-decoration: none; }
+    .reserve-btn {
+      background: #0F1012;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .reserve-btn:hover { background: #1F8F4C; }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 3rem 4rem;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      border-bottom: 1px solid #ECEBE7;
+    }
+    .hero-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #1F8F4C;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      margin-bottom: 1.75rem;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #555860;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+    .hero-img-wrap {
+      height: 440px;
+      background: #F4F4F0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Telemetry strip */
+    .telemetry {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #ECEBE7;
+    }
+    .tel-cell {
+      padding: 2.5rem 3rem;
+      border-right: 1px solid #ECEBE7;
+    }
+    .tel-cell:last-child { border-right: none; }
+    .tel-val {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+    .tel-lbl {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #777;
+    }
+
+    /* Detail Specs */
+    .specs-section {
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      border-bottom: 1px solid #ECEBE7;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #ECEBE7;
+      font-size: 0.95rem;
+    }
+    .spec-row span:first-child { color: #666; }
+    .spec-row span:last-child { font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+
+    footer {
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+      .telemetry { grid-template-columns: 1fr 1fr; }
+      .tel-cell:nth-child(2n) { border-right: none; }
+      .specs-section { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+      header { padding: 1.25rem 1.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Vanguard Aero</div>
+    <div class="nav-links">
+      <a href="#">Aerodynamics</a>
+      <a href="#">Propulsion</a>
+      <a href="#">Avionics</a>
+      <a href="#">Fleet</a>
+    </div>
+    <button class="reserve-btn" onclick="alert('Vanguard Aero: Allocation reservation form initiated.')">Reserve Slot &rarr;</button>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="hero-tag">AERODYNAMIC PROTOTYPE // VG-800 CIRRUS</div>
+      <h1 class="hero-title">Zero Emissions. Pure Kinetic Velocity.</h1>
+      <p class="hero-desc">
+        The world's first liquid-hydrogen turboprop transport designed for regional point-to-point routes. 80% lower operating acoustics and zero carbon lifecycle.
+      </p>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80" alt="Aerospace craft aerodynamic wing">
+    </div>
+  </section>
+
+  <div class="telemetry">
+    <div class="tel-cell">
+      <div class="tel-val">1,250 nm</div>
+      <div class="tel-lbl">Operational Flight Radius</div>
+    </div>
+    <div class="tel-cell">
+      <div class="tel-val">Mach 0.72</div>
+      <div class="tel-lbl">High-Cruise Velocity</div>
+    </div>
+    <div class="tel-cell">
+      <div class="tel-val">0 g/km</div>
+      <div class="tel-lbl">Direct Flight CO2 Emissions</div>
+    </div>
+    <div class="tel-cell">
+      <div class="tel-val">42 min</div>
+      <div class="tel-lbl">Rapid Cryo-Fuel Turnaround</div>
+    </div>
+  </div>
+
+  <section class="specs-section">
+    <div>
+      <h3 style="font-size: 1.6rem; font-weight: 600; margin-bottom: 1rem;">Engineering Architecture</h3>
+      <p style="color: #666; font-size: 0.95rem;">
+        Integrated composite airframe with boundary-layer ingestion propulsion pod pods and supercritical laminar flow wing geometry.
+      </p>
+    </div>
+    <div>
+      <div class="spec-row">
+        <span>Propulsion Topology</span>
+        <span>Dual 2.4MW Cryogenic Fuel Cells + Electric Ducted Fans</span>
+      </div>
+      <div class="spec-row">
+        <span>Passenger Capacity</span>
+        <span>48 Regional Cabin Configuration (Club 2+1)</span>
+      </div>
+      <div class="spec-row">
+        <span>Acoustic Footprint</span>
+        <span>-18 EPNdB Below ICAO Chapter 14 Regulations</span>
+      </div>
+      <div class="spec-row">
+        <span>Avionics Autonomy</span>
+        <span>Triple-Redundant Fly-By-Wire Optical Bus</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Vanguard Aerospace Corp. Toulouse &bull; Zurich</div>
+    <div>FAA &amp; EASA Certification Pending 2027</div>
+  </footer>
+</body>
+</html>

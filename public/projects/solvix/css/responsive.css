@@ -1,0 +1,399 @@
+/* ============================================================================
+   SOLVIX — VIVID GRADIENTS / IMMERSIVE DIGITAL EXPERIENCE
+   Responsive Stylesheet (responsive.css)
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   Laptop & Medium Displays (<= 1440px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1440px) {
+  .solvix-hero-container,
+  .solvix-container,
+  .trusted-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .hero-main-title {
+    font-size: clamp(3.2rem, 5.2vw, 4.8rem);
+  }
+
+  .hero-featured-project-card {
+    max-width: 380px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Tablet Landscape (<= 1200px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero-main-stage {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-card-side {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hero-featured-project-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .work-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .work-card-large {
+    grid-column: span 2;
+  }
+
+  .industries-tiles-grid,
+  .insights-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand-side {
+    grid-column: span 2;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Tablet Portrait (<= 992px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .solvix-header-container {
+    padding: 1.2rem 2rem;
+  }
+
+  .solvix-nav {
+    display: none;
+  }
+
+  .solvix-menu-btn {
+    display: flex;
+  }
+
+  .hero-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+    width: 100%;
+  }
+
+  .hero-bottom-stage {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .trusted-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .trusted-logos-list {
+    gap: 1.5rem 2.5rem;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Mobile Devices (<= 768px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .solvix-hero-container,
+  .solvix-container,
+  .trusted-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .solvix-header-container {
+    padding: 1rem 1.25rem;
+  }
+
+  .solvix-start-project-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.78rem;
+  }
+
+  .solvix-hero {
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+    min-height: auto;
+  }
+
+  .hero-main-stage {
+    margin-bottom: 3.5rem;
+    gap: 2.5rem;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2.4rem, 10vw, 3.8rem);
+    line-height: 1;
+    word-break: break-word;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-lead-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-cluster {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .hero-primary-pill-btn,
+  .hero-video-play-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-floating-meta {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+    font-size: 0.6rem;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    width: 100%;
+  }
+
+  .stat-number-wrap {
+    font-size: 2.2rem;
+  }
+
+  .trusted-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .trusted-kicker {
+    white-space: normal;
+  }
+
+  .trusted-logos-list {
+    gap: 1.25rem 2rem;
+    width: 100%;
+  }
+
+  .solvix-services-section,
+  .solvix-work-section,
+  .solvix-approach-section,
+  .solvix-industries-section,
+  .solvix-insights-section,
+  .solvix-contact-section {
+    padding: 4.5rem 0;
+  }
+
+  .services-header-row,
+  .work-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-panel-card {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .work-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .work-card-large {
+    grid-column: span 1;
+  }
+
+  .work-card-large .work-card-media {
+    height: 260px;
+  }
+
+  .industries-tiles-grid,
+  .insights-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .approach-step-nav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .approach-step-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-nav-btn {
+    flex: 0 0 auto;
+    min-width: 85px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand-side {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .solvix-gradient-orb {
+    filter: blur(80px);
+    opacity: 0.2;
+    pointer-events: none;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .orb-primary {
+    width: 90vw;
+    height: 90vw;
+    right: -20vw;
+  }
+
+  .orb-secondary {
+    width: 80vw;
+    height: 80vw;
+    left: -30vw;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Small Mobile (<= 480px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .solvix-logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .solvix-start-project-btn span:first-child {
+    display: none;
+  }
+
+  .solvix-start-project-btn {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2rem, 9.5vw, 2.6rem);
+    word-break: break-word;
+  }
+
+  .services-main-title,
+  .work-main-title,
+  .approach-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 0.75rem;
+  }
+
+  .stat-number-wrap {
+    font-size: 1.85rem;
+  }
+
+  .stat-label {
+    font-size: 0.58rem;
+  }
+
+  .drawer-panel {
+    width: 85vw;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Extra Small Phones (<= 360px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .solvix-hero-container,
+  .solvix-container,
+  .trusted-container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .hero-main-title {
+    font-size: 1.95rem;
+  }
+
+  .hero-lead-text {
+    font-size: 0.88rem;
+  }
+
+  .stat-number-wrap {
+    font-size: 1.65rem;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Accessibility: Reduced Motion
+   ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .solvix-gradient-orb {
+    display: none !important;
+  }
+
+  .reveal-on-scroll,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

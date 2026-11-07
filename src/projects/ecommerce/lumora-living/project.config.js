@@ -1,0 +1,16 @@
+export const lumoraConfig = {
+  id: 'lumora-living',
+  number: '02',
+  title: 'LUMORA LIVING',
+  category: 'E-COMMERCE',
+  sectionSlug: 'ecommerce',
+  year: '2026',
+  client: 'Lumora Living Studio',
+  description: 'Premium home décor and furniture e-commerce featuring artisanal oak furniture, travertine tables, and ambient alabaster luminaires.',
+  deliverables: ['Custom Storefront', 'Editorial Photography', 'White-Glove Logistics'],
+  demoUrl: null,
+  featured: false,
+  tags: ['Furniture', 'Home Décor', 'Architectural Objects'],
+  accentColor: '#8C6E4A',
+  surfaceColor: '#F6F4EE',
+};

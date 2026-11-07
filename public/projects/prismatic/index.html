@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRISMATIC — Experimental Digital Art &amp; Creative Technology Studio</title>
+  <meta name="description" content="Independent digital art laboratory specializing in 3D visual experiences, generative art, optical illusions, and chromatic brutalism.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='16,2 30,28 2,28' fill='none' stroke='%23D6FF35' stroke-width='3'/><circle cx='16' cy='18' r='4' fill='%23FF5A36'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Three.js CDN for 3D Prism Sculpture -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="prismatic-body">
+
+  <!-- Custom Contextual Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-label" id="cursorLabel">EXPLORE</span>
+  </div>
+
+  <!-- Noise Grain Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="prismatic-nav" id="mainNav">
+    <div class="nav-wrapper">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="nav-brand" aria-label="PRISMATIC Home">
+        <div class="brand-symbol">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="12,2 22,20 2,20" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="14" r="3" fill="#D6FF35"/>
+          </svg>
+        </div>
+        <span class="brand-name">PRISMATIC<span class="dot-accent">.</span></span>
+      </a>
+
+      <!-- Center Links -->
+      <nav class="nav-links">
+        <a href="#manifesto" class="nav-item">Manifesto</a>
+        <a href="#experiments" class="nav-item">Experiments</a>
+        <a href="#chromatic-lab" class="nav-item">Chromatic Lab</a>
+        <a href="#creations" class="nav-item">Selected Works</a>
+        <a href="#about" class="nav-item">Studio</a>
+      </nav>
+
+      <!-- Right Contact CTA -->
+      <div class="nav-right">
+        <a href="#contact" class="btn-contact-action" id="navContactBtn">
+          <span class="status-indicator"></span>
+          <span>INITIATE DISPATCH</span>
+          <span class="arrow-sym">↗</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <span class="drawer-tag">PRISMATIC / LAB // 026</span>
+        <button class="drawer-close" id="drawerClose">&times;</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#hero" class="drawer-link">01 // Apex</a>
+        <a href="#manifesto" class="drawer-link">02 // Manifesto</a>
+        <a href="#experiments" class="drawer-link">03 // Experiments</a>
+        <a href="#chromatic-lab" class="drawer-link">04 // Chromatic Lab</a>
+        <a href="#creations" class="drawer-link">05 // Selected Works</a>
+        <a href="#process" class="drawer-link">06 // Process</a>
+        <a href="#about" class="drawer-link">07 // About Studio</a>
+        <a href="#contact" class="drawer-btn-cta">Start an Experiment ↗</a>
+      </nav>
+      <div class="drawer-meta">
+        <span>59.3293° N | 18.0686° E</span>
+        <span>CHROMATIC BRUTALISM × OPTICAL 3D</span>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- ==================== SECTION 01: IMMERSIVE HERO ==================== -->
+  <section class="hero-section" id="hero">
+    
+    <!-- Hero 3D WebGL Canvas Container -->
+    <div class="hero-3d-canvas-container" id="hero3DContainer">
+      <canvas id="heroPrismCanvas"></canvas>
+      <div class="canvas-radial-vignette"></div>
+    </div>
+
+    <!-- Hero Content Overlay -->
+    <div class="hero-content">
+      
+      <!-- Top Annotation -->
+      <div class="hero-meta-row">
+        <div class="hero-tag">
+          <span class="tag-pulse"></span>
+          <span class="tag-text">INDEPENDENT DIGITAL ART LAB / EST. 2026</span>
+        </div>
+        <div class="hero-coords">
+          <span>SYS.RENDER: 60FPS // WEBGL 2.0</span>
+        </div>
+      </div>
+
+      <!-- Oversized Editorial Headline -->
+      <div class="hero-headline-wrapper">
+        <h1 class="hero-title">
+          <span class="title-line title-line-1">
+            <span class="word-solid">WE</span>
+            <span class="word-solid">CREATE</span>
+          </span>
+          <span class="title-line title-line-2">
+            <span class="word-solid">WHAT</span>
+            <span class="word-serif-italic">doesn't</span>
+          </span>
+          <span class="title-line title-line-3">
+            <span class="word-solid accent-lime">EXIST</span>
+            <span class="period-orange">.</span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- Description & Action Group -->
+      <div class="hero-bottom-grid">
+        
+        <div class="hero-desc-col">
+          <p class="hero-description">
+            We transform imagination into interactive digital experiences through experimental visuals, generative systems and unconventional creative technology.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#chromatic-lab" class="btn-hero-primary">
+              <span>EXPLORE THE LAB</span>
+              <svg class="cta-arrow" viewBox="0 0 14 14" fill="none">
+                <path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            
+            <a href="#experiments" class="btn-hero-secondary">
+              <span>DISCOVER OUR WORK</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical Metadata Metrics -->
+        <div class="hero-stats-col">
+          <div class="hero-stat-item">
+            <span class="stat-num">001—026</span>
+            <span class="stat-lbl">DIGITAL EXPERIMENTS</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="stat-num accent-lime">ACTIVE</span>
+            <span class="stat-lbl">CREATIVE SYSTEMS</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="stat-num">3D / MOTION</span>
+            <span class="stat-lbl">INTERACTION CORE</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll-indicator">
+        <span class="scroll-track">
+          <span class="scroll-dot"></span>
+        </span>
+        <span class="scroll-text">SCROLL TO INTERACT</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==================== SECTION 02: CREATIVE MANIFESTO ==================== -->
+  <section class="manifesto-section" id="manifesto">
+    <div class="manifesto-wrapper">
+      
+      <div class="manifesto-eyebrow">
+        <span class="eyebrow-num">02</span>
+        <span class="eyebrow-rule"></span>
+        <span class="eyebrow-text">LAB MANIFESTO // PHILOSOPHY</span>
+      </div>
+
+      <div class="manifesto-grid">
+        
+        <!-- Large Asymmetric Statement -->
+        <div class="manifesto-text-block">
+          <blockquote class="manifesto-quote">
+            <span class="quote-line">“WE DON’T</span>
+            <span class="quote-line">FOLLOW <span class="serif-word-italic">visual rules.</span></span>
+            <span class="quote-line">WE <span class="highlight-lime">EXPERIMENT</span></span>
+            <span class="quote-line">WITH <span class="serif-word-italic">them.</span>”</span>
+          </blockquote>
+
+          <p class="manifesto-sub">
+            Conventional design solves problems with familiar patterns. Experimental digital art exposes alternate dimensions of human perception. By colliding physics-based refraction with brutalist typographic hierarchy, we manufacture uncharted sensory territory.
+          </p>
+        </div>
+
+        <!-- Interactive Abstract Optical Sculpture -->
+        <div class="manifesto-visual-block" id="manifestoVisual">
+          <div class="optical-interactive-card">
+            <div class="optical-prism-ring" id="opticalRing"></div>
+            <div class="optical-data-badge">
+              <span class="data-pulse"></span>
+              <span>INDEX: η = 2.417 // CHROMA SHIFT</span>
+            </div>
+            <div class="optical-caption">
+              <span>CURSOR-COUPLED OPTICAL DISPERSION</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 03: DIGITAL EXPERIMENTS GALLERY ==================== -->
+  <section class="experiments-section" id="experiments">
+    <div class="section-container">
+      
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag">
+            <span class="tag-idx">03</span>
+            <span class="tag-title">// DIGITAL EXPERIMENTS</span>
+          </div>
+          <h2 class="section-title">Optical Explorations &amp; Visual Hypotheses</h2>
+        </div>
+        <p class="section-subtitle">
+          Six self-directed laboratory studies investigating the limits of material refraction, fluid chrome, and perceptual distortion.
+        </p>
+      </div>
+
+      <!-- Irregular Editorial Gallery Grid -->
+      <div class="experiments-gallery-grid">
+        
+        <!-- Artwork 1: Large Featured (Chromatic Flow) -->
+        <article class="art-card art-card-hero" data-art="01">
+          <div class="art-media-wrap">
+            <div class="art-canvas-bg bg-chromatic-flow"></div>
+            <div class="art-overlay-noise"></div>
+            <div class="art-status-pill">EXP // 001</div>
+          </div>
+          <div class="art-info">
+            <div class="art-header">
+              <span class="art-cat">GENERATIVE SHADER / LIQUID</span>
+              <h3 class="art-title">Chromatic Flow</h3>
+            </div>
+            <p class="art-desc">Iridescent liquid-metal sculpture undulating in multi-octave simplex space with dynamic dielectric refraction.</p>
+            <div class="art-action">
+              <span class="art-tech">GLSL / THREE.JS</span>
+              <button class="btn-inspect-exp" aria-label="Inspect Chromatic Flow">INSPECT ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 2: Vertical Angular (Fracture) -->
+        <article class="art-card art-card-portrait" data-art="02">
+          <div class="art-media-wrap">
+            <div class="art-canvas-bg bg-fracture"></div>
+            <div class="art-overlay-noise"></div>
+            <div class="art-status-pill">EXP // 002</div>
+          </div>
+          <div class="art-info">
+            <div class="art-header">
+              <span class="art-cat">OPTICAL GEOMETRY</span>
+              <h3 class="art-title">Fracture</h3>
+            </div>
+            <p class="art-desc">Sharp angular glass forms exhibiting internal Fresnel reflection and total internal refraction.</p>
+            <div class="art-action">
+              <span class="art-tech">PHYSICS REFRACT</span>
+              <button class="btn-inspect-exp" aria-label="Inspect Fracture">INSPECT ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 3: Compact Square (Afterimage) -->
+        <article class="art-card art-card-compact" data-art="03">
+          <div class="art-media-wrap">
+            <div class="art-canvas-bg bg-afterimage"></div>
+            <div class="art-overlay-noise"></div>
+            <div class="art-status-pill">EXP // 003</div>
+          </div>
+          <div class="art-info">
+            <div class="art-header">
+              <span class="art-cat">RETINAL INTERFERENCE</span>
+              <h3 class="art-title">Afterimage</h3>
+            </div>
+            <p class="art-desc">High-frequency lime and orange chromatic aberration trails that burn persistent visual impressions.</p>
+            <div class="art-action">
+              <span class="art-tech">TEMPORAL BUFFER</span>
+              <button class="btn-inspect-exp" aria-label="Inspect Afterimage">INSPECT ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 4: Horizontal Wide (Liquid Matter) -->
+        <article class="art-card art-card-wide" data-art="04">
+          <div class="art-media-wrap">
+            <div class="art-canvas-bg bg-liquid-matter"></div>
+            <div class="art-overlay-noise"></div>
+            <div class="art-status-pill">EXP // 004</div>
+          </div>
+          <div class="art-info">
+            <div class="art-header">
+              <span class="art-cat">COMPUTATIONAL TOPOLOGY</span>
+              <h3 class="art-title">Liquid Matter</h3>
+            </div>
+            <p class="art-desc">Organic reflective mercury surfaces simulating viscosity and surface tension in zero gravity.</p>
+            <div class="art-action">
+              <span class="art-tech">PBR METALLIC</span>
+              <button class="btn-inspect-exp" aria-label="Inspect Liquid Matter">INSPECT ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 5: Architectural Vertical (Dimension 09) -->
+        <article class="art-card art-card-tall" data-art="05">
+          <div class="art-media-wrap">
+            <div class="art-canvas-bg bg-dimension-09"></div>
+            <div class="art-overlay-noise"></div>
+            <div class="art-status-pill">EXP // 005</div>
+          </div>
+          <div class="art-info">
+            <div class="art-header">
+              <span class="art-cat">SPATIAL COMPUTATION</span>
+              <h3 class="art-title">Dimension 09</h3>
+            </div>
+            <p class="art-desc">Impossible non-Euclidean brutalist architectures constructed along hyper-dimensional planes.</p>
+            <div class="art-action">
+              <span class="art-tech">SPATIAL 3D</span>
+              <button class="btn-inspect-exp" aria-label="Inspect Dimension 09">INSPECT ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 6: Generative Color (Color Theory) -->
+        <article class="art-card art-card-square" data-art="06">
+          <div class="art-media-wrap">
+            <div class="art-canvas-bg bg-color-theory"></div>
+            <div class="art-overlay-noise"></div>
+            <div class="art-status-pill">EXP // 006</div>
+          </div>
+          <div class="art-info">
+            <div class="art-header">
+              <span class="art-cat">SPECTRAL HARMONICS</span>
+              <h3 class="art-title">Color Theory</h3>
+            </div>
+            <p class="art-desc">Mathematical wavelength synthesis creating unexpected tonal resonances across obsidian backgrounds.</p>
+            <div class="art-action">
+              <span class="art-tech">SPECTRAL SYNTH</span>
+              <button class="btn-inspect-exp" aria-label="Inspect Color Theory">INSPECT ↗</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 04: CHROMATIC LAB (INTERACTIVE PLAYGROUND) ==================== -->
+  <section class="chromatic-lab-section" id="chromatic-lab">
+    <div class="section-container">
+      
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag">
+            <span class="tag-idx">04</span>
+            <span class="tag-title">// INTERACTIVE PLAYGROUND</span>
+          </div>
+          <h2 class="section-title">The Chromatic Laboratory</h2>
+        </div>
+        <p class="section-subtitle">
+          Manipulate procedural generative algorithms in real-time. Adjust color matrices, topology waveforms, and spatial distortion.
+        </p>
+      </div>
+
+      <!-- Lab Interactive Interface -->
+      <div class="lab-interface-board">
+        
+        <!-- Live Render Canvas Viewport -->
+        <div class="lab-viewport-col">
+          <div class="lab-canvas-frame">
+            <canvas id="chromaticLabCanvas"></canvas>
+            
+            <!-- Real-time HUD HUD Overlay -->
+            <div class="lab-hud-top">
+              <div class="hud-item"><span class="hud-dot"></span> LIVE WEBGL ENGINE</div>
+              <div class="hud-item" id="hudFps">60.0 FPS</div>
+              <div class="hud-item" id="hudCycles">CYCLE: 004821</div>
+            </div>
+
+            <div class="lab-hud-bottom">
+              <div class="hud-coord" id="hudMatrix">MAT: [ACID_LIME / LIQUID / D:45%]</div>
+              <div class="hud-hint">DRAG CANVAS TO ROTATE FIELD</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Dashboard Column -->
+        <div class="lab-controls-col">
+          <div class="controls-panel">
+            
+            <div class="panel-header">
+              <span class="panel-title">PARAMETER CONTROLS</span>
+              <span class="panel-badge">REALTIME</span>
+            </div>
+
+            <!-- Control 1: Color Mode -->
+            <div class="control-group">
+              <label class="control-label">01 // COLOR MATRIX</label>
+              <div class="control-btn-grid" id="colorControlGroup">
+                <button class="ctrl-btn active" data-mode="acid">ACID</button>
+                <button class="ctrl-btn" data-mode="chromatic">CHROMATIC</button>
+                <button class="ctrl-btn" data-mode="monochrome">MONOCHROME</button>
+              </div>
+            </div>
+
+            <!-- Control 2: Form Topology -->
+            <div class="control-group">
+              <label class="control-label">02 // GEOMETRIC TOPOLOGY</label>
+              <div class="control-btn-grid" id="formControlGroup">
+                <button class="ctrl-btn active" data-form="liquid">LIQUID</button>
+                <button class="ctrl-btn" data-form="geometric">GEOMETRIC</button>
+                <button class="ctrl-btn" data-form="organic">ORGANIC</button>
+              </div>
+            </div>
+
+            <!-- Control 3: Distortion Slider -->
+            <div class="control-group">
+              <div class="slider-label-row">
+                <label class="control-label" for="distortionSlider">03 // REFRACTION DISTORTION</label>
+                <span class="slider-val" id="distortionVal">45%</span>
+              </div>
+              <div class="slider-track-wrap">
+                <input type="range" id="distortionSlider" min="0" max="100" value="45" class="custom-range-slider" />
+              </div>
+            </div>
+
+            <!-- Control 4: Preset Generators -->
+            <div class="control-group">
+              <label class="control-label">04 // LAB PRESETS</label>
+              <div class="preset-pill-row">
+                <button class="preset-pill" data-preset="supernova">SUPERNOVA</button>
+                <button class="preset-pill" data-preset="quantum">QUANTUM GLASS</button>
+                <button class="preset-pill" data-preset="darkvoid">DARK VOID</button>
+              </div>
+            </div>
+
+            <!-- Technical Status Info Readout -->
+            <div class="lab-tech-specs">
+              <div class="spec-row">
+                <span>WAVELENGTH:</span>
+                <span id="specWavelength">520nm / 610nm</span>
+              </div>
+              <div class="spec-row">
+                <span>SAMPLING:</span>
+                <span>8X MULTISAMPLE MSAA</span>
+              </div>
+              <div class="spec-row">
+                <span>RAYMARCH STEPS:</span>
+                <span id="specSteps">64 ITERATIONS</span>
+              </div>
+            </div>
+
+            <button class="btn-snapshot-art" id="btnSnapshot">
+              <span>CAPTURE FRAME ARTIFACT (.PNG)</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M2 10v4h12v-4M8 2v8m0 0l-3-3m3 3l3-3" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 05: SELECTED CREATIONS (CINEMATIC SLIDER) ==================== -->
+  <section class="creations-section" id="creations">
+    <div class="section-container">
+      
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag">
+            <span class="tag-idx">05</span>
+            <span class="tag-title">// SELECTED CREATIONS</span>
+          </div>
+          <h2 class="section-title">Major Installations &amp; Digital Monoliths</h2>
+        </div>
+        
+        <!-- Slider Navigation Controls -->
+        <div class="slider-ctrl-box">
+          <div class="slider-counter">
+            <span class="count-current" id="sliderCurIdx">01</span>
+            <span class="count-divider">/</span>
+            <span class="count-total">04</span>
+          </div>
+          <div class="slider-nav-btns">
+            <button class="btn-slide-nav" id="slidePrev" aria-label="Previous Project">&larr;</button>
+            <button class="btn-slide-nav" id="slideNext" aria-label="Next Project">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Viewport & Track -->
+      <div class="slider-viewport" id="sliderViewport">
+        <div class="slider-track" id="sliderTrack">
+          
+          <!-- Slide 1 -->
+          <article class="slide-card active" data-index="0">
+            <div class="slide-media">
+              <div class="slide-art-bg bg-slide-chromatic"></div>
+              <div class="slide-tag">PROJECT // 01</div>
+            </div>
+            <div class="slide-body">
+              <span class="slide-cat">GENERATIVE ART / INSTALLATION</span>
+              <h3 class="slide-title">Chromatic Horizon</h3>
+              <p class="slide-desc">A 360-degree monumental digital installation reacting to environmental ambient soundwaves through multi-layered prism arrays.</p>
+              <div class="slide-footer">
+                <span class="slide-meta">BERLIN BIENNALE // 2026</span>
+                <span class="slide-arrow">VIEW INSTALLATION ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="slide-card" data-index="1">
+            <div class="slide-media">
+              <div class="slide-art-bg bg-slide-prism"></div>
+              <div class="slide-tag">PROJECT // 02</div>
+            </div>
+            <div class="slide-body">
+              <span class="slide-cat">OPTICAL INTERACTION</span>
+              <h3 class="slide-title">Prism Field 3D</h3>
+              <p class="slide-desc">An interactive kinetic field composed of 2,400 physical dichroic glass blades mapped with volumetric projection light.</p>
+              <div class="slide-footer">
+                <span class="slide-meta">TOKYO MEDIA PAVILION</span>
+                <span class="slide-arrow">VIEW INSTALLATION ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="slide-card" data-index="2">
+            <div class="slide-media">
+              <div class="slide-art-bg bg-slide-liquid"></div>
+              <div class="slide-tag">PROJECT // 03</div>
+            </div>
+            <div class="slide-body">
+              <span class="slide-cat">MOTION EXPERIMENT</span>
+              <h3 class="slide-title">Liquid State</h3>
+              <p class="slide-desc">Autonomous generative liquid chrome simulation calculating micro-surface tension and photorealistic chromatic dispersion.</p>
+              <div class="slide-footer">
+                <span class="slide-meta">CENTRE POMPIDOU DISPATCH</span>
+                <span class="slide-arrow">VIEW INSTALLATION ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 4 -->
+          <article class="slide-card" data-index="3">
+            <div class="slide-media">
+              <div class="slide-art-bg bg-slide-fracture"></div>
+              <div class="slide-tag">PROJECT // 04</div>
+            </div>
+            <div class="slide-body">
+              <span class="slide-cat">DIGITAL SCULPTURE</span>
+              <h3 class="slide-title">Fracture Monolith</h3>
+              <p class="slide-desc">Massive geometric crystalline structure generated from real-time seismic geological telemetry across Iceland's tectonic faults.</p>
+              <div class="slide-footer">
+                <span class="slide-meta">STOCKHOLM KUNSTHALLE</span>
+                <span class="slide-arrow">VIEW INSTALLATION ↗</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 06: CREATIVE PROCESS ==================== -->
+  <section class="process-section" id="process">
+    <div class="section-container">
+      
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag">
+            <span class="tag-idx">06</span>
+            <span class="tag-title">// METHODOLOGY</span>
+          </div>
+          <h2 class="section-title">The Four Vector Progression</h2>
+        </div>
+        <p class="section-subtitle">
+          How raw perceptual curiosity evolves into calibrated sensory artifacts through iterative coding and optical experimentation.
+        </p>
+      </div>
+
+      <!-- Process 4-Stage Horizontal Progression -->
+      <div class="process-timeline-grid">
+        
+        <!-- Step 1 -->
+        <div class="process-stage-unit">
+          <div class="stage-top">
+            <span class="stage-num">01</span>
+            <span class="stage-dot"></span>
+          </div>
+          <div class="stage-line"></div>
+          <h3 class="stage-name">OBSERVE</h3>
+          <p class="stage-desc">
+            Explore unscripted visual phenomena, micro-crystalline structures, optical glass flaws, and unexpected historical brutalist geometries.
+          </p>
+          <div class="stage-tag">// INPUT PHASE</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-stage-unit">
+          <div class="stage-top">
+            <span class="stage-num">02</span>
+            <span class="stage-dot"></span>
+          </div>
+          <div class="stage-line"></div>
+          <h3 class="stage-name">EXPERIMENT</h3>
+          <p class="stage-desc">
+            Develop procedural shaders in GLSL. Torture math matrices with non-linear feedback loops, noise frequencies, and chromatic dispersion.
+          </p>
+          <div class="stage-tag">// SHADER SYNTHESIS</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-stage-unit">
+          <div class="stage-top">
+            <span class="stage-num">03</span>
+            <span class="stage-dot"></span>
+          </div>
+          <div class="stage-line"></div>
+          <h3 class="stage-name">TRANSFORM</h3>
+          <p class="stage-desc">
+            Integrate spatial user interaction. Map pointer velocity, auditory sensors, and physical gravity into kinetic responsive behavior.
+          </p>
+          <div class="stage-tag">// SPATIAL MAPPING</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-stage-unit">
+          <div class="stage-top">
+            <span class="stage-num">04</span>
+            <span class="stage-dot active"></span>
+          </div>
+          <div class="stage-line"></div>
+          <h3 class="stage-name">TRANSCEND</h3>
+          <p class="stage-desc">
+            Deliver an astonishing digital result that resists standard categorization—an artwork that lives between technology and pure wonder.
+          </p>
+          <div class="stage-tag">// ARTIFACT OUTPUT</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 07: ABOUT PRISMATIC ==================== -->
+  <section class="about-section" id="about">
+    <div class="section-container">
+      
+      <div class="about-grid">
+        
+        <!-- Left Column: Manifesto & Disciplines -->
+        <div class="about-info-col">
+          <div class="section-tag">
+            <span class="tag-idx">07</span>
+            <span class="tag-title">// STUDIO PROFILE</span>
+          </div>
+          
+          <h2 class="about-statement">
+            ART MEETS THE <span class="serif-word-italic">unexpected.</span>
+          </h2>
+
+          <p class="about-body-text">
+            PRISMATIC is an independent digital art laboratory exploring the intersection of visual experimentation, creative technology and interactive experiences. Founded in 2026, we work at the vanguard of real-time 3D, generative systems, and optical brutalism.
+          </p>
+
+          <!-- Disciplines Matrix -->
+          <div class="disciplines-block">
+            <span class="disc-label">CORE DISCIPLINES &amp; CAPABILITIES</span>
+            <div class="disc-grid">
+              <div class="disc-item"><span>01</span> 3D Visual Design</div>
+              <div class="disc-item"><span>02</span> Generative Art Systems</div>
+              <div class="disc-item"><span>03</span> Motion Experiments</div>
+              <div class="disc-item"><span>04</span> Interactive Installations</div>
+              <div class="disc-item"><span>05</span> Creative Coding &amp; GLSL</div>
+              <div class="disc-item"><span>06</span> Spatial Audio &amp; Sensory UX</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Abstract Prism Sculpture Badge -->
+        <div class="about-sculpture-col">
+          <div class="sculpture-frame">
+            <div class="sculpture-graphic-art"></div>
+            <div class="sculpture-badge">
+              <span class="badge-num">100%</span>
+              <span class="badge-lbl">PROCEDURAL INTEGRITY // ZERO CANNED TEMPLATES</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 08: FINAL CTA ==================== -->
+  <section class="final-cta-section" id="contact">
+    <div class="cta-inner-card">
+      <div class="cta-bg-glow"></div>
+      
+      <div class="cta-content">
+        <span class="cta-tag">// INITIALIZE COLLABORATION</span>
+        <h2 class="cta-heading">
+          MAKE SOMETHING <span class="serif-word-italic">unexpected.</span>
+        </h2>
+        <p class="cta-subtext">
+          Have an ambitious digital installation, generative brand identity, or unclassifiable creative tech project? Transmit your coordinates to our laboratory dispatch.
+        </p>
+
+        <form class="cta-form" id="labInquiryForm">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name / Studio" required id="inqName" class="lab-input" />
+            <input type="email" placeholder="Electronic Mail" required id="inqEmail" class="lab-input" />
+          </div>
+          <div class="form-row">
+            <select id="inqDiscipline" class="lab-input">
+              <option>3D Generative Installation</option>
+              <option>Interactive Web Experience</option>
+              <option>Chromatic Brand System</option>
+              <option>Research Commission</option>
+            </select>
+            <input type="text" placeholder="Project Budget / Scope" id="inqScope" class="lab-input" />
+          </div>
+          <textarea placeholder="Describe the unexplored territory you wish to venture into..." rows="3" class="lab-input" id="inqDetails"></textarea>
+
+          <button type="submit" class="btn-start-experiment">
+            <span>START AN EXPERIMENT</span>
+            <svg viewBox="0 0 14 14" fill="none">
+              <path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 09: FOOTER ==================== -->
+  <footer class="prismatic-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top-grid">
+        <div class="footer-col-brand">
+          <div class="f-brand">
+            <span class="f-brand-txt">PRISMATIC</span>
+            <span class="dot-accent">.</span>
+          </div>
+          <p class="f-desc">
+            Independent Digital Art Laboratory. Exploring the frontiers of Chromatic Brutalism, Optical Refraction, and Generative Realities.
+          </p>
+          <div class="f-coords">
+            STATION 01: 59.3293° N, 18.0686° E // STOCKHOLM
+          </div>
+        </div>
+
+        <div class="footer-col-nav">
+          <span class="f-nav-head">NAVIGATION</span>
+          <a href="#hero">01 // Apex Hero</a>
+          <a href="#manifesto">02 // Manifesto</a>
+          <a href="#experiments">03 // Experiments</a>
+          <a href="#chromatic-lab">04 // Chromatic Lab</a>
+          <a href="#creations">05 // Selected Works</a>
+          <a href="#about">06 // Studio Profile</a>
+        </div>
+
+        <div class="footer-col-nav">
+          <span class="f-nav-head">COLLABORATION</span>
+          <a href="#contact">Commission Study</a>
+          <a href="#contact">Exhibition Licensing</a>
+          <a href="#contact">GLSL Shader Assets</a>
+          <a href="#contact">Field Dispatches</a>
+        </div>
+      </div>
+
+      <!-- Giant Monolithic Brand Mark -->
+      <div class="footer-monolith-mark">
+        <span>PRISMATIC</span>
+      </div>
+
+      <!-- Bottom Meta Row -->
+      <div class="footer-bottom-row">
+        <span>© 2026 PRISMATIC DIGITAL ART LAB. ALL RIGHTS RESERVED.</span>
+        <span>CHROMATIC BRUTALISM × OPTICAL ART</span>
+        <a href="#hero" class="btn-back-apex" id="btnBackApex">
+          <span>APEX</span> &uarr;
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== ARTWORK INSPECTOR MODAL ==================== -->
+  <div class="art-modal-backdrop" id="artModal">
+    <div class="art-modal-card">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body-grid">
+        <div class="modal-art-view" id="modalArtView">
+          <div class="modal-art-canvas" id="modalArtCanvas"></div>
+        </div>
+        <div class="modal-info-view">
+          <span class="modal-tag" id="modalTag">EXP // 001</span>
+          <h3 class="modal-title" id="modalTitle">Chromatic Flow</h3>
+          <p class="modal-desc" id="modalDesc">Detailed procedural explanation of the algorithmic mathematics generating this refraction study.</p>
+          
+          <div class="modal-specs-list">
+            <div class="ms-row"><span>ALGORITHM:</span><span id="modalAlg">SIMPLEX NOISE + FRESNEL</span></div>
+            <div class="ms-row"><span>SHADER STAGE:</span><span id="modalStage">FRAGMENT SHADER 60FPS</span></div>
+            <div class="ms-row"><span>MATERIAL:</span><span id="modalMat">DIELECTRIC GLASS / IRIDESCENT</span></div>
+          </div>
+
+          <button class="modal-btn-download" id="modalBtnDownload">DOWNLOAD SHADER SPEC (.JSON)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Toast Notification -->
+  <div class="prismatic-toast" id="toastNotice">
+    <span class="toast-indicator"></span>
+    <span class="toast-message" id="toastMsg">Telemetry transmitted to Prismatic dispatch.</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/prism3d.js"></script>
+  <script src="js/chromatic-lab.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

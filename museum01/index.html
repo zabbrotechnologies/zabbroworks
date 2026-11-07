@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSEUM 01 — Digital Art Gallery &amp; Contemporary Institution</title>
+  <meta name="description" content="A digital space for contemporary expression, visual experimentation and emerging artistic perspectives. Art Beyond the Physical.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text x='16' y='22' font-family='serif' font-size='18' fill='%23F1F0EC' text-anchor='middle'>M1</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="museum-body">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="museum-nav" id="museumNav">
+    <div class="nav-container">
+      
+      <!-- Left: Wordmark -->
+      <a href="#entrance" class="museum-brand" aria-label="MUSEUM 01 Home">
+        <span class="brand-title">MUSEUM 01</span>
+        <span class="brand-sub">DIGITAL ART INSTITUTION</span>
+      </a>
+
+      <!-- Center: Gallery Sections -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#exhibition" class="nav-item">EXHIBITIONS</a>
+        <a href="#collection" class="nav-item">COLLECTION</a>
+        <a href="#artists" class="nav-item">ARTISTS</a>
+        <a href="#journal" class="nav-item">JOURNAL</a>
+        <a href="#visit" class="nav-item">VIRTUAL VISIT</a>
+      </nav>
+
+      <!-- Right: Global & Menu Trigger -->
+      <div class="nav-meta">
+        <span class="meta-locale">EN / GLOBAL</span>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle Museum Index">
+          <span class="menu-icon-line"></span>
+          <span class="menu-icon-line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Index Drawer -->
+  <div class="museum-drawer" id="museumDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-label">M01 // INSTITUTIONAL INDEX</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close Index">&times;</button>
+    </div>
+    <div class="drawer-nav">
+      <a href="#entrance" class="d-item"><span class="d-num">00</span><span class="d-title">Museum Entrance</span></a>
+      <a href="#exhibition" class="d-item"><span class="d-num">01</span><span class="d-title">Beyond the Visible</span></a>
+      <a href="#collection" class="d-item"><span class="d-num">02</span><span class="d-title">Selected Works</span></a>
+      <a href="#artists" class="d-item"><span class="d-num">03</span><span class="d-title">Artist Archive</span></a>
+      <a href="#journal" class="d-item"><span class="d-num">04</span><span class="d-title">Notes from the Art World</span></a>
+      <a href="#visit" class="d-item"><span class="d-num">05</span><span class="d-title">Virtual Gallery</span></a>
+      <a href="#invitation" class="d-item"><span class="d-num">06</span><span class="d-title">Closing Statement</span></a>
+    </div>
+    <div class="drawer-footer">
+      <p class="df-text">“ART BEYOND THE PHYSICAL.”</p>
+      <span class="df-coord">46.2044° N, 6.1432° E &bull; GENEVA</span>
+    </div>
+  </div>
+  <div class="drawer-scrim" id="drawerScrim"></div>
+
+  <!-- ==================== 01. MUSEUM ENTRANCE / HERO ==================== -->
+  <section class="museum-entrance" id="entrance">
+    
+    <!-- Architectural Hero Background Backdrop -->
+    <div class="entrance-bg-wrapper">
+      <img 
+        src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=2000&q=85" 
+        alt="Contemporary Museum Gallery Architecture with Concrete Light"
+        class="entrance-bg-img"
+        id="heroBgImage"
+        loading="eager"
+      />
+      <div class="entrance-scrim"></div>
+    </div>
+
+    <!-- Hero Content Floor -->
+    <div class="entrance-content">
+      
+      <!-- Top Eyebrow Identifier -->
+      <div class="entrance-meta-tag">
+        <span class="badge-gold-dot"></span>
+        <span class="mono-meta">M01 / DIGITAL ART INSTITUTION &bull; FOUNDATION GENÈVE</span>
+      </div>
+
+      <!-- Main Headline: Editorial Typography -->
+      <div class="entrance-headline-box">
+        <h1 class="entrance-title">
+          <span class="t-line">A SPACE FOR</span>
+          <span class="t-line">THE <em class="serif-italic-accent">UNSEEN</em>.</span>
+        </h1>
+      </div>
+
+      <!-- Supporting Statement & Primary Actions -->
+      <div class="entrance-bottom-grid">
+        <div class="entrance-desc-col">
+          <p class="entrance-desc">
+            An independent digital museum exploring the boundaries of contemporary art, technology and visual culture.
+          </p>
+          <div class="entrance-actions">
+            <a href="#exhibition" class="btn-museum-primary">
+              <span>EXPLORE EXHIBITION</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <a href="#collection" class="btn-museum-secondary">
+              <span>ENTER THE COLLECTION</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="entrance-spec-col">
+          <div class="hero-spec-card">
+            <span class="sc-heading">CURRENT PROJECTION</span>
+            <span class="sc-title">Beyond the Visible</span>
+            <span class="sc-dates">ON VIEW &bull; THROUGH FEB 2027</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Minimal Vertical Scroll Indicator -->
+    <a href="#exhibition" class="vertical-scroll-cue" aria-label="Scroll to Exhibition">
+      <span class="v-line"></span>
+      <span class="v-label">SCROLL TO ENTER</span>
+    </a>
+
+  </section>
+
+  <!-- ==================== 02. CURRENT EXHIBITION — FEATURED ARTWORK ==================== -->
+  <section class="current-exhibition-section" id="exhibition">
+    <div class="gallery-container">
+      
+      <!-- Section Header Marker -->
+      <div class="section-marker">
+        <span class="marker-code">01 / CURRENT EXHIBITION</span>
+        <span class="marker-divider"></span>
+        <span class="marker-status">GALLERY HALL A &bull; NOW SHOWING</span>
+      </div>
+
+      <!-- Editorial Split Layout: 65% Artwork / 35% Curatorial Info -->
+      <div class="exhibition-split-layout">
+        
+        <!-- Large Installation Artwork (65%) -->
+        <div class="exhibition-artwork-col">
+          <div class="artwork-curation-frame" id="featuredArtworkCard" data-art-index="0">
+            <div class="artwork-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85" 
+                alt="Beyond the Visible — Generative Light and Spatial Wave by Elena Rostova"
+                class="curation-img"
+                loading="lazy"
+              />
+              <div class="artwork-view-pill">
+                <span>OPEN FULLSCREEN IMMERSION ⤢</span>
+              </div>
+            </div>
+            <div class="artwork-foot-spec">
+              <span class="spec-id">INV. 2026.001</span>
+              <span class="spec-tech">COMPUTATIONAL FLUID SPECTRA &bull; 8K PROJECTION MATRIX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exhibition Information (35%) -->
+        <div class="exhibition-info-col">
+          <div class="exhibition-meta-header">
+            <span class="exhibition-vertical-badge">EXHIBITION 001</span>
+            <span class="exhibition-dates">OCT 14, 2026 — FEB 28, 2027</span>
+          </div>
+
+          <h2 class="exhibition-title">
+            Beyond the <em class="serif-title-italic">Visible</em>
+          </h2>
+
+          <div class="exhibition-artist-line">
+            <span class="artist-lbl">CURATED FEATURING</span>
+            <span class="artist-name">ELENA ROSTOVA &amp; STUDIO BASEL</span>
+          </div>
+
+          <p class="exhibition-lead">
+            An exploration of form, light, perception and the relationship between digital environments and physical space.
+          </p>
+
+          <p class="exhibition-body">
+            By liberating sculptural form from material gravity, this installation examines how digital architectural volumes evoke contemplation and sensory resonance impossible within stone or bronze.
+          </p>
+
+          <div class="exhibition-cta-row">
+            <button class="btn-museum-primary" id="btnLaunchCuratedExhibition" data-art-index="0">
+              <span>VIEW EXHIBITION</span>
+              <span class="btn-arrow">↗</span>
+            </button>
+            <span class="audio-guide-pill">AUDIO GUIDE 04:18 MIN</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 03. CURATED COLLECTION — DIGITAL ART ARCHIVE ==================== -->
+  <section class="curated-collection-section" id="collection">
+    <div class="gallery-container">
+      
+      <!-- Section Marker -->
+      <div class="section-marker">
+        <span class="marker-code">02 / THE COLLECTION</span>
+        <span class="marker-divider"></span>
+        <span class="marker-status">PERMANENT DIGITAL HOLDINGS</span>
+      </div>
+
+      <!-- Section Title & Description -->
+      <div class="collection-header-row">
+        <div>
+          <h2 class="collection-headline">
+            SELECTED <em class="serif-italic-accent">WORKS</em>.
+          </h2>
+          <p class="collection-subtext">
+            A growing archive of visual expressions, digital compositions and contemporary experiments.
+          </p>
+        </div>
+        <div class="collection-filter-bar">
+          <span class="filter-count">06 CATALOGUED ACQUISITIONS</span>
+        </div>
+      </div>
+
+      <!-- Architectural Editorial Gallery Layout (Asymmetrical Rhythms) -->
+      <div class="editorial-gallery-grid">
+        
+        <!-- Artwork 1: Oversized Landscape -->
+        <article class="gallery-card card-oversized-landscape" data-art-id="01" data-art-index="1">
+          <div class="card-inner">
+            <div class="card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1400&q=85" 
+                alt="01 — Silent Form by Marcus Vance"
+                loading="lazy"
+              />
+              <div class="card-hover-overlay">
+                <span class="hover-inspect-btn">INSPECT WORK ↗</span>
+              </div>
+            </div>
+            <div class="card-metadata">
+              <div class="card-meta-left">
+                <span class="art-num">01</span>
+                <div class="art-titles">
+                  <h3 class="art-title">SILENT FORM</h3>
+                  <span class="art-artist">Marcus Vance, 2026</span>
+                </div>
+              </div>
+              <span class="art-medium">Volumetric Light &amp; Algorithmic Resin</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 2: Tall Portrait -->
+        <article class="gallery-card card-tall-portrait" data-art-id="02" data-art-index="2">
+          <div class="card-inner">
+            <div class="card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&q=85" 
+                alt="02 — After Image by Kaito Mori"
+                loading="lazy"
+              />
+              <div class="card-hover-overlay">
+                <span class="hover-inspect-btn">INSPECT WORK ↗</span>
+              </div>
+            </div>
+            <div class="card-metadata">
+              <div class="card-meta-left">
+                <span class="art-num">02</span>
+                <div class="art-titles">
+                  <h3 class="art-title">AFTER IMAGE</h3>
+                  <span class="art-artist">Kaito Mori, 2026</span>
+                </div>
+              </div>
+              <span class="art-medium">Spectral Waveform &bull; Monolith</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 3: Square Composition Left -->
+        <article class="gallery-card card-square" data-art-id="03" data-art-index="3">
+          <div class="card-inner">
+            <div class="card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" 
+                alt="03 — The Other Side by Sören Lindqvist"
+                loading="lazy"
+              />
+              <div class="card-hover-overlay">
+                <span class="hover-inspect-btn">INSPECT WORK ↗</span>
+              </div>
+            </div>
+            <div class="card-metadata">
+              <div class="card-meta-left">
+                <span class="art-num">03</span>
+                <div class="art-titles">
+                  <h3 class="art-title">THE OTHER SIDE</h3>
+                  <span class="art-artist">Sören Lindqvist, 2025</span>
+                </div>
+              </div>
+              <span class="art-medium">Architectural Spatial Void</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 4: Square Composition Right -->
+        <article class="gallery-card card-square" data-art-id="04" data-art-index="4">
+          <div class="card-inner">
+            <div class="card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=85" 
+                alt="04 — Soft Geometry by Elena Rostova"
+                loading="lazy"
+              />
+              <div class="card-hover-overlay">
+                <span class="hover-inspect-btn">INSPECT WORK ↗</span>
+              </div>
+            </div>
+            <div class="card-metadata">
+              <div class="card-meta-left">
+                <span class="art-num">04</span>
+                <div class="art-titles">
+                  <h3 class="art-title">SOFT GEOMETRY</h3>
+                  <span class="art-artist">Elena Rostova, 2026</span>
+                </div>
+              </div>
+              <span class="art-medium">Generative Chromatic Tension</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 5: Wide Experimental Visual -->
+        <article class="gallery-card card-wide-experimental" data-art-id="05" data-art-index="5">
+          <div class="card-inner">
+            <div class="card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=85" 
+                alt="05 — Between Worlds by Kaito Mori"
+                loading="lazy"
+              />
+              <div class="card-hover-overlay">
+                <span class="hover-inspect-btn">INSPECT WORK ↗</span>
+              </div>
+            </div>
+            <div class="card-metadata">
+              <div class="card-meta-left">
+                <span class="art-num">05</span>
+                <div class="art-titles">
+                  <h3 class="art-title">BETWEEN WORLDS</h3>
+                  <span class="art-artist">Kaito Mori, 2026</span>
+                </div>
+              </div>
+              <span class="art-medium">Dual-State Atmospheric Simulation</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 6: Minimal Abstract Artwork -->
+        <article class="gallery-card card-minimal-abstract" data-art-id="06" data-art-index="6">
+          <div class="card-inner">
+            <div class="card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=85" 
+                alt="06 — Light Studies by Marcus Vance"
+                loading="lazy"
+              />
+              <div class="card-hover-overlay">
+                <span class="hover-inspect-btn">INSPECT WORK ↗</span>
+              </div>
+            </div>
+            <div class="card-metadata">
+              <div class="card-meta-left">
+                <span class="art-num">06</span>
+                <div class="art-titles">
+                  <h3 class="art-title">LIGHT STUDIES</h3>
+                  <span class="art-artist">Marcus Vance, 2026</span>
+                </div>
+              </div>
+              <span class="art-medium">Raytraced Luminous Particles</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 04. IMMERSIVE DIGITAL EXHIBITION (SIGNATURE FEATURE) ==================== -->
+  <!-- Fullscreen Modal Lightbox Architecture -->
+  <div class="museum-fullscreen-viewer" id="fullscreenViewer" aria-hidden="true" role="dialog" aria-label="Immersive Exhibition Viewer">
+    
+    <!-- Top Utility Controls -->
+    <div class="viewer-top-bar">
+      <div class="viewer-brand-badge">
+        <span class="v-brand">MUSEUM 01</span>
+        <span class="v-counter" id="viewerCounter">01 / 07</span>
+      </div>
+
+      <div class="viewer-top-actions">
+        <button class="v-btn" id="btnToggleInfo" aria-label="Toggle Curatorial Info">
+          <span class="v-btn-icon">ℹ</span>
+          <span class="v-btn-txt">CURATORIAL NOTES</span>
+        </button>
+        <button class="v-btn" id="btnToggleNativeFullscreen" aria-label="Toggle Fullscreen">
+          <span class="v-btn-icon">⤢</span>
+          <span class="v-btn-txt">EXPAND</span>
+        </button>
+        <button class="v-btn v-btn-close" id="btnCloseViewer" aria-label="Close Viewer">
+          <span class="v-btn-icon">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Centered Stage Canvas Area -->
+    <div class="viewer-stage" id="viewerStage">
+      
+      <!-- Previous Navigation Button -->
+      <button class="viewer-nav-btn v-prev" id="btnViewerPrev" aria-label="Previous Artwork">
+        <span>←</span>
+      </button>
+
+      <!-- Centerpiece Artwork Presentation Frame -->
+      <div class="viewer-artwork-container" id="viewerArtworkContainer">
+        <img 
+          src="" 
+          alt="" 
+          class="viewer-artwork-img" 
+          id="viewerMainImage"
+        />
+        <div class="viewer-artwork-caption" id="viewerArtworkCaption">
+          <span class="vac-title" id="vacTitle">Beyond the Visible</span>
+          <span class="vac-artist" id="vacArtist">Elena Rostova, 2026</span>
+        </div>
+      </div>
+
+      <!-- Next Navigation Button -->
+      <button class="viewer-nav-btn v-next" id="btnViewerNext" aria-label="Next Artwork">
+        <span>→</span>
+      </button>
+
+    </div>
+
+    <!-- Expandable Curatorial Information Drawer -->
+    <aside class="viewer-info-panel" id="viewerInfoPanel">
+      <div class="vip-header">
+        <span class="vip-tag" id="vipTag">INV. 2026.001</span>
+        <button class="vip-close" id="btnCloseInfoPanel">&times;</button>
+      </div>
+      <div class="vip-content">
+        <h3 class="vip-title" id="vipTitle">Beyond the Visible</h3>
+        <span class="vip-artist" id="vipArtist">Elena Rostova</span>
+        <div class="vip-metadata-table">
+          <div class="vmt-row"><span>YEAR:</span><span id="vipYear">2026</span></div>
+          <div class="vmt-row"><span>MEDIUM:</span><span id="vipMedium">Computational Fluid Spectra</span></div>
+          <div class="vmt-row"><span>DIMENSIONS:</span><span id="vipDim">Variable (Site-Specific)</span></div>
+          <div class="vmt-row"><span>PROVENANCE:</span><span id="vipProv">Acquired via Museum 01 Acquisition Fund</span></div>
+        </div>
+        <p class="vip-desc" id="vipDesc">
+          An ongoing investigation into the spatial translation of digital fluid dynamics into immersive architectural spaces.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Bottom Keyboard Instruction Bar -->
+    <div class="viewer-bottom-bar">
+      <span>USE [<kbd>←</kbd>] AND [<kbd>→</kbd>] KEYS TO NAVIGATE &bull; [<kbd>ESC</kbd>] TO EXIT</span>
+    </div>
+
+  </div>
+
+  <!-- ==================== 05. ARTIST ARCHIVE ==================== -->
+  <section class="artist-archive-section" id="artists">
+    <div class="gallery-container">
+      
+      <!-- Section Marker -->
+      <div class="section-marker">
+        <span class="marker-code">03 / ARTISTS</span>
+        <span class="marker-divider"></span>
+        <span class="marker-status">RESIDENCY &amp; COLLABORATORS</span>
+      </div>
+
+      <!-- Section Headline -->
+      <div class="archive-header-row">
+        <h2 class="archive-title">
+          THE PEOPLE BEHIND <em class="serif-italic-accent">THE WORK</em>.
+        </h2>
+        <p class="archive-subtext">
+          Independent voices and research studios shaping the discourse of post-physical contemporary practice.
+        </p>
+      </div>
+
+      <!-- Asymmetrical Horizontal Artist Arrangement -->
+      <div class="artists-editorial-list">
+        
+        <!-- Artist 1: Elena Rostova -->
+        <article class="artist-card" data-artist="elena">
+          <div class="artist-visual-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85" 
+              alt="Elena Rostova — Generative Architecture & Spatial Form"
+              loading="lazy"
+            />
+            <div class="artist-works-badge">04 WORKS ON VIEW</div>
+          </div>
+          <div class="artist-info">
+            <span class="artist-discipline">GENERATIVE ARCHITECTURE &bull; ZÜRICH</span>
+            <h3 class="artist-heading">Elena Rostova</h3>
+            <p class="artist-summary">
+              Investigating the boundary where algorithmic code generates tangible physical weight, fluid monuments and spatial resonance.
+            </p>
+            <button class="btn-artist-detail" data-artist="elena">
+              <span>EXPLORE MONOGRAPH</span>
+              <span class="ar-arrow">↗</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Artist 2: Marcus Vance -->
+        <article class="artist-card" data-artist="marcus">
+          <div class="artist-visual-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85" 
+              alt="Marcus Vance — Computational Aesthetics & Monolithic Light"
+              loading="lazy"
+            />
+            <div class="artist-works-badge">03 WORKS ON VIEW</div>
+          </div>
+          <div class="artist-info">
+            <span class="artist-discipline">COMPUTATIONAL AESTHETICS &bull; OSLO</span>
+            <h3 class="artist-heading">Marcus Vance</h3>
+            <p class="artist-summary">
+              Creating monumental concrete atmospheres, geometric light prisms and sensory tension across computational boundaries.
+            </p>
+            <button class="btn-artist-detail" data-artist="marcus">
+              <span>EXPLORE MONOGRAPH</span>
+              <span class="ar-arrow">↗</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Artist 3: Kaito Mori -->
+        <article class="artist-card" data-artist="kaito">
+          <div class="artist-visual-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85" 
+              alt="Kaito Mori — Kinetic Algorithms & Spectral Volumes"
+              loading="lazy"
+            />
+            <div class="artist-works-badge">02 WORKS ON VIEW</div>
+          </div>
+          <div class="artist-info">
+            <span class="artist-discipline">SPECTRAL VOLUMES &bull; TOKYO</span>
+            <h3 class="artist-heading">Kaito Mori</h3>
+            <p class="artist-summary">
+              Developing audio-reactive optical environments that explore retinal persistence, after-images and chromatic distortion.
+            </p>
+            <button class="btn-artist-detail" data-artist="kaito">
+              <span>EXPLORE MONOGRAPH</span>
+              <span class="ar-arrow">↗</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Artist 4: Sören Lindqvist -->
+        <article class="artist-card" data-artist="soren">
+          <div class="artist-visual-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=85" 
+              alt="Sören Lindqvist — Post-Physical Sculpture & Material Decay"
+              loading="lazy"
+            />
+            <div class="artist-works-badge">02 WORKS ON VIEW</div>
+          </div>
+          <div class="artist-info">
+            <span class="artist-discipline">MATERIAL DECAY &bull; COPENHAGEN</span>
+            <h3 class="artist-heading">Sören Lindqvist</h3>
+            <p class="artist-summary">
+              Examining digital weathering, spatial obsolescence and the archaeological preservation of non-physical sculptures.
+            </p>
+            <button class="btn-artist-detail" data-artist="soren">
+              <span>EXPLORE MONOGRAPH</span>
+              <span class="ar-arrow">↗</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 06. MUSEUM JOURNAL ==================== -->
+  <section class="museum-journal-section" id="journal">
+    <div class="gallery-container">
+      
+      <!-- Section Marker -->
+      <div class="section-marker">
+        <span class="marker-code">04 / JOURNAL</span>
+        <span class="marker-divider"></span>
+        <span class="marker-status">ESSAYS, CRITIQUE &bull; VOL. 04</span>
+      </div>
+
+      <!-- Heading -->
+      <div class="journal-header-row">
+        <h2 class="journal-title">
+          NOTES FROM <em class="serif-italic-accent">THE ART WORLD</em>.
+        </h2>
+        <p class="journal-subtext">
+          Critical essays, interviews and research papers from museum curators and visiting theoreticians.
+        </p>
+      </div>
+
+      <!-- Newspaper-Inspired Editorial Layout -->
+      <div class="journal-grid">
+        
+        <!-- Large Featured Article (Left 60%) -->
+        <article class="journal-feature-card" data-article="01">
+          <div class="jfc-media">
+            <img 
+              src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85" 
+              alt="The Changing Language of Digital Art cover"
+              loading="lazy"
+            />
+            <span class="j-category-tag">THEORETICAL CRITIQUE</span>
+          </div>
+          <div class="jfc-body">
+            <div class="j-meta-line">
+              <span>ISSUE NO. 14</span>
+              <span>&bull;</span>
+              <span>OCTOBER 2026</span>
+              <span>&bull;</span>
+              <span>08 MIN READ</span>
+            </div>
+            <h3 class="jfc-headline">The Changing Language of Digital Art.</h3>
+            <p class="jfc-summary">
+              How the transition from screen-bound interactive pixels to architectural sensory volumes is redefining what constitutes a legitimate artistic medium in contemporary institutions.
+            </p>
+            <button class="btn-read-article" data-article="01">
+              <span>READ ESSAY</span>
+              <span class="ra-arrow">↗</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Supporting Articles Column (Right 40%) -->
+        <div class="journal-supporting-col">
+          
+          <!-- Article 2 -->
+          <article class="journal-compact-card" data-article="02">
+            <div class="jcc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=85" 
+                alt="When Architecture Becomes an Artwork cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="jcc-body">
+              <span class="j-category-tag-sm">ARCHITECTURAL ESSAY</span>
+              <h4 class="jcc-headline">When Architecture Becomes an Artwork.</h4>
+              <p class="jcc-desc">The spatial dissolution of walls into programmable light matrices.</p>
+              <div class="j-meta-sm"><span>SEPTEMBER 2026</span> &bull; <span>05 MIN READ</span></div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="journal-compact-card" data-article="03">
+            <div class="jcc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=85" 
+                alt="Exploring Light as a Creative Medium cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="jcc-body">
+              <span class="j-category-tag-sm">LIGHT PHENOMENOLOGY</span>
+              <h4 class="jcc-headline">Exploring Light as a Creative Medium.</h4>
+              <p class="jcc-desc">A study on sensory immersion and perceptual thresholds.</p>
+              <div class="j-meta-sm"><span>AUGUST 2026</span> &bull; <span>06 MIN READ</span></div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 07. VIRTUAL VISIT ==================== -->
+  <section class="virtual-visit-section" id="visit">
+    <div class="gallery-container">
+      
+      <!-- Section Marker -->
+      <div class="section-marker">
+        <span class="marker-code">05 / VIRTUAL VISIT</span>
+        <span class="marker-divider"></span>
+        <span class="marker-status">SPATIAL SIMULATION ENGINE</span>
+      </div>
+
+      <!-- Heading -->
+      <div class="visit-header-block">
+        <h2 class="visit-title">
+          STEP <em class="serif-italic-accent">INSIDE</em>.
+        </h2>
+        <p class="visit-subtext">
+          Explore a curated digital environment where every artwork has its own space.
+        </p>
+      </div>
+
+      <!-- Interactive Gallery Space Simulator -->
+      <div class="virtual-stage-box">
+        
+        <!-- Room Selector Tabs -->
+        <div class="room-selector-tabs">
+          <button class="room-tab active" data-room="a">
+            <span class="rt-code">ROOM A</span>
+            <span class="rt-name">Volumetric Hall</span>
+          </button>
+          <button class="room-tab" data-room="b">
+            <span class="rt-code">ROOM B</span>
+            <span class="rt-name">The Dark Cube</span>
+          </button>
+          <button class="room-tab" data-room="c">
+            <span class="rt-code">ROOM C</span>
+            <span class="rt-name">Sculptural Void</span>
+          </button>
+        </div>
+
+        <!-- Room Visual Presentation Stage -->
+        <div class="room-viewport">
+          <img 
+            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1600&q=85" 
+            alt="Room A — Volumetric Hall Architecture" 
+            class="room-active-img" 
+            id="roomActiveImage"
+          />
+          <div class="room-overlay-info">
+            <div class="roi-left">
+              <span class="roi-hall" id="roomNameLabel">GALLERY 01 // VOLUMETRIC HALL</span>
+              <p class="roi-desc" id="roomDescLabel">
+                Cathedral-scale concrete chamber with natural diffused skylights and spatial audio dispersion.
+              </p>
+            </div>
+            <div class="roi-right">
+              <button class="btn-enter-room" id="btnEnterVirtualSpace">
+                <span>ENTER VIRTUAL SPACE</span>
+                <span>↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 08. FINAL INVITATION ==================== -->
+  <section class="final-invitation-section" id="invitation">
+    <div class="gallery-container">
+      
+      <div class="invitation-card">
+        <div class="invitation-content">
+          <span class="inv-eyebrow">MUSEUM 01 &bull; GLOBAL MEMBERSHIP &bull; OPEN ENTRANCE</span>
+          <h2 class="inv-title">
+            ART HAS NO <em class="serif-italic-accent">FINAL FORM</em>.
+          </h2>
+          <p class="inv-text">
+            Discover new perspectives. Explore new expressions. Experience art differently.
+          </p>
+          <div class="inv-actions">
+            <a href="#exhibition" class="btn-inv-cta">
+              <span>EXPLORE THE MUSEUM</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 09. MUSEUM FOOTER ==================== -->
+  <footer class="museum-footer">
+    <div class="gallery-container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Brand & Mission -->
+        <div class="footer-col-brand">
+          <span class="f-brand-title">MUSEUM 01</span>
+          <p class="f-brand-statement">“ART BEYOND THE PHYSICAL.”</p>
+          <p class="f-brand-desc">
+            An independent contemporary digital art museum dedicated to non-physical expression, virtual installations, and research curation.
+          </p>
+        </div>
+
+        <!-- Column 1: Exhibitions -->
+        <div class="footer-col">
+          <span class="f-col-heading">EXHIBITIONS</span>
+          <a href="#exhibition">Beyond the Visible</a>
+          <a href="#collection">Permanent Holdings</a>
+          <a href="#visit">Virtual Pavilion</a>
+          <a href="#invitation">Past Archive (2025–2026)</a>
+        </div>
+
+        <!-- Column 2: Institution -->
+        <div class="footer-col">
+          <span class="f-col-heading">INSTITUTION</span>
+          <a href="#artists">Artists in Residence</a>
+          <a href="#journal">Editorial Journal</a>
+          <a href="#entrance">About Museum 01</a>
+          <a href="#entrance">Curatorial Board</a>
+        </div>
+
+        <!-- Column 3: Access & Logistics -->
+        <div class="footer-col">
+          <span class="f-col-heading">VISIT &bull; ACCESS</span>
+          <span>Open 24/7 Worldwide</span>
+          <span>Admission: Free Digital Access</span>
+          <span>Geneva &bull; Zürich &bull; Tokyo</span>
+          <a href="mailto:curator@museum01.art">curator@museum01.art</a>
+        </div>
+
+      </div>
+
+      <!-- Giant Monolithic Architectural Wordmark -->
+      <div class="footer-monolith-brand" aria-hidden="true">
+        <span>MUSEUM 01</span>
+      </div>
+
+      <!-- Bottom Legal Strip -->
+      <div class="footer-bottom-strip">
+        <span class="f-copy">&copy; 2026 MUSEUM 01 DIGITAL ART FOUNDATION. ALL RIGHTS RESERVED.</span>
+        <span class="f-coords">COORDINATES: 46.2044° N, 6.1432° E &bull; SWITZERLAND</span>
+        <a href="#entrance" class="f-apex-btn">RETURN TO ENTRANCE ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== ARTIST DETAIL MODAL ==================== -->
+  <div class="museum-modal" id="artistModal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <button class="modal-close" id="btnCloseArtistModal" aria-label="Close Artist Profile">&times;</button>
+      <div class="modal-body-split">
+        <div class="modal-visual-side">
+          <img src="" alt="" id="artistModalImg" class="modal-profile-img" />
+        </div>
+        <div class="modal-text-side">
+          <span class="modal-kicker" id="artistModalDiscipline">DISCIPLINE</span>
+          <h3 class="modal-heading" id="artistModalName">Artist Name</h3>
+          <p class="modal-long-desc" id="artistModalBio">Artist Bio</p>
+          <div class="modal-work-list">
+            <span class="mw-label">CATALOGUED EXHIBITIONS AT M01:</span>
+            <ul id="artistModalWorks"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JOURNAL ARTICLE READER MODAL ==================== -->
+  <div class="museum-modal" id="articleModal" aria-hidden="true" role="dialog">
+    <div class="modal-card modal-card-article">
+      <button class="modal-close" id="btnCloseArticleModal" aria-label="Close Article">&times;</button>
+      <div class="article-reader-container">
+        <span class="article-category-badge" id="articleModalCat">THEORETICAL CRITIQUE</span>
+        <h2 class="article-reader-title" id="articleModalTitle">Article Title</h2>
+        <div class="article-meta-row" id="articleModalMeta">OCTOBER 2026 &bull; 08 MIN READ &bull; BY DR. JULIA MÜLLER</div>
+        <div class="article-reader-banner">
+          <img src="" alt="" id="articleModalImg" />
+        </div>
+        <div class="article-body-text" id="articleModalBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/viewer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

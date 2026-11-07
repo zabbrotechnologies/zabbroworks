@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARCUS VANCE — Creative Developer & Digital Designer</title>
+  <meta name="description" content="Designing digital experiences at the intersection of architecture, technology, and human behavior. Personal portfolio of Marcus Vance.">
+
+  <!-- Preload hero background image -->
+  <link rel="preload" as="image" href="assets/images/marcus-hero-bg.png">
+
+  <!-- Google Fonts: Space Grotesk + Inter + IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. HERO SECTION — MONOLITHIC ARCHITECTURAL INTRODUCTION
+       ========================================================================== -->
+  <header class="hero-monolith" id="intro">
+    
+    <!-- Top Minimal Navigation -->
+    <nav class="hero-nav" aria-label="Main Navigation">
+      <div class="nav-brand">
+        MARCUS VANCE &mdash;
+      </div>
+
+      <ul class="nav-links-center">
+        <li><a href="#intro">Portfolio</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#experiments">Journal</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-contact-btn">
+        CONTACT &nearr;
+      </a>
+    </nav>
+
+    <!-- Main Hero Body -->
+    <div class="hero-body">
+      <div class="mono-label hero-eyebrow">
+        / CREATIVE DEVELOPER
+      </div>
+
+      <h1 class="hero-monumental-name">
+        <span>MARCUS</span>
+        <span>VANCE</span>
+      </h1>
+
+      <p class="hero-desc">
+        Designing digital experiences at the intersection of architecture, technology, and human behavior.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="#projects" class="btn-monolith-primary">
+          <span>VIEW PORTFOLIO</span>
+          <span>&nearr;</span>
+        </a>
+        <a href="#about" class="btn-monolith-secondary">
+          <span>ABOUT ME</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Architectural Information Strip -->
+    <div class="hero-bottom-strip">
+      <div class="strip-item">CREATIVE DEVELOPMENT</div>
+      <div class="strip-item">DIGITAL DESIGN</div>
+      <div class="strip-item">INTERACTIVE EXPERIENCES</div>
+      <div class="strip-item">CREATIVE TECHNOLOGY</div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. SELECTED WORKS
+       ========================================================================== -->
+  <section class="works-monolith" id="projects">
+    <div class="container">
+      <div class="section-divider">
+        <span class="mono-label">01 / SELECTED WORKS</span>
+        <span class="mono-label">INDEX 2024–2026</span>
+      </div>
+
+      <div style="margin-bottom: 3.5rem;">
+        <h2 class="section-headline">Selected Projects.</h2>
+        <p style="color: var(--c-concrete); margin-top: 0.75rem; max-width: 580px; font-weight: 350;">
+          A collection of digital experiences shaped through design, technology, and architectural experimentation.
+        </p>
+      </div>
+
+      <div class="works-grid-asymmetric">
+        <!-- Project 1: Span 8 Landscape Panel -->
+        <article class="work-card span-8">
+          <div class="work-img-box">
+            <img src="assets/images/marcus-architecture.png" alt="Monolith Archive Project">
+          </div>
+          <div class="work-info-box">
+            <div>
+              <div class="work-meta-top">
+                <span>PRJ &bull; 01</span>
+                <span>CREATIVE DEVELOPMENT</span>
+              </div>
+              <h3 class="work-title">Monolith Archive</h3>
+              <p class="work-desc">
+                An immersive spatial web platform celebrating brutalist architectural forms through interactive WebGL camera sequences and soundscapes.
+              </p>
+            </div>
+            <div class="work-footer">
+              <span>THREE.JS &bull; CUSTOM SHADERS &bull; GLTF</span>
+              <span class="work-arrow">&nearr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Span 4 Tall Panel -->
+        <article class="work-card span-4">
+          <div class="work-img-box">
+            <img src="assets/images/marcus-corridor.png" alt="The Corridor Study Project">
+          </div>
+          <div class="work-info-box">
+            <div>
+              <div class="work-meta-top">
+                <span>PRJ &bull; 02</span>
+                <span>SPATIAL DESIGN</span>
+              </div>
+              <h3 class="work-title">The Corridor Study</h3>
+              <p class="work-desc">
+                Interactive acoustic exhibition mapping directional audio reflections across concrete gallery walls.
+              </p>
+            </div>
+            <div class="work-footer">
+              <span>WEB AUDIO &bull; SPATIAL UI</span>
+              <span class="work-arrow">&nearr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Span 5 Panel -->
+        <article class="work-card span-5">
+          <div class="work-img-box">
+            <img src="assets/images/marcus-tree-shadows.png" alt="Shadow & Form Project">
+          </div>
+          <div class="work-info-box">
+            <div>
+              <div class="work-meta-top">
+                <span>PRJ &bull; 03</span>
+                <span>INTERACTIVE LAB</span>
+              </div>
+              <h3 class="work-title">Shadow &amp; Form</h3>
+              <p class="work-desc">
+                Generative light simulation tracking solar azimuth coordinates to cast real-time shadows on editorial typography.
+              </p>
+            </div>
+            <div class="work-footer">
+              <span>SVG MASKING &bull; CANVAS2D</span>
+              <span class="work-arrow">&nearr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Span 7 Wide Panel -->
+        <article class="work-card span-7">
+          <div class="work-img-box">
+            <img src="assets/images/marcus-mountain.png" alt="Alpine Ascent Project">
+          </div>
+          <div class="work-info-box">
+            <div>
+              <div class="work-meta-top">
+                <span>PRJ &bull; 04</span>
+                <span>DIGITAL ART DIRECTION</span>
+              </div>
+              <h3 class="work-title">Alpine Ascent</h3>
+              <p class="work-desc">
+                Editorial digital expedition monograph featuring high-resolution terrain photogrammetry and interactive contours.
+              </p>
+            </div>
+            <div class="work-footer">
+              <span>INTERACTIVE MAP &bull; GSAP MOTION</span>
+              <span class="work-arrow">&nearr;</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. ABOUT / PROFILE
+       ========================================================================== */
+  <section class="about-monolith" id="about">
+    <div class="container">
+      <div class="section-divider">
+        <span class="mono-label">02 / PERSONAL IDENTITY</span>
+        <span class="mono-label">PHILOSOPHY</span>
+      </div>
+
+      <div class="about-split">
+        <div>
+          <h2 class="about-statement">
+            BEYOND THE INTERFACE.
+          </h2>
+          <p class="about-p">
+            "I approach digital design as a system of structure, rhythm, and interaction &mdash; combining thoughtful visuals with functional technology."
+          </p>
+          <p class="about-p" style="color: var(--c-concrete); font-size: 1rem;">
+            Rooted in architectural theory and creative engineering, my work balances monumental restraint with micro-interaction finesse. Every digital artifact is engineered for performance, precision, and enduring relevance.
+          </p>
+
+          <div class="about-specs">
+            <div>
+              <span>DISCIPLINE</span>
+              Creative Development
+            </div>
+            <div>
+              <span>FOCUS</span>
+              Interactive Architecture
+            </div>
+            <div>
+              <span>STATUS</span>
+              Open to Select Commissions
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image-card">
+          <img src="assets/images/marcus-concrete-wall.png" alt="Marcus Vance Architectural Environment">
+          <div class="about-img-tag">
+            MONOLITHIC STUDY &bull; CONCRETE REFLECTION
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. EXPERTISE SECTION
+       ========================================================================== -->
+  <section class="expertise-monolith">
+    <div class="container">
+      <div class="section-divider">
+        <span class="mono-label">03 / WHAT I DO</span>
+        <span class="mono-label">CORE CAPABILITIES</span>
+      </div>
+
+      <h2 class="section-headline" style="margin-bottom: 3.5rem;">
+        Areas of Practice.
+      </h2>
+
+      <div class="expertise-table">
+        <div class="expertise-row">
+          <span class="exp-num">01</span>
+          <h3 class="exp-title">Creative Development</h3>
+          <p class="exp-desc">Engineering bespoke interactive web environments, custom shaders, and bespoke motion choreographies.</p>
+          <span class="exp-arrow">&rarr;</span>
+        </div>
+
+        <div class="expertise-row">
+          <span class="exp-num">02</span>
+          <h3 class="exp-title">Interface Design</h3>
+          <p class="exp-desc">Sculpting deliberate UI systems, tactile design tokens, and editorial layout architectures.</p>
+          <span class="exp-arrow">&rarr;</span>
+        </div>
+
+        <div class="expertise-row">
+          <span class="exp-num">03</span>
+          <h3 class="exp-title">Frontend Engineering</h3>
+          <p class="exp-desc">Architecting robust, accessible, high-performance web platforms with zero unnecessary dependencies.</p>
+          <span class="exp-arrow">&rarr;</span>
+        </div>
+
+        <div class="expertise-row">
+          <span class="exp-num">04</span>
+          <h3 class="exp-title">Interactive Experiences</h3>
+          <p class="exp-desc">Creating 3D spatial product presentations, micro-interactions, and experiential brand launches.</p>
+          <span class="exp-arrow">&rarr;</span>
+        </div>
+
+        <div class="expertise-row">
+          <span class="exp-num">05</span>
+          <h3 class="exp-title">Digital Art Direction</h3>
+          <p class="exp-desc">Defining photographic palettes, typographic hierarchies, and cohesive digital design philosophies.</p>
+          <span class="exp-arrow">&rarr;</span>
+        </div>
+
+        <div class="expertise-row">
+          <span class="exp-num">06</span>
+          <h3 class="exp-title">Creative Technology</h3>
+          <p class="exp-desc">Prototyping experimental interactions, generative visuals, and spatial audio installations.</p>
+          <span class="exp-arrow">&rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. CREATIVE PROCESS
+       ========================================================================== -->
+  <section class="process-monolith" id="process">
+    <div class="container">
+      <div class="section-divider">
+        <span class="mono-label">04 / APPROACH</span>
+        <span class="mono-label">METHODOLOGY</span>
+      </div>
+
+      <div class="process-layout">
+        <div>
+          <h2 class="section-headline" style="margin-bottom: 2.5rem;">
+            Structure.<br>Form. Function.
+          </h2>
+
+          <div class="process-timeline">
+            <div class="process-step">
+              <span class="step-marker">01</span>
+              <div class="step-body">
+                <h4>Understand</h4>
+                <p>Researching the fundamental problem, technical context, and intended audience to define the core architectural brief.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span class="step-marker">02</span>
+              <div class="step-body">
+                <h4>Define</h4>
+                <p>Establishing typographic hierarchy, geometric spatial grids, and motion grammar before writing code.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span class="step-marker">03</span>
+              <div class="step-body">
+                <h4>Build</h4>
+                <p>Translating conceptual models into responsive, performant digital code with relentless attention to tactile detail.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span class="step-marker">04</span>
+              <div class="step-body">
+                <h4>Refine</h4>
+                <p>Testing across viewport scales, optimizing frame rates, fine-tuning transitions, and eliminating friction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-media-wrap">
+          <img src="assets/images/marcus-staircase.png" alt="Architectural Concrete Staircase">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. EXPERIMENTS / VISUAL PLAYGROUND
+       ========================================================================== -->
+  <section class="experiments-monolith" id="experiments">
+    <div class="container">
+      <div class="section-divider">
+        <span class="mono-label">05 / EXPERIMENTS</span>
+        <span class="mono-label">VISUAL PLAYGROUND</span>
+      </div>
+
+      <div style="margin-bottom: 3.5rem;">
+        <h2 class="section-headline">Exploring the Unbuilt.</h2>
+        <p style="color: var(--c-concrete); margin-top: 0.75rem; max-width: 580px; font-weight: 350;">
+          Ongoing digital sketches, spatial studies, and geometric lighting explorations.
+        </p>
+      </div>
+
+      <div class="experiments-mosaic">
+        <div class="exp-mosaic-item">
+          <img src="assets/images/marcus-concrete-interior.png" alt="Concrete Interior Study">
+          <div class="exp-mosaic-caption">
+            <span class="exp-mosaic-title">Spatial Void</span>
+            <span class="exp-mosaic-tag">EXP &bull; 01</span>
+          </div>
+        </div>
+
+        <div class="exp-mosaic-item">
+          <img src="assets/images/marcus-pavilion.png" alt="Concrete Pavilion Study">
+          <div class="exp-mosaic-caption">
+            <span class="exp-mosaic-title">Monolith Pavilion</span>
+            <span class="exp-mosaic-tag">EXP &bull; 02</span>
+          </div>
+        </div>
+
+        <div class="exp-mosaic-item">
+          <img src="assets/images/marcus-monolith.png" alt="Monolith Geometry Study">
+          <div class="exp-mosaic-caption">
+            <span class="exp-mosaic-title">Canyon Light</span>
+            <span class="exp-mosaic-tag">EXP &bull; 03</span>
+          </div>
+        </div>
+
+        <div class="exp-mosaic-item">
+          <img src="assets/images/marcus-terrace.png" alt="Terrace Horizon Study">
+          <div class="exp-mosaic-caption">
+            <span class="exp-mosaic-title">Horizon Portal</span>
+            <span class="exp-mosaic-tag">EXP &bull; 04</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. CONTACT SECTION
+       ========================================================================== -->
+  <section class="contact-monolith" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div>
+          <div class="mono-label" style="margin-bottom: 1.5rem;">
+            / INITIATE COLLABORATION
+          </div>
+          <h2 class="contact-huge-title">
+            <span>HAVE AN IDEA?</span>
+            <span class="color-accent">LET'S BUILD IT.</span>
+          </h2>
+          <p class="contact-sub">
+            Have a project, collaboration, or interesting idea? Let's create something meaningful.
+          </p>
+          <div class="contact-actions">
+            <a href="mailto:hello@marcusvance.studio" class="btn-monolith-primary">
+              <span>START A CONVERSATION</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-meta-col">
+          <div>
+            <span>AVAILABILITY</span>
+            Q1 / Q2 Commissions
+          </div>
+          <div>
+            <span>COORDINATES</span>
+            47.3769° N, 8.5417° E
+          </div>
+          <div>
+            <span>RESPONSE TIME</span>
+            Within 24 Hours
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. FOOTER
+       ========================================================================== -->
+  <footer class="footer-monolith">
+    <div class="container footer-inner">
+      <div class="footer-name">
+        MARCUS VANCE &bull; CREATIVE DEVELOPER
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="#intro">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="footer-cr">
+        &copy; 2026 MARCUS VANCE. ALL RIGHTS RESERVED.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
+

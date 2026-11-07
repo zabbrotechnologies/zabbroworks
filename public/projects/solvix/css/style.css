@@ -1,0 +1,1745 @@
+/* ============================================================================
+   SOLVIX — VIVID GRADIENTS / IMMERSIVE DIGITAL EXPERIENCE
+   Primary Stylesheet (style.css)
+   ============================================================================ */
+
+:root {
+  /* Official SOLVIX Color System */
+  --solvix-midnight: #070A19;
+  --solvix-indigo: #101344;
+  --solvix-indigo-card: rgba(16, 19, 68, 0.7);
+  --solvix-blue: #285BFF;
+  --solvix-violet: #873BFF;
+  --solvix-magenta: #F02DAD;
+  --solvix-orange: #FF853D;
+  --solvix-white: #F7F8FF;
+  --solvix-lavender: #A8A9C5;
+
+  /* Translucent & Glow Overlays */
+  --solvix-border-light: rgba(247, 248, 255, 0.12);
+  --solvix-border-glow: rgba(135, 59, 255, 0.35);
+  --solvix-border-blue: rgba(40, 91, 255, 0.4);
+
+  /* Typography Stacks */
+  --solvix-font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --solvix-font-sub: 'Sora', sans-serif;
+  --solvix-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --solvix-font-mono: 'IBM Plex Mono', monospace;
+
+  /* Spring & Fluid Easing */
+  --solvix-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ----------------------------------------------------------------------------
+   Reset & Baseline
+   ---------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--solvix-midnight);
+  color: var(--solvix-white);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.solvix-body {
+  font-family: var(--solvix-font-body);
+  background-color: var(--solvix-midnight);
+  color: var(--solvix-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Dynamic Ambient Gradient Orbs */
+.solvix-gradient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.28;
+}
+
+.orb-primary {
+  top: -10vw;
+  right: -10vw;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, var(--solvix-blue) 0%, var(--solvix-violet) 70%, transparent 100%);
+}
+
+.orb-secondary {
+  top: 40vh;
+  left: -15vw;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, var(--solvix-magenta) 0%, var(--solvix-indigo) 75%, transparent 100%);
+}
+
+.orb-tertiary {
+  bottom: 10vh;
+  right: 10vw;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--solvix-orange) 0%, var(--solvix-magenta) 60%, transparent 100%);
+  opacity: 0.16;
+}
+
+.solvix-container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Iconic Multi-Tone Vivid Gradient Text */
+.gradient-text-impact {
+  background: linear-gradient(135deg, var(--solvix-blue) 0%, var(--solvix-violet) 35%, var(--solvix-magenta) 70%, var(--solvix-orange) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.section-tag-mono {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--solvix-magenta);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   HEADER & NAVIGATION
+   ============================================================================ */
+.solvix-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.75rem 0;
+  transition: all 0.4s var(--solvix-ease);
+  background: transparent;
+}
+
+.solvix-header.is-scrolled {
+  padding: 1.1rem 0;
+  background: rgba(7, 10, 25, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--solvix-border-light);
+}
+
+.solvix-header-container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.solvix-logo-text {
+  font-family: var(--solvix-font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--solvix-white);
+  text-transform: uppercase;
+}
+
+.solvix-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+  list-style: none;
+}
+
+.solvix-nav-link {
+  font-family: var(--solvix-font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(247, 248, 255, 0.75);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 0.35rem;
+}
+
+.solvix-nav-link:hover,
+.solvix-nav-link.active {
+  color: var(--solvix-white);
+}
+
+.solvix-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--solvix-blue), var(--solvix-magenta));
+  border-radius: 2px;
+}
+
+/* Header Actions */
+.solvix-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.solvix-start-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(135, 59, 255, 0.5);
+  background: linear-gradient(135deg, rgba(40, 91, 255, 0.15) 0%, rgba(240, 45, 173, 0.15) 100%);
+  font-family: var(--solvix-font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--solvix-white);
+  transition: all 0.35s var(--solvix-ease);
+}
+
+.solvix-start-project-btn:hover {
+  border-color: var(--solvix-magenta);
+  box-shadow: 0 0 24px rgba(240, 45, 173, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-diag-arrow {
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.solvix-start-project-btn:hover .btn-diag-arrow {
+  transform: translate(2px, -2px);
+}
+
+.solvix-menu-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--solvix-border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.solvix-menu-btn:hover {
+  border-color: var(--solvix-blue);
+  background: rgba(40, 91, 255, 0.15);
+}
+
+.menu-line {
+  width: 18px;
+  height: 1.5px;
+  background-color: var(--solvix-white);
+}
+
+/* Mobile Drawer */
+.solvix-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  display: none;
+}
+
+.solvix-mobile-drawer.is-active {
+  display: block;
+}
+
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 10, 25, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 420px;
+  background-color: #0c102a;
+  border-left: 1px solid var(--solvix-border-glow);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-close-btn {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.drawer-link {
+  font-family: var(--solvix-font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--solvix-white);
+  transition: color 0.2s ease;
+}
+
+.drawer-link:hover {
+  color: var(--solvix-magenta);
+}
+
+.drawer-tag {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--solvix-lavender);
+}
+
+/* ============================================================================
+   SECTION 01 — HERO
+   ============================================================================ */
+.solvix-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 8rem;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+  background-color: var(--solvix-midnight);
+}
+
+.hero-backdrop-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  filter: brightness(0.95) contrast(1.08);
+  transition: transform 0.6s var(--solvix-ease);
+}
+
+.hero-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 35%, rgba(135, 59, 255, 0.12) 0%, transparent 65%),
+              linear-gradient(180deg, rgba(7, 10, 25, 0.7) 0%, rgba(7, 10, 25, 0) 35%, rgba(7, 10, 25, 0.95) 100%),
+              linear-gradient(90deg, rgba(7, 10, 25, 0.94) 0%, rgba(7, 10, 25, 0.55) 45%, rgba(7, 10, 25, 0) 80%);
+  pointer-events: none;
+}
+
+.solvix-hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(100vh - 10.5rem);
+}
+
+.hero-main-stage {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-bottom: 5.5rem;
+}
+
+/* Left Headline Column */
+.hero-headline-side {
+  max-width: 780px;
+}
+
+.hero-kicker-tag {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--solvix-lavender);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-main-title {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(4.2rem, 7.4vw, 7.8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--solvix-white);
+  margin-bottom: 2rem;
+}
+
+.title-word {
+  display: block;
+}
+
+.hero-lead-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--solvix-lavender);
+  max-width: 540px;
+  margin-bottom: 2.75rem;
+}
+
+.hero-cta-cluster {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-primary-pill-btn {
+  background-color: var(--solvix-white);
+  color: #070A19;
+  font-family: var(--solvix-font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.35s var(--solvix-ease);
+}
+
+.hero-primary-pill-btn:hover {
+  background: linear-gradient(135deg, var(--solvix-blue) 0%, var(--solvix-magenta) 100%);
+  color: var(--solvix-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(40, 91, 255, 0.4);
+}
+
+.pill-arrow {
+  font-size: 0.95rem;
+}
+
+.hero-video-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--solvix-white);
+  transition: all 0.3s ease;
+}
+
+.play-circle-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--solvix-border-light);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  padding-left: 2px;
+  transition: all 0.35s var(--solvix-ease);
+}
+
+.hero-video-play-btn:hover .play-circle-icon {
+  border-color: var(--solvix-magenta);
+  background-color: var(--solvix-magenta);
+  transform: scale(1.08);
+}
+
+/* Upper Right Featured Project Card */
+.hero-card-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 1rem;
+}
+
+.hero-floating-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--solvix-lavender);
+  margin-bottom: 1.25rem;
+}
+
+.hero-featured-project-card {
+  background: rgba(16, 19, 68, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--solvix-border-blue);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 320px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s var(--solvix-ease);
+}
+
+.hero-featured-project-card:hover {
+  border-color: var(--solvix-magenta);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(135, 59, 255, 0.3);
+}
+
+.featured-card-thumb {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.featured-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--solvix-ease);
+}
+
+.hero-featured-project-card:hover .featured-card-thumb img {
+  transform: scale(1.08);
+}
+
+.featured-card-body {
+  padding: 1.4rem;
+  position: relative;
+}
+
+.featured-badge {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  color: var(--solvix-magenta);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.featured-project-title {
+  font-family: var(--solvix-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--solvix-white);
+  margin-bottom: 0.45rem;
+}
+
+.featured-project-desc {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--solvix-lavender);
+  padding-right: 2rem;
+}
+
+.featured-arrow-circle {
+  position: absolute;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--solvix-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--solvix-white);
+  transition: all 0.3s ease;
+}
+
+.hero-featured-project-card:hover .featured-arrow-circle {
+  background-color: var(--solvix-magenta);
+  border-color: var(--solvix-magenta);
+  transform: scale(1.1);
+}
+
+/* Lower Hero Statistics Strip */
+.hero-bottom-stage {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid var(--solvix-border-light);
+  padding-top: 2rem;
+  gap: 3rem;
+}
+
+.hero-stats-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.stat-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-number-wrap {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(2.4rem, 3.2vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--solvix-white);
+  letter-spacing: -0.03em;
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-plus {
+  color: var(--solvix-blue);
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--solvix-lavender);
+  font-weight: 500;
+}
+
+.hero-scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scroll-text {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: var(--solvix-lavender);
+  text-align: right;
+  line-height: 1.4;
+}
+
+.scroll-line-track {
+  width: 1px;
+  height: 44px;
+  background-color: rgba(247, 248, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background: linear-gradient(180deg, var(--solvix-magenta), transparent);
+  animation: scroll-slide 2s infinite ease-in-out;
+}
+
+@keyframes scroll-slide {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(100%); }
+  100% { transform: translateY(200%); }
+}
+
+/* ============================================================================
+   SECTION 02 — TRUSTED BY
+   ============================================================================ */
+.solvix-trusted-strip {
+  background-color: var(--solvix-midnight);
+  border-top: 1px solid var(--solvix-border-light);
+  border-bottom: 1px solid var(--solvix-border-light);
+  padding: 1.75rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.trusted-container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.trusted-kicker {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--solvix-lavender);
+  text-transform: uppercase;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.trusted-logos-list {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.trusted-brand-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--solvix-font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(247, 248, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.trusted-brand-item:hover {
+  color: var(--solvix-white);
+}
+
+.brand-symbol {
+  font-size: 0.9rem;
+  color: var(--solvix-magenta);
+}
+
+/* ============================================================================
+   SECTION 03 — SERVICES
+   ============================================================================ */
+.solvix-services-section {
+  background-color: var(--solvix-midnight);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--solvix-border-light);
+}
+
+.services-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4.5rem;
+  gap: 3rem;
+}
+
+.services-main-title {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(2.8rem, 4.4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.services-lead-p {
+  max-width: 520px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--solvix-lavender);
+}
+
+/* 4 Distinct Cards with Cropped Visual Artwork */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.service-panel-card {
+  position: relative;
+  height: 480px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--solvix-border-light);
+  cursor: pointer;
+  background-color: var(--solvix-indigo);
+  transition: all 0.4s var(--solvix-ease);
+}
+
+.service-panel-card:hover {
+  border-color: var(--solvix-border-glow);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(135, 59, 255, 0.35);
+}
+
+.panel-artwork-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.panel-artwork-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--solvix-ease);
+  filter: brightness(0.9);
+}
+
+.service-panel-card:hover .panel-artwork-frame img {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+.panel-glow-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 10, 25, 0.4) 0%, rgba(7, 10, 25, 0.2) 35%, rgba(7, 10, 25, 0.94) 100%);
+}
+
+.panel-content-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.panel-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-num {
+  font-family: var(--solvix-font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--solvix-magenta);
+}
+
+.panel-category-tag {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  color: var(--solvix-lavender);
+  background: rgba(7, 10, 25, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid var(--solvix-border-light);
+}
+
+.panel-headline {
+  font-family: var(--solvix-font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: var(--solvix-white);
+}
+
+.panel-blurb {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--solvix-lavender);
+  margin-bottom: 1.25rem;
+}
+
+.panel-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--solvix-border-light);
+  background: rgba(7, 10, 25, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--solvix-white);
+  transition: all 0.3s ease;
+}
+
+.service-panel-card:hover .panel-action-btn {
+  background-color: var(--solvix-magenta);
+  border-color: var(--solvix-magenta);
+  transform: scale(1.1);
+}
+
+/* ============================================================================
+   SECTION 04 — SELECTED WORK
+   ============================================================================ */
+.solvix-work-section {
+  background-color: var(--solvix-indigo);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--solvix-border-light);
+}
+
+.work-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4.5rem;
+}
+
+.work-main-title {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(2.8rem, 4.4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.work-sub-provenance {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--solvix-lavender);
+}
+
+/* Asymmetric Work Showcase Grid */
+.work-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.work-card-large {
+  grid-column: span 2;
+}
+
+.work-card {
+  background: rgba(7, 10, 25, 0.65);
+  border: 1px solid var(--solvix-border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s var(--solvix-ease);
+}
+
+.work-card:hover {
+  border-color: var(--solvix-border-glow);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.work-card-media {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.work-card-large .work-card-media {
+  height: 380px;
+}
+
+.work-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--solvix-ease);
+}
+
+.work-card:hover .work-card-media img {
+  transform: scale(1.06);
+}
+
+.work-media-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7, 10, 25, 0.95) 100%);
+}
+
+.work-card-info {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.work-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--solvix-magenta);
+  margin-bottom: 0.6rem;
+}
+
+.work-year {
+  color: var(--solvix-lavender);
+}
+
+.work-title {
+  font-family: var(--solvix-font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.work-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--solvix-lavender);
+  margin-bottom: 1.5rem;
+}
+
+.work-explore-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--solvix-font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--solvix-blue);
+  transition: all 0.3s ease;
+}
+
+.work-card:hover .work-explore-link {
+  color: var(--solvix-magenta);
+  transform: translateX(4px);
+}
+
+/* ============================================================================
+   SECTION 05 — OUR APPROACH
+   ============================================================================ */
+.solvix-approach-section {
+  background-color: var(--solvix-midnight);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--solvix-border-light);
+}
+
+.approach-top-block {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4.5rem;
+}
+
+.approach-title {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(2.8rem, 4.4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+}
+
+.approach-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--solvix-lavender);
+}
+
+.approach-steps-container {
+  background: rgba(16, 19, 68, 0.4);
+  border: 1px solid var(--solvix-border-light);
+  border-radius: 8px;
+  padding: 3rem;
+  position: relative;
+}
+
+.process-steps-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.step-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem 1rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.step-btn.active {
+  border-color: var(--solvix-border-glow);
+  background: linear-gradient(135deg, rgba(40, 91, 255, 0.15) 0%, rgba(135, 59, 255, 0.2) 100%);
+}
+
+.step-btn .step-num {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.7rem;
+  color: var(--solvix-magenta);
+}
+
+.step-btn .step-name {
+  font-family: var(--solvix-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--solvix-white);
+}
+
+.process-progress-bar {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.progress-indicator-fill {
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--solvix-blue), var(--solvix-magenta));
+  transition: width 0.4s var(--solvix-ease);
+}
+
+.step-dossier-card {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.dossier-step-label {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--solvix-blue);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.dossier-step-title {
+  font-family: var(--solvix-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dossier-step-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--solvix-lavender);
+  margin-bottom: 2rem;
+}
+
+.dossier-specs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.spec-pill {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.72rem;
+  color: var(--solvix-white);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--solvix-border-light);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+}
+
+.dossier-media-side {
+  height: 280px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--solvix-border-light);
+}
+
+.dossier-media-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================================
+   SECTION 06 — INDUSTRIES
+   ============================================================================ */
+.solvix-industries-section {
+  background-color: var(--solvix-indigo);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--solvix-border-light);
+}
+
+.industries-header-block {
+  margin-bottom: 4.5rem;
+}
+
+.industries-title {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(2.8rem, 4.4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.industries-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.industry-tile {
+  background: rgba(7, 10, 25, 0.7);
+  border: 1px solid var(--solvix-border-light);
+  border-radius: 6px;
+  padding: 2.75rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s var(--solvix-ease);
+}
+
+.industry-tile:hover {
+  border-color: var(--solvix-magenta);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(240, 45, 173, 0.25);
+}
+
+.tile-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, rgba(135, 59, 255, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.tile-icon {
+  font-size: 1.8rem;
+  color: var(--solvix-magenta);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.tile-name {
+  font-family: var(--solvix-font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.tile-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--solvix-lavender);
+}
+
+/* ============================================================================
+   SECTION 07 — INSIGHTS
+   ============================================================================ */
+.solvix-insights-section {
+  background-color: var(--solvix-midnight);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--solvix-border-light);
+}
+
+.insights-header-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4.5rem;
+}
+
+.insights-title {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(2.8rem, 4.4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.insights-vol-tag {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--solvix-lavender);
+}
+
+.insights-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.solvix-article-card {
+  background: rgba(16, 19, 68, 0.5);
+  border: 1px solid var(--solvix-border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s var(--solvix-ease);
+}
+
+.solvix-article-card:hover {
+  border-color: var(--solvix-border-glow);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.article-thumb-frame {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.article-thumb-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--solvix-ease);
+}
+
+.solvix-article-card:hover .article-thumb-frame img {
+  transform: scale(1.06);
+}
+
+.article-cat-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(7, 10, 25, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--solvix-border-light);
+  padding: 0.3rem 0.65rem;
+  font-family: var(--solvix-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--solvix-magenta);
+}
+
+.article-card-info {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-date-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--solvix-font-mono);
+  font-size: 0.65rem;
+  color: var(--solvix-lavender);
+  margin-bottom: 0.75rem;
+}
+
+.article-heading {
+  font-family: var(--solvix-font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.article-blurb {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--solvix-lavender);
+  margin-bottom: 1.75rem;
+}
+
+.read-monograph-btn {
+  margin-top: auto;
+  font-family: var(--solvix-font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--solvix-blue);
+  transition: color 0.3s ease;
+}
+
+.solvix-article-card:hover .read-monograph-btn {
+  color: var(--solvix-magenta);
+}
+
+/* ============================================================================
+   SECTION 08 — FINAL CTA & CONTACT
+   ============================================================================ */
+.solvix-cta-section {
+  background-color: var(--solvix-midnight);
+  padding: 8.5rem 0;
+  position: relative;
+}
+
+.cta-banner-wrapper {
+  background: linear-gradient(135deg, rgba(16, 19, 68, 0.9) 0%, rgba(7, 10, 25, 0.95) 100%);
+  border: 1px solid var(--solvix-border-glow);
+  border-radius: 8px;
+  padding: 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-backdrop-glow {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 45, 173, 0.25) 0%, rgba(40, 91, 255, 0.15) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content-core {
+  max-width: 780px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-headline {
+  font-family: var(--solvix-font-display);
+  font-size: clamp(3.2rem, 5vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.cta-subhead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--solvix-lavender);
+  margin-bottom: 3rem;
+}
+
+.solvix-inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--solvix-border-light);
+  border-radius: 4px;
+  padding: 0.95rem 1.25rem;
+  font-family: var(--solvix-font-body);
+  font-size: 0.88rem;
+  color: var(--solvix-white);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--solvix-magenta);
+  background: rgba(135, 59, 255, 0.08);
+}
+
+.form-field select option {
+  background-color: #070A19;
+  color: #fff;
+}
+
+.cta-submit-btn {
+  background: linear-gradient(135deg, var(--solvix-blue) 0%, var(--solvix-magenta) 100%);
+  color: var(--solvix-white);
+  border: none;
+  border-radius: 4px;
+  padding: 1.1rem 2.5rem;
+  font-family: var(--solvix-font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.35s var(--solvix-ease);
+}
+
+.cta-submit-btn:hover {
+  box-shadow: 0 10px 32px rgba(240, 45, 173, 0.5);
+  transform: translateY(-2px);
+}
+
+.form-feedback-alert {
+  display: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.form-feedback-alert.is-success {
+  display: block;
+  background: rgba(40, 91, 255, 0.15);
+  border: 1px solid var(--solvix-magenta);
+  color: var(--solvix-white);
+}
+
+/* ============================================================================
+   SECTION 09 — FOOTER
+   ============================================================================ */
+.solvix-footer {
+  background-color: var(--solvix-midnight);
+  border-top: 1px solid var(--solvix-border-light);
+  padding: 6rem 0 3.5rem;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.footer-logo {
+  font-family: var(--solvix-font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--solvix-white);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer-mission {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--solvix-lavender);
+  max-width: 380px;
+}
+
+.footer-heading {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--solvix-magenta);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col a {
+  font-size: 0.85rem;
+  color: var(--solvix-lavender);
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--solvix-white);
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--solvix-border-light);
+  padding-top: 2rem;
+  font-size: 0.75rem;
+  color: var(--solvix-lavender);
+}
+
+.footer-tags {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.68rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ============================================================================
+   MODALS
+   ============================================================================ */
+.solvix-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(7, 10, 25, 0.92);
+  backdrop-filter: blur(14px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.solvix-modal-backdrop.is-open {
+  display: flex;
+}
+
+.solvix-modal-box {
+  background-color: #0c102a;
+  border: 1px solid var(--solvix-border-glow);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 840px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-box-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--solvix-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-label-mono {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--solvix-magenta);
+}
+
+.modal-close-cross {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--solvix-lavender);
+  transition: color 0.2s ease;
+}
+
+.modal-close-cross:hover {
+  color: var(--solvix-white);
+}
+
+.modal-showreel-stage {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.modal-showreel-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showreel-glow-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(0deg, rgba(7, 10, 25, 0.9) 0%, transparent 100%);
+}
+
+.hd-tag {
+  font-family: var(--solvix-font-mono);
+  font-size: 0.72rem;
+  background: rgba(40, 91, 255, 0.3);
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+  border: 1px solid var(--solvix-border-blue);
+}
+
+.modal-article-body {
+  padding: 2.5rem 2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(247, 248, 255, 0.9);
+}
+
+/* ============================================================================
+   REVEAL ANIMATIONS
+   ============================================================================ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--solvix-ease), transform 0.8s var(--solvix-ease);
+}
+
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.85s var(--solvix-ease), transform 0.85s var(--solvix-ease);
+}
+
+.reveal-on-scroll.is-revealed,
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+

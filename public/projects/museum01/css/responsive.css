@@ -1,0 +1,271 @@
+/* ==========================================================================
+   MUSEUM 01 — RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Laptops & Medium Desktops (<= 1200px) */
+@media (max-width: 1200px) {
+  .entrance-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .entrance-spec-col {
+    justify-content: flex-start;
+  }
+
+  .exhibition-split-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .artwork-img-wrapper {
+    height: 480px;
+  }
+
+  .card-oversized-landscape {
+    grid-column: span 12;
+  }
+
+  .card-tall-portrait {
+    grid-column: span 6;
+  }
+
+  .card-square {
+    grid-column: span 6;
+  }
+
+  .card-wide-experimental {
+    grid-column: span 12;
+  }
+
+  .card-minimal-abstract {
+    grid-column: span 6;
+  }
+
+  .artists-editorial-list {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu-btn {
+    display: flex;
+  }
+
+  .gallery-container,
+  .nav-container,
+  .entrance-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .vertical-scroll-cue {
+    display: none;
+  }
+
+  .room-viewport {
+    height: 420px;
+  }
+
+  .room-overlay-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .viewer-top-bar {
+    padding: 1rem 1.5rem;
+  }
+
+  .viewer-stage {
+    padding: 1rem 2rem;
+  }
+
+  .v-btn-txt {
+    display: none;
+  }
+
+  .modal-body-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-visual-side img {
+    height: 260px;
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 68px;
+  }
+
+  .museum-entrance {
+    min-height: 90vh;
+  }
+
+  .entrance-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1;
+    word-break: break-word;
+  }
+
+  .current-exhibition-section,
+  .curated-collection-section,
+  .artist-archive-section,
+  .museum-journal-section,
+  .virtual-visit-section,
+  .final-invitation-section {
+    padding: 5rem 0;
+  }
+
+  .artwork-img-wrapper {
+    height: 340px;
+  }
+
+  .editorial-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .card-oversized-landscape,
+  .card-tall-portrait,
+  .card-square,
+  .card-wide-experimental,
+  .card-minimal-abstract {
+    grid-column: span 1;
+  }
+
+  .card-oversized-landscape .card-media,
+  .card-tall-portrait .card-media,
+  .card-square .card-media,
+  .card-wide-experimental .card-media,
+  .card-minimal-abstract .card-media {
+    height: 320px;
+  }
+
+  .artist-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .artist-visual-wrap {
+    height: 220px;
+  }
+
+  .jfc-media {
+    height: 260px;
+  }
+
+  .journal-compact-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .jcc-media {
+    height: 180px;
+  }
+
+  .room-selector-tabs {
+    flex-direction: column;
+  }
+
+  .room-tab {
+    border-right: none;
+    border-bottom: var(--border-subtle);
+    padding: 1rem 1.5rem;
+  }
+
+  .room-tab:last-child {
+    border-bottom: none;
+  }
+
+  .room-viewport {
+    height: 360px;
+  }
+
+  .inv-title {
+    font-size: 2.5rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-card-article {
+    padding: 2rem 1.5rem;
+  }
+
+  .article-reader-banner {
+    height: 220px;
+  }
+
+  .viewer-artwork-container {
+    max-width: 95vw;
+    max-height: 60vh;
+  }
+
+  .viewer-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .v-prev { left: 1rem; }
+  .v-next { right: 1rem; }
+}
+
+/* Small Screens (<= 480px) */
+@media (max-width: 480px) {
+  .entrance-title {
+    font-size: 2.4rem;
+  }
+
+  .exhibition-title,
+  .collection-headline,
+  .archive-title,
+  .journal-title,
+  .visit-title {
+    font-size: 2.2rem;
+  }
+
+  .entrance-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-museum-primary,
+  .btn-museum-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

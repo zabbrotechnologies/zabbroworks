@@ -1,0 +1,16 @@
+export const freshMarketConfig = {
+  id: 'fresh-market',
+  number: '04',
+  title: 'FRESH MARKET',
+  category: 'E-COMMERCE',
+  sectionSlug: 'ecommerce',
+  year: '2026',
+  client: 'Fresh Market Collective',
+  description: 'Genuine farm-to-table grocery shopping storefront featuring local organic produce, express delivery, and seasonal harvest catalogs.',
+  deliverables: ['Grocery Storefront', 'Express Checkout', 'Inventory Telemetry'],
+  demoUrl: null,
+  featured: false,
+  tags: ['Groceries', 'Organic Produce', 'Quick Commerce'],
+  accentColor: '#169B50',
+  surfaceColor: '#FFFFFF',
+};

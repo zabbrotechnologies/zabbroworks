@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NORDIC TIMBER® — Timber Heritage Survey & Vernacular Research Studio</title>
+  <meta name="description" content="Structural blueprints, geographic vernacular mapping, and architectural research on Scandinavian timber heritage.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310251D'><path d='M12 2L6 9h3l-4 6h4l-5 6h16l-5-6h4l-4-6h3L12 2z'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="nordic-body">
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="nordic-navbar" id="topNav">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="nav-brand" aria-label="Nordic Timber Home">
+        <svg class="brand-rune-icon" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 11M12 2L21 11M12 2V26M12 9L5 16M12 9L19 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-title">NORDIC<br><span class="brand-sub">TIMBER<sup>®</sup></span></span>
+      </a>
+
+      <!-- Center Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#journal" class="nav-link">Journal</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn-touch">
+          <span>Get in Touch</span>
+          <svg class="touch-arrow" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="drawer-brand">NORDIC TIMBER®</div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <a href="#hero" class="drawer-link">Home</a>
+      <a href="#projects" class="drawer-link">Projects</a>
+      <a href="#research" class="drawer-link">Research</a>
+      <a href="#journal" class="drawer-link">Journal</a>
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#contact" class="drawer-btn">Get in Touch ↗</a>
+    </div>
+    <div class="drawer-footer">
+      <span class="drawer-coords">63.4305° N | 10.3951° E</span>
+      <p>Vernacular Timber Heritage Survey</p>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- ==================== HERO SECTION (REPRODUCING IMAGE 2) ==================== -->
+  <section class="hero-section" id="hero">
+    
+    <!-- Hero Background Image (IMAGE 1) -->
+    <div class="hero-bg-layer" style="background-image: url('assets/images/nordic-hero-bg.jpg');"></div>
+
+    <!-- Warm Cream Scrim & Topographic Contour Texture -->
+    <div class="hero-cream-scrim"></div>
+    <div class="hero-topo-overlay"></div>
+
+    <!-- Left Vertical Annotation Coordinates -->
+    <div class="hero-vertical-coords">
+      <span class="coord-cross top">+</span>
+      <span class="coord-text">63.4305° N &nbsp;|&nbsp; 10.3951° E</span>
+      <span class="coord-cross bottom">+</span>
+    </div>
+
+    <!-- Right Side Section Indicator -->
+    <aside class="hero-section-nav" aria-label="Page Sections">
+      <a href="#research" class="sec-nav-item active">
+        <span class="sec-nav-bar"></span>
+        <span class="sec-nav-num">01</span>
+        <span class="sec-nav-label">Research</span>
+      </a>
+      <a href="#projects" class="sec-nav-item">
+        <span class="sec-nav-bar"></span>
+        <span class="sec-nav-num">02</span>
+        <span class="sec-nav-label">Projects</span>
+      </a>
+      <a href="#insights" class="sec-nav-item">
+        <span class="sec-nav-bar"></span>
+        <span class="sec-nav-num">03</span>
+        <span class="sec-nav-label">Insights</span>
+      </a>
+      <a href="#about" class="sec-nav-item">
+        <span class="sec-nav-bar"></span>
+        <span class="sec-nav-num">04</span>
+        <span class="sec-nav-label">About</span>
+      </a>
+    </aside>
+
+    <!-- Main Hero Left Editorial Content -->
+    <div class="hero-content-wrapper">
+      
+      <!-- Studio Eyebrow Tag -->
+      <div class="hero-eyebrow">
+        <span class="eyebrow-slash">/</span>
+        <span class="eyebrow-text">TIMBER RESEARCH STUDIO</span>
+      </div>
+
+      <!-- 3-Line Editorial Headline -->
+      <h1 class="hero-headline">
+        <span class="headline-line line-1">Timber</span>
+        <span class="headline-line line-2 italic-brown">Heritage</span>
+        <span class="headline-line line-3">
+          <span class="headline-word">Survey</span>
+          <span class="headline-dash">—</span>
+          <span class="headline-subtext">Structural blueprints<br>and geographic<br>vernacular mapping.</span>
+        </span>
+      </h1>
+
+      <!-- CTA Action Row -->
+      <div class="hero-cta-row">
+        <a href="#research" class="btn-primary-explore">
+          <span>Explore Research</span>
+          <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <button class="btn-watch-overview" id="openVideoBtn" aria-label="Watch Overview Video">
+          <span class="play-circle">
+            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5.14v13.72a1 1 0 001.52.85l11-6.86a1 1 0 000-1.7l-11-6.86A1 1 0 008 5.14z"/>
+            </svg>
+          </span>
+          <span class="watch-label">Watch Overview</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ==================== ORGANIC CURVED FOREST-GREEN LOWER SECTION ==================== -->
+    <div class="hero-green-bottom-section">
+      
+      <!-- Organic Flowing Contour SVG Divider -->
+      <div class="green-wave-divider">
+        <svg viewBox="0 0 1440 180" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,130 C220,130 380,85 640,90 C840,94 1020,140 1440,110 L1440,180 L0,180 Z" fill="#10251D"/>
+          <!-- Subtle contour line accent -->
+          <path d="M0,118 C220,118 380,72 640,78 C840,82 1020,128 1440,98" stroke="rgba(244,235,221,0.18)" stroke-width="1.2" stroke-dasharray="3 4"/>
+          <path d="M0,105 C240,105 400,60 650,65 C850,70 1040,115 1440,85" stroke="rgba(244,235,221,0.08)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- Content Container inside Green Area -->
+      <div class="green-content-container">
+        
+        <!-- Left Side: Areas of Study -->
+        <div class="study-areas-block">
+          <div class="study-label">// AREAS OF STUDY</div>
+          
+          <div class="study-grid">
+            
+            <!-- 1. Vernacular Mapping -->
+            <div class="study-item" data-topic="vernacular">
+              <div class="study-icon-box">
+                <!-- Stacked logs / vernacular icon -->
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <ellipse cx="10" cy="18" rx="5" ry="5"/>
+                  <circle cx="10" cy="18" r="1.5" fill="currentColor"/>
+                  <path d="M10 13h18c2.5 0 4.5 2.2 4.5 5s-2 5-4.5 5H10"/>
+                  <ellipse cx="28" cy="18" rx="3.5" ry="5"/>
+                  <ellipse cx="18" cy="10" rx="5" ry="5"/>
+                  <circle cx="18" cy="10" r="1.5" fill="currentColor"/>
+                  <path d="M18 5h10c2 0 4 2.2 4 5s-2 5-4 5H18"/>
+                  <ellipse cx="28" cy="10" rx="3" ry="5"/>
+                </svg>
+              </div>
+              <span class="study-name">Vernacular<br>Mapping</span>
+            </div>
+
+            <!-- 2. Timber Structures -->
+            <div class="study-item" data-topic="structures">
+              <div class="study-icon-box">
+                <!-- Timber truss / frame icon -->
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 30L18 8l14 22H4z"/>
+                  <path d="M18 8v22"/>
+                  <path d="M11 19h14"/>
+                  <path d="M8 24h20"/>
+                  <circle cx="18" cy="8" r="1.5" fill="currentColor"/>
+                  <circle cx="4" cy="30" r="1.5" fill="currentColor"/>
+                  <circle cx="32" cy="30" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="study-name">Timber<br>Structures</span>
+            </div>
+
+            <!-- 3. Material Behavior -->
+            <div class="study-item" data-topic="material">
+              <div class="study-icon-box">
+                <!-- Pine tree / grain behavior icon -->
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M18 4L8 14h5l-6 8h6l-7 9h24l-7-9h6l-6-8h5L18 4z"/>
+                  <path d="M18 31v3"/>
+                </svg>
+              </div>
+              <span class="study-name">Material<br>Behavior</span>
+            </div>
+
+            <!-- 4. Regional Typologies -->
+            <div class="study-item" data-topic="typologies">
+              <div class="study-icon-box">
+                <!-- Topographic contours / elevation icon -->
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M5 28c5-4 12-4 18 0s8 2 8 0"/>
+                  <path d="M6 22c6-5 14-5 20 0s5 1 5-1"/>
+                  <path d="M8 16c6-4 11-4 16 0s3 0 4-2"/>
+                  <path d="M11 10c4-3 9-3 12 0"/>
+                  <circle cx="17" cy="6" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="study-name">Regional<br>Typologies</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Center-Right: Featured Research Card & Layered Cards -->
+        <div class="hero-featured-card-wrapper">
+          
+          <!-- Layer 3: Backmost shadow archive slip -->
+          <div class="card-layer layer-tertiary"></div>
+
+          <!-- Layer 2: Middle archive card with pine forest photo -->
+          <div class="card-layer layer-secondary">
+            <div class="archive-forest-img"></div>
+            <div class="archive-tag">VOL. 08 // ARCHIVE</div>
+          </div>
+
+          <!-- Layer 1: Front Primary Featured Research Card -->
+          <article class="featured-research-card">
+            
+            <!-- Left Info Panel -->
+            <div class="featured-info-col">
+              <span class="featured-label">FEATURED RESEARCH</span>
+              <h3 class="featured-title">Nordic<br>Timber Forms</h3>
+              <p class="featured-desc">A study on regional timber construction and its modern relevance.</p>
+              
+              <div class="featured-action-row">
+                <span class="card-mini-rule"></span>
+                <a href="#research" class="card-btn-arrow" aria-label="Read Nordic Timber Forms Research">
+                  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Image Panel: Detailed Timber Joinery Photograph -->
+            <div class="featured-image-col">
+              <div class="joinery-photo-box" id="joineryPhoto">
+                <!-- Visualized timber joinery structure using real image crop & layered joinery detail -->
+                <div class="joinery-bg-img"></div>
+                <div class="joinery-badge">
+                  <span class="badge-dot"></span>
+                  <span>LAP JOINT 04-A</span>
+                </div>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== SECTION 02: SELECTED VERNACULAR PROJECTS ==================== -->
+  <section class="section-container projects-section" id="projects">
+    <div class="section-header">
+      <div class="section-tag-group">
+        <span class="tag-num">02</span>
+        <span class="tag-slash">/</span>
+        <span class="tag-name">MONOGRAPH PORTFOLIO</span>
+      </div>
+      <h2 class="section-heading">Vernacular Timber Architecture</h2>
+      <p class="section-subtext">Comprehensive surveys, precision blueprints, and contemporary adaptations across Scandinavia’s coastal fjords and alpine tree lines.</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      
+      <!-- Project 1 -->
+      <article class="project-card">
+        <div class="project-img-frame">
+          <img src="assets/images/nordic-hero-bg.jpg" alt="Hardanger Fjord Alpine Pavilion" class="project-img" loading="lazy">
+          <div class="project-overlay-badge">SURVEY REF: NO-60.3</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-coords">60.3833° N | 6.5500° E — Hardangerfjord</span>
+          <h3 class="project-title">Hardanger Timber Observatory</h3>
+          <p class="project-desc">Curved glued-laminated pine structure anchoring a high mountain ridge. Integrates floor-to-ceiling thermal timber glazing overlooking cloud-inversion valleys.</p>
+          <div class="project-tags">
+            <span>Norwegian Pine</span>
+            <span>Radial Joinery</span>
+            <span>Passive Envelope</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <div class="project-img-frame">
+          <div class="project-fallback-img timber-structure-2"></div>
+          <div class="project-overlay-badge">SURVEY REF: NO-62.7</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-coords">62.7372° N | 7.1607° E — Møre og Romsdal</span>
+          <h3 class="project-title">Sula Fjord Coastal Naust</h3>
+          <p class="project-desc">Restoration and thermal modernization of a 19th-century coastal timber boathouse. Hand-hewn pine heartwood with natural salt-resistant pine tar coating.</p>
+          <div class="project-tags">
+            <span>Core Heartwood</span>
+            <span>Coping Notch</span>
+            <span>Tidal Base</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div class="project-img-frame">
+          <div class="project-fallback-img timber-structure-3"></div>
+          <div class="project-overlay-badge">SURVEY REF: SE-63.8</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-coords">63.8258° N | 20.2630° E — Västerbotten</span>
+          <h3 class="project-title">Bothnian Forest Field Laboratory</h3>
+          <p class="project-desc">Modular mass-timber research station designed for complete disassembly and zero soil footprint, harvesting solar energy through bioclimatic orientation.</p>
+          <div class="project-tags">
+            <span>Cross-Laminated</span>
+            <span>Dowel-Laminated</span>
+            <span>Zero-Glue</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 03: RESEARCH & JOINERY CODEX ==================== -->
+  <section class="section-container research-section" id="research">
+    <div class="section-header">
+      <div class="section-tag-group">
+        <span class="tag-num">03</span>
+        <span class="tag-slash">/</span>
+        <span class="tag-name">TECHNICAL RESEARCH CODEX</span>
+      </div>
+      <h2 class="section-heading">Joinery Codex & Material Blueprints</h2>
+      <p class="section-subtext">The engineering legacy of Scandinavian interlocking timber joinery, documented with high-precision tensile loads, hygroscopic expansion data, and CNC milling protocols.</p>
+    </div>
+
+    <!-- Interactive Codex Tabs & Showcase -->
+    <div class="codex-container">
+      
+      <div class="codex-nav-tabs">
+        <button class="codex-tab active" data-joint="lap">01. Halved Lap Joint</button>
+        <button class="codex-tab" data-joint="dovetail">02. Blind Dovetail</button>
+        <button class="codex-tab" data-joint="notch">03. Scandinavian Cogging</button>
+        <button class="codex-tab" data-joint="scarf">04. Keyed Scarf Joint</button>
+      </div>
+
+      <div class="codex-display-panel">
+        
+        <div class="codex-diagram-col">
+          <div class="blueprint-canvas-box">
+            <svg class="blueprint-grid-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Blueprint Grid Lines -->
+              <defs>
+                <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(244, 235, 221, 0.08)" stroke-width="0.8"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#bpGrid)"/>
+              
+              <!-- Joint Vector Schematic -->
+              <g id="schematicGraphic" stroke="#C18A56" stroke-width="1.8" fill="none">
+                <!-- Beam A -->
+                <polygon points="60,90 220,90 220,135 150,135 150,180 60,180" fill="rgba(193, 138, 86, 0.12)" stroke="#C18A56"/>
+                <!-- Beam B -->
+                <polygon points="150,135 340,135 340,225 220,225 220,180 150,180" fill="rgba(152, 102, 61, 0.18)" stroke="#98663D"/>
+                
+                <!-- Dimension Lines -->
+                <line x1="60" y1="75" x2="220" y2="75" stroke="#F4EBDD" stroke-width="1" stroke-dasharray="2 2"/>
+                <line x1="60" y1="70" x2="60" y2="80" stroke="#F4EBDD" stroke-width="1"/>
+                <line x1="220" y1="70" x2="220" y2="80" stroke="#F4EBDD" stroke-width="1"/>
+                <text x="130" y="70" fill="#F4EBDD" font-size="10" font-family="'IBM Plex Mono', monospace" text-anchor="middle">160 mm</text>
+
+                <!-- Center Peg -->
+                <circle cx="185" cy="157" r="9" stroke="#E3ECE7" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <circle cx="185" cy="157" r="3" fill="#E3ECE7"/>
+              </g>
+            </svg>
+            <div class="blueprint-legend">
+              <span class="bp-mark">DWG-REF: NT-J01</span>
+              <span class="bp-scale">SCALE 1:5 @ A3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="codex-data-col" id="codexDataCol">
+          <div class="codex-entry-head">
+            <span class="entry-index">SPECIFICATION NO. 01</span>
+            <h3 class="entry-title" id="jointTitle">Halved Lap Joint (Halvkløving)</h3>
+            <p class="entry-desc" id="jointDesc">The primary foundational joint in vernacular Nordic post-and-beam construction. Enables symmetrical shear distribution and accommodates longitudinal thermal movement without splitting.</p>
+          </div>
+
+          <div class="spec-metrics-grid">
+            <div class="metric-card">
+              <span class="m-val" id="metricShear">18.4 kN</span>
+              <span class="m-lbl">Shear Capacity</span>
+            </div>
+            <div class="metric-card">
+              <span class="m-val" id="metricMoisture">12–15%</span>
+              <span class="m-lbl">Optimal Timber Moisture</span>
+            </div>
+            <div class="metric-card">
+              <span class="m-val" id="metricSpecies">Scots Pine</span>
+              <span class="m-lbl">Recommended Wood</span>
+            </div>
+            <div class="metric-card">
+              <span class="m-val" id="metricFastener">Oak Dowel</span>
+              <span class="m-lbl">Locking Element</span>
+            </div>
+          </div>
+
+          <div class="codex-actions">
+            <button class="btn-download-dwg" id="btnDownloadSpec">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M8 2v9m0 0l-3-3m3 3l3-3M2 13h12" stroke-linecap="round"/>
+              </svg>
+              <span>Download Vector Blueprint (.PDF / .DXF)</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 04: MATERIAL INSIGHTS ==================== -->
+  <section class="section-container insights-section" id="insights">
+    <div class="section-header">
+      <div class="section-tag-group">
+        <span class="tag-num">04</span>
+        <span class="tag-slash">/</span>
+        <span class="tag-name">FORESTRY & MATERIAL SCIENCE</span>
+      </div>
+      <h2 class="section-heading">Arboreal Typologies & Carbon Storage</h2>
+      <p class="section-subtext">Investigating slow-growth Boreal timbers: cellular density, resin saturation, and long-term biological carbon sequestration across Norwegian and Swedish taiga.</p>
+    </div>
+
+    <!-- Wood Species Cards -->
+    <div class="species-grid">
+      
+      <!-- Species 1 -->
+      <div class="species-card">
+        <div class="species-header">
+          <span class="botanical-name">Pinus sylvestris</span>
+          <span class="species-code">NT-P01</span>
+        </div>
+        <h3 class="species-common">Scots Pine (Furu)</h3>
+        <p class="species-detail">Dense resin-rich heartwood harvested from high latitudes. Unmatched natural resistance to wood-rot fungi, used historically for stave churches and ships.</p>
+        <div class="species-bars">
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Density</span><span>510 kg/m³</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 72%;"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Bending Strength</span><span>87 N/mm²</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 80%;"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Carbon Capture</span><span>920 kg CO₂/m³</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Species 2 -->
+      <div class="species-card">
+        <div class="species-header">
+          <span class="botanical-name">Picea abies</span>
+          <span class="species-code">NT-S02</span>
+        </div>
+        <h3 class="species-common">Norway Spruce (Gran)</h3>
+        <p class="species-detail">Long, uniform fiber length and low resin pocketing makes it the quintessential choice for engineered glulam beams, CLT panels, and acoustic timber ceilings.</p>
+        <div class="species-bars">
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Density</span><span>460 kg/m³</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 62%;"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Bending Strength</span><span>78 N/mm²</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 74%;"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Carbon Capture</span><span>840 kg CO₂/m³</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Species 3 -->
+      <div class="species-card">
+        <div class="species-header">
+          <span class="botanical-name">Larix sibirica</span>
+          <span class="species-code">NT-L03</span>
+        </div>
+        <h3 class="species-common">Siberian Larch (Lerk)</h3>
+        <p class="species-detail">Extremely high natural resin and wax content gives it extraordinary surface hardness and water repellency for untreated exterior facade shingles.</p>
+        <div class="species-bars">
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Density</span><span>590 kg/m³</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 84%;"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Bending Strength</span><span>105 N/mm²</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 92%;"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-lbl"><span>Carbon Capture</span><span>1,050 kg CO₂/m³</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width: 95%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 05: EDITORIAL JOURNAL ==================== -->
+  <section class="section-container journal-section" id="journal">
+    <div class="section-header">
+      <div class="section-tag-group">
+        <span class="tag-num">05</span>
+        <span class="tag-slash">/</span>
+        <span class="tag-name">PUBLICATIONS & DISPATCHES</span>
+      </div>
+      <h2 class="section-heading">Field Journal & Research Dispatches</h2>
+      <p class="section-subtext">Published field reports, photogrammetry models, and structural monographs from our expeditions across the Arctic circle and coastal archipelagoes.</p>
+    </div>
+
+    <div class="journal-list">
+      
+      <article class="journal-row">
+        <span class="j-date">OCTOBER 2026</span>
+        <div class="j-main">
+          <span class="j-category">SURVEY MONOGRAPH #14</span>
+          <h3 class="j-title">The Geometry of Stave Timber Portals: Symbolic Carvings and Axial Loads</h3>
+          <p class="j-summary">A 40-page empirical survey analyzing the load-bearing capacity of 12th-century corner posts (staver) in Borgund and Heddal.</p>
+        </div>
+        <div class="j-action">
+          <span class="j-read-time">12 min read</span>
+          <a href="#journal" class="j-arrow-link" aria-label="Read monograph">↗</a>
+        </div>
+      </article>
+
+      <article class="journal-row">
+        <span class="j-date">AUGUST 2026</span>
+        <div class="j-main">
+          <span class="j-category">BIOCLIMATIC REPORT</span>
+          <h3 class="j-title">Hygroscopic Buffering in Untreated Solid Wood Interiors</h3>
+          <p class="j-summary">Testing relative humidity stabilization in sub-zero Scandinavian winter climates without mechanical ventilation.</p>
+        </div>
+        <div class="j-action">
+          <span class="j-read-time">8 min read</span>
+          <a href="#journal" class="j-arrow-link" aria-label="Read report">↗</a>
+        </div>
+      </article>
+
+      <article class="journal-row">
+        <span class="j-date">MAY 2026</span>
+        <div class="j-main">
+          <span class="j-category">CASE STUDY</span>
+          <h3 class="j-title">Naust Vernacular: Coastal Boathouse Engineering in Møre og Romsdal</h3>
+          <p class="j-summary">Blueprint documentation of flexible timber wall joints that breathe with North Sea storm gales.</p>
+        </div>
+        <div class="j-action">
+          <span class="j-read-time">15 min read</span>
+          <a href="#journal" class="j-arrow-link" aria-label="Read case study">↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 06: ABOUT & MANIFESTO ==================== -->
+  <section class="section-container about-section" id="about">
+    <div class="about-grid">
+      <div class="about-manifesto-col">
+        <div class="section-tag-group">
+          <span class="tag-num">06</span>
+          <span class="tag-slash">/</span>
+          <span class="tag-name">STUDIO MANIFESTO</span>
+        </div>
+        <h2 class="about-headline">"Wood remembers the sun, the wind, and the snow that shaped its grain."</h2>
+        <p class="about-body">NORDIC TIMBER® is an independent architectural research studio founded in Trondheim. We bridge centuries-old Scandinavian timber joinery techniques with modern structural computational modeling.</p>
+        <p class="about-body">Our team of vernacular architectural historians, structural engineers, and parametric designers documents threatened timber monuments and guides zero-carbon modern mass-timber construction throughout the Nordic region.</p>
+        
+        <div class="studio-stats">
+          <div class="stat-unit">
+            <span class="stat-num">142</span>
+            <span class="stat-label">Heritage Structures Surveyed</span>
+          </div>
+          <div class="stat-unit">
+            <span class="stat-num">38</span>
+            <span class="stat-label">Vector Joinery Blueprints</span>
+          </div>
+          <div class="stat-unit">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Boreal FSC Certified Spec</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-quote-box">
+        <div class="quote-card">
+          <div class="quote-rune">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L4 10h5v12h6V10h5L12 2z"/>
+            </svg>
+          </div>
+          <blockquote class="quote-text">
+            “When we build with massive timber that honors regional grain orientation, we are not simply building a shelter—we are completing a biological cycle that began two centuries ago in the forest.”
+          </blockquote>
+          <div class="quote-author">
+            <span class="author-name">Dr. Astrid Lindqvist</span>
+            <span class="author-title">Principal Researcher, Trondheim Field Station</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 07: CONTACT & DISPATCH ==================== -->
+  <section class="section-container contact-section" id="contact">
+    <div class="contact-card">
+      <div class="contact-header">
+        <div class="contact-eyebrow">// COMMENCE DIALOGUE</div>
+        <h2 class="contact-title">Commission a Timber Survey or Collaborate on Research</h2>
+        <p class="contact-desc">We collaborate with architectural ateliers, heritage conservation funds, and progressive developers seeking vernacular mass-timber consulting.</p>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Your Name / Atelier</label>
+            <input type="text" id="name" required placeholder="e.g. Snøhetta Studio" />
+          </div>
+          <div class="form-field">
+            <label for="email">Electronic Dispatch</label>
+            <input type="email" id="email" required placeholder="contact@studio.com" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="interest">Area of Collaboration</label>
+          <select id="interest">
+            <option>Timber Structure Monograph</option>
+            <option>Vernacular Joinery Codex Access</option>
+            <option>Bioclimatic Carbon Modeling</option>
+            <option>Field Survey & Photogrammetry</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Scope of Inquiry</label>
+          <textarea id="message" rows="4" placeholder="Detail your project coordinates, timber species interest, or research objectives..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-inquiry">
+          <span>Transmit Dispatch</span>
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="nordic-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="f-logo">
+            <svg class="brand-rune-icon mini" viewBox="0 0 24 28" fill="none">
+              <path d="M12 2L3 11M12 2L21 11M12 2V26M12 9L5 16M12 9L19 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="f-name">NORDIC TIMBER®</span>
+          </div>
+          <p class="f-desc">Structural blueprints and geographic vernacular mapping across the Scandinavian Taiga.</p>
+          <div class="f-coords">STATION NO. 01: 63.4305° N, 10.3951° E — TRONDHEIM</div>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="f-nav-title">Navigation</span>
+          <a href="#hero">01. Survey Hero</a>
+          <a href="#projects">02. Monograph Archive</a>
+          <a href="#research">03. Joinery Codex</a>
+          <a href="#insights">04. Arboreal Science</a>
+          <a href="#journal">05. Field Journal</a>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="f-nav-title">Field Stations</span>
+          <span>Trondheim (Hovedkvarter)</span>
+          <span>Oslo (Arkivfilial)</span>
+          <span>Stockholm (Material Lab)</span>
+          <span>Rovaniemi (Subarctic Test Site)</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="f-copy">© 2026 NORDIC TIMBER RESEARCH STUDIO. ALL RIGHTS RESERVED.</span>
+        <a href="#hero" class="f-back-top" id="backToTop">
+          <span>Return to Apex</span>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 10V2M6 2L2 6M6 2l4 4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== VIDEO MODAL ==================== -->
+  <div class="video-modal-backdrop" id="videoModal">
+    <div class="video-modal-card">
+      <button class="modal-close-btn" id="closeVideoBtn" aria-label="Close Overview Video">&times;</button>
+      <div class="video-player-container">
+        <!-- Visual Video Simulation with atmospheric ambient timber architecture -->
+        <div class="video-embed-mock">
+          <img src="assets/images/nordic-hero-bg.jpg" alt="Timber architecture video thumbnail" class="modal-thumb-img">
+          <div class="modal-play-overlay">
+            <div class="pulse-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5.14v13.72a1 1 0 001.52.85l11-6.86a1 1 0 000-1.7l-11-6.86A1 1 0 008 5.14z"/>
+              </svg>
+            </div>
+            <div class="modal-video-title">NORDIC TIMBER — FIELD EXPEDITION 2026 (4K CINEMATIC)</div>
+            <span class="modal-runtime">04:32 // SCANDINAVIAN VERNACULAR EXPLORATION</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast-notice" id="toastNotice">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg">Specification downloaded successfully.</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

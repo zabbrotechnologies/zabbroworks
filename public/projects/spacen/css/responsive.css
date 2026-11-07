@@ -1,0 +1,242 @@
+/* ============================================================================
+   SPACEN — RESPONSIVE STYLESHEET (responsive.css)
+   Breakpoints: 1280px, 1024px, 768px, 480px, 375px & prefers-reduced-motion
+   ============================================================================ */
+
+/* Large Laptops / Screens (max 1280px) */
+@media (max-width: 1280px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .missions-console-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .planets-carousel-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablets (max 1024px) */
+@media (max-width: 1024px) {
+  .desktop-nav-recessed {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  .hero-console-section {
+    padding-top: 10rem;
+  }
+
+  .carousel-3d-stage {
+    height: 420px;
+  }
+
+  .carousel-card {
+    width: 280px;
+    height: 390px;
+  }
+
+  .discover-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planets-carousel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .research-domains-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-skeuo-console {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem;
+  }
+
+  .footer-console-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile Devices (max 768px) */
+@media (max-width: 768px) {
+  .site-container, .console-stage-container {
+    padding: 0 1.25rem;
+  }
+
+  .spacen-header {
+    top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .nav-console-pod {
+    padding: 0.5rem 0.85rem 0.5rem 1.25rem;
+  }
+
+  .btn-raised-orange {
+    display: none; /* Moved to mobile drawer */
+  }
+
+  .hero-console-section {
+    padding-top: 8.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+
+  .hero-button-cluster {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-raised-orange.hero-cta, .btn-raised-porcelain {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .telemetry-recessed-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .telem-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .carousel-3d-stage {
+    height: 380px;
+  }
+
+  .carousel-card {
+    width: 250px;
+    height: 360px;
+  }
+
+  .carousel-base-platform {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .platform-controls-cluster {
+    gap: 1rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .recessed-categories-tray {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .missions-console-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planets-carousel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-domains-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-inputs-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-raised-orange.submit-join {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-console-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* Small Phones (max 480px & 375px) */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 1.85rem;
+  }
+
+  .section-title, .about-title, .join-title {
+    font-size: 1.85rem;
+  }
+
+  .carousel-card {
+    width: 220px;
+    height: 330px;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+  .about-skeuo-console {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .join-console-panel {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* Extra Small Phones (max 360px / 320px) */
+@media (max-width: 360px) {
+  .hero-headline {
+    font-size: 1.55rem;
+  }
+
+  .carousel-card {
+    width: 200px;
+    height: 300px;
+  }
+
+  .console-tab {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .nav-console-pod {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pulse-beacon {
+    animation: none !important;
+  }
+}
+

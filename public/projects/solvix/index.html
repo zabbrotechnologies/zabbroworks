@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLVIX — Vivid Gradients &amp; Immersive Digital Experience</title>
+  <meta name="description" content="SOLVIX is a futuristic creative technology studio building high-impact digital experiences, scalable web applications, and intelligent AI solutions for ambitious global brands.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="solvix-body">
+
+  <!-- Ambient Dynamic Gradient Mesh Lighting -->
+  <div class="solvix-gradient-orb orb-primary" aria-hidden="true"></div>
+  <div class="solvix-gradient-orb orb-secondary" aria-hidden="true"></div>
+  <div class="solvix-gradient-orb orb-tertiary" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="solvix-header" id="mainHeader">
+    <div class="solvix-header-container">
+      <!-- Logo -->
+      <a href="#hero" class="solvix-brand" aria-label="SOLVIX Home">
+        <span class="solvix-logo-text">SOLVIX</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="solvix-nav" aria-label="Main Navigation">
+        <ul class="solvix-nav-list">
+          <li><a href="#work" class="solvix-nav-link">Work</a></li>
+          <li><a href="#services" class="solvix-nav-link">Services</a></li>
+          <li><a href="#industries" class="solvix-nav-link">Industries</a></li>
+          <li><a href="#insights" class="solvix-nav-link">Insights</a></li>
+          <li><a href="#about" class="solvix-nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="solvix-header-actions">
+        <a href="#contact" class="solvix-start-project-btn">
+          <span>Start a Project</span>
+          <span class="btn-diag-arrow">&nearr;</span>
+        </a>
+
+        <!-- Circular Hamburger Button -->
+        <button type="button" class="solvix-menu-btn" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="solvix-mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <span class="solvix-logo-text">SOLVIX</span>
+        <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#hero" class="drawer-link">01 // Home</a>
+        <a href="#services" class="drawer-link">02 // Services</a>
+        <a href="#work" class="drawer-link">03 // Selected Work</a>
+        <a href="#approach" class="drawer-link">04 // Our Approach</a>
+        <a href="#industries" class="drawer-link">05 // Industries</a>
+        <a href="#insights" class="drawer-link">06 // Insights</a>
+        <a href="#contact" class="drawer-link">07 // Start a Project</a>
+      </nav>
+      <div class="drawer-footer">
+        <span class="drawer-tag">FUTURISTIC CREATIVE TECHNOLOGY STUDIO</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 01 — HERO
+       ========================================================================= -->
+  <section class="solvix-hero" id="hero" aria-label="Hero Section">
+    <!-- Architectural Hero Background Stage -->
+    <div class="hero-backdrop-stage" aria-hidden="true">
+      <img src="assets/images/hero-bg.jpg" alt="Futuristic curved architectural structure with glowing violet-orange canopy and reflective floor" class="hero-bg-img" id="heroParallaxImg">
+      <div class="hero-overlay-gradient"></div>
+    </div>
+
+    <div class="solvix-hero-container">
+      <!-- Main Content Stage -->
+      <div class="hero-main-stage">
+        
+        <!-- Left Headline Column -->
+        <div class="hero-headline-side">
+          <div class="hero-kicker-tag reveal-fade">
+            <span>DIGITAL SOLUTIONS FOR A BOLDER TOMORROW</span>
+          </div>
+
+          <h1 class="hero-main-title reveal-fade">
+            <span class="title-word">Ideas</span><br>
+            <span class="title-word">into <span class="gradient-text-impact">Impact.</span></span>
+          </h1>
+
+          <p class="hero-lead-text reveal-fade">
+            We design and build digital experiences that help ambitious brands grow, connect and make a lasting impact.
+          </p>
+
+          <div class="hero-cta-cluster reveal-fade">
+            <a href="#work" class="hero-primary-pill-btn">
+              <span>EXPLORE OUR WORK</span>
+              <span class="pill-arrow">&nearr;</span>
+            </a>
+
+            <button type="button" class="hero-video-play-btn" id="openShowreelBtn">
+              <span class="play-circle-icon">&#9658;</span>
+              <span class="play-text">WATCH SHOWREEL</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Upper Right: Featured Project Card -->
+        <div class="hero-card-side reveal-fade">
+          <div class="hero-floating-meta">
+            <span>STRATEGY &mdash;</span>
+            <span>DESIGN</span>
+            <span>TECHNOLOGY</span>
+            <span>GROWTH</span>
+          </div>
+
+          <article class="hero-featured-project-card" id="heroFeaturedCard">
+            <div class="featured-card-thumb">
+              <img src="assets/images/project-horizon.jpg" alt="Horizon Platform Architecture" loading="lazy">
+              <div class="featured-card-glass-glow"></div>
+            </div>
+            <div class="featured-card-body">
+              <span class="featured-badge">FEATURED PROJECT</span>
+              <h4 class="featured-project-title">Horizon Platform</h4>
+              <p class="featured-project-desc">
+                A next-generation digital platform for a global technology brand.
+              </p>
+              <div class="featured-arrow-circle">
+                <span>&rarr;</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- Lower Hero: Statistics Strip & Scroll Indicator -->
+      <div class="hero-bottom-stage reveal-fade">
+        <div class="hero-stats-row">
+          <div class="stat-cell">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="120">120</span><span class="stat-plus">+</span>
+            </div>
+            <span class="stat-label">BRANDS PARTNERED</span>
+          </div>
+
+          <div class="stat-cell">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="8">8</span><span class="stat-plus">+</span>
+            </div>
+            <span class="stat-label">INDUSTRIES COVERED</span>
+          </div>
+
+          <div class="stat-cell">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="98">98</span><span class="stat-plus">%</span>
+            </div>
+            <span class="stat-label">CLIENT SATISFACTION</span>
+          </div>
+
+          <div class="stat-cell">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="4">4</span><span class="stat-plus">X</span>
+            </div>
+            <span class="stat-label">AVERAGE GROWTH IMPACT</span>
+          </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+          <span class="scroll-text">SCROLL<br>TO EXPLORE</span>
+          <div class="scroll-line-track">
+            <span class="scroll-dot"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 02 — TRUSTED BY
+       ========================================================================= -->
+  <section class="solvix-trusted-strip" aria-label="Trusted By Innovative Brands">
+    <div class="trusted-container">
+      <div class="trusted-kicker">
+        <span>TRUSTED BY<br>INNOVATIVE BRANDS</span>
+      </div>
+
+      <div class="trusted-logos-list">
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#9650;</span>
+          <span class="brand-name">Aurora</span>
+        </div>
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#9830;</span>
+          <span class="brand-name">Lumen</span>
+        </div>
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#10022;</span>
+          <span class="brand-name">Vertex</span>
+        </div>
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#9678;</span>
+          <span class="brand-name">Clyra</span>
+        </div>
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#9646;</span>
+          <span class="brand-name">Nexis</span>
+        </div>
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#9673;</span>
+          <span class="brand-name">Orbit</span>
+        </div>
+        <div class="trusted-brand-item">
+          <span class="brand-symbol">&#9679;</span>
+          <span class="brand-name">Radius</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 03 — SERVICES
+       ========================================================================= -->
+  <section class="solvix-services-section" id="services" aria-label="Digital Services">
+    <div class="solvix-container">
+      
+      <div class="services-header-row reveal-on-scroll">
+        <div>
+          <span class="section-tag-mono">&mdash; 02 // SERVICES</span>
+          <h2 class="services-main-title">Digital Experiences<br>Without Limits.</h2>
+        </div>
+        <p class="services-lead-p">
+          We combine cutting-edge creative direction with robust engineering architectures to turn ideas into market-defining digital products.
+        </p>
+      </div>
+
+      <!-- 4 Visually Distinct Service Panels with Real Cropped Artwork -->
+      <div class="services-cards-grid">
+        
+        <!-- Service 01 -->
+        <article class="service-panel-card reveal-on-scroll" data-service="brand">
+          <div class="panel-artwork-frame">
+            <img src="assets/images/service-brand.jpg" alt="Vivid organic fluid wave in warm orange and violet" loading="lazy">
+            <div class="panel-glow-scrim"></div>
+          </div>
+          <div class="panel-content-overlay">
+            <div class="panel-top-row">
+              <span class="panel-num">01</span>
+              <span class="panel-category-tag">BRAND &amp; DIGITAL</span>
+            </div>
+            <div class="panel-bottom-block">
+              <h3 class="panel-headline">Modern<br>Brand Experiences</h3>
+              <p class="panel-blurb">Identity systems, motion guidelines, generative visual languages, and interactive design systems built to elevate market resonance.</p>
+              <button type="button" class="panel-action-btn" data-modal="modal-brand" aria-label="Inspect Brand Experiences">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 02 -->
+        <article class="service-panel-card reveal-on-scroll" data-service="web">
+          <div class="panel-artwork-frame">
+            <img src="assets/images/service-web.jpg" alt="Sleek curved abstract wave in electric blue and violet" loading="lazy">
+            <div class="panel-glow-scrim"></div>
+          </div>
+          <div class="panel-content-overlay">
+            <div class="panel-top-row">
+              <span class="panel-num">02</span>
+              <span class="panel-category-tag">WEB APPLICATIONS</span>
+            </div>
+            <div class="panel-bottom-block">
+              <h3 class="panel-headline">Scalable<br>Digital Products</h3>
+              <p class="panel-blurb">Cloud-native architectures, high-performance web platforms, sub-second responsive UX, and scalable multi-tenant SaaS interfaces.</p>
+              <button type="button" class="panel-action-btn" data-modal="modal-web" aria-label="Inspect Scalable Products">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 03 -->
+        <article class="service-panel-card reveal-on-scroll" data-service="ai">
+          <div class="panel-artwork-frame">
+            <img src="assets/images/service-ai.jpg" alt="Orbital celestial sphere glowing with purple ring" loading="lazy">
+            <div class="panel-glow-scrim"></div>
+          </div>
+          <div class="panel-content-overlay">
+            <div class="panel-top-row">
+              <span class="panel-num">03</span>
+              <span class="panel-category-tag">AI &amp; AUTOMATION</span>
+            </div>
+            <div class="panel-bottom-block">
+              <h3 class="panel-headline">Intelligent<br>Business Solutions</h3>
+              <p class="panel-blurb">Predictive machine intelligence, autonomous workflows, intelligent search pipelines, and conversational enterprise copilots.</p>
+              <button type="button" class="panel-action-btn" data-modal="modal-ai" aria-label="Inspect AI Solutions">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 04 -->
+        <article class="service-panel-card reveal-on-scroll" data-service="growth">
+          <div class="panel-artwork-frame">
+            <img src="assets/images/service-growth.jpg" alt="Prismatic geometric glass facade refracting blue and orange" loading="lazy">
+            <div class="panel-glow-scrim"></div>
+          </div>
+          <div class="panel-content-overlay">
+            <div class="panel-top-row">
+              <span class="panel-num">04</span>
+              <span class="panel-category-tag">GROWTH STRATEGY</span>
+            </div>
+            <div class="panel-bottom-block">
+              <h3 class="panel-headline">Digital<br>Transformation</h3>
+              <p class="panel-blurb">Product-led growth loops, conversion architecture, technical SEO governance, and multi-horizon market expansion models.</p>
+              <button type="button" class="panel-action-btn" data-modal="modal-growth" aria-label="Inspect Transformation">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 04 — SELECTED WORK
+       ========================================================================= -->
+  <section class="solvix-work-section" id="work" aria-label="Selected Work">
+    <div class="solvix-container">
+      
+      <div class="work-header-row reveal-on-scroll">
+        <div>
+          <span class="section-tag-mono">&mdash; 03 // PORTFOLIO</span>
+          <h2 class="work-main-title">Selected Work.<br><span class="gradient-text-impact">Bold Ideas.</span></h2>
+        </div>
+        <span class="work-sub-provenance">SHOWCASE // 2025&ndash;2026</span>
+      </div>
+
+      <!-- Asymmetric Project Showcase Grid -->
+      <div class="work-showcase-grid">
+        
+        <!-- Project 01: Large Featured -->
+        <article class="work-card work-card-large reveal-on-scroll" data-project="horizon">
+          <div class="work-card-media">
+            <img src="assets/images/project-horizon.jpg" alt="Horizon Platform" loading="lazy">
+            <div class="work-media-gradient"></div>
+          </div>
+          <div class="work-card-info">
+            <div class="work-meta-top">
+              <span class="work-category">TECHNOLOGY &bull; GLOBAL PLATFORM</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">Horizon Platform</h3>
+            <p class="work-desc">An enterprise cloud operating ecosystem connecting global engineering teams with automated deployment workflows and telemetry.</p>
+            <button type="button" class="work-explore-link">
+              <span>View Case Study</span>
+              <span class="link-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="work-card reveal-on-scroll" data-project="vertex">
+          <div class="work-card-media">
+            <img src="assets/images/project-vertex.jpg" alt="Vertex Digital" loading="lazy">
+            <div class="work-media-gradient"></div>
+          </div>
+          <div class="work-card-info">
+            <div class="work-meta-top">
+              <span class="work-category">BUSINESS &bull; ENTERPRISE</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">Vertex Digital</h3>
+            <p class="work-desc">Unified cross-border advisory experience for capital allocation and corporate restructuring.</p>
+            <button type="button" class="work-explore-link">
+              <span>View Case Study</span>
+              <span class="link-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="work-card reveal-on-scroll" data-project="orbit">
+          <div class="work-card-media">
+            <img src="assets/images/service-ai.jpg" alt="Orbit AI" loading="lazy">
+            <div class="work-media-gradient"></div>
+          </div>
+          <div class="work-card-info">
+            <div class="work-meta-top">
+              <span class="work-category">AI PLATFORM &bull; AUTOMATION</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">Orbit AI</h3>
+            <p class="work-desc">Autonomous machine learning pipelines processing real-time streaming market intelligence.</p>
+            <button type="button" class="work-explore-link">
+              <span>View Case Study</span>
+              <span class="link-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="work-card reveal-on-scroll" data-project="lumina">
+          <div class="work-card-media">
+            <img src="assets/images/project-lumina.jpg" alt="Lumina Studio" loading="lazy">
+            <div class="work-media-gradient"></div>
+          </div>
+          <div class="work-card-info">
+            <div class="work-meta-top">
+              <span class="work-category">CREATIVE &bull; IMMERSIVE</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">Lumina Studio</h3>
+            <p class="work-desc">Spatial digital design atelier showcasing interactive audio-visual generative installations.</p>
+            <button type="button" class="work-explore-link">
+              <span>View Case Study</span>
+              <span class="link-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 05 -->
+        <article class="work-card reveal-on-scroll" data-project="pulse">
+          <div class="work-card-media">
+            <img src="assets/images/service-brand.jpg" alt="Pulse Commerce" loading="lazy">
+            <div class="work-media-gradient"></div>
+          </div>
+          <div class="work-card-info">
+            <div class="work-meta-top">
+              <span class="work-category">E-COMMERCE &bull; DIRECT-TO-CONSUMER</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">Pulse Commerce</h3>
+            <p class="work-desc">High-conversion sensory shopping storefront with sub-second page transitions and localized payments.</p>
+            <button type="button" class="work-explore-link">
+              <span>View Case Study</span>
+              <span class="link-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 06 -->
+        <article class="work-card reveal-on-scroll" data-project="nova">
+          <div class="work-card-media">
+            <img src="assets/images/service-web.jpg" alt="Nova Experience" loading="lazy">
+            <div class="work-media-gradient"></div>
+          </div>
+          <div class="work-card-info">
+            <div class="work-meta-top">
+              <span class="work-category">DIGITAL PRODUCT &bull; SAAS</span>
+              <span class="work-year">2025</span>
+            </div>
+            <h3 class="work-title">Nova Experience</h3>
+            <p class="work-desc">Collaborative digital workspace application streamlining cross-functional engineering handoffs.</p>
+            <button type="button" class="work-explore-link">
+              <span>View Case Study</span>
+              <span class="link-arrow">&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 05 — OUR APPROACH
+       ========================================================================= -->
+  <section class="solvix-approach-section" id="approach" aria-label="Our Approach">
+    <div class="solvix-container">
+      
+      <div class="approach-top-block reveal-on-scroll">
+        <span class="section-tag-mono">&mdash; 04 // METHODOLOGY</span>
+        <h2 class="approach-title">Think Beyond.<br><span class="gradient-text-impact">Build Forward.</span></h2>
+        <p class="approach-lead">
+          Our 5-stage agile pipeline bridges strategic discovery, rapid prototyping, and scalable production deployment.
+        </p>
+      </div>
+
+      <!-- Interactive 5-Step Process Visualizer -->
+      <div class="approach-steps-container reveal-on-scroll">
+        <div class="process-steps-nav" role="tablist">
+          <button type="button" class="step-btn active" data-step="01" role="tab" aria-selected="true">
+            <span class="step-num">01</span>
+            <span class="step-name">Discover</span>
+          </button>
+          <button type="button" class="step-btn" data-step="02" role="tab" aria-selected="false">
+            <span class="step-num">02</span>
+            <span class="step-name">Define</span>
+          </button>
+          <button type="button" class="step-btn" data-step="03" role="tab" aria-selected="false">
+            <span class="step-num">03</span>
+            <span class="step-name">Design</span>
+          </button>
+          <button type="button" class="step-btn" data-step="04" role="tab" aria-selected="false">
+            <span class="step-num">04</span>
+            <span class="step-name">Develop</span>
+          </button>
+          <button type="button" class="step-btn" data-step="05" role="tab" aria-selected="false">
+            <span class="step-num">05</span>
+            <span class="step-name">Deliver</span>
+          </button>
+        </div>
+
+        <!-- Connecting Progress Line -->
+        <div class="process-progress-bar">
+          <div class="progress-indicator-fill" id="processFill"></div>
+        </div>
+
+        <!-- Step Content Dossier -->
+        <div class="step-dossier-card" id="stepDossier">
+          <div class="dossier-text-side">
+            <span class="dossier-step-label" id="dossierStepLabel">PHASE // 01</span>
+            <h3 class="dossier-step-title" id="dossierStepTitle">Discover &amp; Diagnose</h3>
+            <p class="dossier-step-desc" id="dossierStepDesc">
+              We immerse ourselves in your market landscape, customer data, and technical architecture to isolate unfair competitive advantages.
+            </p>
+            <div class="dossier-specs-list" id="dossierSpecs">
+              <div class="spec-pill">&bull; Stakeholder Workshops</div>
+              <div class="spec-pill">&bull; Technical Debt Audit</div>
+              <div class="spec-pill">&bull; User Friction Telemetry</div>
+            </div>
+          </div>
+          <div class="dossier-media-side">
+            <img src="assets/images/service-brand.jpg" alt="Process Phase Illustration" id="dossierImg">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 06 — INDUSTRIES
+       ========================================================================= -->
+  <section class="solvix-industries-section" id="industries" aria-label="Industries We Transform">
+    <div class="solvix-container">
+      
+      <div class="industries-header-block reveal-on-scroll">
+        <span class="section-tag-mono">&mdash; 05 // SECTOR HORIZONS</span>
+        <h2 class="industries-title">Transforming Ideas<br>Across Industries.</h2>
+      </div>
+
+      <div class="industries-tiles-grid">
+        
+        <div class="industry-tile reveal-on-scroll">
+          <div class="tile-bg-overlay"></div>
+          <div class="tile-content">
+            <span class="tile-icon">&#9889;</span>
+            <h3 class="tile-name">Technology</h3>
+            <p class="tile-desc">Cloud infrastructure, enterprise devtools, cybersecurity frameworks, and decentralized protocols.</p>
+          </div>
+        </div>
+
+        <div class="industry-tile reveal-on-scroll">
+          <div class="tile-bg-overlay"></div>
+          <div class="tile-content">
+            <span class="tile-icon">&#10010;</span>
+            <h3 class="tile-name">Healthcare</h3>
+            <p class="tile-desc">Clinical diagnostics, HIPAA-compliant patient platforms, genomics data pipelines, and telemetry.</p>
+          </div>
+        </div>
+
+        <div class="industry-tile reveal-on-scroll">
+          <div class="tile-bg-overlay"></div>
+          <div class="tile-content">
+            <span class="tile-icon">&#9670;</span>
+            <h3 class="tile-name">Finance</h3>
+            <p class="tile-desc">Next-generation fintech, automated wealth management, algorithmic trading, and cross-border settlement.</p>
+          </div>
+        </div>
+
+        <div class="industry-tile reveal-on-scroll">
+          <div class="tile-bg-overlay"></div>
+          <div class="tile-content">
+            <span class="tile-icon">&#9635;</span>
+            <h3 class="tile-name">E-Commerce</h3>
+            <p class="tile-desc">Global headless commerce engines, unified cart architectures, and high-velocity merchandising.</p>
+          </div>
+        </div>
+
+        <div class="industry-tile reveal-on-scroll">
+          <div class="tile-bg-overlay"></div>
+          <div class="tile-content">
+            <span class="tile-icon">&#9733;</span>
+            <h3 class="tile-name">Education</h3>
+            <p class="tile-desc">Adaptive learning algorithms, immersive virtual classrooms, and enterprise skill credentialing.</p>
+          </div>
+        </div>
+
+        <div class="industry-tile reveal-on-scroll">
+          <div class="tile-bg-overlay"></div>
+          <div class="tile-content">
+            <span class="tile-icon">&#9658;</span>
+            <h3 class="tile-name">Media &amp; Entertainment</h3>
+            <p class="tile-desc">Real-time streaming topologies, interactive spatial experiences, and generative digital storytelling.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 07 — INSIGHTS
+       ========================================================================= -->
+  <section class="solvix-insights-section" id="insights" aria-label="Perspectives and Insights">
+    <div class="solvix-container">
+      
+      <div class="insights-header-block reveal-on-scroll">
+        <div>
+          <span class="section-tag-mono">&mdash; 06 // EDITORIAL INSIGHTS</span>
+          <h2 class="insights-title">Perspectives That<br><span class="gradient-text-impact">Move Things Forward.</span></h2>
+        </div>
+        <span class="insights-vol-tag">JOURNAL // VOL. 12</span>
+      </div>
+
+      <div class="insights-cards-grid">
+        
+        <!-- Article 01 -->
+        <article class="solvix-article-card reveal-on-scroll" data-article="digital-experiences">
+          <div class="article-thumb-frame">
+            <img src="assets/images/service-brand.jpg" alt="Emerging Digital Experiences" loading="lazy">
+            <span class="article-cat-tag">CREATIVE TECHNOLOGY</span>
+          </div>
+          <div class="article-card-info">
+            <div class="article-date-row">
+              <span>OCT 2026</span>
+              <span>&bull;</span>
+              <span>5 MIN READ</span>
+            </div>
+            <h3 class="article-heading">Emerging Digital Experiences</h3>
+            <p class="article-blurb">How fluid gradients, spatial computing, and micro-interactions are redefining post-flat digital design languages.</p>
+            <button type="button" class="read-monograph-btn">
+              <span>Read Perspective &rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 02 -->
+        <article class="solvix-article-card reveal-on-scroll" data-article="ai-business">
+          <div class="article-thumb-frame">
+            <img src="assets/images/service-ai.jpg" alt="How AI Is Reshaping Business" loading="lazy">
+            <span class="article-cat-tag">MACHINE INTELLIGENCE</span>
+          </div>
+          <div class="article-card-info">
+            <div class="article-date-row">
+              <span>SEP 2026</span>
+              <span>&bull;</span>
+              <span>7 MIN READ</span>
+            </div>
+            <h3 class="article-heading">How AI Is Reshaping Business</h3>
+            <p class="article-blurb">Why generative models are shifting from simple content generation to active autonomous decision copilots across enterprise workflows.</p>
+            <button type="button" class="read-monograph-btn">
+              <span>Read Perspective &rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 03 -->
+        <article class="solvix-article-card reveal-on-scroll" data-article="tomorrow-products">
+          <div class="article-thumb-frame">
+            <img src="assets/images/service-growth.jpg" alt="Building Products for Tomorrow" loading="lazy">
+            <span class="article-cat-tag">PRODUCT ARCHITECTURE</span>
+          </div>
+          <div class="article-card-info">
+            <div class="article-date-row">
+              <span>AUG 2026</span>
+              <span>&bull;</span>
+              <span>6 MIN READ</span>
+            </div>
+            <h3 class="article-heading">Building Products for Tomorrow</h3>
+            <p class="article-blurb">Structuring resilient digital ecosystems that can absorb technological shifts without rewriting entire foundational codebases.</p>
+            <button type="button" class="read-monograph-btn">
+              <span>Read Perspective &rarr;</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 08 — FINAL CTA & CONTACT
+       ========================================================================= -->
+  <section class="solvix-cta-section" id="contact" aria-label="Start a Project">
+    <div class="solvix-container">
+      
+      <div class="cta-banner-wrapper reveal-on-scroll">
+        <div class="cta-backdrop-glow"></div>
+        <div class="cta-content-core">
+          <span class="section-tag-mono">&mdash; 07 // INITIATE COLLABORATION</span>
+          <h2 class="cta-headline">Ready to Make<br>an <span class="gradient-text-impact">Impact?</span></h2>
+          <p class="cta-subhead">
+            Let's create something remarkable together. Share your ambitions and our technical directors will assemble a tailored strategic brief.
+          </p>
+
+          <form class="solvix-inquiry-form" id="inquiryForm" novalidate>
+            <div class="form-inputs-row">
+              <div class="form-field">
+                <input type="text" id="clientName" placeholder="Your Name *" required>
+              </div>
+              <div class="form-field">
+                <input type="email" id="clientEmail" placeholder="Corporate Email *" required>
+              </div>
+            </div>
+            <div class="form-inputs-row">
+              <div class="form-field">
+                <input type="text" id="clientOrg" placeholder="Company / Brand *" required>
+              </div>
+              <div class="form-field">
+                <select id="clientScope">
+                  <option value="brand">Brand &amp; Digital Experience</option>
+                  <option value="web">Web Application &amp; Platform</option>
+                  <option value="ai">AI Solutions &amp; Automation</option>
+                  <option value="transformation">Full Digital Transformation</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="cta-submit-btn">
+              <span>Start a Project</span>
+              <span class="arrow-glyph">&rarr;</span>
+            </button>
+            <div class="form-feedback-alert" id="formAlert"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 09 — FOOTER
+       ========================================================================= -->
+  <footer class="solvix-footer" id="about">
+    <div class="solvix-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-side">
+          <span class="footer-logo">SOLVIX</span>
+          <p class="footer-mission">
+            A futuristic creative technology and digital transformation studio. Designing vivid, high-impact digital experiences for ambitious global brands.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-heading">SERVICES</span>
+          <ul>
+            <li><a href="#services">Brand Experiences</a></li>
+            <li><a href="#services">Scalable Web Apps</a></li>
+            <li><a href="#services">AI &amp; Automation</a></li>
+            <li><a href="#services">Growth Strategy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-heading">SECTORS</span>
+          <ul>
+            <li><a href="#industries">Technology</a></li>
+            <li><a href="#industries">Healthcare</a></li>
+            <li><a href="#industries">Finance &amp; Fintech</a></li>
+            <li><a href="#industries">Media &amp; Entertainment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-heading">CONNECT</span>
+          <ul>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter &nearr;</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub &nearr;</a></li>
+            <li><a href="mailto:hello@solvix-studio.internal">hello@solvix-studio.internal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 SOLVIX Creative Technology Studio. All rights reserved. Built for VERHOST Digital Works.</span>
+        <div class="footer-tags">
+          <span>Midnight Navy #070A19</span>
+          <span>&bull;</span>
+          <span>Electric Blue #285BFF</span>
+          <span>&bull;</span>
+          <span>Neon Magenta #F02DAD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE MODALS
+       ========================================================================= -->
+  <!-- Showreel Modal -->
+  <div class="solvix-modal-backdrop" id="showreelModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="solvix-modal-box">
+      <div class="modal-box-header">
+        <span class="modal-label-mono">SOLVIX SHOWREEL // 2026</span>
+        <button type="button" class="modal-close-cross" id="closeShowreelBtn" aria-label="Close Showreel">&times;</button>
+      </div>
+      <div class="modal-showreel-stage">
+        <img src="assets/images/hero-bg.jpg" alt="Showreel Video Frame">
+        <div class="showreel-glow-overlay">
+          <span class="hd-tag">&#9658; 4K SHOWREEL ACTIVE &bull; 01:45</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Perspective Reader Modal -->
+  <div class="solvix-modal-backdrop" id="perspectiveModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="solvix-modal-box article-modal-box">
+      <div class="modal-box-header">
+        <span class="modal-label-mono" id="modalArtCat">PERSPECTIVE MONOGRAPH</span>
+        <button type="button" class="modal-close-cross" id="closePerspectiveBtn" aria-label="Close Monograph">&times;</button>
+      </div>
+      <div class="modal-article-body" id="modalArtBody">
+        <!-- Content injected by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

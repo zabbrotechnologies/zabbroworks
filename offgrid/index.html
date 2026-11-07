@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OFFGRID® — Experimental Graphic Design Playground &amp; Print Lab</title>
+  <meta name="description" content="Independent graphic design studio and interactive visual playground. Neo-Brutalism × Swiss Design × Print Collage. Good design doesn't always follow the grid.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F04438'/><text x='16' y='24' font-family='sans-serif' font-weight='900' font-size='20' fill='%23F2EBDD' text-anchor='middle'>OG</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="offgrid-body">
+
+  <!-- Crosshair Registration Cursor -->
+  <div class="print-crosshair-cursor" id="crosshairCursor" aria-hidden="true">
+    <div class="ch-horizontal"></div>
+    <div class="ch-vertical"></div>
+    <div class="ch-ring"></div>
+    <span class="ch-label" id="crosshairLabel">REG.01</span>
+  </div>
+
+  <!-- Physical Halftone & Paper Grain Scrim -->
+  <div class="paper-texture-overlay" aria-hidden="true"></div>
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="offgrid-nav" id="topNav">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="OFFGRID Studio Home">
+        <span class="brand-text">OFFGRID<span class="trademark">®</span></span>
+        <span class="reg-mark-badge">+</span>
+      </a>
+
+      <!-- Center Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#manifesto" class="nav-link">01 / MANIFESTO</a>
+        <a href="#playground" class="nav-link">02 / PLAYGROUND</a>
+        <a href="#works" class="nav-link">03 / ARCHIVE</a>
+        <a href="#typelab" class="nav-link">04 / TYPE LAB</a>
+        <a href="#practice" class="nav-link">05 / PRACTICE</a>
+        <a href="#studio" class="nav-link">06 / STUDIO</a>
+      </nav>
+
+      <!-- Right Action & Index -->
+      <div class="nav-actions">
+        <span class="nav-index">INDEX / 001–026</span>
+        <a href="#contact" class="btn-nav-project">
+          <span>PROJECT BRIEF</span>
+          <span class="arrow-sym">↗</span>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="offgrid-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="drawer-brand">OFFGRID® // PLAYGROUND</span>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#hero" class="d-link">00 // Apex Print Wall</a>
+      <a href="#manifesto" class="d-link">01 // Graphic Manifesto</a>
+      <a href="#playground" class="d-link">02 // Interactive Playground</a>
+      <a href="#works" class="d-link">03 // Selected Chaos Archive</a>
+      <a href="#typelab" class="d-link">04 // Experimental Type Lab</a>
+      <a href="#practice" class="d-link">05 // Creative Practice</a>
+      <a href="#studio" class="d-link">06 // Studio Philosophy</a>
+      <a href="#contact" class="d-btn-cta">Start an Experiment ↗</a>
+    </nav>
+    <div class="drawer-footer">
+      <span class="df-coords">EST. 2026 // SWISS × NEO-BRUTALISM</span>
+      <span>GOOD DESIGN DOESN'T ALWAYS FOLLOW THE GRID.</span>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- ==================== SECTION 01: HERO PRINT WALL ==================== -->
+  <section class="hero-print-wall" id="hero">
+    
+    <!-- Background Technical Grid & Registration Marks -->
+    <div class="hero-reg-grid" aria-hidden="true">
+      <span class="reg-cross reg-tl">+</span>
+      <span class="reg-cross reg-tr">+</span>
+      <span class="reg-cross reg-bl">+</span>
+      <span class="reg-cross reg-br">+</span>
+      <span class="reg-scale-rule">CMYK // 100-100-0-0 [COBALT] &bull; 0-90-85-0 [SIGNAL RED]</span>
+      <div class="color-swatch-strip">
+        <span class="swatch c-cream"></span>
+        <span class="swatch c-red"></span>
+        <span class="swatch c-cobalt"></span>
+        <span class="swatch c-yellow"></span>
+        <span class="swatch c-lavender"></span>
+        <span class="swatch c-black"></span>
+      </div>
+    </div>
+
+    <!-- Collaged Decorative Graphic Shapes -->
+    <div class="collage-layer" aria-hidden="true">
+      <!-- 1. Rotated Signal Red Block -->
+      <div class="shape-red-rectangle floating-shape">
+        <span>SWISS_SPEC // 04</span>
+      </div>
+
+      <!-- 2. Cobalt Blue Sun Circle -->
+      <div class="shape-cobalt-circle floating-shape">
+        <svg viewBox="0 0 100 100" class="circle-svg">
+          <circle cx="50" cy="50" r="48" fill="#2547D0"/>
+          <text x="50" y="55" font-family="'Space Mono', monospace" font-size="10" fill="#F2EBDD" text-anchor="middle">EXPERIMENTAL</text>
+        </svg>
+      </div>
+
+      <!-- 3. Halftone Stamp -->
+      <div class="shape-halftone-stamp floating-shape"></div>
+
+      <!-- 4. Electric Lavender Bar -->
+      <div class="shape-lavender-tag floating-shape">
+        <span>PRINT DISPATCH &bull; NO. 82</span>
+      </div>
+
+      <!-- 5. Torn Paper Slip -->
+      <div class="shape-torn-slip floating-shape">
+        <div class="torn-top"></div>
+        <p>“CONTROLLED<br>CHAOS.”</p>
+      </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content-block">
+      
+      <!-- Top Technical Annotation -->
+      <div class="hero-meta-eyebrow">
+        <span class="pill-badge red-badge">VISUAL SYSTEMS / 001</span>
+        <span class="eyebrow-text">EXPERIMENTAL DESIGN STUDIO // ACTIVE</span>
+        <span class="pill-badge dark-badge">EST. 2026</span>
+      </div>
+
+      <!-- Massive Asymmetrical Headline -->
+      <div class="hero-headline-wrap">
+        <h1 class="hero-poster-title">
+          <span class="h-line line-1">DESIGN</span>
+          <span class="h-line line-2">
+            <!-- Acid Yellow Block Overlap behind WITHOUT -->
+            <span class="yellow-highlight-block">
+              <span class="word-without">WITHOUT</span>
+            </span>
+          </span>
+          <span class="h-line line-3">
+            <span class="word-permission">PERMISSION</span>
+            <span class="red-dot">.</span>
+            <span class="editorial-detail">
+              <em class="serif-contrast-italic">unregulated</em> form
+            </span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- Description & Action Buttons -->
+      <div class="hero-footer-grid">
+        <div class="hero-desc-box">
+          <p class="hero-desc">
+            Independent graphic design studio exploring visual identity, experimental typography and unconventional digital experiences.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#works" class="btn-bold-primary">
+              <span>EXPLORE THE WORK</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <a href="#playground" class="btn-bold-secondary">
+              <span>ENTER PLAYGROUND</span>
+              <span class="btn-plus">+</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical Manifest Annotation -->
+        <div class="hero-stamp-box">
+          <div class="manifesto-stamp">
+            <div class="stamp-inner">
+              <span class="st-rot">OFFGRID</span>
+              <span class="st-spec">PROOF COPY &bull; SPEC 26-B</span>
+              <span class="st-status">APPROVED FOR ANARCHY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==================== SECTION 02: GRAPHIC MANIFESTO ==================== -->
+  <section class="manifesto-section" id="manifesto">
+    <div class="manifesto-container">
+      
+      <div class="section-badge-row">
+        <span class="sect-num">01</span>
+        <span class="sect-line"></span>
+        <span class="sect-label">STUDIO MANIFESTO // 2026</span>
+      </div>
+
+      <!-- Giant Editorial Statement -->
+      <div class="manifesto-large-text" id="manifestoReveal">
+        <p class="manifesto-sentence">
+          <span class="m-word word-heavy">WE</span>
+          <span class="m-word word-heavy">BREAK</span>
+          <span class="m-word word-heavy highlight-red">THE</span>
+          <span class="m-word word-heavy highlight-red">GRID</span>
+          <span class="m-word word-serif-italic">to find</span>
+          <span class="m-word word-heavy highlight-cobalt">NEW</span>
+          <span class="m-word word-heavy highlight-cobalt">FORMS</span>
+          <span class="m-word word-dot">.</span>
+        </p>
+      </div>
+
+      <!-- Subtext & Swiss Grid Annotations -->
+      <div class="manifesto-details-grid">
+        <div class="m-left-block">
+          <div class="barcode-graphic" aria-hidden="true"></div>
+          <span class="barcode-num">ISBN 978-0-OFFGRID-26</span>
+        </div>
+
+        <div class="m-center-block">
+          <p class="m-paragraph">
+            From identity systems to experimental compositions, we believe design becomes interesting when familiar visual rules are questioned. True visual invention cannot emerge from safe presets, symmetrical templates, or polite typography.
+          </p>
+        </div>
+
+        <div class="m-right-block">
+          <div class="stamp-rot-box">
+            <span class="sr-label">POSTULATE NO. 04</span>
+            <span class="sr-quote">“TIGHT KERNING &bull; ZERO COMPROMISE”</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 03: INTERACTIVE PLAYGROUND (SIGNATURE FEATURE) ==================== -->
+  <section class="playground-section" id="playground">
+    <div class="playground-outer">
+      
+      <div class="section-badge-row">
+        <span class="sect-num">02</span>
+        <span class="sect-line"></span>
+        <span class="sect-label">SIGNATURE FEATURE // PRINT LAB</span>
+      </div>
+
+      <div class="playground-intro-row">
+        <div>
+          <h2 class="playground-title">THE GRAPHIC PLAYGROUND</h2>
+          <p class="playground-subtitle">An interactive physical design table. Drag elements, switch color systems, mutate compositions, and generate new graphic collisions.</p>
+        </div>
+        
+        <div class="drag-hint-badge">
+          <span class="dh-icon">✥</span>
+          <span>DRAG, REPOSITION &amp; MUTATE</span>
+        </div>
+      </div>
+
+      <!-- Main Canvas Table Work Surface -->
+      <div class="playground-board">
+        
+        <!-- Top Toolbar Controls -->
+        <div class="board-toolbar">
+          
+          <!-- Control 1: Color Palette -->
+          <div class="tool-group">
+            <span class="tool-lbl">COLOR PALETTE:</span>
+            <div class="tool-btn-cluster" id="paletteCluster">
+              <button class="tool-btn active" data-palette="original">ORIGINAL PRINT</button>
+              <button class="tool-btn" data-palette="redblack">RED / BLACK</button>
+              <button class="tool-btn" data-palette="cobaltcream">COBALT / CREAM</button>
+              <button class="tool-btn" data-palette="acidink">ACID / INK</button>
+            </div>
+          </div>
+
+          <!-- Control 2: Composition Mode -->
+          <div class="tool-group">
+            <span class="tool-lbl">COMPOSITION:</span>
+            <div class="tool-btn-cluster" id="compositionCluster">
+              <button class="tool-btn active" data-comp="collage">COLLAGE</button>
+              <button class="tool-btn" data-comp="grid">GRID</button>
+              <button class="tool-btn" data-comp="diagonal">DIAGONAL</button>
+              <button class="tool-btn" data-comp="overlap">OVERLAP</button>
+            </div>
+          </div>
+
+          <!-- Control 3: Shape Generator -->
+          <div class="tool-group">
+            <span class="tool-lbl">ADD SHAPE:</span>
+            <div class="tool-btn-cluster" id="addShapeCluster">
+              <button class="tool-btn add-btn" data-shape="circle">+ CIRCLE</button>
+              <button class="tool-btn add-btn" data-shape="rect">+ RECT</button>
+              <button class="tool-btn add-btn" data-shape="triangle">+ TRIANGLE</button>
+              <button class="tool-btn add-btn" data-shape="halftone">+ HALFTONE</button>
+            </div>
+          </div>
+
+          <!-- Control 4: Reset -->
+          <div class="tool-group">
+            <button class="tool-btn btn-reset" id="btnResetBoard">RESET BOARD &#8634;</button>
+          </div>
+
+        </div>
+
+        <!-- Interactive Dragging Surface Canvas -->
+        <div class="interactive-stage" id="interactiveStage">
+          
+          <!-- Background Grid lines on Stage -->
+          <div class="stage-grid-lines" aria-hidden="true"></div>
+
+          <!-- Draggable Object 1: Giant Letter 'O' -->
+          <div class="drag-item item-letter" id="dragO" style="top: 40px; left: 60px;">
+            <div class="item-inner">
+              <span class="huge-char">O</span>
+              <span class="item-handle">✥</span>
+            </div>
+          </div>
+
+          <!-- Draggable Object 2: Signal Red Banner -->
+          <div class="drag-item item-red-banner" id="dragRed" style="top: 180px; left: 160px; transform: rotate(-5deg);">
+            <div class="item-inner">
+              <span class="banner-txt">PRINT MATTERS &bull; POST-DIGITAL</span>
+              <span class="item-handle">✥</span>
+            </div>
+          </div>
+
+          <!-- Draggable Object 3: Cobalt Disc -->
+          <div class="drag-item item-cobalt-disc" id="dragCobalt" style="top: 80px; right: 180px;">
+            <div class="item-inner">
+              <div class="disc-face">
+                <span>CHAOS</span>
+                <span class="item-handle">✥</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Draggable Object 4: Acid Yellow Note Slip -->
+          <div class="drag-item item-yellow-slip" id="dragYellow" style="top: 240px; right: 120px; transform: rotate(8deg);">
+            <div class="item-inner">
+              <span class="note-head">// SPEC. 08</span>
+              <p class="note-body">“A grid is a framework to destroy.”</p>
+              <span class="item-handle">✥</span>
+            </div>
+          </div>
+
+          <!-- Draggable Object 5: Bodoni Serif Cutout -->
+          <div class="drag-item item-serif-cutout" id="dragSerif" style="bottom: 80px; left: 120px; transform: rotate(-2deg);">
+            <div class="item-inner">
+              <span class="serif-big-italic">Typographie</span>
+              <span class="item-handle">✥</span>
+            </div>
+          </div>
+
+          <!-- Draggable Object 6: Halftone Pattern Swatch -->
+          <div class="drag-item item-halftone-swatch" id="dragHalftone" style="bottom: 60px; right: 280px;">
+            <div class="item-inner">
+              <div class="ht-grid-preview"></div>
+              <span class="ht-label">DPI 300 // RASTER</span>
+              <span class="item-handle">✥</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Stage Status Bar -->
+        <div class="board-status-bar">
+          <div class="status-left">
+            <span class="status-dot"></span>
+            <span class="status-msg" id="stageStatusMsg">ACTIVE OBJECTS: 06 // READY FOR DRAG</span>
+          </div>
+          <div class="status-right">
+            <span>OFFGRID STUDIO PHYSICAL WORKSPACE SIMULATOR // VER. 2.6</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 04: SELECTED VISUAL WORKS (POSTER ARCHIVE) ==================== -->
+  <section class="works-section" id="works">
+    <div class="works-container">
+      
+      <div class="section-badge-row">
+        <span class="sect-num">03</span>
+        <span class="sect-line"></span>
+        <span class="sect-label">01 / VISUAL ARCHIVE</span>
+      </div>
+
+      <div class="works-header-row">
+        <h2 class="works-headline">SELECTED CHAOS.</h2>
+        <p class="works-subtext">A collection of visual systems, identities and experimental compositions exploring print artifacts and non-conforming typography.</p>
+      </div>
+
+      <!-- Irregular Poster-Wall Grid -->
+      <div class="poster-wall-grid">
+        
+        <!-- Artwork 1: Oversized Vertical Poster -->
+        <article class="poster-item poster-tall-hero" data-project="01">
+          <div class="poster-frame">
+            <div class="poster-art art-bg-01">
+              <div class="p-top-reg"><span>CAT. 01</span><span>SWISS-POSTER</span></div>
+              <div class="p-huge-type">STATIC<br>CULTURE</div>
+              <div class="p-red-accent-block"></div>
+              <div class="p-bottom-label">ZÜRICH &bull; TOKYO &bull; OSLO</div>
+            </div>
+          </div>
+          <div class="poster-meta-strip">
+            <span class="p-num">01</span>
+            <div class="p-desc-col">
+              <h3 class="p-name">STATIC CULTURE</h3>
+              <span class="p-cat">Experimental Poster &amp; Print Design</span>
+            </div>
+            <button class="btn-open-poster" aria-label="Inspect Static Culture Poster">INSPECT ↗</button>
+          </div>
+        </article>
+
+        <!-- Artwork 2: Wide Horizontal Graphic -->
+        <article class="poster-item poster-wide" data-project="02">
+          <div class="poster-frame">
+            <div class="poster-art art-bg-02">
+              <div class="p-wide-stamp">TYPOGRAPHY IN REVOLT</div>
+              <div class="p-marquee-row">
+                <span>TYPE RIOT</span>
+                <span>TYPE RIOT</span>
+                <span>TYPE RIOT</span>
+              </div>
+              <div class="p-halftone-corner"></div>
+            </div>
+          </div>
+          <div class="poster-meta-strip">
+            <span class="p-num">02</span>
+            <div class="p-desc-col">
+              <h3 class="p-name">TYPE RIOT</h3>
+              <span class="p-cat">Kinetic Typographic Compositions</span>
+            </div>
+            <button class="btn-open-poster" aria-label="Inspect Type Riot Poster">INSPECT ↗</button>
+          </div>
+        </article>
+
+        <!-- Artwork 3: Compact Square Graphic -->
+        <article class="poster-item poster-square" data-project="03">
+          <div class="poster-frame">
+            <div class="poster-art art-bg-03">
+              <div class="c-theory-circle"></div>
+              <span class="c-theory-text">COLOR<br>THEORY</span>
+              <span class="c-theory-formula">λ = 650nm &bull; COBALT</span>
+            </div>
+          </div>
+          <div class="poster-meta-strip">
+            <span class="p-num">03</span>
+            <div class="p-desc-col">
+              <h3 class="p-name">COLOR THEORY</h3>
+              <span class="p-cat">Chromatic Identity Exploration</span>
+            </div>
+            <button class="btn-open-poster" aria-label="Inspect Color Theory">INSPECT ↗</button>
+          </div>
+        </article>
+
+        <!-- Artwork 4: Compact Square Graphic -->
+        <article class="poster-item poster-square" data-project="04">
+          <div class="poster-frame">
+            <div class="poster-art art-bg-04">
+              <div class="geo-monolith-prism"></div>
+              <span class="obj-study-tag">OBJECT STUDY // NO. 04</span>
+            </div>
+          </div>
+          <div class="poster-meta-strip">
+            <span class="p-num">04</span>
+            <div class="p-desc-col">
+              <h3 class="p-name">OBJECT STUDY</h3>
+              <span class="p-cat">Abstract Graphic Objects &amp; Forms</span>
+            </div>
+            <button class="btn-open-poster" aria-label="Inspect Object Study">INSPECT ↗</button>
+          </div>
+        </article>
+
+        <!-- Artwork 5: Editorial Tall Artwork -->
+        <article class="poster-item poster-tall-editorial" data-project="05">
+          <div class="poster-frame">
+            <div class="poster-art art-bg-05">
+              <div class="scanlines-pattern"></div>
+              <div class="no-signal-box">NO SIGNAL</div>
+              <div class="glitch-text">BROADCAST TERMINATED</div>
+            </div>
+          </div>
+          <div class="poster-meta-strip">
+            <span class="p-num">05</span>
+            <div class="p-desc-col">
+              <h3 class="p-name">NO SIGNAL</h3>
+              <span class="p-cat">Experimental Digital Campaign</span>
+            </div>
+            <button class="btn-open-poster" aria-label="Inspect No Signal">INSPECT ↗</button>
+          </div>
+        </article>
+
+        <!-- Artwork 6: Irregular Cropped Graphic -->
+        <article class="poster-item poster-irregular" data-project="06">
+          <div class="poster-frame">
+            <div class="poster-art art-bg-06">
+              <div class="torn-edge-layer"></div>
+              <div class="print-matters-word">PRINT<br>MATTERS</div>
+              <span class="wood-block-spec">HEAVY COTTON PAPER // 450GSM</span>
+            </div>
+          </div>
+          <div class="poster-meta-strip">
+            <span class="p-num">06</span>
+            <div class="p-desc-col">
+              <h3 class="p-name">PRINT MATTERS</h3>
+              <span class="p-cat">Editorial &amp; Physical Publication</span>
+            </div>
+            <button class="btn-open-poster" aria-label="Inspect Print Matters">INSPECT ↗</button>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 05: EXPERIMENTAL TYPOGRAPHY LAB ==================== -->
+  <section class="typelab-section" id="typelab">
+    <div class="typelab-container">
+      
+      <div class="section-badge-row">
+        <span class="sect-num">04</span>
+        <span class="sect-line"></span>
+        <span class="sect-label">02 / TYPE EXPERIMENTS</span>
+      </div>
+
+      <div class="typelab-header">
+        <h2 class="typelab-headline">TYPE IS NOT JUST TEXT.</h2>
+        <p class="typelab-sub">Typography is an architectural substance. It possesses mass, tensile tolerance, rhythm, and political attitude.</p>
+      </div>
+
+      <!-- Interactive Type Specimen Workbench -->
+      <div class="type-specimen-workbench">
+        
+        <!-- Controls Bar -->
+        <div class="type-controls-bar">
+          
+          <!-- Phrase Presets -->
+          <div class="type-ctrl-unit">
+            <span class="tc-label">PHRASE:</span>
+            <select id="typePhraseSelect" class="type-select">
+              <option value="ANARCHY &bull; FORM">ANARCHY &bull; FORM</option>
+              <option value="GOOD DESIGN DIES IN COMFORT">GOOD DESIGN DIES IN COMFORT</option>
+              <option value="SWISS PRECISION × BRUTAL REBELLION">SWISS PRECISION × BRUTAL REBELLION</option>
+              <option value="OFFGRID // NO GRIDS HERE">OFFGRID // NO GRIDS HERE</option>
+            </select>
+          </div>
+
+          <!-- Font Style -->
+          <div class="type-ctrl-unit">
+            <span class="tc-label">FONT FAMILY:</span>
+            <div class="type-font-btns" id="typeFontBtns">
+              <button class="t-btn active" data-font="archivo">ARCHIVO BLACK</button>
+              <button class="t-btn" data-font="bodoni">BODONI MODA</button>
+              <button class="t-btn" data-font="space">SPACE MONO</button>
+            </div>
+          </div>
+
+          <!-- Tracking Slider -->
+          <div class="type-ctrl-unit">
+            <span class="tc-label">LETTER SPACING: <span id="trackingValue">0px</span></span>
+            <input type="range" id="trackingSlider" min="-12" max="36" value="0" class="type-slider">
+          </div>
+
+          <!-- Color Mode -->
+          <div class="type-ctrl-unit">
+            <span class="tc-label">COLOR INK:</span>
+            <div class="type-color-swatches" id="typeColorSwatches">
+              <button class="t-color-dot active" data-color="#171717" style="background:#171717;"></button>
+              <button class="t-color-dot" data-color="#F04438" style="background:#F04438;"></button>
+              <button class="t-color-dot" data-color="#2547D0" style="background:#2547D0;"></button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Typography Display Board -->
+        <div class="type-display-board" id="typeDisplayBoard">
+          <div class="type-display-inner" id="typeDisplayTarget">
+            ANARCHY &bull; FORM
+          </div>
+          <div class="type-board-footer">
+            <span>FONT-WEIGHT: 900 // GLYPH RASTER: OK</span>
+            <span>KERNING MATRIX: CUSTOM ADJUSTED</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 06: CREATIVE SERVICES / PRACTICE ==================== -->
+  <section class="practice-section" id="practice">
+    <div class="practice-container">
+      
+      <div class="section-badge-row">
+        <span class="sect-num">05</span>
+        <span class="sect-line"></span>
+        <span class="sect-label">CREATIVE DISCIPLINES</span>
+      </div>
+
+      <div class="practice-header">
+        <h2 class="practice-title">WHAT WE EXPLORE.</h2>
+        <p class="practice-sub">We don't offer standard agency templates. We partner with fearless brands to invent visual systems that command attention.</p>
+      </div>
+
+      <!-- Interactive Hover-Reveal List -->
+      <div class="practice-list">
+        
+        <!-- Row 1 -->
+        <div class="practice-row" data-preview="identity">
+          <span class="row-num">01</span>
+          <h3 class="row-title">Visual Identity Systems</h3>
+          <span class="row-desc">Modular typography, dynamic brand guidelines, bespoke iconographies.</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-hover-thumb thumb-identity"></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="practice-row" data-preview="artdirection">
+          <span class="row-num">02</span>
+          <h3 class="row-title">Art Direction &amp; Campaigns</h3>
+          <span class="row-desc">High-contrast cultural posters, spatial installations, physical print runs.</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-hover-thumb thumb-artdirection"></div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="practice-row" data-preview="typography">
+          <span class="row-num">03</span>
+          <h3 class="row-title">Experimental Typography</h3>
+          <span class="row-desc">Custom display typefaces, variable font choreographies, wood-block digitization.</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-hover-thumb thumb-typography"></div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="practice-row" data-preview="editorial">
+          <span class="row-num">04</span>
+          <h3 class="row-title">Editorial &amp; Book Design</h3>
+          <span class="row-desc">Tactile publications, zines, art monographs, foil and risograph editions.</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-hover-thumb thumb-editorial"></div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="practice-row" data-preview="digital">
+          <span class="row-num">05</span>
+          <h3 class="row-title">Digital &amp; Interactive Graphics</h3>
+          <span class="row-desc">Browser playgrounds, WebGL visualizers, interactive sensory portfolios.</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-hover-thumb thumb-digital"></div>
+        </div>
+
+        <!-- Row 6 -->
+        <div class="practice-row" data-preview="motion">
+          <span class="row-num">06</span>
+          <h3 class="row-title">Kinetic Motion Design</h3>
+          <span class="row-desc">Stop-motion print animations, kinetic brutalist typography, frame-by-frame chaos.</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-hover-thumb thumb-motion"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 07: STUDIO PHILOSOPHY ==================== -->
+  <section class="philosophy-section" id="studio">
+    <div class="philosophy-container">
+      
+      <div class="philosophy-split-grid">
+        
+        <!-- Left: Statement & Copy -->
+        <div class="phil-text-col">
+          <div class="section-badge-row">
+            <span class="sect-num">06</span>
+            <span class="sect-line"></span>
+            <span class="sect-label">STUDIO PHILOSOPHY</span>
+          </div>
+
+          <h2 class="phil-title">NOT HERE TO FIT IN.</h2>
+
+          <p class="phil-lead">
+            OFFGRID exists to explore the space between structure and spontaneity, precision and chaos, function and expression.
+          </p>
+
+          <p class="phil-body">
+            The world has enough perfectly neutral sans-serif interfaces designed by committee. We are dedicated to the tactile energy of printed matter, the joyful collision of unexpected weights, and the poetry of visual disruption.
+          </p>
+
+          <div class="phil-stats-row">
+            <div class="p-stat">
+              <span class="ps-num">100%</span>
+              <span class="ps-lbl">INDEPENDENT &bull; UNAPOLOGETIC</span>
+            </div>
+            <div class="p-stat">
+              <span class="ps-num">00</span>
+              <span class="ps-lbl">GENERIC TEMPLATES PERMITTED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Print Collage Assembly -->
+        <div class="phil-collage-col">
+          <div class="collage-card-stack">
+            <div class="c-stack-item stack-bg-sheet"></div>
+            <div class="c-stack-item stack-cobalt-block">
+              <span class="cobalt-tag">PROOF NO. 14</span>
+            </div>
+            <div class="c-stack-item stack-red-poster">
+              <span class="srp-title">CHAOS<br>THEORY</span>
+              <span class="srp-foot">SWISS EDITION</span>
+            </div>
+            <div class="c-stack-item stack-quote-card">
+              <blockquote>
+                “Order is boring. Disorder is memorable.”
+              </blockquote>
+              <cite>&mdash; OFFGRID Manifesto, 2026</cite>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 08: FINAL CONTACT ==================== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      
+      <!-- Big Signal Red Background Container -->
+      <div class="contact-bold-card">
+        <div class="contact-content-grid">
+          
+          <div class="contact-info-col">
+            <span class="c-eyebrow">// COMMENCE COLLABORATION</span>
+            <h2 class="c-headline">MAKE SOMETHING UNEXPECTED.</h2>
+            <p class="c-subtext">Have an idea that doesn’t fit the usual format? Let’s experiment. We partner with bold founders, cultural institutions, and brave ateliers.</p>
+            
+            <div class="c-direct-links">
+              <div class="cd-item">
+                <span class="cd-label">TELEGRAPH:</span>
+                <a href="mailto:hello@offgrid-studio.design" class="cd-val">hello@offgrid-studio.design</a>
+              </div>
+              <div class="cd-item">
+                <span class="cd-label">FIELD STATION:</span>
+                <span class="cd-val">Zürich &bull; Berlin &bull; Tokyo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <form class="offgrid-form" id="contactProjectForm">
+              
+              <div class="f-group">
+                <label for="cName" class="f-label">YOUR NAME / ATELIER</label>
+                <input type="text" id="cName" required placeholder="e.g. Studio Basel" class="f-input" />
+              </div>
+
+              <div class="f-group">
+                <label for="cEmail" class="f-label">ELECTRONIC DISPATCH</label>
+                <input type="email" id="cEmail" required placeholder="director@studio.com" class="f-input" />
+              </div>
+
+              <div class="f-group">
+                <label for="cScope" class="f-label">EXPERIMENT SCOPE</label>
+                <select id="cScope" class="f-input">
+                  <option>Visual Identity &amp; System</option>
+                  <option>Experimental Poster Campaign</option>
+                  <option>Editorial &amp; Publication Design</option>
+                  <option>Interactive Digital Playground</option>
+                </select>
+              </div>
+
+              <div class="f-group">
+                <label for="cMsg" class="f-label">SCOPE &amp; VISUAL INTENT</label>
+                <textarea id="cMsg" rows="3" placeholder="Tell us how you want to challenge expectations..." class="f-input"></textarea>
+              </div>
+
+              <button type="submit" class="btn-start-project">
+                <span>START A PROJECT</span>
+                <span class="f-arrow">↗</span>
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 09: EXPERIMENTAL FOOTER ==================== -->
+  <footer class="offgrid-footer">
+    <div class="footer-container">
+      
+      <!-- Top Links Grid -->
+      <div class="footer-top-row">
+        
+        <div class="f-brand-unit">
+          <span class="f-logo-text">OFFGRID®</span>
+          <p class="f-tagline">Experimental Graphic Design Playground &bull; Swiss Design × Neo-Brutalism &bull; Est. 2026.</p>
+        </div>
+
+        <div class="f-nav-col">
+          <span class="f-col-title">NAVIGATION</span>
+          <a href="#hero">00 // Print Wall Apex</a>
+          <a href="#manifesto">01 // Graphic Manifesto</a>
+          <a href="#playground">02 // Graphic Playground</a>
+          <a href="#works">03 // Selected Chaos</a>
+          <a href="#typelab">04 // Typography Lab</a>
+          <a href="#studio">05 // Studio Philosophy</a>
+        </div>
+
+        <div class="f-nav-col">
+          <span class="f-col-title">SYSTEMS</span>
+          <span>Paper Cream // #F2EBDD</span>
+          <span>Signal Red // #F04438</span>
+          <span>Cobalt Blue // #2547D0</span>
+          <span>Ink Black // #171717</span>
+          <span>Acid Yellow // #E9F044</span>
+        </div>
+
+      </div>
+
+      <!-- Giant Monolithic Brand Wordmark -->
+      <div class="footer-giant-wordmark" aria-hidden="true">
+        <span>OFFGRID</span>
+      </div>
+
+      <!-- Bottom Meta -->
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 OFFGRID EXPERIMENTAL GRAPHIC DESIGN STUDIO. ALL RIGHTS RESERVED.</span>
+        <span class="reg-code">REG: 47.3769° N, 8.5417° E &bull; ZÜRICH</span>
+        <a href="#hero" class="btn-return-apex" id="btnReturnApex">
+          <span>APEX</span> &uarr;
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== POSTER DETAIL INSPECT MODAL ==================== -->
+  <div class="poster-modal-backdrop" id="posterModal">
+    <div class="poster-modal-card">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close Poster Modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-poster-preview" id="modalPosterPreview">
+          <div class="modal-poster-canvas" id="modalPosterCanvas"></div>
+        </div>
+        <div class="modal-poster-data">
+          <span class="modal-num" id="modalNum">01 // POSTER ARCHIVE</span>
+          <h3 class="modal-title" id="modalTitle">STATIC CULTURE</h3>
+          <span class="modal-cat" id="modalCat">Experimental Poster &amp; Print Design</span>
+          <p class="modal-desc" id="modalDesc">Comprehensive visual study on analogue screen-printing distortions applied to digital vector frameworks.</p>
+          
+          <div class="modal-specs">
+            <div class="ms-line"><span>FORMAT:</span><span>B1 PRINT (700 × 1000 MM)</span></div>
+            <div class="ms-line"><span>SUBSTRATE:</span><span>MUNKEN LYNX 300GSM</span></div>
+            <div class="ms-line"><span>COLOR SYSTEM:</span><span>PANTONE 032 U + PROCESS BLACK</span></div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn-modal-spec" id="btnModalSpec">DOWNLOAD SPEC SHEET (.PDF)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Toast Notification -->
+  <div class="offgrid-toast" id="offgridToast">
+    <span class="toast-cross">+</span>
+    <span class="toast-text" id="toastText">Brief received. OFFGRID studio has dispatched telemetry.</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/playground.js"></script>
+  <script src="js/typelab.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

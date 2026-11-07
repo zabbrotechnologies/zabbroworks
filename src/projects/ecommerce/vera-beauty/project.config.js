@@ -1,0 +1,16 @@
+export const veraConfig = {
+  id: 'vera-beauty',
+  number: '03',
+  title: 'VÉRA BEAUTY',
+  category: 'E-COMMERCE',
+  sectionSlug: 'ecommerce',
+  year: '2026',
+  client: 'Véra Dermatological Laboratories',
+  description: 'Clean skincare and beauty commerce platform highlighting clinical bio-compatibility, peptide serums, and sustainable botanical packaging.',
+  deliverables: ['Skincare Architecture', 'Ritual Customizer', 'Ingredient Transparency'],
+  demoUrl: null,
+  featured: true,
+  tags: ['Skincare', 'Beauty E-Commerce', 'Clean Beauty'],
+  accentColor: '#C27863',
+  surfaceColor: '#FAF7F2',
+};

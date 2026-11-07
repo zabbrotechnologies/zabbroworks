@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEVFLOW — Digital Development & Creative Technology Agency</title>
+  <meta name="description"
+    content="DEVFLOW is a premier digital development and creative technology agency crafting modern websites, intuitive digital experiences, and custom software.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="devflow-body">
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION (Floating Pill Nav Bar)
+       ========================================================================= -->
+  <header class="devflow-header" id="devflowHeader">
+    <nav class="nav-pill-container" aria-label="Main Navigation">
+      <!-- Left: Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="DEVFLOW Home">
+        <span class="logo-symbol">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="8" height="8" rx="2" fill="#3157E8" />
+            <rect x="13" y="3" width="8" height="8" rx="2" fill="#795BFF" />
+            <rect x="3" y="13" width="8" height="8" rx="2" fill="#101D43" />
+            <circle cx="17" cy="17" r="4" fill="#FF873F" />
+          </svg>
+        </span>
+        <span class="brand-name">DEVFLOW</span>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <ul class="nav-links-list">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <!-- Right: Action CTA & Menu Toggle -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn-talk">
+          <span>Let's Talk</span>
+          <svg class="talk-arrow" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="menu-icon-grid">
+            <span></span><span></span>
+            <span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-logo">DEVFLOW</span>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#hero" class="drawer-link active">Home</a></li>
+      <li><a href="#services" class="drawer-link">Services</a></li>
+      <li><a href="#projects" class="drawer-link">Projects</a></li>
+      <li><a href="#process" class="drawer-link">Process</a></li>
+      <li><a href="#about" class="drawer-link">About</a></li>
+      <li><a href="#contact" class="drawer-link drawer-cta">Start a Project &rarr;</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         HERO SECTION: MAIN BENTO GRID COMPOSITION
+         Asymmetric 3-Column Bento Architecture
+         ========================================================================= -->
+    <section class="hero-bento-section" id="hero">
+      <div class="bento-container">
+
+        <!-- ==================== ROW 1: PRIMARY BENTO STAGE ==================== -->
+        <div class="bento-main-grid">
+
+          <!-- CARD A: Main Hero Text (Large Dark Navy Card) -->
+          <article class="bento-card card-hero-text">
+            <div class="card-hero-glow" aria-hidden="true"></div>
+
+            <div class="card-eyebrow">
+              <span class="dot-accent"></span>
+              <span>DESIGN. DEVELOP. DELIVER.</span>
+            </div>
+
+            <h1 class="card-main-title">
+              We Turn Complex Ideas Into <span class="gradient-text">Digital</span> Reality.
+            </h1>
+
+            <p class="card-main-desc">
+              We design and build modern websites, intuitive digital experiences, and custom software that help
+              businesses transform ideas into meaningful digital products.
+            </p>
+
+            <div class="card-action-row">
+              <a href="#projects" class="btn-primary-cobalt">
+                <span>Explore Our Work</span>
+                <svg viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+                </svg>
+              </a>
+              <a href="#contact" class="btn-secondary-border">
+                <span>Start a Project</span>
+              </a>
+            </div>
+
+            <!-- Subtle Abstract Geometric Detail -->
+            <div class="card-geometric-accent" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none">
+                <circle cx="60" cy="60" r="50" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"
+                  stroke-dasharray="4 4" />
+                <path d="M20 60C40 30 80 90 100 60" stroke="url(#accentCurve)" stroke-width="2" />
+                <defs>
+                  <linearGradient id="accentCurve" x1="20" y1="60" x2="100" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3157E8" />
+                    <stop offset="1" stop-color="#795BFF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </article>
+
+          <!-- CARD B: Main Visual Artwork (Layered 3D Development Interface) -->
+          <article class="bento-card card-visual-artwork">
+            <div class="artwork-backdrop-gradient" aria-hidden="true"></div>
+
+            <div class="dev-artwork-stage">
+              <!-- Floating Frosted Code Panel -->
+              <div class="floating-panel panel-code">
+                <div class="panel-header">
+                  <span class="window-dot red"></span>
+                  <span class="window-dot yellow"></span>
+                  <span class="window-dot green"></span>
+                  <span class="panel-title">devflow.config.ts</span>
+                </div>
+                <div class="code-lines">
+                  <div class="code-line"><span class="c-purple">export default</span> <span
+                      class="c-blue">defineConfig</span>({</div>
+                  <div class="code-line ind"><span class="c-key">engine</span>: <span
+                      class="c-str">'next-generation'</span>,</div>
+                  <div class="code-line ind"><span class="c-key">performance</span>: <span class="c-num">100</span>,
+                  </div>
+                  <div class="code-line ind"><span class="c-key">designSystem</span>: <span class="c-orange">true</span>
+                  </div>
+                  <div class="code-line">});</div>
+                </div>
+              </div>
+
+              <!-- Central 3D Layered Code Emblem -->
+              <div class="central-emblem">
+                <div class="emblem-cube">
+                  <span class="code-symbol">&lt;/&gt;</span>
+                </div>
+                <div class="emblem-halo"></div>
+              </div>
+
+              <!-- Floating Metric Pill -->
+              <div class="floating-panel panel-pill">
+                <span class="pill-dot"></span>
+                <span class="pill-text">Zero Latency • Optimized Architecture</span>
+              </div>
+            </div>
+
+            <!-- Card Bottom Label -->
+            <div class="artwork-footer-label">
+              <span>CREATIVE TECHNOLOGY &bull; MODERN ARCHITECTURE</span>
+            </div>
+          </article>
+
+          <!-- RIGHT COLUMN: Stack of 3 Compact Cards (C, D, E) -->
+          <div class="bento-right-stack">
+
+            <!-- CARD C: Project Delivery Information (Light Card) -->
+            <article class="bento-card card-compact card-delivery">
+              <div class="compact-header">
+                <div class="compact-icon-badge blue">
+                  <svg viewBox="0 0 20 20" fill="none">
+                    <path d="M4 14L9 9L12 12L16 6" stroke="#3157E8" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="compact-tag">EXECUTION</span>
+              </div>
+              <h3 class="compact-title">Ideas Into Experiences.</h3>
+              <p class="compact-desc">From the first concept to the final launch, we focus on building digital products
+                with purpose.</p>
+
+              <div class="upward-chart-visual" aria-hidden="true">
+                <span class="chart-bar" style="height: 35%;"></span>
+                <span class="chart-bar" style="height: 55%;"></span>
+                <span class="chart-bar" style="height: 45%;"></span>
+                <span class="chart-bar" style="height: 75%;"></span>
+                <span class="chart-bar active" style="height: 95%;"></span>
+              </div>
+            </article>
+
+            <!-- CARD D: Client-Focused Information (Light Card) -->
+            <article class="bento-card card-compact card-client">
+              <div class="compact-header">
+                <div class="compact-icon-badge violet">
+                  <svg viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="6" stroke="#795BFF" stroke-width="2" />
+                    <circle cx="10" cy="10" r="2" fill="#FF873F" />
+                  </svg>
+                </div>
+                <span class="compact-tag">PARTNERSHIP</span>
+              </div>
+              <h3 class="compact-title">Built Around Your Goals.</h3>
+              <p class="compact-desc">Every project starts with understanding the people, problems, and goals behind it.
+              </p>
+
+              <!-- Subtle Gradient Ring Graphic -->
+              <div class="gradient-ring-accent" aria-hidden="true">
+                <div class="ring r-outer"></div>
+                <div class="ring r-inner"></div>
+              </div>
+            </article>
+
+            <!-- CARD E: Availability & Direct Contact (Dark Navy Card) -->
+            <article class="bento-card card-compact card-availability">
+              <div class="availability-status">
+                <span class="status-pulse-dot"></span>
+                <span class="status-text">AVAILABLE FOR NEW PROJECTS</span>
+              </div>
+              <h3 class="availability-title">Have a Project in Mind?</h3>
+              <p class="availability-desc">Let's discuss what we can build together.</p>
+
+              <a href="#contact" class="availability-action-btn" aria-label="Go to contact section">
+                <span>Start Conversation</span>
+                <div class="circle-arrow-icon">
+                  <svg viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" />
+                  </svg>
+                </div>
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ==================== ROW 2: SECONDARY BENTO GRID ==================== -->
+        <div class="bento-secondary-grid">
+
+          <!-- CARD F: Technology / Identity (Rich Dark Card) -->
+          <article class="bento-card card-tech-identity">
+            <div class="tech-card-content">
+              <span class="tech-card-tag">DIGITAL ENGINEERING</span>
+              <h3 class="tech-card-title">Built for What's Next.</h3>
+              <p class="tech-card-desc">Thoughtful design. Reliable development. Digital experiences made to move
+                forward.</p>
+            </div>
+
+            <div class="abstract-ring-stage" aria-hidden="true">
+              <div class="flowing-ring"></div>
+            </div>
+          </article>
+
+          <!-- CARD G: 4 Modular Service Tiles -->
+          <div class="services-tiles-wrapper">
+            <!-- Service 1: Web Development -->
+            <div class="service-tile tile-white">
+              <div class="tile-icon-box">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="4" width="18" height="14" rx="2" stroke="#101D43" stroke-width="2" />
+                  <path d="M8 20H16M12 18V20" stroke="#101D43" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h4 class="tile-title">Web Development</h4>
+              <ul class="tile-list">
+                <li>Responsive websites</li>
+                <li>Modern frontend experiences</li>
+                <li>Performance-focused implementation</li>
+              </ul>
+            </div>
+
+            <!-- Service 2: UI/UX Design -->
+            <div class="service-tile tile-lavender">
+              <div class="tile-icon-box violet">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke="#795BFF" stroke-width="2" />
+                  <circle cx="12" cy="12" r="3" fill="#3157E8" />
+                </svg>
+              </div>
+              <h4 class="tile-title">UI/UX Design</h4>
+              <ul class="tile-list">
+                <li>User-centered interfaces</li>
+                <li>Wireframes and prototypes</li>
+                <li>Design systems &amp; usability</li>
+              </ul>
+            </div>
+
+            <!-- Service 3: Custom Software -->
+            <div class="service-tile tile-white">
+              <div class="tile-icon-box orange">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7H20M4 12H20M4 17H12" stroke="#FF873F" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h4 class="tile-title">Custom Software</h4>
+              <ul class="tile-list">
+                <li>Business-specific applications</li>
+                <li>Custom digital tools</li>
+                <li>Workflow-oriented solutions</li>
+              </ul>
+            </div>
+
+            <!-- Service 4: Smart Automation -->
+            <div class="service-tile tile-lavender">
+              <div class="tile-icon-box cobalt">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="8" stroke="#3157E8" stroke-width="2" />
+                  <path d="M12 8V12L15 15" stroke="#795BFF" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h4 class="tile-title">Smart Automation</h4>
+              <ul class="tile-list">
+                <li>AI-powered integrations</li>
+                <li>Intelligent workflows</li>
+                <li>Automation solutions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CARD H: Scroll Indicator Card -->
+          <article class="bento-card card-scroll-indicator">
+            <span class="scroll-label">SCROLL TO EXPLORE</span>
+            <div class="mouse-scroll-icon" aria-hidden="true">
+              <div class="mouse-wheel"></div>
+            </div>
+            <div class="scroll-arrow-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 3V13M8 13L4 9M8 13L12 9" stroke="#101D43" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ==================== ROW 3: WIDE FEATURED PROJECT CARD ==================== -->
+        <article class="bento-card card-featured-project" id="featuredProject">
+          <div class="featured-bg-overlay"></div>
+
+          <div class="featured-content">
+            <span class="featured-eyebrow">FEATURED WORK / 01</span>
+            <h2 class="featured-headline">Digital Experiences That Make an Impact.</h2>
+            <p class="featured-desc">
+              Explore how thoughtful design and development turn ideas into functional digital experiences.
+            </p>
+            <a href="#projects" class="btn-featured-cta">
+              <span>Explore Projects</span>
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="featured-tags-strip">
+            <span class="f-tag">DESIGN CONCEPT</span>
+            <span class="f-tag">ENTERPRISE UI</span>
+            <span class="f-tag">HIGH-PERFORMANCE FRONTEND</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 1: ABOUT DEVFLOW
+         Split Editorial Layout
+         ========================================================================= -->
+    <section class="section-about" id="about">
+      <div class="site-container">
+        <div class="about-split-grid">
+          <div class="about-text-column">
+            <span class="section-label">ABOUT DEVFLOW</span>
+            <h2 class="about-headline">
+              We Build More Than Websites. <br>
+              <span class="highlight-navy">We Build Digital Experiences.</span>
+            </h2>
+            <p class="about-paragraph">
+              DEVFLOW was founded on the belief that digital technology should feel effortless, performant, and
+              purposeful. We collaborate directly with forward-thinking companies to conceptualize, design, and engineer
+              custom digital platforms that elevate their operations and engage their customers.
+            </p>
+            <p class="about-paragraph secondary">
+              Our multidisciplinary team bridges user research, design systems, and modern software engineering. We
+              believe in craftsmanship, clean code, and solutions tailored to real organizational objectives.
+            </p>
+
+            <div class="about-core-metrics">
+              <div class="core-metric">
+                <span class="m-title">Design-Led</span>
+                <span class="m-sub">Human-centered UI/UX at every stage</span>
+              </div>
+              <div class="core-metric">
+                <span class="m-title">Modern Stack</span>
+                <span class="m-sub">Fast, secure, scalable architecture</span>
+              </div>
+              <div class="core-metric">
+                <span class="m-title">Direct Partnership</span>
+                <span class="m-sub">Agile sprints with senior engineers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-column">
+            <div class="editorial-card-graphic">
+              <div class="graphic-layer layer-back"></div>
+              <div class="graphic-layer layer-front">
+                <span class="quote-mark">&ldquo;</span>
+                <p class="quote-text">
+                  Great digital products occur when thoughtful design meets disciplined engineering.
+                </p>
+                <span class="quote-author">&mdash; DEVFLOW Studio Philosophy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: WHAT WE DO (Detailed Service Breakdown)
+         ========================================================================= -->
+    <section class="section-services-deep" id="services">
+      <div class="site-container">
+        <div class="section-header-center">
+          <span class="section-label">OUR EXPERTISE</span>
+          <h2 class="section-title-large">End-to-End Digital Engineering Capabilities</h2>
+          <p class="section-subtitle">Comprehensive design, frontend, and software solutions built for business growth.
+          </p>
+        </div>
+
+        <div class="services-deep-grid">
+          <!-- Service 1 -->
+          <div class="service-deep-card">
+            <div class="card-num-watermark">01</div>
+            <h3 class="deep-card-title">Web Development</h3>
+            <p class="deep-card-desc">High-performance frontend solutions, responsive web platforms, and headless CMS
+              integrations designed for speed and reliability.</p>
+            <ul class="deep-card-checklist">
+              <li>Modern semantic HTML5 &amp; CSS3 architecture</li>
+              <li>Responsive across all modern mobile and desktop screens</li>
+              <li>Lighthouse 95+ score optimization</li>
+              <li>Accessible, standards-compliant markup</li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-deep-card">
+            <div class="card-num-watermark">02</div>
+            <h3 class="deep-card-title">UI/UX Design</h3>
+            <p class="deep-card-desc">Intuitive interaction patterns, wireframes, component design systems, and
+              interactive prototypes built to solve user friction.</p>
+            <ul class="deep-card-checklist">
+              <li>User research &amp; information architecture</li>
+              <li>Figma design systems &amp; interactive prototypes</li>
+              <li>Intuitive user onboarding &amp; checkout flows</li>
+              <li>Micro-interactions and subtle motion design</li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-deep-card">
+            <div class="card-num-watermark">03</div>
+            <h3 class="deep-card-title">Custom Software</h3>
+            <p class="deep-card-desc">Bespoke web applications, internal operational tools, and tailored client portals
+              engineered around specific business requirements.</p>
+            <ul class="deep-card-checklist">
+              <li>Custom administrative dashboards</li>
+              <li>Secure API integrations and webhooks</li>
+              <li>Role-based access &amp; data visualization</li>
+              <li>Maintainable, scalable modular codebases</li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-deep-card">
+            <div class="card-num-watermark">04</div>
+            <h3 class="deep-card-title">Smart Automation</h3>
+            <p class="deep-card-desc">Automated workflows, AI-assisted productivity pipelines, and multi-service
+              synchronizations that eliminate manual repetitive tasks.</p>
+            <ul class="deep-card-checklist">
+              <li>Automated CRM &amp; customer communication</li>
+              <li>Intelligent data extraction &amp; document pipelines</li>
+              <li>Third-party platform integrations</li>
+              <li>Reliable event-driven trigger systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: SELECTED WORK (Actual Curated Concepts)
+         ========================================================================= -->
+    <section class="section-projects" id="projects">
+      <div class="site-container">
+        <div class="section-header-split">
+          <div>
+            <span class="section-label">SELECTED WORK</span>
+            <h2 class="section-title-large">Engineered With Purpose</h2>
+          </div>
+          <p class="header-split-text">A showcase of design concepts and client-focused digital applications crafted by
+            the DEVFLOW studio team.</p>
+        </div>
+
+        <div class="projects-editorial-grid">
+          <!-- Project 1: Aura Design System -->
+          <article class="project-editorial-card">
+            <div class="project-media-stage media-aura">
+              <div class="project-wireframe-sample">
+                <div class="wire-header">
+                  <span class="w-tag">AURA COMPONENT SYSTEM</span>
+                  <span class="w-status">v2.4 ACTIVE</span>
+                </div>
+                <div class="wire-body">
+                  <div class="wire-card"></div>
+                  <div class="wire-card"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <span class="project-category">DESIGN SYSTEM &bull; UI/UX</span>
+              <h3 class="project-name">Aura Enterprise Design System</h3>
+              <p class="project-summary">Unified design language and component library built for a multi-product SaaS
+                ecosystem, ensuring visual consistency across 40+ user touchpoints.</p>
+              <div class="project-deliverables-pills">
+                <span>Tokens</span>
+                <span>Figma Library</span>
+                <span>Component Docs</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Pulse Analytics -->
+          <article class="project-editorial-card">
+            <div class="project-media-stage media-pulse">
+              <div class="project-wireframe-sample">
+                <div class="wire-header">
+                  <span class="w-tag">PULSE ANALYTICS DASHBOARD</span>
+                  <span class="w-status">REALTIME</span>
+                </div>
+                <div class="wire-body">
+                  <div class="wire-chart-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <span class="project-category">CUSTOM SOFTWARE &bull; WEB APP</span>
+              <h3 class="project-name">Pulse Financial Telemetry Engine</h3>
+              <p class="project-summary">High-density data visualization suite rendering real-time revenue streams,
+                transaction forecasts, and cohort retention metrics.</p>
+              <div class="project-deliverables-pills">
+                <span>Data Visuals</span>
+                <span>WebSockets</span>
+                <span>Custom Dashboard</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Kroma Studio -->
+          <article class="project-editorial-card">
+            <div class="project-media-stage media-kroma">
+              <div class="project-wireframe-sample">
+                <div class="wire-header">
+                  <span class="w-tag">KROMA INTERACTIVE</span>
+                  <span class="w-status">PUBLISHED</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <span class="project-category">WEB DEVELOPMENT &bull; CREATIVE TECH</span>
+              <h3 class="project-name">Kroma Creative Studio Platform</h3>
+              <p class="project-summary">Immersive editorial portfolio website with fluid scroll transitions, responsive
+                media galleries, and sub-second load times.</p>
+              <div class="project-deliverables-pills">
+                <span>Frontend Dev</span>
+                <span>Fluid Motion</span>
+                <span>Responsive Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Nexus Automations -->
+          <article class="project-editorial-card">
+            <div class="project-media-stage media-nexus">
+              <div class="project-wireframe-sample">
+                <div class="wire-header">
+                  <span class="w-tag">NEXUS PIPELINE</span>
+                  <span class="w-status">AUTOMATED</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <span class="project-category">SMART AUTOMATION &bull; WORKFLOWS</span>
+              <h3 class="project-name">Nexus Intelligent Workflow Suite</h3>
+              <p class="project-summary">End-to-end operational automation engine synchronizing client intake requests,
+                project scoping pipelines, and invoicing notifications.</p>
+              <div class="project-deliverables-pills">
+                <span>AI Pipelines</span>
+                <span>API Webhooks</span>
+                <span>CRM Sync</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: OUR PROCESS (4 Disciplined Stages)
+         ========================================================================= -->
+    <section class="section-process" id="process">
+      <div class="site-container">
+        <div class="section-header-center">
+          <span class="section-label">HOW WE WORK</span>
+          <h2 class="section-title-large">A Transparent, Collaborative Process</h2>
+          <p class="section-subtitle">From initial discovery to launch, we follow a structured 4-step framework.</p>
+        </div>
+
+        <div class="process-stages-grid">
+          <!-- Step 1 -->
+          <div class="process-stage-card">
+            <div class="stage-num-badge">01</div>
+            <h3 class="stage-title">Discover</h3>
+            <p class="stage-desc">We listen to your vision, research your market, analyze competitor benchmarks, and
+              clarify core business objectives.</p>
+            <div class="stage-footer">Requirement Definition</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-stage-card">
+            <div class="stage-num-badge">02</div>
+            <h3 class="stage-title">Design</h3>
+            <p class="stage-desc">We build structural wireframes, visual aesthetics, responsive UI components, and
+              clickable prototypes for early review.</p>
+            <div class="stage-footer">Interactive Prototypes</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-stage-card">
+            <div class="stage-num-badge">03</div>
+            <h3 class="stage-title">Develop</h3>
+            <p class="stage-desc">We code clean, modular, and maintainable software with optimized performance, strict
+              accessibility, and cross-browser testing.</p>
+            <div class="stage-footer">Clean Implementation</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-stage-card">
+            <div class="stage-num-badge">04</div>
+            <h3 class="stage-title">Deliver</h3>
+            <p class="stage-desc">We conduct comprehensive QA, optimize assets, deploy to fast edge infrastructure, and
+              prepare documentation for launch.</p>
+            <div class="stage-footer">Deployment &amp; Handover</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: WHY DEVFLOW
+         Studio Strengths & Differentiators
+         ========================================================================= -->
+    <section class="section-why">
+      <div class="site-container">
+        <div class="why-bento-layout">
+          <!-- Main Statement Card -->
+          <div class="why-card why-lead-card">
+            <span class="section-label white">WHY PARTNER WITH US</span>
+            <h2 class="why-main-headline">
+              Craftsmanship, Reliability, and Direct Senior Collaboration.
+            </h2>
+            <p class="why-lead-text">
+              We don't hand your project off to junior subcontractors. You work directly with experienced designers and
+              engineers who care deeply about the quality of the final product.
+            </p>
+          </div>
+
+          <!-- Pillar 1 -->
+          <div class="why-card why-pillar">
+            <div class="pillar-dot cobalt"></div>
+            <h4 class="pillar-title">Design-Focused Development</h4>
+            <p class="pillar-text">We believe code should honor design intent down to the last pixel, transition timing,
+              and font weight.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="why-card why-pillar">
+            <div class="pillar-dot violet"></div>
+            <h4 class="pillar-title">Responsive Implementation</h4>
+            <p class="pillar-text">Tested thoroughly across ultra-wide monitors, laptops, tablets, and varied mobile
+              aspect ratios.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="why-card why-pillar">
+            <div class="pillar-dot orange"></div>
+            <h4 class="pillar-title">Performance Optimization</h4>
+            <p class="pillar-text">Fast loading speeds, zero layout shifts, optimized media, and lightweight vanilla
+              dependencies.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="why-card why-pillar">
+            <div class="pillar-dot navy"></div>
+            <h4 class="pillar-title">Practical Digital Solutions</h4>
+            <p class="pillar-text">We build software that solves actual operational bottlenecks without bloated
+              complexity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: CONTACT / CTA (Inquiry Form with Meaningful Flow)
+         ========================================================================= -->
+    <section class="section-contact" id="contact">
+      <div class="site-container">
+        <div class="contact-card-wrapper">
+          <div class="contact-header-block">
+            <span class="section-label">START A CONVERSATION</span>
+            <h2 class="contact-title">Have an Idea? Let's Make It Real.</h2>
+            <p class="contact-subtitle">Tell us what you're planning. We'll help you shape the right digital solution.
+            </p>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-grid-two">
+              <div class="form-field">
+                <label for="contactName">Your Name *</label>
+                <input type="text" id="contactName" name="name" placeholder="E.g. Sarah Jenkins" required>
+                <span class="field-error-msg" id="nameError">Please enter your name</span>
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">Work Email *</label>
+                <input type="email" id="contactEmail" name="email" placeholder="sarah@company.com" required>
+                <span class="field-error-msg" id="emailError">Please enter a valid email address</span>
+              </div>
+            </div>
+
+            <!-- Project Type Selection -->
+            <div class="form-field">
+              <label>Project Type</label>
+              <div class="project-type-pills">
+                <label class="type-pill">
+                  <input type="radio" name="projectType" value="Web Development" checked>
+                  <span>Web Development</span>
+                </label>
+                <label class="type-pill">
+                  <input type="radio" name="projectType" value="UI/UX Design">
+                  <span>UI/UX Design</span>
+                </label>
+                <label class="type-pill">
+                  <input type="radio" name="projectType" value="Custom Software">
+                  <span>Custom Software</span>
+                </label>
+                <label class="type-pill">
+                  <input type="radio" name="projectType" value="Smart Automation">
+                  <span>Smart Automation</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="contactDetails">Project Details *</label>
+              <textarea id="contactDetails" name="details" rows="4"
+                placeholder="Tell us about your project goals, timeline, and any specific requirements..."
+                required></textarea>
+              <span class="field-error-msg" id="detailsError">Please provide a brief description of your project</span>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+              </button>
+              <div class="form-feedback-message" id="formFeedback" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 7: FOOTER
+       ========================================================================= -->
+  <footer class="devflow-footer">
+    <div class="site-container">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand-column">
+          <a href="#hero" class="brand-logo footer-logo">
+            <span class="logo-symbol">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="8" height="8" rx="2" fill="#3157E8" />
+                <rect x="13" y="3" width="8" height="8" rx="2" fill="#795BFF" />
+                <rect x="3" y="13" width="8" height="8" rx="2" fill="#101D43" />
+                <circle cx="17" cy="17" r="4" fill="#FF873F" />
+              </svg>
+            </span>
+            <span class="brand-name">DEVFLOW</span>
+          </a>
+          <p class="footer-tagline">
+            Digital development and creative technology agency crafting purposeful websites, user interfaces, and custom
+            digital software.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-nav-column">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Capabilities -->
+        <div class="footer-nav-column">
+          <h4 class="footer-col-title">Capabilities</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">Custom Software</a></li>
+            <li><a href="#services">Smart Automation</a></li>
+            <li><a href="#about">Design Systems</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Inquiries -->
+        <div class="footer-nav-column">
+          <h4 class="footer-col-title">Inquiries</h4>
+          <p class="footer-info-text">Have a project you would like to discuss?</p>
+          <a href="#contact" class="footer-email-link">contact@devflow.studio</a>
+          <div class="footer-social-row">
+            <span class="social-label">DEVFLOW DIGITAL WORKS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-strip">
+        <span class="copyright-text">&copy; <span id="currentYear">2026</span> DEVFLOW Agency. All rights
+          reserved.</span>
+        <span class="footer-subtext">Designed &amp; Developed with Purpose</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREATIVIO — Premium Glassmorphism Landing Website</title>
+  <meta name="description" content="CREATIVIO is a premier creative digital studio specializing in UI/UX design, modern web development, brand systems, and data-driven digital growth.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="creativio-body">
+
+  <!-- Ambient Blue Ambient Glows -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-mid" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION (Transparent Floating & Frosted on Scroll)
+       ========================================================================= -->
+  <header class="creativio-header" id="creativioHeader">
+    <div class="header-container">
+      <!-- Logo with Geometric Overlapping-Square Symbol -->
+      <a href="#hero" class="brand-logo" aria-label="CREATIVIO Home">
+        <div class="logo-symbol" aria-hidden="true">
+          <span class="square-back"></span>
+          <span class="square-front"></span>
+        </div>
+        <span class="brand-name">CREATIVIO</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#approach" class="nav-link">Process</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="#contact" class="btn-talk-cta">
+          <span>Let's Talk</span>
+          <span class="btn-arrow">&nearr;</span>
+        </a>
+
+        <!-- Mobile Circular Hamburger Toggle -->
+        <button type="button" class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-content-pane glass-panel">
+      <div class="drawer-header-row">
+        <div class="brand-logo">
+          <div class="logo-symbol">
+            <span class="square-back"></span>
+            <span class="square-front"></span>
+          </div>
+          <span class="brand-name">CREATIVIO</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <a href="#hero" class="drawer-link">01 // Home</a>
+        <a href="#services" class="drawer-link">02 // Services</a>
+        <a href="#approach" class="drawer-link">03 // Process</a>
+        <a href="#work" class="drawer-link">04 // Selected Work</a>
+        <a href="#why" class="drawer-link">05 // Why Us</a>
+        <a href="#testimonials" class="drawer-link">06 // Reviews</a>
+        <a href="#contact" class="drawer-link">07 // Start a Project</a>
+      </nav>
+
+      <div class="drawer-footer-row">
+        <span class="drawer-tagline">PREMIUM GLASSMORPHISM STUDIO</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 01 — HERO
+       ========================================================================= -->
+  <section class="creativio-hero" id="hero" aria-label="Hero Section">
+    <!-- Hero Background Image Stage with 3D Glass Ribbon -->
+    <div class="hero-bg-stage" aria-hidden="true">
+      <img
+        src="assets/images/hero-glass-background.jpg"
+        alt="Translucent 3D glass ribbon loop with soft blue reflections"
+        class="hero-bg-img"
+        id="heroGlassBg"
+        loading="eager"
+      >
+      <div class="hero-radial-scrim"></div>
+    </div>
+
+    <div class="creativio-container hero-container">
+      
+      <!-- Upper Main Hero Grid -->
+      <div class="hero-content-grid">
+        
+        <!-- Left: Headline & Actions -->
+        <div class="hero-text-block">
+          <div class="hero-kicker-pill glass-pill reveal-fade">
+            <span class="kicker-dot"></span>
+            <span class="kicker-label">CREATIVE DIGITAL STUDIO</span>
+          </div>
+
+          <h1 class="hero-title reveal-fade">
+            Designing<br>
+            Digital Experiences<br>
+            That <span class="gradient-blue-text">Convert.</span>
+          </h1>
+
+          <p class="hero-supporting-copy reveal-fade">
+            We craft modern, high-performing websites and brands that turn ideas into real business growth.
+          </p>
+
+          <div class="hero-actions-row reveal-fade">
+            <a href="#contact" class="btn-primary-white">
+              <span>Start a Project</span>
+              <span class="btn-diag-glyph">&nearr;</span>
+            </a>
+
+            <button type="button" class="btn-glass-secondary" id="heroShowreelBtn">
+              <span class="play-icon-triangle">&#9658;</span>
+              <span>Watch Showreel</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Floating Frosted-Glass Card (Nova SaaS) -->
+        <div class="hero-featured-card-wrapper reveal-fade">
+          <article class="featured-glass-card glass-panel" id="heroFeaturedCard">
+            <div class="featured-card-header">
+              <span class="featured-sub-badge">FEATURED WORK</span>
+              <span class="featured-cat-tag">SAAS &bull; 2026</span>
+            </div>
+
+            <div class="featured-thumb-container">
+              <img src="assets/images/hero-glass-background.jpg" alt="Nova SaaS Platform preview" class="featured-thumb-img">
+              <div class="featured-thumb-glow"></div>
+            </div>
+
+            <div class="featured-card-body">
+              <h3 class="featured-project-name">Nova SaaS</h3>
+              <p class="featured-project-blurb">
+                A complete digital experience for a next-generation SaaS brand.
+              </p>
+              <a href="#work" class="featured-explore-btn" aria-label="Explore Nova SaaS case study">
+                <span>View Case Study</span>
+                <span class="circle-arrow-glyph">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- Lower Hero: Glassmorphism Statistics Strip -->
+      <div class="hero-stats-wrapper reveal-fade">
+        <div class="glass-stats-strip glass-panel">
+          
+          <div class="stat-unit">
+            <div class="stat-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="stat-meta">
+              <div class="stat-number-row">
+                <span class="stat-number" data-target="120">120</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-desc">Projects Delivered</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-unit">
+            <div class="stat-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="stat-meta">
+              <div class="stat-number-row">
+                <span class="stat-number" data-target="80">80</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-desc">Happy Clients</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-unit">
+            <div class="stat-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="stat-meta">
+              <div class="stat-number-row">
+                <span class="stat-number" data-target="98">98</span><span class="stat-plus">%</span>
+              </div>
+              <span class="stat-desc">Client Satisfaction</span>
+            </div>
+          </div>
+
+          <div class="stat-divider" aria-hidden="true"></div>
+
+          <div class="stat-unit">
+            <div class="stat-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div class="stat-meta">
+              <div class="stat-number-row">
+                <span class="stat-number" data-target="4">4</span><span class="stat-plus">X</span>
+              </div>
+              <span class="stat-desc">Average Growth</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 02 — SERVICES (WHAT WE DO)
+       ========================================================================= -->
+  <section class="creativio-services" id="services" aria-label="Services Section">
+    <div class="creativio-container">
+      
+      <div class="section-heading-cluster reveal-on-scroll">
+        <span class="section-kicker-label">WHAT WE DO</span>
+        <h2 class="section-title">
+          Specialized Services Crafted for<br>
+          <span class="gradient-blue-text">Exceptional Performance.</span>
+        </h2>
+        <p class="section-lead-paragraph">
+          We combine human-centered design with modern technology stacks to build websites and products that leave lasting impressions.
+        </p>
+      </div>
+
+      <!-- 4 Translucent Glassmorphism Service Cards -->
+      <div class="services-cards-grid">
+        
+        <!-- Card 01: UI/UX Design -->
+        <article class="service-glass-card glass-panel reveal-on-scroll" data-light="left">
+          <div class="card-glass-glow glow-pos-1"></div>
+          <div class="card-inner-content">
+            <div class="service-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <span class="service-number">01</span>
+            <h3 class="service-card-title">UI / UX Design</h3>
+            <p class="service-card-description">
+              Intuitive, user-focused interfaces that engage visitors, simplify complex workflows, and deliver measurable business results.
+            </p>
+            <div class="service-card-footer">
+              <span class="service-tag">Figma &bull; Prototyping</span>
+              <button type="button" class="service-circle-arrow-btn" aria-label="Learn more about UI/UX Design">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 02: Web Development -->
+        <article class="service-glass-card glass-panel reveal-on-scroll" data-light="top">
+          <div class="card-glass-glow glow-pos-2"></div>
+          <div class="card-inner-content">
+            <div class="service-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <span class="service-number">02</span>
+            <h3 class="service-card-title">Web Development</h3>
+            <p class="service-card-description">
+              Fast, responsive and scalable web solutions built on clean semantic code, sub-second loading speeds, and robust architectures.
+            </p>
+            <div class="service-card-footer">
+              <span class="service-tag">HTML5 &bull; CSS3 &bull; Vanilla JS</span>
+              <button type="button" class="service-circle-arrow-btn" aria-label="Learn more about Web Development">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 03: Brand Identity -->
+        <article class="service-glass-card glass-panel reveal-on-scroll" data-light="right">
+          <div class="card-glass-glow glow-pos-3"></div>
+          <div class="card-inner-content">
+            <div class="service-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <span class="service-number">03</span>
+            <h3 class="service-card-title">Brand Identity</h3>
+            <p class="service-card-description">
+              Distinctive brand systems, visual guidelines, typography hierarchies, and tactile identities that build trust and market recognition.
+            </p>
+            <div class="service-card-footer">
+              <span class="service-tag">Design Systems &bull; Motion</span>
+              <button type="button" class="service-circle-arrow-btn" aria-label="Learn more about Brand Identity">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 04: Digital Growth -->
+        <article class="service-glass-card glass-panel reveal-on-scroll" data-light="bottom">
+          <div class="card-glass-glow glow-pos-4"></div>
+          <div class="card-inner-content">
+            <div class="service-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+            </div>
+            <span class="service-number">04</span>
+            <h3 class="service-card-title">Digital Growth</h3>
+            <p class="service-card-description">
+              Data-driven strategies, conversion rate optimization, technical SEO governance, and continuous iteration to grow your brand online.
+            </p>
+            <div class="service-card-footer">
+              <span class="service-tag">Analytics &bull; CRO Strategy</span>
+              <button type="button" class="service-circle-arrow-btn" aria-label="Learn more about Digital Growth">
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 03 — OUR APPROACH (Asymmetric Two-Column Composition)
+       ========================================================================= -->
+  <section class="creativio-approach" id="approach" aria-label="Our Approach Section">
+    <div class="creativio-container">
+      
+      <div class="approach-grid">
+        
+        <!-- Left: Abstract Dimensional Blue Visual in Translucent Frame -->
+        <div class="approach-visual-col reveal-on-scroll">
+          <div class="approach-glass-frame glass-panel">
+            <div class="frame-reflection-top"></div>
+            <img src="assets/images/hero-glass-background.jpg" alt="Abstract 3D dimensional blue glass visual" class="approach-img">
+            <div class="frame-caption-glass">
+              <span class="caption-label">COLLABORATIVE ARCHITECTURE</span>
+              <span class="caption-metric">04 Agile Delivery Cycles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Process Narrative & Interactive Steps -->
+        <div class="approach-content-col reveal-on-scroll">
+          <span class="section-kicker-label">OUR APPROACH</span>
+          <h2 class="section-title">
+            From Idea to <span class="gradient-blue-text">Impact.</span>
+          </h2>
+          <p class="approach-lead-copy">
+            A simple, collaborative process to turn your vision into a meaningful digital experience that connects with your audience and scales effortlessly.
+          </p>
+
+          <!-- 4 Sequential Process Steps -->
+          <div class="process-steps-list">
+            
+            <div class="process-step-item glass-panel active" data-step="1">
+              <div class="step-num-circle">01</div>
+              <div class="step-detail">
+                <h4 class="step-title">Discover</h4>
+                <p class="step-body">Understand the brand, audience, competitive whitespace, and core business objectives.</p>
+              </div>
+            </div>
+
+            <div class="process-step-item glass-panel" data-step="2">
+              <div class="step-num-circle">02</div>
+              <div class="step-detail">
+                <h4 class="step-title">Design</h4>
+                <p class="step-body">Develop the visual direction, design tokens, tactile micro-interactions, and user experience.</p>
+              </div>
+            </div>
+
+            <div class="process-step-item glass-panel" data-step="3">
+              <div class="step-num-circle">03</div>
+              <div class="step-detail">
+                <h4 class="step-title">Develop</h4>
+                <p class="step-body">Build responsive, high-performance digital products engineered on lean web standards.</p>
+              </div>
+            </div>
+
+            <div class="process-step-item glass-panel" data-step="4">
+              <div class="step-num-circle">04</div>
+              <div class="step-detail">
+                <h4 class="step-title">Deliver</h4>
+                <p class="step-body">Launch, optimize with real user metrics, and continuously iterate to sustain compound market growth.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 04 — FEATURED PROJECTS (Selected Work)
+       ========================================================================= -->
+  <section class="creativio-work" id="work" aria-label="Featured Projects Section">
+    <div class="creativio-container">
+      
+      <div class="work-header-row reveal-on-scroll">
+        <div>
+          <span class="section-kicker-label">FEATURED PROJECTS</span>
+          <h2 class="section-title">
+            Selected Work.<br>
+            <span class="gradient-blue-text">Engineered for Impact.</span>
+          </h2>
+        </div>
+        <p class="work-header-sub">
+          Digital experiences designed to make an impact across modern enterprises, SaaS platforms, and luxury e-commerce.
+        </p>
+      </div>
+
+      <!-- Asymmetric Project Gallery Grid -->
+      <div class="projects-asymmetric-grid">
+        
+        <!-- Project 01: Large Featured (Nova SaaS) -->
+        <article class="project-card card-large-featured glass-panel reveal-on-scroll" data-project="nova-saas">
+          <div class="project-media-frame">
+            <img src="assets/images/hero-glass-background.jpg" alt="NOVA SAAS digital platform" class="project-img">
+            <div class="project-hover-overlay">
+              <span class="overlay-cta-pill">View Case Study &nearr;</span>
+            </div>
+          </div>
+          <div class="project-metadata-panel">
+            <div class="meta-tags-row">
+              <span class="meta-tag-category">TECHNOLOGY &bull; SAAS</span>
+              <span class="meta-tag-year">2026</span>
+            </div>
+            <h3 class="project-card-title">Nova SaaS</h3>
+            <p class="project-card-excerpt">
+              A comprehensive digital experience and customer acquisition portal for an enterprise AI analytics ecosystem.
+            </p>
+            <div class="project-card-action">
+              <span>Explore Platform &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02: Medium (Lumora Living) -->
+        <article class="project-card glass-panel reveal-on-scroll" data-project="lumora">
+          <div class="project-media-frame">
+            <img src="assets/images/hero-glass-background.jpg" alt="Lumora Living interior e-commerce" class="project-img">
+            <div class="project-hover-overlay">
+              <span class="overlay-cta-pill">View Case Study &nearr;</span>
+            </div>
+          </div>
+          <div class="project-metadata-panel">
+            <div class="meta-tags-row">
+              <span class="meta-tag-category">E-COMMERCE &bull; FURNITURE</span>
+              <span class="meta-tag-year">2026</span>
+            </div>
+            <h3 class="project-card-title">Lumora Living</h3>
+            <p class="project-card-excerpt">
+              Artisanal oak furniture and ambient alabaster lighting showcase with tactile e-commerce shopping.
+            </p>
+            <div class="project-card-action">
+              <span>Explore Platform &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03: Medium (Nexora) -->
+        <article class="project-card glass-panel reveal-on-scroll" data-project="nexora">
+          <div class="project-media-frame">
+            <img src="assets/images/hero-glass-background.jpg" alt="Nexora strategy advisory" class="project-img">
+            <div class="project-hover-overlay">
+              <span class="overlay-cta-pill">View Case Study &nearr;</span>
+            </div>
+          </div>
+          <div class="project-metadata-panel">
+            <div class="meta-tags-row">
+              <span class="meta-tag-category">BUSINESS &bull; ADVISORY</span>
+              <span class="meta-tag-year">2026</span>
+            </div>
+            <h3 class="project-card-title">Nexora</h3>
+            <p class="project-card-excerpt">
+              Cinematic consultancy platform transforming corporate complexity into actionable growth trajectories.
+            </p>
+            <div class="project-card-action">
+              <span>Explore Platform &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04 (Solvix) -->
+        <article class="project-card glass-panel reveal-on-scroll" data-project="solvix">
+          <div class="project-media-frame">
+            <img src="assets/images/hero-glass-background.jpg" alt="Solvix digital solutions" class="project-img">
+            <div class="project-hover-overlay">
+              <span class="overlay-cta-pill">View Case Study &nearr;</span>
+            </div>
+          </div>
+          <div class="project-metadata-panel">
+            <div class="meta-tags-row">
+              <span class="meta-tag-category">DIGITAL SOLUTIONS &bull; AI</span>
+              <span class="meta-tag-year">2026</span>
+            </div>
+            <h3 class="project-card-title">Solvix</h3>
+            <p class="project-card-excerpt">
+              Vivid gradient digital agency website celebrating fluid interactive physics and autonomous AI engines.
+            </p>
+            <div class="project-card-action">
+              <span>Explore Platform &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 05 (Chronix) -->
+        <article class="project-card glass-panel reveal-on-scroll" data-project="chronix">
+          <div class="project-media-frame">
+            <img src="assets/images/hero-glass-background.jpg" alt="Chronix luxury timepieces" class="project-img">
+            <div class="project-hover-overlay">
+              <span class="overlay-cta-pill">View Case Study &nearr;</span>
+            </div>
+          </div>
+          <div class="project-metadata-panel">
+            <div class="meta-tags-row">
+              <span class="meta-tag-category">E-COMMERCE &bull; HOROLOGY</span>
+              <span class="meta-tag-year">2026</span>
+            </div>
+            <h3 class="project-card-title">Chronix</h3>
+            <p class="project-card-excerpt">
+              Swiss horological showcase with photorealistic luxury timepieces and bespoke calibre configurations.
+            </p>
+            <div class="project-card-action">
+              <span>Explore Platform &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 06 (Atelier) -->
+        <article class="project-card glass-panel reveal-on-scroll" data-project="atelier">
+          <div class="project-media-frame">
+            <img src="assets/images/hero-glass-background.jpg" alt="Atelier architecture studio" class="project-img">
+            <div class="project-hover-overlay">
+              <span class="overlay-cta-pill">View Case Study &nearr;</span>
+            </div>
+          </div>
+          <div class="project-metadata-panel">
+            <div class="meta-tags-row">
+              <span class="meta-tag-category">ARCHITECTURE &bull; INTERIORS</span>
+              <span class="meta-tag-year">2026</span>
+            </div>
+            <h3 class="project-card-title">Atelier</h3>
+            <p class="project-card-excerpt">
+              Architectural studio portfolio formatted as an interactive field journal with blueprints and structural archives.
+            </p>
+            <div class="project-card-action">
+              <span>Explore Platform &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 05 — WHY CREATIVIO
+       ========================================================================= -->
+  <section class="creativio-why" id="why" aria-label="Why Creativio Section">
+    <div class="creativio-container">
+      
+      <div class="section-heading-cluster reveal-on-scroll">
+        <span class="section-kicker-label">OUR DISTINCTIVE ADVANTAGE</span>
+        <h2 class="section-title">
+          More Than Just<br>
+          <span class="gradient-blue-text">Good Design.</span>
+        </h2>
+        <p class="section-lead-paragraph">
+          We combine architectural design discipline with production-ready software engineering to deliver lasting business equity.
+        </p>
+      </div>
+
+      <!-- 4 Key Strengths Grid with Layered Glass Elements -->
+      <div class="strengths-grid">
+        
+        <div class="strength-card glass-panel reveal-on-scroll">
+          <div class="strength-number">01</div>
+          <h3 class="strength-heading">Purpose-Driven Design</h3>
+          <p class="strength-description">
+            Every pixel, micro-interaction, and layout decision stems from rigorous user behavior analysis and clear business conversion targets.
+          </p>
+          <div class="strength-accent-line"></div>
+        </div>
+
+        <div class="strength-card glass-panel reveal-on-scroll">
+          <div class="strength-number">02</div>
+          <h3 class="strength-heading">Performance-Focused</h3>
+          <p class="strength-description">
+            Zero bloat, sub-second First Contentful Paint benchmarks, and hardware-accelerated animations that achieve 99+ Google Lighthouse scores.
+          </p>
+          <div class="strength-accent-line"></div>
+        </div>
+
+        <div class="strength-card glass-panel reveal-on-scroll">
+          <div class="strength-number">03</div>
+          <h3 class="strength-heading">Seamless User Experiences</h3>
+          <p class="strength-description">
+            Tactile glassmorphic surfaces, fluid navigation pathways, and accessible contrast ratios engineered for high dwell times and retention.
+          </p>
+          <div class="strength-accent-line"></div>
+        </div>
+
+        <div class="strength-card glass-panel reveal-on-scroll">
+          <div class="strength-number">04</div>
+          <h3 class="strength-heading">Scalable Digital Solutions</h3>
+          <p class="strength-description">
+            Modular component token systems that expand seamlessly as your product catalogue, international markets, and traffic scale.
+          </p>
+          <div class="strength-accent-line"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 06 — TESTIMONIALS (Interactive Glassmorphism Slider)
+       ========================================================================= -->
+  <section class="creativio-testimonials" id="testimonials" aria-label="Client Testimonials">
+    <div class="creativio-container">
+      
+      <div class="section-heading-cluster reveal-on-scroll">
+        <span class="section-kicker-label">TESTIMONIALS</span>
+        <h2 class="section-title">
+          What Our <span class="gradient-blue-text">Clients Say.</span>
+        </h2>
+      </div>
+
+      <!-- Large Frosted-Glass Testimonial Slider Container -->
+      <div class="testimonial-slider-container glass-panel reveal-on-scroll">
+        <div class="slider-track" id="testimonialTrack">
+          
+          <!-- Testimonial 01 -->
+          <div class="testimonial-slide active">
+            <div class="quote-stars">★★★★★</div>
+            <p class="quote-body">
+              &ldquo;CREATIVIO transformed our digital brand from an ordinary software tool into a market-defining enterprise platform. The frosted glass aesthetic and sub-second performance immediately elevated our credibility with Tier-1 institutional clients.&rdquo;
+            </p>
+            <div class="quote-author-row">
+              <div class="author-avatar-glass">EL</div>
+              <div class="author-meta">
+                <span class="author-name">Elena Rostova</span>
+                <span class="author-role">Chief Product Officer &bull; Nova Global Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 02 -->
+          <div class="testimonial-slide">
+            <div class="quote-stars">★★★★★</div>
+            <p class="quote-body">
+              &ldquo;Working with CREATIVIO was effortless. Their 4-step collaborative process removed all ambiguity, and our e-commerce conversion rate increased by 42% within the first 60 days of launch. Simply world-class art direction.&rdquo;
+            </p>
+            <div class="quote-author-row">
+              <div class="author-avatar-glass">MK</div>
+              <div class="author-meta">
+                <span class="author-name">Marcus Vance</span>
+                <span class="author-role">Founder &amp; CEO &bull; Lumora Living Group</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 03 -->
+          <div class="testimonial-slide">
+            <div class="quote-stars">★★★★★</div>
+            <p class="quote-body">
+              &ldquo;The glassmorphism design language CREATIVIO built gives our advisory firm a contemporary, authoritative identity without sacrificing readability. They deliver both breathtaking visual art and rock-solid code.&rdquo;
+            </p>
+            <div class="quote-author-row">
+              <div class="author-avatar-glass">SK</div>
+              <div class="author-meta">
+                <span class="author-name">Sarah Kenner</span>
+                <span class="author-role">Managing Director &bull; Nexora Strategy Advisory</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Navigation Controls -->
+        <div class="slider-controls-row">
+          <button type="button" class="slider-arrow-btn prev-btn" id="prevTestimonialBtn" aria-label="Previous Testimonial">&larr;</button>
+          
+          <div class="slider-dots-wrap" id="sliderDots">
+            <span class="slider-dot active" data-index="0"></span>
+            <span class="slider-dot" data-index="1"></span>
+            <span class="slider-dot" data-index="2"></span>
+          </div>
+
+          <button type="button" class="slider-arrow-btn next-btn" id="nextTestimonialBtn" aria-label="Next Testimonial">&rarr;</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 07 — FINAL CTA
+       ========================================================================= -->
+  <section class="creativio-cta" id="contact" aria-label="Start a Project">
+    <div class="creativio-container">
+      
+      <div class="cta-glass-banner glass-panel reveal-on-scroll">
+        <div class="cta-inner-radial"></div>
+
+        <div class="cta-content-wrapper">
+          <span class="section-kicker-label">INITIATE COLLABORATION</span>
+          <h2 class="cta-headline">
+            Have an Idea?<br>
+            Let's Create Something<br>
+            <span class="gradient-blue-text">Extraordinary.</span>
+          </h2>
+          <p class="cta-subtext">
+            Let's turn your vision into a digital experience that makes a lasting difference. Share your project parameters below.
+          </p>
+
+          <!-- Interactive Glassmorphic Project Inquiry Form -->
+          <form class="cta-inquiry-form" id="creativioInquiryForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <input type="text" id="userName" name="name" placeholder="Your Name *" required class="glass-input">
+              </div>
+              <div class="form-group">
+                <input type="email" id="userEmail" name="email" placeholder="Corporate Email *" required class="glass-input">
+              </div>
+              <div class="form-group">
+                <input type="text" id="userCompany" name="company" placeholder="Company / Brand" class="glass-input">
+              </div>
+              <div class="form-group">
+                <select id="userScope" name="scope" class="glass-input glass-select">
+                  <option value="uiux">UI / UX Design &amp; Prototyping</option>
+                  <option value="web">Full Web Development</option>
+                  <option value="brand">Brand Identity System</option>
+                  <option value="growth">Digital Growth &amp; Strategy</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <textarea id="userMessage" name="message" rows="3" placeholder="Tell us about your project ambitions..." class="glass-input"></textarea>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-primary-white">
+                <span>Start Your Project</span>
+                <span class="btn-diag-glyph">&nearr;</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Transmission Feedback Alert -->
+            <div class="form-feedback-box" id="formFeedbackAlert"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 08 — FOOTER
+       ========================================================================= -->
+  <footer class="creativio-footer" id="about">
+    <div class="creativio-container">
+      <div class="footer-top-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand-side">
+          <a href="#hero" class="brand-logo footer-logo">
+            <div class="logo-symbol">
+              <span class="square-back"></span>
+              <span class="square-front"></span>
+            </div>
+            <span class="brand-name">CREATIVIO</span>
+          </a>
+          <p class="footer-tagline-text">
+            A premier creative digital studio specializing in UI/UX design, modern web development, and digital growth. Tactile glassmorphism engineered for high-performing brands.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-col">
+          <span class="footer-heading">NAVIGATION</span>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Selected Work</a></li>
+            <li><a href="#approach">Our Process</a></li>
+            <li><a href="#why">Why Creativio</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Links -->
+        <div class="footer-col">
+          <span class="footer-heading">SERVICES</span>
+          <ul>
+            <li><a href="#services">UI / UX Design</a></li>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Brand Identity Systems</a></li>
+            <li><a href="#services">Conversion Optimization</a></li>
+            <li><a href="#services">Digital Growth Strategy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Connect Placeholders -->
+        <div class="footer-col">
+          <span class="footer-heading">CONNECT</span>
+          <ul>
+            <li><a href="mailto:hello@creativio-studio.internal">hello@creativio-studio.internal</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter &nearr;</a></li>
+            <li><a href="https://dribbble.com" target="_blank" rel="noopener">Dribbble &nearr;</a></li>
+            <li><span>Zurich &bull; London &bull; NYC</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 CREATIVIO Digital Studio. All rights reserved. Built for VERHOST Digital Works.</span>
+        <div class="footer-color-tokens">
+          <span class="color-dot dot-navy" title="Deep Navy #0B1748"></span>
+          <span class="color-dot dot-royal" title="Royal Blue #1D2EBB"></span>
+          <span class="color-dot dot-vivid" title="Vivid Blue #2848E8"></span>
+          <span class="color-dot dot-periwinkle" title="Periwinkle #7895F8"></span>
+          <span class="color-dot dot-ice" title="Ice Blue #ADD2FA"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE MODALS
+       ========================================================================= -->
+  <!-- Showreel Modal -->
+  <div class="creativio-modal-backdrop" id="showreelModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="creativio-modal-card glass-panel">
+      <div class="modal-card-header">
+        <span class="modal-tag">CREATIVIO SHOWREEL // 2026</span>
+        <button type="button" class="modal-close-btn" id="closeShowreelBtn" aria-label="Close Showreel">&times;</button>
+      </div>
+      <div class="modal-video-frame">
+        <img src="assets/images/hero-glass-background.jpg" alt="4K Showreel Presentation preview">
+        <div class="modal-video-scrim">
+          <span class="video-indicator-badge">&#9658; 4K ULTRA-HD SHOWREEL ACTIVE &bull; 01:30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

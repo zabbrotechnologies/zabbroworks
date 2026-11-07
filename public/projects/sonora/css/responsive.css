@@ -1,0 +1,189 @@
+/* ==========================================================================
+   SONORA® — Responsive Stylesheet
+   Breakpoints: 1200px, 1024px, 768px, 480px
+   ========================================================================== */
+
+/* Large Tablets & Small Desktops (<= 1200px) */
+@media (max-width: 1200px) {
+  .hero-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .release-showcase-grid {
+    gap: 3rem;
+  }
+
+  .artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .releases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .soundlab-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-viewport-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    min-height: 380px;
+  }
+
+  .release-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .sessions-media-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .stay-frequency-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .sf-cta-row {
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1.5rem;
+  }
+
+  .featured-release-section,
+  .soundlab-section,
+  .archive-section,
+  .artists-section,
+  .sessions-section,
+  .philosophy-section,
+  .stay-frequency-section {
+    padding: 5rem 0;
+  }
+
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .status-live-pill {
+    display: none;
+  }
+
+  .sonora-hero {
+    padding: 7rem 1.5rem 3.5rem;
+  }
+
+  .hero-meta-strip {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-headline {
+    font-size: 3.25rem;
+  }
+
+  .orange-frequency-line {
+    display: none;
+  }
+
+  .soundlab-header-row,
+  .archive-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .releases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-frequency-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-strip {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .modal-split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: clamp(1.85rem, 8vw, 2.6rem);
+    word-break: break-word;
+  }
+
+  .track-technical-pills {
+    gap: 0.5rem;
+  }
+
+  .rack-btn-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-sonora-primary, .btn-sonora-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Extra Small Phones (<= 360px) */
+@media (max-width: 360px) {
+  .hero-headline {
+    font-size: 1.65rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}

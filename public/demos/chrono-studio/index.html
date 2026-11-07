@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRONO STUDIO &mdash; Generative Temporal Observatory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #F4F4F0;
+      color: #111;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E2E2DC;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .modes {
+      display: flex;
+      gap: 1rem;
+    }
+    .mode-btn {
+      background: none;
+      border: 1px solid #CCC;
+      padding: 0.35rem 0.85rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mode-btn.active, .mode-btn:hover {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    /* Main Canvas Stage */
+    .stage {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .center-readout {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      pointer-events: none;
+    }
+    .main-clock {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: #111;
+      margin-bottom: 0.5rem;
+    }
+    .clock-meta {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+    /* Bottom strip */
+    .zones-strip {
+      border-top: 1px solid #E2E2DC;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #FAF9F6;
+    }
+    .zone-cell {
+      padding: 1.25rem 2.5rem;
+      border-right: 1px solid #E2E2DC;
+    }
+    .zone-cell:last-child { border-right: none; }
+    .zone-city {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #777;
+      margin-bottom: 0.25rem;
+    }
+    .zone-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 800px) {
+      .zones-strip { grid-template-columns: 1fr 1fr; }
+      .zone-cell:nth-child(2n) { border-right: none; }
+      header { padding: 1rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Chrono Studio &bull; Observatory</div>
+    <div class="modes">
+      <button class="mode-btn active" onclick="setMode('orbital', this)">Orbital</button>
+      <button class="mode-btn" onclick="setMode('pulse', this)">Pulse</button>
+      <button class="mode-btn" onclick="setMode('matrix', this)">Matrix</button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <canvas id="timeCanvas"></canvas>
+    <div class="center-readout">
+      <div class="main-clock" id="mainTime">12:00:00</div>
+      <div class="clock-meta">ZURICH CENTRAL SOLAR HOROLOGY</div>
+    </div>
+  </main>
+
+  <div class="zones-strip">
+    <div class="zone-cell">
+      <div class="zone-city">Tokyo (JST +9)</div>
+      <div class="zone-time" id="tokyoTime">--:--:--</div>
+    </div>
+    <div class="zone-cell">
+      <div class="zone-city">London (GMT +0)</div>
+      <div class="zone-time" id="londonTime">--:--:--</div>
+    </div>
+    <div class="zone-cell">
+      <div class="zone-city">New York (EST -5)</div>
+      <div class="zone-time" id="nycTime">--:--:--</div>
+    </div>
+    <div class="zone-cell">
+      <div class="zone-city">San Francisco (PST -8)</div>
+      <div class="zone-time" id="sfTime">--:--:--</div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('timeCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, cx, cy;
+    let mode = 'orbital';
+    let mouse = { x: 0, y: 0 };
+
+    function resize() {
+      width = canvas.width = canvas.parentElement.clientWidth;
+      height = canvas.height = canvas.parentElement.clientHeight;
+      cx = width / 2;
+      cy = height / 2;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    function setMode(m, btn) {
+      mode = m;
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function updateClocks() {
+      const now = new Date();
+      const pad = n => String(n).padStart(2, '0');
+      
+      document.getElementById('mainTime').textContent = 
+        `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+
+      const opts = (tz) => ({ timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+      document.getElementById('tokyoTime').textContent = now.toLocaleTimeString('en-US', opts('Asia/Tokyo'));
+      document.getElementById('londonTime').textContent = now.toLocaleTimeString('en-US', opts('Europe/London'));
+      document.getElementById('nycTime').textContent = now.toLocaleTimeString('en-US', opts('America/New_York'));
+      document.getElementById('sfTime').textContent = now.toLocaleTimeString('en-US', opts('America/Los_Angeles'));
+    }
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    let angle = 0;
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      angle += 0.008;
+
+      if (mode === 'orbital') {
+        const radii = [140, 200, 260, 320];
+        radii.forEach((r, idx) => {
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.strokeStyle = '#E2E2DC';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          // Satellite dot
+          const offset = idx * 1.5;
+          const sx = cx + Math.cos(angle * (idx + 1) * 0.4 + offset) * r;
+          const sy = cy + Math.sin(angle * (idx + 1) * 0.4 + offset) * r;
+
+          ctx.beginPath();
+          ctx.arc(sx, sy, 4, 0, Math.PI * 2);
+          ctx.fillStyle = idx === 1 ? '#1F8F4C' : '#111';
+          ctx.fill();
+        });
+      } else if (mode === 'pulse') {
+        for (let i = 0; i < 60; i++) {
+          const theta = (i / 60) * Math.PI * 2 + angle * 0.2;
+          const len = (i % 5 === 0) ? 28 : 12;
+          const r1 = 220;
+          const r2 = r1 + len;
+          ctx.beginPath();
+          ctx.moveTo(cx + Math.cos(theta) * r1, cy + Math.sin(theta) * r1);
+          ctx.lineTo(cx + Math.cos(theta) * r2, cy + Math.sin(theta) * r2);
+          ctx.strokeStyle = (i % 5 === 0) ? '#111' : '#AAA';
+          ctx.lineWidth = (i % 5 === 0) ? 1.5 : 1;
+          ctx.stroke();
+        }
+      } else if (mode === 'matrix') {
+        const step = 40;
+        for (let x = 40; x < width; x += step) {
+          for (let y = 40; y < height; y += step) {
+            const d = Math.hypot(x - mouse.x, y - mouse.y);
+            const scale = Math.max(1, 6 - d * 0.02);
+            ctx.beginPath();
+            ctx.arc(x, y, scale, 0, Math.PI * 2);
+            ctx.fillStyle = scale > 3 ? '#1F8F4C' : '#DDD';
+            ctx.fill();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
+</body>
+</html>

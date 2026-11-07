@@ -1,0 +1,130 @@
+/* ==========================================================================
+   ARCHORA STUDIO — Responsive Stylesheet
+   ========================================================================== */
+
+/* Laptop / Medium Screens (Max 1366px) */
+@media (max-width: 1366px) {
+  .hero-editorial-viewport {
+    padding: 2rem 3rem 2rem;
+  }
+
+  .hero-left-column {
+    max-width: 400px;
+  }
+
+  .hero-right-nav {
+    right: 2rem;
+  }
+}
+
+/* Tablets (Max 1024px) */
+@media (max-width: 1024px) {
+  .hero-editorial-viewport {
+    padding: 1.75rem 2rem 1.75rem;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-editorial-viewport::before {
+    width: 65%;
+    background: linear-gradient(
+      to right,
+      rgba(248, 244, 238, 0.94) 0%,
+      rgba(248, 244, 238, 0.85) 60%,
+      transparent 100%
+    );
+  }
+
+  .hero-right-nav {
+    display: none; /* In tablet/mobile, right nav is hidden or simplified */
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .materials-showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .deliverables-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Mobile Devices (Max 768px) */
+@media (max-width: 768px) {
+  .hero-editorial-viewport {
+    padding: 1.5rem 1.25rem;
+    background-position: 65% center; /* Keep laptop visible as the main visual */
+  }
+
+  .hero-editorial-viewport::before {
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(248, 244, 238, 0.92) 0%,
+      rgba(248, 244, 238, 0.8) 50%,
+      rgba(248, 244, 238, 0.35) 100%
+    );
+  }
+
+  .top-nav-center {
+    display: none;
+  }
+
+  .hero-main-layout {
+    margin: 2.5rem 0;
+  }
+
+  .hero-left-column {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .hero-editorial-title {
+    font-size: clamp(1.85rem, 8vw, 2.6rem);
+    word-break: break-word;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    justify-content: center;
+  }
+
+  .hero-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .case-section {
+    padding: 5rem 1.25rem;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}

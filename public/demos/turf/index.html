@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrimeTurf Arena | Floodlit Football & Box Cricket Turf Booking</title>
+  <meta name="description" content="Book 5-a-side, 7-a-side football and box cricket slots at PrimeTurf Arena. Real-time availability, floodlit synthetic turf surface, and transparent hourly rates.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans / Outfit typography system -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Local Demo Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation (Corrected 100% Website Replica) -->
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#hero" class="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <span class="brand-title">
+            PrimeTurf <span style="color: var(--brand-green);">Arena</span>
+          </span>
+        </a>
+
+        <nav class="nav-menu">
+          <a href="#hero" class="nav-link active">Home</a>
+          <a href="#slot-finder" class="nav-link">Turf</a>
+          <a href="#rates" class="nav-link">Pricing</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#playing-experience" class="nav-link">About</a>
+          <a href="#amenities" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#slot-finder" class="nav-link" style="font-weight: 700; color: var(--text-primary); text-decoration: none;">My Bookings</a>
+          <a href="#slot-finder" class="btn btn-primary">Book Now</a>
+          <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-title">PrimeTurf <span style="color: var(--brand-green);">Arena</span></div>
+      <button type="button" id="close-drawer" style="font-size: 24px; background: none; border: none; cursor: pointer;">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" onclick="closeDrawer()">Home</a></li>
+      <li><a href="#slot-finder" onclick="closeDrawer()">Turf</a></li>
+      <li><a href="#rates" onclick="closeDrawer()">Pricing</a></li>
+      <li><a href="#gallery" onclick="closeDrawer()">Gallery</a></li>
+      <li><a href="#playing-experience" onclick="closeDrawer()">About</a></li>
+      <li><a href="#amenities" onclick="closeDrawer()">Contact</a></li>
+      <li><a href="#slot-finder" onclick="closeDrawer()">My Bookings</a></li>
+    </ul>
+    <a href="#slot-finder" class="btn btn-primary" onclick="closeDrawer()" style="width: 100%; text-align: center;">
+      Book Slot Now &rarr;
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <!-- Local Turf Photograph Background -->
+    <img src="images/turf-hero.jpg" alt="Real Floodlit Artificial Football Turf Pitch at PrimeTurf Arena" class="hero-bg-img">
+
+    <div class="container relative-z">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          PRIME TURF ARENA · MAIN PITCH
+        </div>
+
+        <h1 class="hero-title">
+          YOUR GAME.<br>
+          <span class="hero-highlight-green">YOUR TIME.</span><br>
+          YOUR TURF.
+        </h1>
+
+        <p class="hero-description">
+          Check today's availability, choose your slot, and book the pitch instantly.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#slot-finder" class="btn btn-primary btn-hero-cta">
+            Book Your Slot &rarr;
+          </a>
+
+          <a href="#playing-experience" class="hero-play-btn">
+            <span class="play-icon-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </span>
+            <span>View Turf Details</span>
+          </a>
+        </div>
+
+        <!-- Feature Highlights Bar (3 Items in a Row) -->
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item-title">Live availability</div>
+              <div class="trust-item-desc">Check real-time slots</div>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item-title">Floodlit pitch</div>
+              <div class="trust-item-desc">Play day or night</div>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item-title">Instant confirmation</div>
+              <div class="trust-item-desc">Secure and easy booking</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Slot Finder Booking Section (2-Column Surface) -->
+  <section class="booking-section" id="slot-finder">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">RESERVE YOUR TIME</span>
+        <h2 class="section-title">QUICK SLOT BOOKING</h2>
+        <p class="lead">Select your game mode, date, and time slot to complete your reservation.</p>
+      </div>
+
+      <div class="booking-workspace-grid">
+        <!-- LEFT SURFACE: Selection Flow (65%) -->
+        <div class="booking-left-surface">
+          <!-- 01. SPORT -->
+          <div class="booking-form-row">
+            <label class="field-section-label">01. SPORT</label>
+            <div class="sport-segmented-control">
+              <button type="button" class="sport-btn active" id="sport-football" onclick="setSport('football')">⚽ Football</button>
+              <button type="button" class="sport-btn" id="sport-cricket" onclick="setSport('cricket')">🏏 Box Cricket</button>
+            </div>
+          </div>
+
+          <div class="booking-divider"></div>
+
+          <!-- 02. DURATION -->
+          <div class="booking-form-row">
+            <div class="row-header">
+              <label class="field-section-label">02. DURATION</label>
+              <span class="field-hint-text">Windows update automatically</span>
+            </div>
+            <div class="duration-segmented-control">
+              <button type="button" class="duration-btn active" id="dur-60" onclick="setDuration(60)">60 mins</button>
+              <button type="button" class="duration-btn" id="dur-90" onclick="setDuration(90)">90 mins</button>
+              <button type="button" class="duration-btn" id="dur-120" onclick="setDuration(120)">120 mins</button>
+            </div>
+          </div>
+
+          <div class="booking-divider"></div>
+
+          <!-- 03. DATE SELECTOR -->
+          <div class="booking-form-row">
+            <label class="field-section-label">03. DATE</label>
+            <div class="date-selector-grid" id="date-selector-container">
+              <!-- Dates rendered dynamically via JS -->
+            </div>
+          </div>
+
+          <div class="booking-divider"></div>
+
+          <!-- 04. AVAILABLE TIME SLOTS -->
+          <div class="booking-form-row">
+            <div class="slots-header-row">
+              <label class="field-section-label">04. AVAILABLE TIME SLOTS</label>
+              <span class="live-badge">🟢 Real-time slots</span>
+            </div>
+
+            <div class="time-slots-grid" id="slots-grid-container">
+              <!-- Slot cards rendered dynamically via JS -->
+            </div>
+
+            <!-- Next Available Shortcut Banner -->
+            <div class="next-available-banner" id="next-banner">
+              <div>
+                <span class="next-tag">NEXT AVAILABLE</span>
+                <div class="next-slot-text">04:00 PM – 05:00 PM · ₹1,000</div>
+              </div>
+              <button type="button" class="btn-next-book" onclick="selectSlot('s6', '04:00 PM – 05:00 PM', 1000)">
+                SELECT THIS SLOT
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SURFACE: Sticky Summary Panel (35%) -->
+        <div class="summary-panel">
+          <h3 class="summary-panel-title">YOUR BOOKING</h3>
+          
+          <div class="summary-facility-meta">
+            <div class="facility-name">PrimeTurf Arena</div>
+            <div class="facility-pitch">Main Pitch</div>
+          </div>
+
+          <div class="summary-details-list">
+            <div class="summary-detail-item">
+              <span class="detail-item-label">Sport:</span>
+              <span class="detail-item-value" id="summary-sport">Football</span>
+            </div>
+            <div class="summary-detail-item">
+              <span class="detail-item-label">Duration:</span>
+              <span class="detail-item-value" id="summary-duration">60 mins</span>
+            </div>
+            <div class="summary-detail-item">
+              <span class="detail-item-label">Date:</span>
+              <span class="detail-item-value" id="summary-date">Today</span>
+            </div>
+            <div class="summary-detail-item">
+              <span class="detail-item-label">Time Slot:</span>
+              <span class="detail-item-value" id="summary-slot" style="color: var(--brand-green);">Select a slot</span>
+            </div>
+          </div>
+
+          <div class="summary-detail-item" style="margin-top: 4px;">
+            <span class="detail-item-label">Total Payable:</span>
+            <span class="summary-total-amount" id="summary-total">₹0</span>
+          </div>
+
+          <button type="button" class="btn btn-primary" style="width: 100%;" onclick="confirmBookingAlert()">
+            PROCEED TO BOOKING &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR BETTER GAMES (Requirement 6) -->
+  <section class="better-games-section" id="playing-experience">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">PLAYING EXPERIENCE</span>
+        <h2 class="section-title">BUILT FOR BETTER GAMES</h2>
+        <p class="lead">Everything about the arena is designed to make your game easier, safer and more enjoyable.</p>
+      </div>
+
+      <div class="better-games-grid">
+        <div class="better-game-card">
+          <div class="card-number-badge">01</div>
+          <div class="card-image-wrapper">
+            <img src="images/surface.jpg" alt="Quality Playing Surface" class="better-game-img">
+          </div>
+          <div class="card-content">
+            <h3 class="card-heading">QUALITY PLAYING SURFACE</h3>
+            <p class="card-body-text">
+              Consistent 50mm synthetic mono-filament grass with rubber infill designed for regular football and box-cricket sessions.
+            </p>
+          </div>
+        </div>
+
+        <div class="better-game-card">
+          <div class="card-number-badge">02</div>
+          <div class="card-image-wrapper">
+            <img src="images/hero.jpg" alt="Play Under The Lights" class="better-game-img">
+          </div>
+          <div class="card-content">
+            <h3 class="card-heading">PLAY UNDER THE LIGHTS</h3>
+            <p class="card-body-text">
+              Bright, evenly distributed High-Lux LED floodlighting system for crystal-clear visibility during evening and night matches.
+            </p>
+          </div>
+        </div>
+
+        <div class="better-game-card">
+          <div class="card-number-badge">03</div>
+          <div class="card-image-wrapper">
+            <img src="images/goal.jpg" alt="Space To Play Your Way" class="better-game-img">
+          </div>
+          <div class="card-content">
+            <h3 class="card-heading">SPACE TO PLAY YOUR WAY</h3>
+            <p class="card-body-text">
+              Fully enclosed arena with heavy-duty safety netting, suitable for 5-a-side, 7-a-side football, and competitive box cricket.
+            </p>
+          </div>
+        </div>
+
+        <div class="better-game-card">
+          <div class="card-number-badge">04</div>
+          <div class="card-image-wrapper">
+            <img src="images/facility.jpg" alt="Ready For Every Session" class="better-game-img">
+          </div>
+          <div class="card-content">
+            <h3 class="card-heading">READY FOR EVERY SESSION</h3>
+            <p class="card-body-text">
+              Clean, brushed surface with maintained infill and prepared facilities before every team steps onto the pitch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESSENTIAL ARENA AMENITIES (Requirement 8) -->
+  <section class="amenities-section" id="amenities">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">FACILITIES & COMFORT</span>
+        <h2 class="section-title">ESSENTIAL ARENA AMENITIES</h2>
+        <p class="lead">Everything you need before, during and after the game.</p>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-item-box">
+          <div class="amenity-check-icon">✓</div>
+          <div>
+            <h4 class="amenity-name">High-Lux Floodlights</h4>
+            <p class="amenity-desc">8x High-lux anti-glare LED illumination for crystal-clear night play.</p>
+          </div>
+        </div>
+
+        <div class="amenity-item-box">
+          <div class="amenity-check-icon">✓</div>
+          <div>
+            <h4 class="amenity-name">Dedicated Parking</h4>
+            <p class="amenity-desc">Free, safe parking space for cars and bikes inside venue campus.</p>
+          </div>
+        </div>
+
+        <div class="amenity-item-box">
+          <div class="amenity-check-icon">✓</div>
+          <div>
+            <h4 class="amenity-name">Changing Rooms & Washrooms</h4>
+            <p class="amenity-desc">Clean, sanitized changing rooms with private lockers and showers.</p>
+          </div>
+        </div>
+
+        <div class="amenity-item-box">
+          <div class="amenity-check-icon">✓</div>
+          <div>
+            <h4 class="amenity-name">Filtered Drinking Water</h4>
+            <p class="amenity-desc">RO cold drinking water dispenser next to player dugouts.</p>
+          </div>
+        </div>
+
+        <div class="amenity-item-box">
+          <div class="amenity-check-icon">✓</div>
+          <div>
+            <h4 class="amenity-name">Covered Player Bench</h4>
+            <p class="amenity-desc">Shaded dugout seating for substitute players and spectators.</p>
+          </div>
+        </div>
+
+        <div class="amenity-item-box">
+          <div class="amenity-check-icon">✓</div>
+          <div>
+            <h4 class="amenity-name">First Aid & Equipment</h4>
+            <p class="amenity-desc">First aid kit, bibs, and match balls provided for football & cricket.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta-center">
+        <a href="#playing-experience" class="btn btn-outline">
+          View Pitch Specifications & Facilities &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENT RATES (Requirement 9) -->
+  <section class="transparent-rates-section" id="rates">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">TRANSPARENT RATES</span>
+        <h2 class="section-title">Hourly Booking Rates</h2>
+        <p class="lead">Know the price before you book. No hidden charges.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="rate-card">
+          <span class="rate-category">MORNING OFF-PEAK</span>
+          <div class="rate-time">06:00 AM – 09:00 AM</div>
+          <div class="rate-price">₹800 <span class="per-hour">/ hour</span></div>
+          <p class="rate-desc">Ideal for early morning practice and fitness sessions.</p>
+          <a href="#slot-finder" class="btn btn-outline btn-full-width">
+            BOOK A SLOT &rarr;
+          </a>
+        </div>
+
+        <div class="rate-card featured">
+          <span class="featured-pill">BEST VALUE</span>
+          <span class="rate-category">REGULAR DAY</span>
+          <div class="rate-time">09:00 AM – 05:00 PM</div>
+          <div class="rate-price">₹1,000 <span class="per-hour">/ hour</span></div>
+          <p class="rate-desc">Standard daytime casual games, practice & tournaments.</p>
+          <a href="#slot-finder" class="btn btn-primary btn-full-width">
+            BOOK A SLOT &rarr;
+          </a>
+        </div>
+
+        <div class="rate-card">
+          <span class="rate-category">PRIME EVENING</span>
+          <div class="rate-time">05:00 PM – 11:00 PM</div>
+          <div class="rate-price">₹1,200 <span class="per-hour">/ hour</span></div>
+          <p class="rate-desc">Floodlit prime night matches under high-lux LED lights.</p>
+          <a href="#slot-finder" class="btn btn-outline btn-full-width">
+            BOOK A SLOT &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITY PROOF (Requirement 10) -->
+  <section class="facility-proof-section" id="gallery">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">VISUAL PROOF</span>
+        <h2 class="section-title">FACILITY PROOF</h2>
+        <p class="lead">See the pitch, facilities and playing environment before you book.</p>
+      </div>
+
+      <div class="facility-proof-grid">
+        <div class="proof-card">
+          <img src="images/grass.jpg" alt="Drone View" class="proof-img">
+          <div class="proof-overlay">
+            <span class="proof-category">AERIAL VIEW</span>
+            <span class="proof-title">Drone Aerial View of Turf</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="images/hero.jpg" alt="Lighting" class="proof-img">
+          <div class="proof-overlay">
+            <span class="proof-category">LIGHTING</span>
+            <span class="proof-title">Floodlit Evening Arena</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="images/surface.jpg" alt="Surface" class="proof-img">
+          <div class="proof-overlay">
+            <span class="proof-category">SURFACE</span>
+            <span class="proof-title">50mm Synthetic Turf Fiber</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="images/goal.jpg" alt="Pitch Detail" class="proof-img">
+          <div class="proof-overlay">
+            <span class="proof-category">PITCH DETAIL</span>
+            <span class="proof-title">Enclosed Pitch & Netting</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="images/facility.jpg" alt="Access" class="proof-img">
+          <div class="proof-overlay">
+            <span class="proof-category">ACCESS</span>
+            <span class="proof-title">Parking & Main Entrance</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="images/dugout.jpg" alt="Amenities" class="proof-img">
+          <div class="proof-overlay">
+            <span class="proof-category">AMENITIES</span>
+            <span class="proof-title">Player Seating Area</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TEAMS SAY (Requirement 11) -->
+  <section class="what-teams-say-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">PLAYER FEEDBACK</span>
+        <h2 class="section-title">WHAT TEAMS SAY</h2>
+        <p class="lead">Verified reviews from players who book at PrimeTurf Arena.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Best 5-v-5 turf in the area! The shock absorption on the grass is top notch, and the lights are really bright for night games."</p>
+          <div class="testimonial-author">
+            <strong>— Rahul Sharma</strong>, <span>Football 5-v-5</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Smooth booking experience. We booked a weekend 90-min box cricket slot and the ground was prepared on time with fresh netting."</p>
+          <div class="testimonial-author">
+            <strong>— Vikram Verma</strong>, <span>Box Cricket</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Clean washrooms, cold drinking water, and plenty of parking. Highly recommend for corporate weekend matches!"</p>
+          <div class="testimonial-author">
+            <strong>— Ankit Patel</strong>, <span>Corporate League</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Real-time availability saves so much time. No back and forth calls required. 10/10 venue experience!"</p>
+          <div class="testimonial-author">
+            <strong>— Sameer Khan</strong>, <span>Football 7-v-7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL BOOKING CTA (Requirement 12) -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="final-cta-box text-center">
+        <h2 class="section-title">READY FOR YOUR NEXT GAME?</h2>
+        <p class="lead">Pick your sport, choose a time and reserve the pitch in a few simple steps.</p>
+        <div class="cta-buttons-group">
+          <a href="#slot-finder" class="btn btn-primary">
+            BOOK YOUR SLOT &rarr;
+          </a>
+          <a href="#playing-experience" class="btn btn-outline">
+            VIEW TURF DETAILS
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEDICATED BLACK FOOTER (#0B0D0C) -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">PrimeTurf Arena</div>
+          <p class="footer-desc">
+            Premium floodlit synthetic turf arena for 5-a-side, 7-a-side football and box cricket. High-lux LED lights, shock-absorbing surface, and instant online slot booking.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#slot-finder">Turf</a></li>
+            <li><a href="#rates">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#playing-experience">About</a></li>
+            <li><a href="#amenities">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Booking</div>
+          <ul class="footer-links">
+            <li><a href="#slot-finder">Find a Slot</a></li>
+            <li><a href="#slot-finder">My Bookings</a></li>
+            <li><a href="#rates">Booking Policy</a></li>
+            <li><a href="#rates">Cancellation Policy</a></li>
+            <li><a href="#rates">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li style="color: #A7ADA9;">📍 Central Ring Flyover, Arena Zone</li>
+            <li style="color: #A7ADA9;">📞 +91 98765 43210</li>
+            <li style="color: #A7ADA9;">💬 WhatsApp: +91 98765 43210</li>
+            <li style="color: #A7ADA9;">✉️ info@primeturfarena.com</li>
+            <li style="color: #A7ADA9;">⏰ 06:00 AM – 11:00 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 PrimeTurf Arena. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE DEMO JS -->
+  <script>
+    let currentSport = 'football';
+    let currentDuration = 60;
+    let selectedDateIndex = 0;
+    let selectedSlotId = null;
+
+    const baseSlots = [
+      { id: 's1', time: '06:00 AM – 07:00 AM', price: 800, type: 'OFF-PEAK' },
+      { id: 's2', time: '07:00 AM – 08:00 AM', price: 800, type: 'OFF-PEAK' },
+      { id: 's3', time: '08:00 AM – 09:00 AM', price: 800, type: 'OFF-PEAK' },
+      { id: 's4', time: '09:00 AM – 10:00 AM', price: 1000, type: 'REGULAR' },
+      { id: 's5', time: '10:00 AM – 11:00 AM', price: 1000, type: 'REGULAR' },
+      { id: 's6', time: '04:00 PM – 05:00 PM', price: 1000, type: 'REGULAR' },
+      { id: 's7', time: '05:00 PM – 06:00 PM', price: 1200, type: 'PEAK' },
+      { id: 's8', time: '06:00 PM – 07:00 PM', price: 1200, type: 'PEAK' },
+      { id: 's9', time: '07:00 PM – 08:00 PM', price: 1200, type: 'PEAK' }
+    ];
+
+    // Mobile Drawer
+    const drawer = document.getElementById('mobile-drawer');
+    document.getElementById('hamburger-toggle').addEventListener('click', () => {
+      drawer.classList.add('open');
+    });
+    document.getElementById('close-drawer').addEventListener('click', () => {
+      drawer.classList.remove('open');
+    });
+    function closeDrawer() {
+      drawer.classList.remove('open');
+    }
+
+    // Render Dates
+    function renderDates() {
+      const container = document.getElementById('date-selector-container');
+      const days = ['TODAY', 'TOMORROW', 'THU', 'FRI', 'SAT', 'SUN', 'MON'];
+      const today = new Date();
+      
+      let html = '';
+      days.forEach((dayLabel, idx) => {
+        const dateObj = new Date(today);
+        dateObj.setDate(today.getDate() + idx);
+        const dayNum = dateObj.getDate();
+        const month = dateObj.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+        
+        const isSelected = idx === selectedDateIndex;
+        html += `
+          <button type="button" class="date-btn ${isSelected ? 'selected' : ''}" onclick="selectDate(${idx})">
+            ${idx === 0 ? '<span class="date-badge">TODAY</span>' : ''}
+            <span class="date-day">${dayLabel}</span>
+            <span class="date-num">${dayNum}</span>
+            <span class="date-month">${month}</span>
+          </button>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    // Render Slots
+    function renderSlots() {
+      const container = document.getElementById('slots-grid-container');
+      const multiplier = currentDuration / 60;
+      
+      let html = '';
+      baseSlots.forEach((slot) => {
+        const slotPrice = Math.round(slot.price * multiplier);
+        const isSelected = selectedSlotId === slot.id;
+        
+        html += `
+          <button type="button" class="slot-card ${isSelected ? 'selected' : ''}" onclick="selectSlot('${slot.id}', '${slot.time}', ${slotPrice})">
+            <div class="slot-time">${isSelected ? '✓ ' : ''}${slot.time}</div>
+            <div class="slot-price-info">₹${slotPrice.toLocaleString()} · ${slot.type}</div>
+            <span class="slot-status-tag">${isSelected ? 'SELECTED' : 'AVAILABLE'}</span>
+          </button>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    function setSport(sport) {
+      currentSport = sport;
+      document.getElementById('sport-football').classList.toggle('active', sport === 'football');
+      document.getElementById('sport-cricket').classList.toggle('active', sport === 'cricket');
+      document.getElementById('summary-sport').innerText = sport === 'football' ? 'Football' : 'Box Cricket';
+      renderSlots();
+    }
+
+    function setDuration(dur) {
+      currentDuration = dur;
+      [60, 90, 120].forEach(d => {
+        document.getElementById(`dur-${d}`).classList.toggle('active', d === dur);
+      });
+      document.getElementById('summary-duration').innerText = `${dur} mins`;
+      renderSlots();
+      updateSummary();
+    }
+
+    function selectDate(idx) {
+      selectedDateIndex = idx;
+      const days = ['Today', 'Tomorrow', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'];
+      document.getElementById('summary-date').innerText = days[idx] || 'Selected Date';
+      renderDates();
+    }
+
+    function selectSlot(id, timeStr, price) {
+      selectedSlotId = id;
+      document.getElementById('summary-slot').innerText = timeStr;
+      document.getElementById('summary-total').innerText = `₹${price.toLocaleString()}`;
+      renderSlots();
+    }
+
+    function updateSummary() {
+      if (selectedSlotId) {
+        const found = baseSlots.find(s => s.id === selectedSlotId);
+        if (found) {
+          const price = Math.round(found.price * (currentDuration / 60));
+          document.getElementById('summary-total').innerText = `₹${price.toLocaleString()}`;
+        }
+      }
+    }
+
+    function confirmBookingAlert() {
+      if (!selectedSlotId) {
+        alert('Please select an available time slot first!');
+        return;
+      }
+      alert(`Success! Demo Reservation confirmed for ${currentSport.toUpperCase()} (${currentDuration} mins) at PrimeTurf Arena.`);
+    }
+
+    // Parallax Effect on Hero Background
+    window.addEventListener('scroll', () => {
+      const heroImg = document.querySelector('.hero-bg-img');
+      if (heroImg && window.scrollY < 800) {
+        heroImg.style.transform = `translateY(${window.scrollY * 0.35}px)`;
+      }
+    }, { passive: true });
+
+    // Initialize
+    renderDates();
+    renderSlots();
+  </script>
+</body>
+</html>

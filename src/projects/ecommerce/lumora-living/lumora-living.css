@@ -1,0 +1,2101 @@
+/* ============================================================================
+   LUMORA LIVING — Editorial Luxury Furniture & Decor E-Commerce Stylesheet
+   Warm Ivory, Dark Charcoal, Restrained Taupe & Olive Accents
+   ============================================================================ */
+
+:root {
+  --lumora-bg: #FAF8F5;
+  --lumora-bg-alt: #F4F1EA;
+  --lumora-surface: #FFFFFF;
+  --lumora-text: #1C1917;
+  --lumora-text-muted: #6E6860;
+  --lumora-text-light: #948E85;
+  --lumora-border: #E8E3DA;
+  --lumora-border-light: rgba(28, 25, 23, 0.08);
+  --lumora-charcoal: #1C1917;
+  --lumora-olive: #4C5441;
+  --lumora-taupe: #8A8072;
+  --lumora-warm-sand: #EAE5DC;
+  
+  --lumora-font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --lumora-font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --lumora-font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+}
+
+/* Base Wrapper */
+.lumora-store-root {
+  background-color: var(--lumora-bg);
+  color: var(--lumora-text);
+  font-family: var(--lumora-font-sans);
+  line-height: 1.5;
+  position: relative;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.lumora-store-root *,
+.lumora-store-root *::before,
+.lumora-store-root *::after {
+  box-sizing: border-box;
+}
+
+/* Toast Notification */
+.lumora-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  background-color: var(--lumora-charcoal);
+  color: #FAF8F5;
+  padding: 0.85rem 1.4rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  animation: lumoraToastIn 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-icon {
+  color: #8FD4A3;
+  flex-shrink: 0;
+}
+
+@keyframes lumoraToastIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ----------------------------------------------------------------------------
+   A. Announcement Bar
+   ---------------------------------------------------------------------------- */
+.lumora-announcement {
+  background-color: #171513;
+  color: #EFECE6;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--lumora-font-sans);
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.announcement-divider {
+  opacity: 0.4;
+}
+
+/* ----------------------------------------------------------------------------
+   A. Navigation Header
+   ---------------------------------------------------------------------------- */
+.lumora-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--lumora-border);
+}
+
+.lumora-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.9rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.lumora-mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--lumora-text);
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.lumora-brand-container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lumora-brand-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--lumora-text);
+  line-height: 1.1;
+}
+
+.lumora-brand-sub {
+  font-family: var(--lumora-font-sans);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: var(--lumora-text-muted);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.lumora-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lumora-nav-item {
+  background: none;
+  border: none;
+  color: var(--lumora-text);
+  font-family: var(--lumora-font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 180ms ease;
+}
+
+.lumora-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--lumora-charcoal);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lumora-nav-item:hover::after,
+.lumora-nav-item.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.lumora-nav-item.is-active {
+  font-weight: 600;
+  color: var(--lumora-charcoal);
+}
+
+.lumora-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.lumora-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lumora-search-wrapper .search-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--lumora-text-light);
+  pointer-events: none;
+}
+
+.lumora-search-input {
+  background-color: rgba(28, 25, 23, 0.04);
+  border: 1px solid var(--lumora-border);
+  border-radius: 4px;
+  padding: 0.45rem 2rem 0.45rem 2.2rem;
+  font-size: 0.78rem;
+  color: var(--lumora-text);
+  font-family: var(--lumora-font-sans);
+  width: 180px;
+  transition: all 200ms ease;
+}
+
+.lumora-search-input:focus {
+  outline: none;
+  border-color: var(--lumora-charcoal);
+  background-color: #FFFFFF;
+  width: 220px;
+  box-shadow: 0 0 0 2px rgba(28, 25, 23, 0.06);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  color: var(--lumora-text-muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.2rem;
+}
+
+.lumora-bag-btn {
+  background-color: var(--lumora-charcoal);
+  color: #FAF8F5;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.lumora-bag-btn:hover {
+  background-color: #312E2B;
+  transform: translateY(-1px);
+}
+
+.bag-counter {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-family: var(--lumora-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 10px;
+}
+
+.lumora-mobile-nav-panel {
+  display: none;
+  background-color: var(--lumora-bg);
+  border-bottom: 1px solid var(--lumora-border);
+  padding: 1.25rem 1.5rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-search-row input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--lumora-border);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mobile-nav-links button {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--lumora-text);
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.05);
+}
+
+/* ----------------------------------------------------------------------------
+   B. Photography-Led Hero Section
+   ---------------------------------------------------------------------------- */
+.lumora-hero {
+  padding: 3.5rem 2.5rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--lumora-border);
+}
+
+.lumora-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.35fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-editorial-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--lumora-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--lumora-olive);
+  background-color: rgba(76, 84, 65, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.badge-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--lumora-olive);
+}
+
+.hero-headline {
+  font-family: var(--lumora-font-serif);
+  font-size: 3.25rem;
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--lumora-text);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: #3F3C37;
+}
+
+.hero-lead {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--lumora-text-muted);
+  max-width: 520px;
+  margin: 0;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.btn-hero-primary {
+  background-color: var(--lumora-charcoal);
+  color: #FAF8F5;
+  border: 1px solid var(--lumora-charcoal);
+  border-radius: 4px;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-hero-primary:hover {
+  background-color: #312E2B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-hero-secondary {
+  background: none;
+  border: 1px solid var(--lumora-border);
+  color: var(--lumora-text);
+  border-radius: 4px;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-hero-secondary:hover {
+  border-color: var(--lumora-charcoal);
+  background-color: #FFFFFF;
+}
+
+.hero-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--lumora-border);
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pillar-num {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--lumora-taupe);
+  letter-spacing: 0.1em;
+}
+
+.pillar-title {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+}
+
+.pillar-desc {
+  font-size: 0.72rem;
+  color: var(--lumora-text-muted);
+  line-height: 1.35;
+}
+
+.hero-visual-col {
+  position: relative;
+}
+
+.hero-photo-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(28, 25, 23, 0.14);
+  border: 1px solid var(--lumora-border);
+}
+
+.hero-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-photo-container:hover .hero-photo-img {
+  transform: scale(1.025);
+}
+
+.hero-floating-card {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 280px;
+}
+
+.floating-edition {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--lumora-olive);
+}
+
+.floating-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+}
+
+.floating-detail {
+  font-size: 0.72rem;
+  color: var(--lumora-text-muted);
+}
+
+/* ----------------------------------------------------------------------------
+   C. Shop By Category
+   ---------------------------------------------------------------------------- */
+.lumora-categories {
+  padding: 4.5rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--lumora-border);
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.section-eyebrow {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--lumora-taupe);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--lumora-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.section-caption {
+  font-size: 0.88rem;
+  color: var(--lumora-text-muted);
+  max-width: 440px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.category-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid var(--lumora-border);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(28, 25, 23, 0.08);
+  border-color: #D3CDC2;
+}
+
+.category-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #F0EDE6;
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.06);
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(28, 25, 23, 0.25) 100%);
+  pointer-events: none;
+}
+
+.category-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background-color: #FFFFFF;
+}
+
+.category-count {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--lumora-olive);
+}
+
+.category-name {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+  margin: 0;
+}
+
+.category-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--lumora-charcoal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  transition: gap 180ms ease;
+}
+
+.category-card:hover .category-link {
+  gap: 0.65rem;
+  color: var(--lumora-olive);
+}
+
+/* ----------------------------------------------------------------------------
+   D. Curated Products Grid
+   ---------------------------------------------------------------------------- */
+.lumora-products {
+  padding: 4.5rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--lumora-border);
+}
+
+.products-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.products-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(28, 25, 23, 0.04);
+  padding: 0.35rem;
+  border-radius: 6px;
+  border: 1px solid var(--lumora-border);
+}
+
+.filter-pill {
+  background: none;
+  border: none;
+  font-family: var(--lumora-font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--lumora-text-muted);
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.filter-pill:hover {
+  color: var(--lumora-text);
+}
+
+.filter-pill.is-active {
+  background-color: #FFFFFF;
+  color: var(--lumora-text);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.search-status-bar {
+  background-color: var(--lumora-bg-alt);
+  border: 1px solid var(--lumora-border);
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  color: var(--lumora-text);
+}
+
+.search-status-bar button {
+  background: none;
+  border: none;
+  color: var(--lumora-olive);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid var(--lumora-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(28, 25, 23, 0.08);
+  border-color: #D3CDC2;
+}
+
+.product-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #F4F1EA;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(6px);
+  font-family: var(--lumora-font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--lumora-text);
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.quick-add-btn {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  background-color: rgba(28, 25, 23, 0.92);
+  color: #FAF8F5;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 220ms ease;
+  backdrop-filter: blur(4px);
+}
+
+.product-card:hover .quick-add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quick-add-btn:hover {
+  background-color: #000000;
+}
+
+.product-details {
+  padding: 1.25rem 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.product-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.product-category-label {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--lumora-taupe);
+  font-weight: 600;
+}
+
+.product-price {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+}
+
+.product-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+  margin: 0.15rem 0 0;
+  line-height: 1.3;
+}
+
+.product-material {
+  font-size: 0.75rem;
+  color: var(--lumora-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.product-mobile-add-btn {
+  display: none;
+  margin-top: 0.75rem;
+  background-color: var(--lumora-charcoal);
+  color: #FAF8F5;
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.products-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid var(--lumora-border);
+}
+
+.products-empty-state p {
+  font-size: 1rem;
+  color: var(--lumora-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ----------------------------------------------------------------------------
+   E. Editorial Collection Banner
+   ---------------------------------------------------------------------------- */
+.lumora-editorial-banner {
+  padding: 3rem 2.5rem 4.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--lumora-border);
+}
+
+.editorial-banner-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--lumora-border);
+  box-shadow: 0 20px 48px rgba(28, 25, 23, 0.12);
+}
+
+.editorial-banner-image-box {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.editorial-banner-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.editorial-banner-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(20, 18, 16, 0.88) 0%, rgba(20, 18, 16, 0.65) 50%, rgba(20, 18, 16, 0.2) 100%);
+}
+
+.editorial-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: #FAF8F5;
+}
+
+.editorial-label {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #B5AD9F;
+}
+
+.editorial-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.editorial-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #D3CDC4;
+  margin: 0;
+}
+
+.editorial-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.btn-editorial-primary {
+  background-color: #FAF8F5;
+  color: var(--lumora-charcoal);
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 1.65rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-editorial-primary:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-editorial-secondary {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #FAF8F5;
+  border-radius: 4px;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-editorial-secondary:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ----------------------------------------------------------------------------
+   F. Brand Story & Benefits
+   ---------------------------------------------------------------------------- */
+.lumora-benefits {
+  padding: 4.5rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.benefits-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--lumora-border);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: all 220ms ease;
+}
+
+.benefit-card:hover {
+  border-color: #D3CDC2;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(28, 25, 23, 0.05);
+}
+
+.benefit-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background-color: rgba(76, 84, 65, 0.08);
+  color: var(--lumora-olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-card-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+  margin: 0;
+}
+
+.benefit-card-text {
+  font-size: 0.825rem;
+  line-height: 1.6;
+  color: var(--lumora-text-muted);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   G. Footer
+   ---------------------------------------------------------------------------- */
+.lumora-footer {
+  background-color: #171513;
+  color: #FAF8F5;
+  padding: 4.5rem 2.5rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-main-row {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+  gap: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-brand-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+.footer-brand-desc {
+  font-size: 0.85rem;
+  color: #9C958C;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.newsletter-label {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: #B5AD9F;
+  font-weight: 600;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-input-group input {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  padding: 0.65rem 0.95rem;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-family: var(--lumora-font-sans);
+  flex: 1;
+}
+
+.newsletter-input-group input:focus {
+  outline: none;
+  border-color: #FAF8F5;
+}
+
+.newsletter-input-group button {
+  background-color: #FAF8F5;
+  color: var(--lumora-charcoal);
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1.15rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.newsletter-input-group button:hover {
+  background-color: #FFFFFF;
+}
+
+.newsletter-success {
+  font-size: 0.75rem;
+  color: #8FD4A3;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-nav-header {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #B5AD9F;
+  margin: 0;
+}
+
+.footer-nav-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav-col ul button,
+.footer-nav-col ul a {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #9C958C;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  transition: color 180ms ease;
+}
+
+.footer-nav-col ul button:hover,
+.footer-nav-col ul a:hover {
+  color: #FFFFFF;
+}
+
+.studio-address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.85rem;
+}
+
+.studio-address strong {
+  font-size: 0.85rem;
+  color: #FAF8F5;
+}
+
+.studio-address span {
+  font-size: 0.78rem;
+  color: #9C958C;
+}
+
+.footer-bottom-row {
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--lumora-font-mono);
+  font-size: 0.68rem;
+  color: #7A746B;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ----------------------------------------------------------------------------
+   Shopping Bag Slide-Over Drawer
+   ---------------------------------------------------------------------------- */
+.lumora-bag-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background-color: rgba(20, 18, 16, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: flex-end;
+  animation: bagFadeIn 220ms ease forwards;
+}
+
+.lumora-bag-drawer {
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.2);
+  animation: bagSlideIn 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bagFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bagSlideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.bag-drawer-header {
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--lumora-border);
+}
+
+.bag-header-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.bag-header-title h3 {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--lumora-text);
+}
+
+.bag-items-count {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.72rem;
+  color: var(--lumora-text-muted);
+}
+
+.bag-close-btn {
+  background: none;
+  border: none;
+  color: var(--lumora-text);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+}
+
+.bag-shipping-progress {
+  background-color: var(--lumora-bg-alt);
+  padding: 0.75rem 1.75rem;
+  border-bottom: 1px solid var(--lumora-border);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.shipping-qualified {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #2F683E;
+  font-weight: 600;
+}
+
+.shipping-need {
+  color: var(--lumora-text-muted);
+}
+
+.bag-items-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bag-item-row {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--lumora-border-light);
+}
+
+.bag-item-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--lumora-border);
+  background-color: #F4F1EA;
+  flex-shrink: 0;
+}
+
+.bag-item-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bag-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bag-item-name {
+  font-family: var(--lumora-font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--lumora-text);
+}
+
+.bag-item-remove {
+  background: none;
+  border: none;
+  color: var(--lumora-text-light);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.1rem;
+}
+
+.bag-item-remove:hover {
+  color: #B91C1C;
+}
+
+.bag-item-mat {
+  font-size: 0.72rem;
+  color: var(--lumora-text-muted);
+  line-height: 1.3;
+}
+
+.bag-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.bag-qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--lumora-border);
+  border-radius: 4px;
+  background-color: var(--lumora-bg);
+}
+
+.bag-qty-stepper button {
+  background: none;
+  border: none;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--lumora-text);
+}
+
+.bag-qty-stepper span {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 24px;
+  text-align: center;
+}
+
+.bag-item-total {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--lumora-text);
+}
+
+.bag-empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bag-empty-state p {
+  color: var(--lumora-text-muted);
+  font-size: 0.9rem;
+}
+
+.bag-drawer-footer {
+  padding: 1.5rem 1.75rem;
+  background-color: var(--lumora-bg);
+  border-top: 1px solid var(--lumora-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bag-subtotal-row,
+.bag-shipping-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--lumora-text-muted);
+}
+
+.bag-subtotal-val {
+  font-family: var(--lumora-font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--lumora-text);
+}
+
+.bag-checkout-btn {
+  background-color: var(--lumora-charcoal);
+  color: #FAF8F5;
+  border: none;
+  border-radius: 4px;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: all 200ms ease;
+}
+
+.bag-checkout-btn:hover {
+  background-color: #312E2B;
+}
+
+.bag-disclaimer {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.62rem;
+  color: var(--lumora-text-light);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================================
+   GALLERY CARD MOCKUP STYLES: LumoraLivingPreview
+   ============================================================================ */
+.lumora-card-preview-root {
+  width: 100%;
+  height: 100%;
+  background-color: #FAF8F5;
+  color: #1C1917;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.85rem 1.15rem;
+  box-sizing: border-box;
+  font-family: var(--lumora-font-sans);
+  overflow: hidden;
+  user-select: none;
+}
+
+.preview-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.preview-brand-title {
+  font-family: var(--lumora-font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #1C1917;
+}
+
+.preview-nav-pills {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #6E6860;
+}
+
+.preview-cart-badge {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  background-color: #1C1917;
+  color: #FAF8F5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+.preview-hero-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+  padding: 0.5rem 0;
+}
+
+.preview-copy-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.preview-editorial-label {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #4C5441;
+}
+
+.preview-serif-heading {
+  font-family: var(--lumora-font-serif);
+  font-size: 1.15rem;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #1C1917;
+  margin: 0;
+}
+
+.preview-serif-heading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.preview-lead-desc {
+  font-size: 0.6rem;
+  line-height: 1.35;
+  color: #6E6860;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.preview-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.2rem;
+}
+
+.preview-cta-button {
+  background-color: #1C1917;
+  color: #FAF8F5;
+  font-size: 0.55rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+}
+
+.preview-price-tag {
+  font-family: var(--lumora-font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1C1917;
+}
+
+.preview-photo-column {
+  height: 100%;
+  max-height: 130px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.preview-living-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(28, 25, 23, 0.08);
+  font-family: var(--lumora-font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  color: #8A8072;
+}
+
+.preview-accent-tag {
+  color: #4C5441;
+  font-weight: 700;
+}
+
+/* Expanded Card Preview adjustments */
+.is-expanded-card .preview-serif-heading {
+  font-size: 1.45rem;
+}
+
+.is-expanded-card .preview-photo-column {
+  max-height: 190px;
+}
+
+.is-expanded-card .preview-lead-desc {
+  -webkit-line-clamp: 3;
+  font-size: 0.68rem;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN (Desktop, Tablet 768px, Mobile 390px)
+   ============================================================================ */
+
+/* Tablet & Medium Breakpoint (<= 1024px or inside 768px viewer) */
+@media (max-width: 1024px) {
+  .lumora-header-inner {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .lumora-hero {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .lumora-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-headline {
+    font-size: 2.75rem;
+  }
+
+  .hero-photo-container {
+    height: 420px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-main-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile Breakpoint (<= 768px or inside 390px mobile viewer) */
+@media (max-width: 768px) {
+  .lumora-announcement {
+    font-size: 0.6rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .announcement-divider {
+    display: none;
+  }
+
+  .lumora-header-inner {
+    padding: 0.75rem 1rem;
+  }
+
+  .lumora-mobile-menu-btn {
+    display: flex;
+  }
+
+  .lumora-nav-links {
+    display: none;
+  }
+
+  .lumora-search-wrapper {
+    display: none;
+  }
+
+  .lumora-mobile-nav-panel {
+    display: flex;
+  }
+
+  .lumora-brand-title {
+    font-size: 1.15rem;
+  }
+
+  .lumora-brand-sub {
+    font-size: 0.48rem;
+  }
+
+  .lumora-hero {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 7vw, 2.15rem);
+    word-break: break-word;
+  }
+
+  .hero-lead {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .hero-photo-container {
+    height: 320px;
+  }
+
+  .hero-floating-card {
+    display: flex;
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 0.65rem 0.85rem;
+    gap: 0.75rem;
+  }
+
+  .floating-card-thumb {
+    width: 44px;
+    height: 44px;
+  }
+
+  .floating-card-title {
+    font-size: 0.78rem;
+  }
+
+  .floating-card-price {
+    font-size: 0.75rem;
+  }
+
+  .hero-pillars {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .pillar-item {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.85rem;
+    border-bottom: 1px solid rgba(28, 25, 23, 0.08);
+    padding-bottom: 0.45rem;
+  }
+
+  .pillar-title {
+    font-size: 0.82rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.72rem;
+  }
+
+  .pillar-sub {
+    font-size: 0.68rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .lumora-categories {
+    padding: 3rem 1rem;
+  }
+
+  .section-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .lumora-products {
+    padding: 3rem 1rem;
+  }
+
+  .products-controls-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .products-filter-pills {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-pill {
+    white-space: nowrap;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.72rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .quick-add-btn {
+    display: none;
+  }
+
+  .product-mobile-add-btn {
+    display: block;
+  }
+
+  .lumora-editorial-banner {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .editorial-banner-container {
+    min-height: 420px;
+  }
+
+  .editorial-banner-content {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .editorial-title {
+    font-size: 1.95rem;
+  }
+
+  .editorial-paragraph {
+    font-size: 0.85rem;
+  }
+
+  .editorial-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-editorial-primary,
+  .btn-editorial-secondary {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .lumora-benefits {
+    padding: 3rem 1rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .lumora-footer {
+    padding: 3.5rem 1rem 2rem;
+  }
+
+  .footer-main-row {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .footer-legal-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Extra Small Phones (<= 360px) */
+@media (max-width: 360px) {
+  .hero-pillars {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+
+  .hero-photo-container {
+    height: 260px;
+  }
+
+  .hero-floating-card {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 0.65rem;
+  }
+
+  .lumora-header-actions .header-action-btn:first-child {
+    display: none;
+  }
+}
+
+/* Specific styling when contained inside VERHOST viewer viewport modes */
+.viewer-container-frame[style*="390px"] .lumora-nav-links,
+.viewer-container-frame[style*="390px"] .lumora-search-wrapper {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="390px"] .lumora-mobile-menu-btn {
+  display: flex !important;
+}
+
+.viewer-container-frame[style*="390px"] .lumora-hero-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .hero-headline {
+  font-size: clamp(1.75rem, 7vw, 2.15rem) !important;
+  word-break: break-word !important;
+}
+
+.viewer-container-frame[style*="390px"] .hero-lead {
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .hero-pillars {
+  grid-template-columns: 1fr !important;
+  gap: 0.75rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .pillar-item {
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0.85rem !important;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.08) !important;
+  padding-bottom: 0.45rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .pillar-title {
+  font-size: 0.82rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .pillar-desc {
+  font-size: 0.72rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .hero-cta-group {
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+.viewer-container-frame[style*="390px"] .btn-hero-primary,
+.viewer-container-frame[style*="390px"] .btn-hero-secondary {
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .categories-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .products-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .benefits-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .footer-main-row {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="768px"] .products-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.viewer-container-frame[style*="768px"] .benefits-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.viewer-container-frame[style*="768px"] .lumora-hero-grid {
+  grid-template-columns: 1fr !important;
+}

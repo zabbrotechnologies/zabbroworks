@@ -1,0 +1,297 @@
+/* ==========================================================================
+   LISTIT ARCHIVE — RESPONSIVE ADAPTATIONS & VIEWPORT SCALING
+   ========================================================================== */
+
+/* Large Desktop Adjustments (<= 1440px) */
+@media (max-width: 1440px) {
+  .hero-stage-grid {
+    grid-template-columns: minmax(240px, 24%) minmax(0, 62%) minmax(95px, 14%);
+    gap: 1.25rem;
+  }
+  .phone-center {
+    width: clamp(210px, 18vw, 260px);
+    height: clamp(390px, 58vh, 460px);
+  }
+  .phone-left,
+  .phone-right {
+    width: clamp(175px, 15vw, 215px);
+    height: clamp(340px, 50vh, 410px);
+  }
+  .orbital-ribbon-back,
+  .orbital-ribbon-front {
+    width: clamp(480px, 50vw, 680px);
+    height: clamp(240px, 26vh, 320px);
+  }
+}
+
+/* Short Desktop Viewport (Height <= 740px on Desktop) */
+@media (max-height: 740px) and (min-width: 992px) {
+  .hero-showcase-section {
+    min-height: 500px;
+    padding: 0 1rem;
+  }
+  .hero-editorial-col {
+    gap: 0.4rem;
+  }
+  .project-title-glitch {
+    font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+  }
+  .hero-description {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+  .deliverable-pills-wrap {
+    margin-bottom: 0.2rem;
+  }
+  .metrics-telemetry-row {
+    padding: 0.35rem 0;
+    gap: 0.9rem;
+  }
+  .metric-value {
+    font-size: 1.35rem;
+  }
+  .phone-center {
+    width: clamp(200px, 17vw, 245px);
+    height: clamp(370px, 56vh, 430px);
+    padding: 6px;
+    border-radius: 28px;
+  }
+  .phone-left,
+  .phone-right {
+    width: clamp(165px, 14vw, 205px);
+    height: clamp(330px, 50vh, 380px);
+    padding: 6px;
+    border-radius: 24px;
+  }
+  .phone-screen-content {
+    padding: 20px 8px 8px;
+  }
+  .anime-featured-card {
+    height: clamp(85px, 13vh, 110px);
+  }
+  .watch-card-art {
+    height: clamp(65px, 11vh, 85px);
+  }
+  .env-rocky-terrain {
+    height: 40px;
+  }
+  .orbital-ribbon-back,
+  .orbital-ribbon-front {
+    height: clamp(200px, 24vh, 280px);
+  }
+}
+
+/* Medium Desktop & Tablet Landscape (<= 1120px) */
+@media (max-width: 1120px) {
+  .hero-showcase-section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    height: auto;
+  }
+
+  .hero-editorial-col {
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-description {
+    max-width: 500px;
+  }
+
+  .deliverable-pills-wrap {
+    justify-content: center;
+  }
+
+  .metrics-telemetry-row {
+    justify-content: center;
+  }
+
+  .hero-sidebar-nav {
+    display: none;
+  }
+
+  .section-lead-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .telemetry-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-steps-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet Portrait (<= 992px) */
+@media (max-width: 992px) {
+  .top-nav-inner {
+    padding: 0 1.25rem;
+  }
+
+  .section-container {
+    padding: 0 1.25rem;
+  }
+
+  .phone-mockup {
+    padding: 6px;
+    border-radius: 28px;
+  }
+
+  .phone-center {
+    width: 230px;
+    height: 440px;
+  }
+
+  .phone-left,
+  .phone-right {
+    width: 185px;
+    height: 380px;
+  }
+
+  .split-narrative-row {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .results-showcase-card {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .cta-banner-pod {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .cta-display-title {
+    font-size: 2.3rem;
+  }
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .selected-works-heading {
+    display: none;
+  }
+
+  .project-title-glitch {
+    font-size: 2.2rem;
+  }
+
+  .hero-device-stage {
+    min-height: 460px;
+  }
+
+  .phone-left,
+  .phone-right {
+    display: none;
+  }
+
+  .phone-center {
+    width: 270px;
+    height: 500px;
+    transform: none !important;
+  }
+
+  .orbital-ribbon-back,
+  .orbital-ribbon-front {
+    display: none;
+  }
+
+  .telemetry-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-stats-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cta-buttons-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary-lime-lg,
+  .btn-secondary-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+}
+
+/* Small Handhelds (<= 480px) */
+@media (max-width: 480px) {
+  .project-title-glitch {
+    font-size: 1.95rem;
+  }
+
+  .section-display-title {
+    font-size: 1.9rem;
+  }
+
+  .phone-center {
+    width: 245px;
+    height: 460px;
+  }
+}
+
+/* Extra Small Mobile (<= 360px) */
+@media (max-width: 360px) {
+  .project-title-glitch {
+    font-size: 1.65rem;
+  }
+
+  .phone-center {
+    width: min(220px, 86vw);
+    height: 420px;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

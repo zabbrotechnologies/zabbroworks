@@ -1,0 +1,16 @@
+export const maxywalkConfig = {
+  id: 'maxywalk',
+  number: '01',
+  title: 'MAXYWALK',
+  category: 'E-COMMERCE',
+  sectionSlug: 'ecommerce',
+  year: '2026',
+  client: 'MAXYWALK Leather Craft',
+  description: 'Handcrafted full-grain leather footwear, bespoke comfort slippers, and artisanal accessories made in Avadi, Chennai.',
+  deliverables: ['Custom Commerce', 'Handcrafted Footwear', 'Express Ordering'],
+  demoUrl: 'https://maxywalk.vercel.app/',
+  featured: true,
+  tags: ['Footwear', 'Full-Grain Leather', 'Retail Flagship'],
+  accentColor: '#FF632D',
+  surfaceColor: '#0B0C0E',
+};

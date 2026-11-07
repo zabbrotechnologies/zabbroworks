@@ -1,0 +1,247 @@
+/* ==========================================================================
+   ARCHORA STUDIO — Responsive Media Queries
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (Max 1200px) */
+@media (max-width: 1200px) {
+  .hero-stage {
+    height: 500px;
+  }
+
+  .sculpture-arch {
+    width: 200px;
+  }
+
+  .sculpture-ribbon {
+    width: 260px;
+  }
+
+  .materials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
+
+/* Tablets (Max 992px) */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1.75rem;
+  }
+
+  .hero-lead-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-actions-group {
+    justify-content: flex-start;
+  }
+
+  .hero-stage {
+    height: 420px;
+  }
+
+  .sculpture-arch {
+    width: 160px;
+  }
+
+  .sculpture-sphere {
+    width: 120px;
+    right: 15%;
+  }
+
+  .sculpture-ribbon {
+    display: none;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .works-masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-large,
+  .project-card-mid,
+  .project-card-curve,
+  .project-card-olive {
+    grid-column: span 12;
+  }
+
+  .project-card-large .card-media-wrapper,
+  .project-card-mid .card-media-wrapper,
+  .project-card-curve .card-media-wrapper,
+  .project-card-olive .card-media-wrapper {
+    height: 380px;
+  }
+
+  .cta-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .recog-item {
+    grid-template-columns: 80px 1.2fr 1fr;
+  }
+
+  .recog-org {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    flex-direction: column;
+    padding: 2.5rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--color-line);
+    transform: translateY(-150%);
+    transition: transform 0.4s var(--ease);
+    box-shadow: 0 15px 30px rgba(43, 43, 43, 0.1);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* Mobile Devices (Max 768px) */
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 68px;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--nav-h) + 1.5rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hero-stage {
+    height: 340px;
+  }
+
+  .hero-stage-caption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .hero-specs-list {
+    display: none;
+  }
+
+  .sculpture-arch {
+    width: 110px;
+  }
+
+  .sculpture-sphere {
+    width: 80px;
+  }
+
+  .sculpture-platform {
+    width: 220px;
+  }
+
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .cta-card-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .recog-item {
+    grid-template-columns: 60px 1fr;
+    gap: 0.5rem;
+  }
+
+  .recog-project {
+    grid-column: span 2;
+    padding-left: 60px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Screens (Max 480px) */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .hero-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions-group .btn-primary,
+  .hero-actions-group .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stage {
+    height: 280px;
+  }
+
+  .project-card-large .card-media-wrapper,
+  .project-card-mid .card-media-wrapper,
+  .project-card-curve .card-media-wrapper,
+  .project-card-olive .card-media-wrapper {
+    height: 280px;
+  }
+
+  .card-details {
+    padding: 1.25rem;
+  }
+}
+

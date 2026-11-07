@@ -1,0 +1,173 @@
+.freshmarket-preview-root {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  color: #1F2937;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.freshmarket-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #E5E7EB;
+  font-size: 0.65rem;
+  z-index: 5;
+}
+
+.freshmarket-brand {
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: -0.01em;
+  color: #169B50;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.freshmarket-leaf-icon {
+  width: 14px;
+  height: 14px;
+  background-color: #EAF6EE;
+  color: #169B50;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+}
+
+.freshmarket-nav {
+  display: flex;
+  gap: 0.55rem;
+  color: #6B7280;
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+
+.freshmarket-nav span:hover {
+  color: #169B50;
+}
+
+.freshmarket-cart-pill {
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  background-color: #EAF6EE;
+  color: #169B50;
+  border: 1px solid rgba(22, 155, 80, 0.2);
+}
+
+.freshmarket-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.freshmarket-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 3;
+}
+
+.freshmarket-eyebrow {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #169B50;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.freshmarket-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.freshmarket-title span {
+  color: #169B50;
+}
+
+.freshmarket-desc {
+  font-size: 0.65rem;
+  line-height: 1.35;
+  color: #4B5563;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 175px;
+}
+
+.freshmarket-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.freshmarket-cta-btn {
+  background-color: #169B50;
+  color: #FFFFFF;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.freshmarket-price-tag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #169B50;
+  background: #EAF6EE;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.freshmarket-visual-col {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.freshmarket-graphic-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 125px;
+}
+
+.freshmarket-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.35rem;
+  border-top: 1px solid #F3F4F6;
+  font-size: 0.55rem;
+  color: #6B7280;
+  font-weight: 600;
+}
+
+.freshmarket-badge {
+  color: #169B50;
+}

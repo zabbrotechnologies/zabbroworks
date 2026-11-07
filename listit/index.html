@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LISTIT ARCHIVE — Cinematic 3D Anime Tracking Showcase | VERHOST</title>
+  <meta name="description" content="Cinematic 3D project showcase for LISTIT Archive — the modern anime tracking and discovery application featuring real-time watchlist management, seasonal radar, and zero-latency indexing.">
+
+  <!-- Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="listit-showcase-body">
+
+  <!-- =========================================================================
+       TOP GLOBAL HEADER
+       ========================================================================= -->
+  <header class="top-nav-bar" id="topNav">
+    <div class="top-nav-inner">
+      <!-- Left: Portfolio Tag -->
+      <div class="portfolio-brand-tag">
+        <a href="/" class="verhost-back-link" title="Return to VERHOST Digital Works">
+          <span class="tag-label">PORTFOLIO</span>
+          <span class="dash-line">—</span>
+        </a>
+      </div>
+
+      <!-- Center: Section Indicator -->
+      <div class="selected-works-heading">
+        <span>SELECTED WORKS</span>
+      </div>
+
+      <!-- Right: Pagination & Navigation Controls -->
+      <div class="portfolio-pagination-cluster">
+        <span class="pagination-counter" id="projectCounter">01 / 06</span>
+        <div class="pagination-buttons">
+          <a href="/projects/spacen/index.html" class="nav-circle-btn btn-prev" aria-label="Previous Project (SPACEN)" title="Previous Project">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#overview" class="nav-circle-btn btn-next active-lime" aria-label="Explore Case Study" title="Next / View Details">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO CINEMATIC 3D SHOWCASE SECTION
+       ========================================================================= -->
+  <section class="hero-showcase-section" id="hero">
+    
+    <!-- Deep Space Environment Layers -->
+    <div class="environment-container" aria-hidden="true">
+      <!-- Celestial Purple Planet -->
+      <div class="env-planet-glow"></div>
+      
+      <!-- Nebular Backlight & Ambient Voids -->
+      <div class="env-purple-haze"></div>
+      <div class="env-lime-accent-glow"></div>
+      
+      <!-- Wireframe Geodesic Globe (Lower Right) -->
+      <div class="env-wireframe-globe">
+        <div class="globe-mesh-grid"></div>
+        <div class="globe-rim-light"></div>
+      </div>
+
+      <!-- Rocky Terrain with Glowing Moss (Foreground Base) -->
+      <div class="env-rocky-terrain"></div>
+
+      <!-- Floating Prismatic Crystal (Lower Left) -->
+      <div class="env-floating-crystal">
+        <div class="crystal-facet facet-front"></div>
+        <div class="crystal-facet facet-back"></div>
+        <div class="crystal-glow-emitter"></div>
+      </div>
+    </div>
+
+    <!-- Main Hero Content Grid -->
+    <div class="hero-stage-grid">
+
+      <!-- LEFT EDITORIAL COLUMN -->
+      <div class="hero-editorial-col">
+        <div class="featured-badge-row">
+          <span class="lime-slash">/</span>
+          <span class="featured-tag">FEATURED PROJECT</span>
+        </div>
+
+        <h1 class="project-title-glitch">
+          LISTIT<span class="registered-symbol">®</span><br>
+          ARCHIVE<span class="accent-slash">/</span>
+        </h1>
+
+        <p class="hero-description">
+          A high-velocity anime tracking and discovery archive. Built for enthusiasts to organize watchlists, discover seasonal simulcasts, and capture personal scores with zero friction.
+        </p>
+
+        <!-- Category Deliverable Pills -->
+        <div class="deliverable-pills-wrap">
+          <span class="pill-tag">UI/UX</span>
+          <span class="pill-tag">Product Design</span>
+          <span class="pill-tag">Web App</span>
+        </div>
+
+        <!-- Metric Telemetry -->
+        <div class="metrics-telemetry-row">
+          <div class="metric-item">
+            <span class="metric-value">+42%</span>
+            <span class="metric-label">User Engagement</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-value">3.8x</span>
+            <span class="metric-label">Faster Discovery</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions-row">
+          <a href="https://trackwithlistit.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary-lime">
+            <span>View Live Project</span>
+            <svg class="external-arrow" viewBox="0 0 14 14" fill="none"><path d="M3.5 10.5L10.5 3.5M10.5 3.5H5.25M10.5 3.5V8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <a href="#overview" class="btn-circular-play" aria-label="Explore Case Study Overview" title="Explore Case Study">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 4L12 8L6 12V4Z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CENTER 3D SMARTPHONE DISPLAY STAGE -->
+      <div class="hero-device-stage" id="deviceStage">
+        
+        <!-- 3D Translucent Orbital Ribbon (Back Layer) -->
+        <div class="orbital-ribbon-back" aria-hidden="true">
+          <svg viewBox="0 0 1000 480" fill="none" class="ribbon-svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="orbitBackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.2" />
+                <stop offset="35%" stop-color="#B388FF" stop-opacity="0.6" />
+                <stop offset="70%" stop-color="#ECE6FF" stop-opacity="0.75" />
+                <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.3" />
+              </linearGradient>
+            </defs>
+            <path d="M 50 260 C 140 90, 860 90, 950 260" stroke="url(#orbitBackGrad)" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M 50 260 C 140 90, 860 90, 950 260" stroke="rgba(179, 136, 255, 0.12)" stroke-width="12" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <!-- Interactive 3-Phone Perspective Cluster -->
+        <div class="phones-perspective-container">
+
+          <!-- PHONE 1: LEFT PERSPECTIVE (ANIME DISCOVERY) -->
+          <div class="phone-mockup phone-left" id="phoneLeft" data-tilt="-14">
+            <div class="phone-chassis">
+              <div class="phone-glare-overlay"></div>
+              <div class="phone-dynamic-island">
+                <span class="speaker-slit"></span>
+              </div>
+              
+              <!-- SCREEN 1: ANIME DISCOVERY FEED -->
+              <div class="phone-screen-content screen-discovery">
+                <!-- Status Bar -->
+                <div class="phone-status-bar">
+                  <span class="status-logo"><svg width="14" height="14" viewBox="0 0 24 24" fill="#C4FF4D"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/></svg></span>
+                  <span class="status-grid-dots">:::</span>
+                  <span class="status-badge-lst">LST</span>
+                </div>
+
+                <!-- Date & Radar Header -->
+                <div class="app-feed-header">
+                  <div class="feed-header-meta">
+                    <span class="feed-subtitle">WINTER SEASON</span>
+                    <span class="feed-title">Trending Anime</span>
+                  </div>
+                  <div class="feed-stat-chip">
+                    <span class="chip-dot"></span>
+                    <span class="chip-text">Live Airing</span>
+                  </div>
+                </div>
+
+                <!-- Featured Seasonal Card -->
+                <div class="anime-featured-card">
+                  <div class="card-art-cover frieren-bg">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="rank-tag">#01 TRENDING</span>
+                    <div class="card-caption">
+                      <h4>Frieren: Beyond Journey's End</h4>
+                      <p>28 Episodes • Studio Madhouse</p>
+                      <div class="card-rating-row">
+                        <span class="star-rating">★ 9.38</span>
+                        <span class="genre-pill">Fantasy / Adventure</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Popular Discover List -->
+                <div class="mini-anime-list">
+                  <div class="mini-anime-row">
+                    <span class="anime-index">02</span>
+                    <div class="anime-row-thumb jjk-thumb"></div>
+                    <div class="anime-row-info">
+                      <span class="row-name">Jujutsu Kaisen S2</span>
+                      <span class="row-details">Shibuya Arc • 23 Eps</span>
+                    </div>
+                    <span class="row-score">★ 8.9</span>
+                  </div>
+
+                  <div class="mini-anime-row">
+                    <span class="anime-index">03</span>
+                    <div class="anime-row-thumb demon-thumb"></div>
+                    <div class="anime-row-info">
+                      <span class="row-name">Demon Slayer: Hashira</span>
+                      <span class="row-details">Ufotable • 8 Eps</span>
+                    </div>
+                    <span class="row-score">★ 8.7</span>
+                  </div>
+                </div>
+
+                <!-- App Bottom Navigation Bar -->
+                <div class="phone-bottom-nav">
+                  <button class="nav-tab active" aria-label="Discover"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 8L21 9L17 14L18 20L12 17L6 20L7 14L3 9L9 8L12 2Z"/></svg></button>
+                  <button class="nav-tab" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21L16.65 16.65"/></svg></button>
+                  <button class="nav-tab" aria-label="Watchlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21L12 16L5 21V5C5 3.9 5.9 3 7 3H17C18.1 3 19 3.9 19 5V21Z"/></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHONE 2: CENTER HERO (INTERACTIVE ANIME WATCHLIST) -->
+          <div class="phone-mockup phone-center" id="phoneCenter">
+            <div class="phone-chassis">
+              <div class="phone-glare-overlay"></div>
+              <div class="phone-dynamic-island">
+                <span class="speaker-slit"></span>
+              </div>
+
+              <!-- SCREEN 2: LIVE WATCHLIST & PROGRESS LOGGING -->
+              <div class="phone-screen-content screen-watchlist">
+                <!-- Status Bar -->
+                <div class="phone-status-bar">
+                  <div class="brand-row">
+                    <span class="lst-lime-mark">///</span>
+                    <span class="lst-brand-name">LISTIT</span>
+                  </div>
+                  <span class="status-grid-dots">:::</span>
+                  <span class="status-badge-lst active-badge">ACTIVE</span>
+                </div>
+
+                <!-- Watchlist Filter Strip -->
+                <div class="watchlist-filter-strip">
+                  <button class="filter-tab-pill active">Watching (8)</button>
+                  <button class="filter-tab-pill">Completed</button>
+                  <button class="filter-tab-pill">Plan to Watch</button>
+                </div>
+
+                <!-- Interactive Hero Watch Card: Attack on Titan -->
+                <div class="interactive-watch-card" id="aotWatchCard">
+                  <div class="watch-card-art aot-hero-art">
+                    <div class="watch-card-scrim"></div>
+                    <span class="status-live-chip">In Progress</span>
+                    <div class="watch-card-heading">
+                      <h3>Attack on Titan</h3>
+                      <p>The Final Season • Part 3</p>
+                    </div>
+                  </div>
+
+                  <div class="progress-control-zone">
+                    <div class="progress-meta-row">
+                      <span class="ep-text">Episode <strong id="aotEpCount">21</strong> of 28</span>
+                      <span class="pct-text" id="aotPercent">75%</span>
+                    </div>
+                    <div class="progress-bar-track">
+                      <div class="progress-bar-fill" id="aotProgressFill" style="width: 75%;"></div>
+                    </div>
+                    <div class="quick-increment-row">
+                      <button class="btn-inc-ep" id="btnIncEp" title="Log next episode watched">
+                        <span>+1 Episode Watched</span>
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                      </button>
+                      <button class="btn-card-bookmark" aria-label="Bookmark Status">
+                        <svg viewBox="0 0 16 16" fill="#C4FF4D"><path d="M3 2H13V15L8 11.5L3 15V2Z"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Secondary Watch Item: Solo Leveling -->
+                <div class="secondary-watch-item">
+                  <div class="item-thumb solo-thumb"></div>
+                  <div class="item-details">
+                    <span class="item-title">Solo Leveling (Arise)</span>
+                    <span class="item-sub">Episode 11 / 12 • Final Next</span>
+                    <div class="mini-progress-bar">
+                      <div class="mini-fill" style="width: 91%;"></div>
+                    </div>
+                  </div>
+                  <button class="mini-plus-btn" title="Quick log episode">+</button>
+                </div>
+
+                <!-- Home Bar Indicator -->
+                <div class="phone-home-indicator"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHONE 3: RIGHT PERSPECTIVE (DETAILED ANIME DOSSIER) -->
+          <div class="phone-mockup phone-right" id="phoneRight" data-tilt="14">
+            <div class="phone-chassis">
+              <div class="phone-glare-overlay"></div>
+              <div class="phone-dynamic-island">
+                <span class="speaker-slit"></span>
+              </div>
+
+              <!-- SCREEN 3: ANIME DOSSIER & METADATA INSPECTOR -->
+              <div class="phone-screen-content screen-dossier">
+                <!-- Status Bar -->
+                <div class="phone-status-bar">
+                  <span class="dossier-back-btn">←</span>
+                  <span class="dossier-id-tag">ARCHIVE #4289</span>
+                  <span class="status-badge-lst">LST</span>
+                </div>
+
+                <!-- Big Visual Typography / Telemetry Header -->
+                <div class="dossier-hero-header">
+                  <div class="big-score-cluster">
+                    <div class="score-number-col">
+                      <span class="score-digit">09</span>
+                      <span class="score-separator">:</span>
+                      <span class="score-digit-lime">18</span>
+                    </div>
+                    <span class="score-sub-label">COMMUNITY SCORE</span>
+                  </div>
+                  <div class="dossier-title-block">
+                    <h3>Vinland Saga</h3>
+                    <p>Season 2 • Farmland Arc</p>
+                  </div>
+                </div>
+
+                <!-- Metadata Tags -->
+                <div class="dossier-specs-grid">
+                  <div class="spec-cell">
+                    <span class="spec-label">STUDIO</span>
+                    <span class="spec-val">MAPPA</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-label">EPISODES</span>
+                    <span class="spec-val">24 Episodes</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-label">STATUS</span>
+                    <span class="spec-val">Completed</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-label">SOURCE</span>
+                    <span class="spec-val">Manga</span>
+                  </div>
+                </div>
+
+                <!-- Synopsis Snippet -->
+                <div class="dossier-synopsis">
+                  <p>
+                    Tormented by guilt over Askeladd's death, Thorfinn becomes an enslaved laborer on a Danish farm, seeking redemption and true peace.
+                  </p>
+                </div>
+
+                <!-- Add to List / Actions -->
+                <div class="dossier-cta-wrap">
+                  <button class="btn-dossier-action active-in-list" id="btnToggleList">
+                    <span class="btn-dot"></span>
+                    <span id="btnListStatusText">In Watchlist</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3D Translucent Orbital Ribbon (Front Layer) -->
+        <div class="orbital-ribbon-front" aria-hidden="true">
+          <svg viewBox="0 0 1000 480" fill="none" class="ribbon-svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="orbitFrontGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.3" />
+                <stop offset="30%" stop-color="#B388FF" stop-opacity="0.7" />
+                <stop offset="65%" stop-color="#FFFFFF" stop-opacity="0.95" />
+                <stop offset="85%" stop-color="#C4FF4D" stop-opacity="1" />
+                <stop offset="100%" stop-color="#C4FF4D" stop-opacity="0.2" />
+              </linearGradient>
+              <filter id="neonGlowFront" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path d="M 950 260 C 860 410, 140 410, 50 260" stroke="url(#orbitFrontGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#neonGlowFront)" />
+            <path d="M 950 260 C 860 410, 140 410, 50 260" stroke="rgba(196, 255, 77, 0.12)" stroke-width="12" stroke-linecap="round" />
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- RIGHT VERTICAL NAVIGATION COLUMN -->
+      <aside class="hero-sidebar-nav" aria-label="Page Sections Navigation">
+        <!-- Brand Mosaic Thumbnail (Anime / Lime Motif) -->
+        <div class="nav-thumbnail-tile" title="LISTIT Archive Monogram">
+          <div class="tile-inner-lime">
+            <svg class="tile-palm-icon" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4C16 10 12 16 6 18C12 20 16 26 16 32C16 26 20 20 26 18C20 16 16 10 16 4Z" fill="#0E0B1A"/>
+              <circle cx="16" cy="18" r="3" fill="#C4FF4D"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Vertical Section Links -->
+        <nav class="vertical-nav-links">
+          <span class="nav-double-slash">//</span>
+          <a href="#overview" class="vert-nav-item active" data-section="overview">
+            <span class="nav-item-line"></span>
+            <span class="nav-item-text">OVERVIEW</span>
+          </a>
+          <a href="#challenge" class="vert-nav-item" data-section="challenge">
+            <span class="nav-item-line"></span>
+            <span class="nav-item-text">CHALLENGE</span>
+          </a>
+          <a href="#solution" class="vert-nav-item" data-section="solution">
+            <span class="nav-item-line"></span>
+            <span class="nav-item-text">SOLUTION</span>
+          </a>
+          <a href="#process" class="vert-nav-item" data-section="process">
+            <span class="nav-item-line"></span>
+            <span class="nav-item-text">PROCESS</span>
+          </a>
+          <a href="#results" class="vert-nav-item" data-section="results">
+            <span class="nav-item-line"></span>
+            <span class="nav-item-text">RESULTS</span>
+          </a>
+        </nav>
+      </aside>
+
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#overview" class="scroll-down-pill" aria-label="Scroll to Overview">
+      <span class="pill-dot"></span>
+      <span class="pill-text">SCROLL TO EXPLORE</span>
+    </a>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 01: PROJECT OVERVIEW
+       ========================================================================= -->
+  <section class="case-study-section section-overview" id="overview">
+    <div class="section-container">
+      
+      <div class="section-header-tag">
+        <span class="lime-tag">// 01</span>
+        <span class="tag-title">PROJECT OVERVIEW</span>
+      </div>
+
+      <div class="section-lead-grid">
+        <div class="lead-title-col">
+          <h2 class="section-display-title">
+            An Organized Universe for Every Anime Enthusiast.
+          </h2>
+        </div>
+        <div class="lead-copy-col">
+          <p class="paragraph-large">
+            Anime fans often maintain fragmented records across cluttered forums, cumbersome spreadsheets, and legacy databases plagued with banner ads and slow load times.
+          </p>
+          <p class="paragraph-body">
+            <strong>LISTIT ARCHIVE</strong> was engineered as a high-density, tactile digital sanctuary. Designed from the ground up for modern web browsers, it provides instant episode logging, live seasonal broadcast schedules, and personalized progress visualization wrapped in a dark obsidian-and-cyber-violet aesthetic.
+          </p>
+        </div>
+      </div>
+
+      <!-- Telemetry Bento Grid -->
+      <div class="telemetry-bento-grid">
+        
+        <div class="bento-card bento-metric">
+          <div class="card-glow-edge"></div>
+          <span class="bento-index">01.01</span>
+          <h3 class="bento-metric-val">10,000+</h3>
+          <span class="bento-metric-title">Indexed Titles</span>
+          <p class="bento-desc">Full metadata records integrated with Jikan &amp; AniList GraphQL endpoints for real-time simulcast telemetry.</p>
+        </div>
+
+        <div class="bento-card bento-metric">
+          <div class="card-glow-edge"></div>
+          <span class="bento-index">01.02</span>
+          <h3 class="bento-metric-val">&lt; 120ms</h3>
+          <span class="bento-metric-title">Search &amp; Filter Latency</span>
+          <p class="bento-desc">Optimistic UI updates paired with client-side indexed caching deliver near-instantaneous search responses.</p>
+        </div>
+
+        <div class="bento-card bento-metric">
+          <div class="card-glow-edge"></div>
+          <span class="bento-index">01.03</span>
+          <h3 class="bento-metric-val">100%</h3>
+          <span class="bento-metric-title">Ad-Free Experience</span>
+          <p class="bento-desc">Zero third-party trackers, zero advertising banners, and distraction-free anime documentation.</p>
+        </div>
+
+        <div class="bento-card bento-metric highlight-lime">
+          <div class="card-glow-edge"></div>
+          <span class="bento-index">01.04</span>
+          <h3 class="bento-metric-val">60 FPS</h3>
+          <span class="bento-metric-title">Gesture Fluidity</span>
+          <p class="bento-desc">Hardware-accelerated CSS 3D transforms ensure silky-smooth interactions across desktop and mobile screens.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 02: THE CHALLENGE
+       ========================================================================= -->
+  <section class="case-study-section section-challenge" id="challenge">
+    <div class="section-container">
+      
+      <div class="section-header-tag">
+        <span class="lime-tag">// 02</span>
+        <span class="tag-title">THE CHALLENGE</span>
+      </div>
+
+      <div class="split-narrative-row">
+        <div class="narrative-left">
+          <h2 class="section-display-title">
+            Keeping Every Anime in One Place Was Clunky and Fragmented.
+          </h2>
+          <p class="paragraph-body">
+            Before LISTIT, logging an episode on conventional anime tracking sites required wading through heavy desktop-first interfaces, multiple page reloads, and popup advertisements.
+          </p>
+        </div>
+
+        <div class="narrative-right">
+          <!-- Problem Cards Cluster -->
+          <div class="problem-cards-list">
+            
+            <div class="problem-card">
+              <div class="prob-num">01</div>
+              <div class="prob-body">
+                <h4>Legacy Database Bloat</h4>
+                <p>Conventional platforms take 3.5+ seconds to log a single episode due to outdated server-side rendering and legacy database architectures.</p>
+              </div>
+            </div>
+
+            <div class="problem-card">
+              <div class="prob-num">02</div>
+              <div class="prob-body">
+                <h4>Mobile Usability Breakdowns</h4>
+                <p>Most community trackers were built in the 2000s for desktop mice, leading to microscopic tap targets and broken gesture interactions on smartphones.</p>
+              </div>
+            </div>
+
+            <div class="problem-card">
+              <div class="prob-num">03</div>
+              <div class="prob-body">
+                <h4>Disjointed Discovery Flows</h4>
+                <p>Users were forced to jump between Reddit threads, YouTube trailers, and external wikis simply to find out which anime were airing this week.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 03: THE SOLUTION
+       ========================================================================= -->
+  <section class="case-study-section section-solution" id="solution">
+    <div class="section-container">
+      
+      <div class="section-header-tag">
+        <span class="lime-tag">// 03</span>
+        <span class="tag-title">THE SOLUTION</span>
+      </div>
+
+      <div class="section-lead-grid">
+        <div class="lead-title-col">
+          <h2 class="section-display-title">
+            A Personal Space for Every Anime Fan.
+          </h2>
+        </div>
+        <div class="lead-copy-col">
+          <p class="paragraph-body">
+            We architected a streamlined, gesture-first application that treats anime collection management like a physical gallery archive.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Trifecta Cards -->
+      <div class="feature-cards-grid">
+        
+        <div class="feature-card">
+          <div class="feature-icon-pod">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#C4FF4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>One-Tap Episode Logging</h3>
+          <p>Update episode counts directly from your home feed with optimistic UI updates. No page reloads or modal confirmations required.</p>
+          <ul class="feature-checklist">
+            <li>Instant progress bar animation</li>
+            <li>Automatic completion status trigger</li>
+            <li>Custom rating dial upon series finale</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-pod">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#C4FF4D" stroke-width="2"/><path d="M12 6V12L16 14" stroke="#C4FF4D" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Seasonal Broadcast Radar</h3>
+          <p>Real-time countdown clocks to the minute for weekly episode simulcasts in Tokyo and localized time zones across the globe.</p>
+          <ul class="feature-checklist">
+            <li>Weekly airing schedule grid</li>
+            <li>Genre &amp; studio filter presets</li>
+            <li>Spoiler-free synopsis teasers</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-pod">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#C4FF4D" stroke-width="2"/><path d="M9 3V21M3 9H21" stroke="#C4FF4D" stroke-width="2"/></svg>
+          </div>
+          <h3>Deep Media Dossiers</h3>
+          <p>Comprehensive character relationship graphs, voice actor credits, opening/ending theme audio clips, and studio production notes.</p>
+          <ul class="feature-checklist">
+            <li>Official streaming platform direct links</li>
+            <li>High-resolution key art galleries</li>
+            <li>Community verdict distribution graphs</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 04: DESIGN & DEVELOPMENT PROCESS
+       ========================================================================= -->
+  <section class="case-study-section section-process" id="process">
+    <div class="section-container">
+      
+      <div class="section-header-tag">
+        <span class="lime-tag">// 04</span>
+        <span class="tag-title">DESIGN &amp; DEVELOPMENT PROCESS</span>
+      </div>
+
+      <h2 class="section-display-title">
+        From Cyber-Violet Concept to 60 FPS Production.
+      </h2>
+
+      <!-- Process Timeline Steps -->
+      <div class="process-steps-timeline">
+        
+        <div class="timeline-step">
+          <div class="step-num-bubble">01</div>
+          <div class="step-content-card">
+            <span class="step-phase">PHASE 01 // DISCOVERY</span>
+            <h3>Information Architecture &amp; User Research</h3>
+            <p>Interviewed 50+ avid anime viewers to map core logging friction points. Identified that 84% of interactions are simple "+1 episode" updates on mobile smartphones.</p>
+            <div class="step-tags">
+              <span>User Journey Mapping</span>
+              <span>Data Normalization</span>
+              <span>Wireframing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-num-bubble">02</div>
+          <div class="step-content-card">
+            <span class="step-phase">PHASE 02 // VISUAL IDENTITY</span>
+            <h3>Cyber-Violet &amp; Neon Lime Design System</h3>
+            <p>Created an obsidian environment (#0E0B1A) accented with electric violet (#7C3AED) and neon lime (#C4FF4D). Developed a 4px modular spacing grid and glassmorphic card overlays.</p>
+            <div class="step-tags">
+              <span>Dark Theme Tokens</span>
+              <span>Glassmorphism</span>
+              <span>Typography Pairing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-num-bubble">03</div>
+          <div class="step-content-card">
+            <span class="step-phase">PHASE 03 // ARCHITECTURE</span>
+            <h3>API Integration &amp; Optimistic Caching</h3>
+            <p>Engineered an asynchronous caching layer over Jikan REST and AniList GraphQL endpoints, persisting watchlists locally in browser storage for instant offline capability.</p>
+            <div class="step-tags">
+              <span>GraphQL Pipeline</span>
+              <span>IndexedDB Sync</span>
+              <span>Optimistic UI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-num-bubble">04</div>
+          <div class="step-content-card">
+            <span class="step-phase">PHASE 04 // POLISH</span>
+            <h3>Micro-Interactions &amp; Edge Deployment</h3>
+            <p>Tuned spring physics and scroll parallax triggers. Deployed the application to Vercel's global edge network for sub-100ms response times worldwide.</p>
+            <div class="step-tags">
+              <span>Vercel Edge</span>
+              <span>CSS Keyframes</span>
+              <span>Lighthouse 98+</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 05: TECHNOLOGY STACK
+       ========================================================================= -->
+  <section class="case-study-section section-tech" id="tech">
+    <div class="section-container">
+      
+      <div class="section-header-tag">
+        <span class="lime-tag">// 05</span>
+        <span class="tag-title">TECHNOLOGY STACK</span>
+      </div>
+
+      <h2 class="section-display-title">
+        Minimalist, Lightning-Fast Architecture.
+      </h2>
+
+      <div class="tech-stack-grid">
+        
+        <div class="tech-card">
+          <span class="tech-category">CORE RUNTIME</span>
+          <h3>HTML5 &amp; Modern CSS3</h3>
+          <p>Native CSS custom properties, grid layouts, 3D perspective transforms, and zero heavy animation runtime bloat.</p>
+        </div>
+
+        <div class="tech-card">
+          <span class="tech-category">INTERACTIONS</span>
+          <h3>Vanilla JavaScript (ESNext)</h3>
+          <p>Intersection Observer APIs, requestAnimationFrame physics, and lightweight state managers for real-time reactivity.</p>
+        </div>
+
+        <div class="tech-card">
+          <span class="tech-category">DATA ENGINE</span>
+          <h3>AniList &amp; Jikan GraphQL</h3>
+          <p>Direct query access to the world's largest open-source anime metadata schemas with smart request batching.</p>
+        </div>
+
+        <div class="tech-card">
+          <span class="tech-category">INFRASTRUCTURE</span>
+          <h3>Vercel Global Edge Network</h3>
+          <p>Instant edge routing, automated CI/CD pipelines, and global SSL caching for maximum delivery velocity.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 06: RESULTS & IMPACT
+       ========================================================================= -->
+  <section class="case-study-section section-results" id="results">
+    <div class="section-container">
+      
+      <div class="section-header-tag">
+        <span class="lime-tag">// 06</span>
+        <span class="tag-title">RESULTS &amp; COMMUNITY TELEMETRY</span>
+      </div>
+
+      <div class="results-showcase-card">
+        <div class="results-bg-glow"></div>
+        <div class="results-inner-content">
+          <span class="results-kicker">VERIFIED OUTCOMES</span>
+          <h2 class="results-headline">Transforming How Fans Experience Their Anime Journey.</h2>
+          
+          <div class="results-stats-row">
+            <div class="r-stat">
+              <span class="r-number">+42%</span>
+              <span class="r-caption">Daily Active User Retention</span>
+            </div>
+            <div class="r-stat">
+              <span class="r-number">3.8x</span>
+              <span class="r-caption">Faster Episode Logging Speed</span>
+            </div>
+            <div class="r-stat">
+              <span class="r-number">99.98%</span>
+              <span class="r-caption">Edge Network Uptime</span>
+            </div>
+            <div class="r-stat">
+              <span class="r-number">4.9 / 5</span>
+              <span class="r-caption">Community Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       SECTION 07: FINAL CALL TO ACTION
+       ========================================================================= -->
+  <section class="case-study-section section-cta" id="cta">
+    <div class="section-container">
+      
+      <div class="cta-banner-pod">
+        <div class="cta-ambient-glow"></div>
+        <span class="cta-micro-badge">READY TO EXPLORE?</span>
+        <h2 class="cta-display-title">
+          Experience LISTIT Archive Live in Your Browser.
+        </h2>
+        <p class="cta-subtext">
+          Track your personal watchlists, discover upcoming seasonal anime, and experience an interface built for pure enthusiasts.
+        </p>
+
+        <div class="cta-buttons-wrap">
+          <a href="https://trackwithlistit.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary-lime-lg">
+            <span>Launch Live Application</span>
+            <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="/" class="btn-secondary-ghost">
+            <span>Return to Portfolio</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="showcase-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">VERHOST DIGITAL WORKS</span>
+        <span class="footer-sep">•</span>
+        <span class="footer-project">Project 13: LISTIT ARCHIVE</span>
+      </div>
+      <div class="footer-center">
+        <span>Curated Showcase • Obsidian Violet Theme</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top-link">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M6 9V3M6 3L3 6M6 3L9 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

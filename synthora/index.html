@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNTHORA — Future-Ready Digital Experiences | Cyberpunk Digital Studio</title>
+  <meta name="description" content="SYNTHORA is an elite futuristic digital experience studio blending Y2K aesthetics, cyberpunk visual architecture, AI solutions, and high-performance creative engineering.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400;600;700;800;900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="synthora-body">
+
+  <!-- Background Technical Grid & Ambient Neon Lighting -->
+  <div class="cyber-grid" aria-hidden="true"></div>
+  <div class="neon-ambient glow-magenta" aria-hidden="true"></div>
+  <div class="neon-ambient glow-cyan" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION (Futuristic Transparent Nav Bar)
+       ========================================================================= -->
+  <header class="synthora-header" id="synthoraHeader">
+    <div class="header-inner">
+      <!-- Brand Logo with Custom Magenta 4-Point Star -->
+      <a href="#hero" class="brand-logo" aria-label="SYNTHORA Home">
+        <svg class="star-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" fill="url(#star-grad)"/>
+          <defs>
+            <linearGradient id="star-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FF16D5"/>
+              <stop offset="100%" stop-color="#F500A8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="brand-text">SYNTHORA<span class="reg-mark">&reg;</span></span>
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-item active">HOME</a></li>
+          <li><a href="#services" class="nav-item">SERVICES</a></li>
+          <li><a href="#work" class="nav-item">WORK</a></li>
+          <li><a href="#labs" class="nav-item">LABS</a></li>
+          <li><a href="#about" class="nav-item">ABOUT</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action Controls -->
+      <div class="header-actions">
+        <a href="#contact" class="btn-launch-nav">
+          <span>LAUNCH PROJECT</span>
+          <svg class="arrow-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Hamburger Toggle -->
+        <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title">// SYSTEM NAVIGATION</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#hero" class="drawer-link active">01 // HOME</a>
+      <a href="#services" class="drawer-link">02 // SERVICES</a>
+      <a href="#work" class="drawer-link">03 // SELECTED WORK</a>
+      <a href="#labs" class="drawer-link">04 // SYNTHORA LABS</a>
+      <a href="#process" class="drawer-link">05 // PROCESS</a>
+      <a href="#about" class="drawer-link">06 // ABOUT</a>
+      <a href="#contact" class="drawer-link drawer-cta">07 // LAUNCH PROJECT &nearr;</a>
+    </nav>
+    <div class="drawer-telemetry">
+      <span>LATENCY: 12ms</span>
+      <span>CYBERNET: ONLINE</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 01: HERO (Cinematic Cyberpunk Sculpture & Futuristic Stage)
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <!-- Full-Width Background Cyberpunk Artwork (Image 01) -->
+      <div class="hero-bg-wrapper">
+        <img 
+          src="assets/images/hero-cyberpunk.jpg" 
+          alt="SYNTHORA Cyberpunk Sculpture with Neon Visor and Futuristic Metropolis" 
+          class="hero-artwork"
+          id="heroArtwork"
+          loading="eager"
+          fetchpriority="high"
+        >
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
+        <div class="hero-scanlines" aria-hidden="true"></div>
+      </div>
+
+      <!-- Right Side Vertical Typography & Japanese Script -->
+      <aside class="hero-vertical-meta" aria-hidden="true">
+        <div class="meta-english">
+          <span>DESIGN</span>
+          <span>TECHNOLOGY</span>
+          <span>EXPERIENCE</span>
+        </div>
+        <div class="meta-kanji">
+          <span class="kanji-char">シ</span>
+          <span class="kanji-char">ン</span>
+          <span class="kanji-char">ソ</span>
+          <span class="kanji-char">ラ</span>
+          <span class="star-accent">&#10022;</span>
+        </div>
+      </aside>
+
+      <div class="hero-content-container">
+        <!-- Main Editorial Column (Left Aligned for Optimal Sculpture Visibility) -->
+        <div class="hero-text-block">
+          <!-- Small Technical Badge -->
+          <div class="hero-badge reveal-item">
+            <span class="badge-bracket">[</span>
+            <span class="badge-label">DIGITAL EXPERIENCE STUDIO</span>
+            <span class="badge-bracket">]</span>
+          </div>
+
+          <!-- Main Massive Display Headline -->
+          <h1 class="hero-headline reveal-item">
+            <span class="headline-row row-white">FUTURE-READY</span>
+            <span class="headline-row">
+              <span class="row-white">DIGITAL </span>
+              <span class="row-magenta glow-text">EXPERIENCES</span>
+            </span>
+          </h1>
+
+          <!-- Studio Mission Statement -->
+          <p class="hero-description reveal-item">
+            We design, build and scale next-gen digital products that merge creativity, technology and culture.
+          </p>
+
+          <!-- Dual Cyberpunk CTAs -->
+          <div class="hero-actions reveal-item">
+            <a href="#work" class="btn-primary-magenta">
+              <span>EXPLORE WORK</span>
+              <svg class="btn-arrow" viewBox="0 0 14 14" fill="none">
+                <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+            <button class="btn-secondary-reel" id="watchReelBtn" aria-label="Watch studio showreel">
+              <span class="play-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </span>
+              <span class="reel-text">WATCH REEL</span>
+            </button>
+          </div>
+
+          <!-- Technical Statistics Row -->
+          <div class="hero-stats-row reveal-item">
+            <div class="stat-node">
+              <span class="stat-number" data-target="120">120+</span>
+              <span class="stat-tag">PROJECTS DELIVERED</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true">/</div>
+
+            <div class="stat-node">
+              <span class="stat-number" data-target="80">80+</span>
+              <span class="stat-tag">GLOBAL CLIENTS</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true">/</div>
+
+            <div class="stat-node">
+              <span class="stat-number" data-target="98">98%</span>
+              <span class="stat-tag">SATISFACTION</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true">/</div>
+
+            <div class="stat-node">
+              <span class="stat-number" data-target="4">4X</span>
+              <span class="stat-tag">AVERAGE GROWTH</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Lower-Right Featured Project Card (Nexus AI) -->
+        <div class="hero-featured-card reveal-item" id="featuredNexusCard">
+          <div class="featured-card-top">
+            <span class="badge-bracket">[</span>
+            <span class="featured-tag">FEATURED PROJECT</span>
+            <span class="badge-bracket">]</span>
+          </div>
+
+          <div class="featured-card-body">
+            <!-- Project Hologram Thumbnail -->
+            <div class="featured-thumb">
+              <img src="assets/images/city-ring.jpg" alt="NEXUS AI Platform Preview" loading="lazy">
+              <div class="thumb-scanline"></div>
+            </div>
+
+            <!-- Project Meta -->
+            <div class="featured-info">
+              <h3 class="featured-title">NEXUS AI</h3>
+              <p class="featured-desc">A next-gen AI platform for creative workflows.</p>
+            </div>
+
+            <!-- Direct Launch Button -->
+            <a href="#work" class="featured-arrow-btn" aria-label="View Nexus AI project details">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 02: OUR SERVICES (Futuristic Chamfered Service Slider)
+         ========================================================================= -->
+    <section class="services-section" id="services">
+      <div class="section-container">
+        <!-- Section Header Bar with Navigation Controls -->
+        <div class="section-header-bar">
+          <div class="section-label-group">
+            <span class="slash-deco">/</span>
+            <h2 class="section-title">OUR SERVICES</h2>
+            <span class="slash-deco">/</span>
+          </div>
+
+          <div class="slider-controls">
+            <span class="slider-index" id="sliderIndex">01 / 04</span>
+            <button class="slider-btn prev" id="servicePrevBtn" aria-label="Previous Service">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="slider-btn next" id="serviceNextBtn" aria-label="Next Service">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Horizontal 4-Panel Service Grid -->
+        <div class="services-slider-wrapper" id="servicesSlider">
+          <!-- 01 UI / UX DESIGN -->
+          <article class="service-card" data-index="0">
+            <div class="card-corner-cut top-left"></div>
+            <div class="card-corner-cut bottom-right"></div>
+            <div class="service-card-header">
+              <span class="service-number">01</span>
+            </div>
+
+            <!-- 3D Chrome Torus Graphic -->
+            <div class="service-visual-art">
+              <div class="art-graphic torus-graphic">
+                <svg viewBox="0 0 160 160" class="svg-art">
+                  <defs>
+                    <linearGradient id="torusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#12D9FF"/>
+                      <stop offset="50%" stop-color="#FF16D5"/>
+                      <stop offset="100%" stop-color="#315BFF"/>
+                    </linearGradient>
+                    <radialGradient id="torusGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#FF16D5" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="#FF16D5" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="55" fill="none" stroke="url(#torusGrad)" stroke-width="22" stroke-dasharray="320" stroke-linecap="round" filter="drop-shadow(0 0 14px rgba(255,22,213,0.65))" />
+                  <ellipse cx="80" cy="80" rx="35" ry="20" fill="url(#torusGlow)" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title">
+                <span>UI / UX</span>
+                <span>DESIGN</span>
+              </h3>
+              <p class="service-snippet">Immersive interfaces built around intuitive user experiences.</p>
+              <div class="service-hover-meta">
+                <span class="meta-tag">SPATIAL UI</span>
+                <span class="meta-tag">DESIGN SYSTEMS</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="service-action-btn" aria-label="Explore UI/UX Design services">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </a>
+          </article>
+
+          <!-- 02 WEB DEVELOPMENT -->
+          <article class="service-card" data-index="1">
+            <div class="card-corner-cut top-left"></div>
+            <div class="card-corner-cut bottom-right"></div>
+            <div class="service-card-header">
+              <span class="service-number">02</span>
+            </div>
+
+            <!-- Translucent Floating Isometric Cubes -->
+            <div class="service-visual-art">
+              <div class="art-graphic cube-graphic">
+                <svg viewBox="0 0 160 160" class="svg-art">
+                  <defs>
+                    <linearGradient id="cubeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#FF16D5"/>
+                      <stop offset="50%" stop-color="#12D9FF"/>
+                      <stop offset="100%" stop-color="#315BFF"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="80,30 125,55 80,80 35,55" fill="rgba(18, 217, 255, 0.4)" stroke="#12D9FF" stroke-width="2" />
+                  <polygon points="35,55 80,80 80,130 35,105" fill="rgba(255, 22, 213, 0.45)" stroke="#FF16D5" stroke-width="2" />
+                  <polygon points="80,80 125,55 125,105 80,130" fill="rgba(49, 91, 255, 0.5)" stroke="#315BFF" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title">
+                <span>WEB</span>
+                <span>DEVELOPMENT</span>
+              </h3>
+              <p class="service-snippet">High-performance digital products built for the next generation.</p>
+              <div class="service-hover-meta">
+                <span class="meta-tag">FULL-STACK</span>
+                <span class="meta-tag">WEBGL / REALTIME</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="service-action-btn" aria-label="Explore Web Development services">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </a>
+          </article>
+
+          <!-- 03 AI SOLUTIONS -->
+          <article class="service-card" data-index="2">
+            <div class="card-corner-cut top-left"></div>
+            <div class="card-corner-cut bottom-right"></div>
+            <div class="service-card-header">
+              <span class="service-number">03</span>
+            </div>
+
+            <!-- Pixelated Volumetric Futuristic X Glyph -->
+            <div class="service-visual-art">
+              <div class="art-graphic x-graphic">
+                <svg viewBox="0 0 160 160" class="svg-art">
+                  <defs>
+                    <linearGradient id="xGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#FF16D5"/>
+                      <stop offset="100%" stop-color="#12D9FF"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="40" y="40" width="20" height="20" fill="#FF16D5" opacity="0.8"/>
+                  <rect x="60" y="60" width="20" height="20" fill="#F500A8" opacity="0.9"/>
+                  <rect x="80" y="80" width="20" height="20" fill="#12D9FF" opacity="1"/>
+                  <rect x="100" y="100" width="20" height="20" fill="#315BFF" opacity="0.8"/>
+                  <rect x="100" y="40" width="20" height="20" fill="#12D9FF" opacity="0.8"/>
+                  <rect x="80" y="60" width="20" height="20" fill="#315BFF" opacity="0.9"/>
+                  <rect x="40" y="100" width="20" height="20" fill="#FF16D5" opacity="0.8"/>
+                  <rect x="70" y="70" width="20" height="20" fill="#FFFFFF" filter="drop-shadow(0 0 8px #FF16D5)"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title">
+                <span>AI</span>
+                <span>SOLUTIONS</span>
+              </h3>
+              <p class="service-snippet">Intelligent digital experiences powered by modern AI.</p>
+              <div class="service-hover-meta">
+                <span class="meta-tag">GENERATIVE AI</span>
+                <span class="meta-tag">AGENTIC WORKFLOWS</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="service-action-btn" aria-label="Explore AI Solutions services">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </a>
+          </article>
+
+          <!-- 04 DIGITAL GROWTH -->
+          <article class="service-card" data-index="3">
+            <div class="card-corner-cut top-left"></div>
+            <div class="card-corner-cut bottom-right"></div>
+            <div class="service-card-header">
+              <span class="service-number">04</span>
+            </div>
+
+            <!-- Wireframe Holographic Sphere on Illuminated Grid -->
+            <div class="service-visual-art">
+              <div class="art-graphic sphere-graphic">
+                <svg viewBox="0 0 160 160" class="svg-art">
+                  <circle cx="80" cy="80" r="50" fill="none" stroke="#FF16D5" stroke-width="1.8" opacity="0.75"/>
+                  <ellipse cx="80" cy="80" rx="50" ry="20" fill="none" stroke="#12D9FF" stroke-width="1.5"/>
+                  <ellipse cx="80" cy="80" rx="20" ry="50" fill="none" stroke="#315BFF" stroke-width="1.5"/>
+                  <line x1="80" y1="30" x2="80" y2="130" stroke="#FF16D5" stroke-dasharray="4,4"/>
+                  <line x1="30" y1="80" x2="130" y2="80" stroke="#12D9FF" stroke-dasharray="4,4"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title">
+                <span>DIGITAL</span>
+                <span>GROWTH</span>
+              </h3>
+              <p class="service-snippet">Technology-driven experiences that move brands forward.</p>
+              <div class="service-hover-meta">
+                <span class="meta-tag">CONVERSION OPT</span>
+                <span class="meta-tag">DATA TELEMETRY</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="service-action-btn" aria-label="Explore Digital Growth services">
+              <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 03: SELECTED WORK (Cinematic Transmission Gallery)
+         ========================================================================= -->
+    <section class="work-section" id="work">
+      <div class="section-container">
+        <!-- Section Header -->
+        <div class="section-intro">
+          <div class="tag-row">
+            <span class="badge-bracket">[</span>
+            <span class="badge-label">SELECTED TRANSMISSIONS</span>
+            <span class="badge-bracket">]</span>
+          </div>
+          <h2 class="section-headline">DIGITAL WORLDS. <span class="glow-text">REAL IMPACT.</span></h2>
+          <p class="section-subtext">Propelling vanguard brands into high-fidelity cybernetic dimensions.</p>
+        </div>
+
+        <!-- Asymmetric Portfolio Grid -->
+        <div class="work-grid">
+          <!-- Main Hero Case Study: NEXUS AI -->
+          <article class="work-card large-feature">
+            <div class="work-media">
+              <img src="assets/images/city-ring.jpg" alt="NEXUS AI Flagship Transmission" loading="lazy">
+              <div class="work-overlay"></div>
+              <span class="status-indicator live">LIVE TRANSMISSION</span>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="work-num">#01</span>
+                <span class="work-cat">ARTIFICIAL INTELLIGENCE</span>
+              </div>
+              <h3 class="work-title">NEXUS AI</h3>
+              <p class="work-desc">Autonomous multi-model inference interface delivering generative design environments for 80,000+ creators worldwide.</p>
+              <div class="work-tags">
+                <span>AGENTIC WORKFLOWS</span>
+                <span>NEURAL ENGINE</span>
+                <span>3D VIEWPORTS</span>
+              </div>
+              <a href="#contact" class="work-link">
+                <span>VIEW TRANSMISSION</span>
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 02 CYBERCORE -->
+          <article class="work-card">
+            <div class="work-media">
+              <img src="assets/images/city-bridge.jpg" alt="CYBERCORE Infrastructure Platform" loading="lazy">
+              <div class="work-overlay"></div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="work-num">#02</span>
+                <span class="work-cat">TECHNOLOGY</span>
+              </div>
+              <h3 class="work-title">CYBERCORE</h3>
+              <p class="work-desc">Decentralized enterprise security architecture with real-time holographic data topology.</p>
+              <a href="#contact" class="work-link">
+                <span>EXPLORE</span>
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 03 NEONVERSE -->
+          <article class="work-card">
+            <div class="work-media">
+              <img src="assets/images/hero-cyberpunk.jpg" alt="NEONVERSE Creative Platform" loading="lazy">
+              <div class="work-overlay"></div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="work-num">#03</span>
+                <span class="work-cat">CREATIVE PLATFORM</span>
+              </div>
+              <h3 class="work-title">NEONVERSE</h3>
+              <p class="work-desc">Spatial audio-visual streaming sanctuary curated for digital artists and metaverse creators.</p>
+              <a href="#contact" class="work-link">
+                <span>EXPLORE</span>
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 04 PIXELSHIFT -->
+          <article class="work-card">
+            <div class="work-media">
+              <div class="abstract-cyber-screen pixelshift-screen"></div>
+              <div class="work-overlay"></div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="work-num">#04</span>
+                <span class="work-cat">DIGITAL EXPERIENCE</span>
+              </div>
+              <h3 class="work-title">PIXELSHIFT</h3>
+              <p class="work-desc">High-framerate interactive lookbook capturing Y2K streetwear iconography.</p>
+              <a href="#contact" class="work-link">
+                <span>EXPLORE</span>
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 05 QUANTUM X -->
+          <article class="work-card">
+            <div class="work-media">
+              <div class="abstract-cyber-screen quantum-screen"></div>
+              <div class="work-overlay"></div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="work-num">#05</span>
+                <span class="work-cat">WEB APPLICATION</span>
+              </div>
+              <h3 class="work-title">QUANTUM X</h3>
+              <p class="work-desc">Real-time quantum algorithmic trading interface with sub-millisecond reaction telemetry.</p>
+              <a href="#contact" class="work-link">
+                <span>EXPLORE</span>
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 06 SYNTH LAB -->
+          <article class="work-card">
+            <div class="work-media">
+              <div class="abstract-cyber-screen synth-screen"></div>
+              <div class="work-overlay"></div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="work-num">#06</span>
+                <span class="work-cat">EXPERIMENTAL INTERFACE</span>
+              </div>
+              <h3 class="work-title">SYNTH LAB</h3>
+              <p class="work-desc">Browser-synthesized modular polyphonic sound sculpture powered by Web Audio API.</p>
+              <a href="#contact" class="work-link">
+                <span>EXPLORE</span>
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.8"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 04: SYNTHORA LABS (Atmospheric R&D with Image 02 Halo Ring)
+         ========================================================================= -->
+    <section class="labs-section" id="labs">
+      <!-- Background Cyber City Image 02 -->
+      <div class="labs-bg-container">
+        <img src="assets/images/city-ring.jpg" alt="SYNTHORA Labs Metropolis Environment" class="labs-bg-image" loading="lazy">
+        <div class="labs-bg-mask"></div>
+      </div>
+
+      <div class="section-container relative-z">
+        <div class="labs-intro">
+          <span class="tag-monospaced">// RESEARCH &amp; EXPLORATION //</span>
+          <h2 class="labs-headline">BEYOND THE <span class="glow-cyan">INTERFACE.</span></h2>
+          <p class="labs-tagline">
+            We explore the intersection of artificial intelligence, design and emerging technology.
+          </p>
+        </div>
+
+        <div class="labs-pod-grid">
+          <!-- Pod 1 -->
+          <div class="lab-pod">
+            <div class="pod-telemetry">POD_01 &bull; 99.8% EFF</div>
+            <h3 class="pod-name">Generative AI</h3>
+            <p class="pod-desc">Context-aware generative agents creating personalized real-time visual canvases and narrative flows.</p>
+            <div class="pod-metrics">
+              <span class="metric-val">&lt; 14ms</span>
+              <span class="metric-key">LATENCY</span>
+            </div>
+          </div>
+
+          <!-- Pod 2 -->
+          <div class="lab-pod">
+            <div class="pod-telemetry">POD_02 &bull; 120 FPS</div>
+            <h3 class="pod-name">Immersive Experiences</h3>
+            <p class="pod-desc">Hardware-accelerated WebGL environments blurring physical spatial boundaries with cybernetic physics.</p>
+            <div class="pod-metrics">
+              <span class="metric-val">4K HDR</span>
+              <span class="metric-key">CANVAS RES</span>
+            </div>
+          </div>
+
+          <!-- Pod 3 -->
+          <div class="lab-pod">
+            <div class="pod-telemetry">POD_03 &bull; AUTONOMOUS</div>
+            <h3 class="pod-name">Creative Automation</h3>
+            <p class="pod-desc">Algorithmic design systems generating multi-platform brand ecosystems with zero manual friction.</p>
+            <div class="pod-metrics">
+              <span class="metric-val">10X</span>
+              <span class="metric-key">VELOCITY</span>
+            </div>
+          </div>
+
+          <!-- Pod 4 -->
+          <div class="lab-pod">
+            <div class="pod-telemetry">POD_04 &bull; LIVE FEED</div>
+            <h3 class="pod-name">Interactive Systems</h3>
+            <p class="pod-desc">Bi-directional sensor interfaces translating user bio-rhythms and gesture physics into digital reactive matter.</p>
+            <div class="pod-metrics">
+              <span class="metric-val">ZERO</span>
+              <span class="metric-key">DRIFT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 05: OUR PROCESS (Interactive Neon Timeline Switchboard)
+         ========================================================================= -->
+    <section class="process-section" id="process">
+      <div class="section-container">
+        <div class="section-intro">
+          <span class="tag-monospaced">// PROTOCOL ARCHITECTURE //</span>
+          <h2 class="section-headline">FROM CONCEPT <span class="glow-text">TO FUTURE.</span></h2>
+          <p class="section-subtext">A disciplined 4-stage deployment pipeline engineered for maximum technological velocity.</p>
+        </div>
+
+        <!-- Connected Step Navigation -->
+        <div class="process-pipeline">
+          <div class="pipeline-track">
+            <div class="pipeline-progress-bar" id="pipelineProgress"></div>
+          </div>
+
+          <div class="pipeline-buttons">
+            <button class="step-btn active" data-step="0">
+              <span class="step-num">01</span>
+              <span class="step-title">DISCOVER</span>
+            </button>
+            <button class="step-btn" data-step="1">
+              <span class="step-num">02</span>
+              <span class="step-title">IMAGINE</span>
+            </button>
+            <button class="step-btn" data-step="2">
+              <span class="step-num">03</span>
+              <span class="step-title">ENGINEER</span>
+            </button>
+            <button class="step-btn" data-step="3">
+              <span class="step-num">04</span>
+              <span class="step-title">LAUNCH</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Process Detail Screen -->
+        <div class="process-display-card" id="processDisplay">
+          <div class="process-card-header">
+            <span class="stage-tag" id="processStageTag">STAGE 01 // SCOPING &amp; SIGNALS</span>
+            <span class="stage-status">[ SYSTEM ARMED ]</span>
+          </div>
+          <div class="process-card-content">
+            <div class="process-info-col">
+              <h3 class="process-stage-title" id="processTitle">01 — DISCOVER</h3>
+              <p class="process-stage-body" id="processBody">
+                We dissect industry complexity, extract cultural signals, and establish foundational technical parameters. We define clear KPIs and cybernetic design vectors before laying down architecture.
+              </p>
+              <ul class="process-deliverables" id="processDeliverables">
+                <li>&bull; Cultural &amp; Competitive Telemetry</li>
+                <li>&bull; Technical Architecture Blueprint</li>
+                <li>&bull; Core User Personas &amp; Journey Mapping</li>
+              </ul>
+            </div>
+            <div class="process-visual-col">
+              <div class="radar-scan-box" id="processVisualBox">
+                <div class="radar-line"></div>
+                <div class="radar-circle r1"></div>
+                <div class="radar-circle r2"></div>
+                <span class="radar-data">COORD: 35.6762° N, 139.6503° E</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 06: WHY SYNTHORA (Core Pillars & Studio Superiority)
+         ========================================================================= -->
+    <section class="about-section" id="about">
+      <div class="section-container">
+        <div class="about-grid">
+          <div class="about-editorial">
+            <span class="tag-monospaced">// STUDIO PILLARS //</span>
+            <h2 class="about-headline">
+              WE DON'T FOLLOW THE FUTURE.<br>
+              <span class="glow-text">WE BUILD IT.</span>
+            </h2>
+            <p class="about-lead">
+              SYNTHORA operates as a high-density collective of digital architects, creative engineers, and futurists. We reject formulaic enterprise templates in favor of bespoke, culturally-resonant systems that command absolute market attention.
+            </p>
+            <div class="about-badge-bar">
+              <span class="about-pill">TOKYO &bull; BERLIN &bull; SF</span>
+              <span class="about-pill">FOUNDED 2024</span>
+              <span class="about-pill">ISO-READY DEPLOYMENT</span>
+            </div>
+          </div>
+
+          <div class="about-pillars-col">
+            <!-- Pillar 1 -->
+            <div class="pillar-row">
+              <div class="pillar-idx">01</div>
+              <div class="pillar-data">
+                <h4>Creative Intelligence</h4>
+                <p>Bridging avant-garde art direction with mathematically rigorous information hierarchies.</p>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-row">
+              <div class="pillar-idx">02</div>
+              <div class="pillar-data">
+                <h4>Future-focused Technology</h4>
+                <p>Built upon resilient, sub-millisecond edge architecture with fluid hardware acceleration.</p>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-row">
+              <div class="pillar-idx">03</div>
+              <div class="pillar-data">
+                <h4>Human-centered Design</h4>
+                <p>Intuitive interaction models that eliminate cognitive friction while preserving atmospheric delight.</p>
+              </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="pillar-row">
+              <div class="pillar-idx">04</div>
+              <div class="pillar-data">
+                <h4>Performance-driven Development</h4>
+                <p>100/100 Lighthouse benchmarks, zero layout shifts, and battery-conscious graphics execution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 07: FINAL CTA (Image 03 Elevated Bridge Background & Form)
+         ========================================================================= -->
+    <section class="cta-section" id="contact">
+      <!-- Background Image 03: Elevated Bridge & Futuristic City -->
+      <div class="cta-bg-container">
+        <img src="assets/images/city-bridge.jpg" alt="SYNTHORA Elevated Highway & Skyline Background" class="cta-bg-image" loading="lazy">
+        <div class="cta-bg-tint"></div>
+      </div>
+
+      <div class="section-container relative-z">
+        <div class="cta-panel">
+          <div class="cta-corner c-tl"></div>
+          <div class="cta-corner c-tr"></div>
+          <div class="cta-corner c-bl"></div>
+          <div class="cta-corner c-br"></div>
+
+          <div class="cta-header-block">
+            <span class="badge-bracket">[</span>
+            <span class="tag-monospaced">INITIALIZE TRANSMISSION</span>
+            <span class="badge-bracket">]</span>
+            <h2 class="cta-headline">CREATE WHAT'S <span class="glow-text">NEXT.</span></h2>
+            <p class="cta-sub">Have an ambitious idea? Let's transform it into something extraordinary.</p>
+          </div>
+
+          <!-- Transmission Planner Form -->
+          <form class="transmission-form" id="transmissionForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="userName">YOUR NAME / CODENAME *</label>
+                <input type="text" id="userName" name="name" placeholder="E.g. Elena Vance" required>
+                <span class="field-error" id="nameError">Name identification is required</span>
+              </div>
+              <div class="form-group">
+                <label for="userEmail">TRANSMISSION FREQUENCY (EMAIL) *</label>
+                <input type="email" id="userEmail" name="email" placeholder="elena@cybercore.io" required>
+                <span class="field-error" id="emailError">Valid communication frequency required</span>
+              </div>
+            </div>
+
+            <!-- Service Selection Pills -->
+            <div class="form-group">
+              <label>REQUIRED CAPABILITIES (SELECT ALL THAT APPLY)</label>
+              <div class="capabilities-pills">
+                <label class="cap-pill">
+                  <input type="checkbox" name="services" value="UI/UX Design" checked>
+                  <span>UI / UX DESIGN</span>
+                </label>
+                <label class="cap-pill">
+                  <input type="checkbox" name="services" value="Web Development" checked>
+                  <span>WEB DEVELOPMENT</span>
+                </label>
+                <label class="cap-pill">
+                  <input type="checkbox" name="services" value="AI Solutions">
+                  <span>AI SOLUTIONS</span>
+                </label>
+                <label class="cap-pill">
+                  <input type="checkbox" name="services" value="Digital Growth">
+                  <span>DIGITAL GROWTH</span>
+                </label>
+                <label class="cap-pill">
+                  <input type="checkbox" name="services" value="Spatial / WebGL">
+                  <span>SPATIAL / 3D</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="userBrief">MISSION BRIEF *</label>
+              <textarea id="userBrief" name="brief" rows="3" placeholder="Describe project scope, timeline, and strategic ambitions..." required></textarea>
+              <span class="field-error" id="briefError">Brief details required for mission launch</span>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-submit-transmission" id="submitBtn">
+                <span>LAUNCH YOUR PROJECT</span>
+                <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 08: FOOTER (Cyberpunk Deep Navy Base & Coordinate Network)
+       ========================================================================= -->
+  <footer class="synthora-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand-logo" aria-label="SYNTHORA Home">
+            <svg class="star-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" fill="#FF16D5"/>
+            </svg>
+            <span class="brand-text">SYNTHORA<span class="reg-mark">&reg;</span></span>
+          </a>
+          <p class="footer-tagline">
+            Vanguard digital experience studio creating future-ready interfaces, generative AI systems, and cybernetic digital architecture.
+          </p>
+          <div class="system-status-indicator">
+            <span class="pulse-dot"></span>
+            <span>ALL NODES OPERATIONAL &bull; 99.99% UPTIME</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-links-col">
+          <span class="footer-heading">// DIRECTORY</span>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Selected Work</a></li>
+            <li><a href="#labs">Synthora Labs</a></li>
+            <li><a href="#about">Studio Philosophy</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-links-col">
+          <span class="footer-heading">// CAPABILITIES</span>
+          <ul>
+            <li><a href="#services">UI / UX Design</a></li>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">AI Solutions</a></li>
+            <li><a href="#services">Digital Growth</a></li>
+            <li><a href="#labs">Spatial Engineering</a></li>
+          </ul>
+        </div>
+
+        <!-- Coordinates & Contact -->
+        <div class="footer-contact-col">
+          <span class="footer-heading">// TRANSMISSION HUBS</span>
+          <p class="contact-line">HQ: SHIBUYA, TOKYO, JAPAN</p>
+          <p class="contact-line">NODE 2: KREUZBERG, BERLIN</p>
+          <p class="contact-line">FREQUENCY: hello@synthora.io</p>
+          <div class="social-tags">
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-chip">X / TWITTER</a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="social-chip">GITHUB</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-chip">INSTAGRAM</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 SYNTHORA DIGITAL WORKS. ALL RIGHTS RESERVED.</span>
+        <span class="mono-coords">35.6580° N, 139.7016° E &bull; PROTOCOL V4.2</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SHOWREEL VIDEO MODAL
+       ========================================================================= -->
+  <div class="showreel-modal" id="showreelModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Showreel Video">&times;</button>
+      <div class="modal-video-viewport">
+        <div class="simulated-cyber-reel">
+          <div class="reel-glitch-layer"></div>
+          <div class="reel-info-hud">
+            <span class="hud-tag">SYNTHORA SHOWREEL 2026 // 4K STREAM</span>
+            <span class="hud-rec">&#9679; REC 01:24</span>
+          </div>
+          <div class="reel-center-play">
+            <svg viewBox="0 0 24 24" fill="#FF16D5" width="48" height="48">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <p>CLICK TO ACTIVATE FULL AUDIO SYNTHESIZER</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

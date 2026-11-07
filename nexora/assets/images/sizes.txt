@@ -1,0 +1,20 @@
+{
+  "hero-bg.jpg": 272496,
+  "featured-insight-thumb.jpg": 94503,
+  "approach-chasm.jpg": 74087,
+  "approach-video-thumb.jpg": 106680,
+  "solution-strategy.jpg": 88388,
+  "solution-digital.jpg": 95395,
+  "solution-tech.jpg": 141338,
+  "solution-growth.jpg": 157474,
+  "industry-technology.jpg": 128957,
+  "industry-finance.jpg": 157474,
+  "industry-healthcare.jpg": 172672,
+  "industry-manufacturing.jpg": 154368,
+  "industry-retail.jpg": 140939,
+  "industry-sustainability.jpg": 220382,
+  "insight-sustainable.jpg": 755014,
+  "insight-resilient.jpg": 106886,
+  "insight-impact.jpg": 157474,
+  "about-philosophy.jpg": 78413
+}

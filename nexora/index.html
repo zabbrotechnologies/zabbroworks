@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA — Strategic Business & Technology Consultancy</title>
+  <meta name="description" content="NEXORA is a premier international business and technology strategy advisory turning complexity into clarity and ideas into measurable enterprise growth.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="nexora-body">
+
+  <!-- Ambient Cinematic Grain & Lighting Overlays -->
+  <div class="nexora-ambient-glow" aria-hidden="true"></div>
+  <div class="nexora-film-grain" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="nexora-header" id="mainHeader">
+    <div class="nexora-header-container">
+      <!-- Brand Wordmark & Descriptor -->
+      <a href="#hero" class="nexora-brand" aria-label="NEXORA Home">
+        <span class="nexora-wordmark">N E X O R A</span>
+        <span class="nexora-descriptor">STRATEGY / TECHNOLOGY / GROWTH</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nexora-nav" aria-label="Main Navigation">
+        <ul class="nexora-nav-list">
+          <li><a href="#hero" class="nexora-nav-link active">Home</a></li>
+          <li><a href="#solutions" class="nexora-nav-link">Solutions</a></li>
+          <li><a href="#industries" class="nexora-nav-link">Industries</a></li>
+          <li><a href="#insights" class="nexora-nav-link">Insights</a></li>
+          <li><a href="#about" class="nexora-nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="nexora-header-actions">
+        <a href="#contact" class="nexora-touch-btn">
+          <span>Get in Touch</span>
+          <span class="nexora-arrow-diag">&nearr;</span>
+        </a>
+
+        <!-- Minimal Circular Mobile Menu Toggle -->
+        <button type="button" class="nexora-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="nexora-mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-backdrop" id="menuBackdrop"></div>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <span class="nexora-wordmark">N E X O R A</span>
+        <button type="button" class="mobile-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="#hero" class="mobile-nav-link">01 &bull; Home</a>
+        <a href="#approach" class="mobile-nav-link">02 &bull; Our Approach</a>
+        <a href="#solutions" class="mobile-nav-link">03 &bull; Solutions</a>
+        <a href="#industries" class="mobile-nav-link">04 &bull; Industries</a>
+        <a href="#insights" class="mobile-nav-link">05 &bull; Insights</a>
+        <a href="#about" class="mobile-nav-link">06 &bull; About Us</a>
+        <a href="#contact" class="mobile-nav-link">07 &bull; Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <span>ZURICH &bull; LONDON &bull; SINGAPORE &bull; NEW YORK</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 01: CINEMATIC HERO
+       ========================================================================= -->
+  <section class="nexora-hero" id="hero" aria-label="Cinematic Hero">
+    <!-- Background Cinematic Architectural Stage -->
+    <div class="nexora-hero-bg-stage" aria-hidden="true">
+      <div class="hero-image-scrim"></div>
+      <img src="assets/images/hero-bg.jpg" alt="Futuristic cantilevered glass architectural pavilion beside water with celestial moon ring" class="hero-cinematic-img" id="heroParallaxImg">
+      <div class="hero-horizon-gradient"></div>
+    </div>
+
+    <!-- Hero Interactive Content Canvas -->
+    <div class="nexora-hero-container">
+      
+      <!-- Top Stage: Headline & Upper Right Card -->
+      <div class="hero-top-stage">
+        
+        <!-- Left Headline Column -->
+        <div class="hero-headline-col">
+          <div class="hero-section-index reveal-fade">
+            <span>01 / A HIGHER PERSPECTIVE</span>
+          </div>
+
+          <h1 class="hero-display-title reveal-fade">
+            <span class="hero-title-line">Your</span>
+            <span class="hero-title-line">Growth,</span>
+            <span class="hero-title-line">
+              <span class="hero-accent-sage">Our Strategy.</span>
+            </span>
+          </h1>
+
+          <div class="hero-lead-row reveal-fade">
+            <p class="hero-lead-copy">
+              WE HELP AMBITIOUS BUSINESSES TURN COMPLEXITY INTO CLARITY AND IDEAS INTO MEASURABLE GROWTH.
+            </p>
+          </div>
+
+          <!-- Hero Action Controls -->
+          <div class="hero-actions-cluster reveal-fade">
+            <a href="#solutions" class="hero-cta-btn">
+              <span class="cta-circle-icon">&rarr;</span>
+              <span class="cta-label">EXPLORE OUR SOLUTIONS</span>
+            </a>
+
+            <button type="button" class="hero-video-btn" id="openHeroVideoBtn" aria-label="Watch Introduction Video">
+              <span class="video-circle-icon">&#9658;</span>
+              <span class="cta-label">WATCH VIDEO</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Upper Right: Featured Insight Floating Card -->
+        <div class="hero-insight-card-col reveal-fade">
+          <div class="hero-insight-prelabel">
+            STRATEGIC<br>
+            BUSINESS SOLUTIONS<br>
+            FOR A CHANGING<br>
+            TOMORROW.
+          </div>
+
+          <article class="hero-insight-capsule" id="heroInsightCapsule">
+            <div class="insight-capsule-thumb">
+              <img src="assets/images/featured-insight-thumb.jpg" alt="Modern illuminated glass pavilion at night" loading="lazy">
+              <div class="insight-thumb-glow"></div>
+            </div>
+            <div class="insight-capsule-meta">
+              <span class="capsule-tag">Featured Insight</span>
+              <h4 class="capsule-title">The Next Era of Sustainable Growth</h4>
+              <span class="capsule-arrow">&nearr;</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- Bottom Stage: Metrics Strip & Slider Navigation -->
+      <div class="hero-bottom-stage reveal-fade">
+        <div class="hero-metrics-grid">
+          <div class="hero-metric-item">
+            <div class="metric-num-wrap">
+              <span class="metric-num" data-target="250">250</span><span class="metric-suffix">+</span>
+            </div>
+            <span class="metric-label">BUSINESSES SUPPORTED</span>
+          </div>
+
+          <div class="hero-metric-item">
+            <div class="metric-num-wrap">
+              <span class="metric-num" data-target="6">6</span><span class="metric-suffix">+</span>
+            </div>
+            <span class="metric-label">INDUSTRIES COVERED</span>
+          </div>
+
+          <div class="hero-metric-item">
+            <div class="metric-num-wrap">
+              <span class="metric-num" data-target="98">98</span><span class="metric-suffix">%</span>
+            </div>
+            <span class="metric-label">CLIENT SATISFACTION</span>
+          </div>
+
+          <div class="hero-metric-item">
+            <div class="metric-num-wrap">
+              <span class="metric-num" data-target="4">4</span><span class="metric-suffix">X</span>
+            </div>
+            <span class="metric-label">AVERAGE GROWTH IMPACT</span>
+          </div>
+        </div>
+
+        <!-- Slide Navigation Controls -->
+        <div class="hero-slider-nav">
+          <div class="slide-counter">
+            <span id="currentSlideNum">01</span>
+            <span class="slide-divider">&mdash;&mdash;</span>
+            <span>03</span>
+          </div>
+          <div class="slide-arrows">
+            <button type="button" class="slide-arrow-btn" id="prevSlideBtn" aria-label="Previous Slide">&larr;</button>
+            <button type="button" class="slide-arrow-btn" id="nextSlideBtn" aria-label="Next Slide">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 02: TRUSTED BY
+       ========================================================================= -->
+  <section class="nexora-trusted-section" aria-label="Trusted By Innovative Companies">
+    <div class="trusted-strip-container">
+      <div class="trusted-label-cell">
+        <span>TRUSTED BY INNOVATIVE COMPANIES</span>
+      </div>
+
+      <div class="trusted-logos-track">
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#10022;</span>
+          <span class="brand-text">AURIX</span>
+        </div>
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#9647;</span>
+          <span class="brand-text">ZENCORE</span>
+        </div>
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#9729;</span>
+          <span class="brand-text">CLOUDIX</span>
+        </div>
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#9673;</span>
+          <span class="brand-text">ELEVATE</span>
+        </div>
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#10024;</span>
+          <span class="brand-text">NOVA</span>
+        </div>
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#9678;</span>
+          <span class="brand-text">SENTRA</span>
+        </div>
+        <div class="trusted-brand-cell">
+          <span class="brand-glyph">&#9675;</span>
+          <span class="brand-text">PIXELCRAFT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 03: OUR APPROACH
+       ========================================================================= -->
+  <section class="nexora-approach-section" id="approach" aria-label="Our Approach">
+    <div class="approach-grid-container">
+      
+      <!-- Left: Atmospheric Vertical Landscape -->
+      <div class="approach-media-col reveal-on-scroll">
+        <div class="approach-image-frame">
+          <img src="assets/images/approach-chasm.jpg" alt="Atmospheric rocky chasm and natural landscape with misty lighting" loading="lazy">
+          <div class="approach-frame-overlay">
+            <span class="frame-tag">FIELD CAPTURE // 02</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Main Editorial Narrative -->
+      <div class="approach-narrative-col reveal-on-scroll">
+        <div class="approach-section-tag">
+          <span>&mdash; 02 / OUR APPROACH</span>
+        </div>
+        <h2 class="approach-headline">
+          From Insight<br>
+          to Impact.
+        </h2>
+        <p class="approach-lead-p">
+          We combine strategy, technology and design to create meaningful business outcomes.
+        </p>
+        <p class="approach-body-p">
+          True enterprise transformation is never merely technological or purely financial. It requires reconciling market ambiguity with operational execution—crafting durable systems capable of thriving in fluctuating international economic environments.
+        </p>
+        <div class="approach-cta-wrap">
+          <a href="#about" class="approach-text-link">
+            <span>LEARN MORE ABOUT OUR APPROACH</span>
+            <span class="link-arrow">&nearr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Circular Video Preview & Company Overview -->
+      <div class="approach-video-col reveal-on-scroll">
+        <div class="approach-video-capsule">
+          <div class="circular-video-preview" id="approachVideoTrigger">
+            <img src="assets/images/approach-video-thumb.jpg" alt="Urban modern architecture video thumbnail" loading="lazy">
+            <div class="circular-play-btn" aria-label="Play company overview video">
+              <span class="play-triangle">&#9658;</span>
+            </div>
+          </div>
+          <div class="video-meta-block">
+            <span class="video-tag">COMPANY OVERVIEW</span>
+            <span class="video-duration">01:24 MIN</span>
+            <button type="button" class="watch-story-link" id="watchStoryBtn">
+              <span>Watch Our Story</span>
+              <span>&nearr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 04: SOLUTIONS
+       ========================================================================= -->
+  <section class="nexora-solutions-section" id="solutions" aria-label="Strategic Solutions">
+    <div class="nexora-container">
+      
+      <div class="solutions-header-block reveal-on-scroll">
+        <div class="solutions-top-meta">
+          <span>&mdash; 03 / CAPABILITIES</span>
+          <span>ENTERPRISE ADVISORY SUITE</span>
+        </div>
+        <h2 class="solutions-main-title">
+          Solutions Built Around<br>
+          Your Ambition.
+        </h2>
+        <p class="solutions-subhead">
+          Each practice area integrates senior strategic counsel, data-driven diagnostic rigor, and hands-on technological execution.
+        </p>
+      </div>
+
+      <!-- 4 Distinctive Solutions Cards -->
+      <div class="solutions-editorial-grid">
+        
+        <!-- Solution 01 -->
+        <article class="solution-card reveal-on-scroll" data-solution="strategy">
+          <div class="solution-card-top">
+            <span class="solution-num">01</span>
+            <span class="solution-code">STR-ADV</span>
+          </div>
+          <div class="solution-card-image-wrap">
+            <img src="assets/images/solution-strategy.jpg" alt="Minimalist executive boardroom" loading="lazy">
+          </div>
+          <div class="solution-card-body">
+            <h3 class="solution-title">Business Strategy</h3>
+            <p class="solution-desc">
+              Market positioning, capital allocation models, merger synergy analysis, and structural enterprise resilience designed for executive clarity.
+            </p>
+            <ul class="solution-specs-list">
+              <li>&bull; Corporate Restructuring</li>
+              <li>&bull; Global Market Penetration</li>
+              <li>&bull; Capital Formation Advisory</li>
+            </ul>
+            <button type="button" class="solution-expand-btn" data-modal="modal-strategy">
+              <span>Inspect Solution Scope</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Solution 02 -->
+        <article class="solution-card reveal-on-scroll" data-solution="digital">
+          <div class="solution-card-top">
+            <span class="solution-num">02</span>
+            <span class="solution-code">DIG-TRN</span>
+          </div>
+          <div class="solution-card-image-wrap">
+            <img src="assets/images/solution-digital.jpg" alt="Geometric digital network and data visualization" loading="lazy">
+          </div>
+          <div class="solution-card-body">
+            <h3 class="solution-title">Digital Transformation</h3>
+            <p class="solution-desc">
+              Modernizing legacy architecture through cloud-native orchestration, automated ERP pipelines, and frictionless stakeholder experiences.
+            </p>
+            <ul class="solution-specs-list">
+              <li>&bull; Enterprise Cloud Architecture</li>
+              <li>&bull; Continuous Operational Sync</li>
+              <li>&bull; Sub-Second Workflow Agility</li>
+            </ul>
+            <button type="button" class="solution-expand-btn" data-modal="modal-digital">
+              <span>Inspect Solution Scope</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Solution 03 -->
+        <article class="solution-card reveal-on-scroll" data-solution="tech">
+          <div class="solution-card-top">
+            <span class="solution-num">03</span>
+            <span class="solution-code">TEC-CNS</span>
+          </div>
+          <div class="solution-card-image-wrap">
+            <img src="assets/images/solution-tech.jpg" alt="Advanced research laboratory and technology facade" loading="lazy">
+          </div>
+          <div class="solution-card-body">
+            <h3 class="solution-title">Technology Consulting</h3>
+            <p class="solution-desc">
+              Applied machine intelligence, data mesh topologies, zero-trust security foundations, and scalable proprietary IP development.
+            </p>
+            <ul class="solution-specs-list">
+              <li>&bull; AI &amp; Autonomous Systems</li>
+              <li>&bull; Resilient Cyber Defense</li>
+              <li>&bull; High-Throughput Data Infrastructure</li>
+            </ul>
+            <button type="button" class="solution-expand-btn" data-modal="modal-tech">
+              <span>Inspect Solution Scope</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Solution 04 -->
+        <article class="solution-card reveal-on-scroll" data-solution="growth">
+          <div class="solution-card-top">
+            <span class="solution-num">04</span>
+            <span class="solution-code">GRO-INV</span>
+          </div>
+          <div class="solution-card-image-wrap">
+            <img src="assets/images/solution-growth.jpg" alt="Modern corporate skyscraper ascending into dawn light" loading="lazy">
+          </div>
+          <div class="solution-card-body">
+            <h3 class="solution-title">Growth &amp; Innovation</h3>
+            <p class="solution-desc">
+              Incubating adjacent revenue vehicles, brand equity expansion, product-led go-to-market strategies, and sustained valuation growth.
+            </p>
+            <ul class="solution-specs-list">
+              <li>&bull; Corporate Venture Building</li>
+              <li>&bull; Next-Gen Product Incubation</li>
+              <li>&bull; Multi-Horizon Expansion</li>
+            </ul>
+            <button type="button" class="solution-expand-btn" data-modal="modal-growth">
+              <span>Inspect Solution Scope</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 05: INDUSTRIES
+       ========================================================================= -->
+  <section class="nexora-industries-section" id="industries" aria-label="Industries We Transform">
+    <div class="nexora-container">
+      
+      <div class="industries-header reveal-on-scroll">
+        <div>
+          <span class="section-kicker">&mdash; 04 / SECTOR EXPERTISE</span>
+          <h2 class="industries-title">Industries We Transform</h2>
+        </div>
+        <p class="industries-intro">
+          Domain-specific strategic depth spanning advanced computing, regulated finance, life sciences, and heavy industrial decarbonization.
+        </p>
+      </div>
+
+      <!-- Horizontal Image-Led Sector Showcase -->
+      <div class="industries-strip-grid">
+        
+        <div class="industry-card reveal-on-scroll">
+          <div class="industry-card-img-wrap">
+            <img src="assets/images/industry-technology.jpg" alt="Advanced technology architecture and clean tech" loading="lazy">
+            <div class="industry-card-scrim"></div>
+          </div>
+          <div class="industry-card-content">
+            <span class="industry-num">01</span>
+            <h3 class="industry-name">Technology</h3>
+            <p class="industry-blurb">SaaS ecosystems, semiconductor supply chains, autonomous networks, and quantum compute readiness.</p>
+          </div>
+        </div>
+
+        <div class="industry-card reveal-on-scroll">
+          <div class="industry-card-img-wrap">
+            <img src="assets/images/industry-finance.jpg" alt="Monolithic glass financial tower at dusk" loading="lazy">
+            <div class="industry-card-scrim"></div>
+          </div>
+          <div class="industry-card-content">
+            <span class="industry-num">02</span>
+            <h3 class="industry-name">Finance</h3>
+            <p class="industry-blurb">Private equity value creation, algorithmic risk models, cross-border asset management, and digital banking.</p>
+          </div>
+        </div>
+
+        <div class="industry-card reveal-on-scroll">
+          <div class="industry-card-img-wrap">
+            <img src="assets/images/industry-healthcare.jpg" alt="Biotech medical research laboratory" loading="lazy">
+            <div class="industry-card-scrim"></div>
+          </div>
+          <div class="industry-card-content">
+            <span class="industry-num">03</span>
+            <h3 class="industry-name">Healthcare</h3>
+            <p class="industry-blurb">Clinical AI diagnostics, genomics data pipelines, pharmaceutical manufacturing, and decentralized care delivery.</p>
+          </div>
+        </div>
+
+        <div class="industry-card reveal-on-scroll">
+          <div class="industry-card-img-wrap">
+            <img src="assets/images/industry-manufacturing.jpg" alt="Automated precision manufacturing facility" loading="lazy">
+            <div class="industry-card-scrim"></div>
+          </div>
+          <div class="industry-card-content">
+            <span class="industry-num">04</span>
+            <h3 class="industry-name">Manufacturing</h3>
+            <p class="industry-blurb">Smart robotics integration, predictive maintenance telemetry, and zero-defect high-precision fabrication.</p>
+          </div>
+        </div>
+
+        <div class="industry-card reveal-on-scroll">
+          <div class="industry-card-img-wrap">
+            <img src="assets/images/industry-retail.jpg" alt="Minimalist luxury retail flagship store" loading="lazy">
+            <div class="industry-card-scrim"></div>
+          </div>
+          <div class="industry-card-content">
+            <span class="industry-num">05</span>
+            <h3 class="industry-name">Retail &amp; Luxury</h3>
+            <p class="industry-blurb">Omnichannel digital commerce, sensory experiential retail spaces, and localized luxury brand stewardship.</p>
+          </div>
+        </div>
+
+        <div class="industry-card reveal-on-scroll">
+          <div class="industry-card-img-wrap">
+            <img src="assets/images/industry-sustainability.jpg" alt="Biophilic sustainable architectural design" loading="lazy">
+            <div class="industry-card-scrim"></div>
+          </div>
+          <div class="industry-card-content">
+            <span class="industry-num">06</span>
+            <h3 class="industry-name">Sustainability</h3>
+            <p class="industry-blurb">Carbon audit integrity, green hydrogen feasibility, circular economy supply logistics, and clean heat conversion.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 06: FEATURED INSIGHTS
+       ========================================================================= -->
+  <section class="nexora-insights-section" id="insights" aria-label="Featured Insights">
+    <div class="nexora-container">
+      
+      <div class="insights-header-row reveal-on-scroll">
+        <div>
+          <span class="section-kicker">&mdash; 05 / EDITORIAL ARCHIVE</span>
+          <h2 class="insights-title">Featured Insights</h2>
+        </div>
+        <span class="insights-provenance">QUARTERLY BRIEFING // VOL. 08</span>
+      </div>
+
+      <div class="insights-editorial-grid">
+        
+        <!-- Article 01 -->
+        <article class="insight-article-card reveal-on-scroll" data-article="sustainable">
+          <div class="article-cover-frame">
+            <img src="assets/images/insight-sustainable.jpg" alt="Sustainable architecture in twilight mist" loading="lazy">
+            <span class="article-badge">SUSTAINABLE CAPITAL</span>
+          </div>
+          <div class="article-content-block">
+            <div class="article-meta-line">
+              <span>OCT 2026</span>
+              <span>&bull;</span>
+              <span>7 MIN READ</span>
+            </div>
+            <h3 class="article-card-title">The Next Era of Sustainable Growth</h3>
+            <p class="article-card-excerpt">
+              How global industrial leaders are turning decarbonization mandates from compliance overhead into durable pricing power and sovereign investment attraction.
+            </p>
+            <div class="article-action-wrap">
+              <button type="button" class="read-article-btn" data-article-id="art-sustainable">
+                <span>Read Article</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 02 -->
+        <article class="insight-article-card reveal-on-scroll" data-article="resilient">
+          <div class="article-cover-frame">
+            <img src="assets/images/insight-resilient.jpg" alt="High-altitude modern geometric corporate architecture" loading="lazy">
+            <span class="article-badge">SYSTEM ARCHITECTURE</span>
+          </div>
+          <div class="article-content-block">
+            <div class="article-meta-line">
+              <span>SEP 2026</span>
+              <span>&bull;</span>
+              <span>5 MIN READ</span>
+            </div>
+            <h3 class="article-card-title">Building Resilient Digital Businesses</h3>
+            <p class="article-card-excerpt">
+              Navigating architectural volatility, cloud cost runaway, and decentralized organizational models in an era of rapid technological inflection points.
+            </p>
+            <div class="article-action-wrap">
+              <button type="button" class="read-article-btn" data-article-id="art-resilient">
+                <span>Read Article</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 03 -->
+        <article class="insight-article-card reveal-on-scroll" data-article="impact">
+          <div class="article-cover-frame">
+            <img src="assets/images/insight-impact.jpg" alt="Minimalist stone and glass design center" loading="lazy">
+            <span class="article-badge">EXECUTIVE EXECUTION</span>
+          </div>
+          <div class="article-content-block">
+            <div class="article-meta-line">
+              <span>AUG 2026</span>
+              <span>&bull;</span>
+              <span>6 MIN READ</span>
+            </div>
+            <h3 class="article-card-title">Turning Strategy Into Measurable Impact</h3>
+            <p class="article-card-excerpt">
+              Why 68% of enterprise initiatives stall between slide decks and implementation—and the empirical governance frameworks that bridge the gap.
+            </p>
+            <div class="article-action-wrap">
+              <button type="button" class="read-article-btn" data-article-id="art-impact">
+                <span>Read Article</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 07: ABOUT NEXORA
+       ========================================================================= -->
+  <section class="nexora-about-section" id="about" aria-label="About NEXORA">
+    <div class="nexora-container">
+      
+      <div class="about-hero-grid reveal-on-scroll">
+        <div class="about-headline-side">
+          <span class="section-kicker">&mdash; 06 / PHILOSOPHY</span>
+          <h2 class="about-main-headline">
+            Clarity Creates<br>
+            <span class="headline-italic">Possibility.</span>
+          </h2>
+        </div>
+        <div class="about-statement-side">
+          <p class="about-lead-statement">
+            NEXORA was founded on a simple conviction: modern enterprise complexity is not an inevitable tax on growth, but a strategic asset waiting for rigorous orchestration.
+          </p>
+          <p class="about-supporting-text">
+            Operating from four international financial and technological capitals, our partners work alongside chief executives and board committees to navigate generational transitions, architectural shifts, and sustainable market dominance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Principles & Global Presence Strip -->
+      <div class="about-pillars-grid reveal-on-scroll">
+        
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h3 class="pillar-title">Intellectual Rigor</h3>
+          <p class="pillar-text">We reject superficial management cliches. Every strategic recommendation is supported by quantitative modeling and proprietary market telemetry.</p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h3 class="pillar-title">Architectural Depth</h3>
+          <p class="pillar-text">We don't merely author strategy presentations; we construct the underlying technological, operational, and organizational frameworks that make execution inevitable.</p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h3 class="pillar-title">Long-Horizon Value</h3>
+          <p class="pillar-text">Quarterly optics never take precedence over generational compounding. We align incentives directly with sustained enterprise enterprise value creation.</p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">04</span>
+          <h3 class="pillar-title">Global Perspective</h3>
+          <p class="pillar-text">Seamless advisory reach spanning European capital markets, North American technological innovation, and Asia-Pacific growth corridors.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 08: CONTACT & CLOSING
+       ========================================================================= -->
+  <section class="nexora-contact-section" id="contact" aria-label="Contact NEXORA">
+    <div class="nexora-container">
+      
+      <div class="contact-main-grid">
+        
+        <!-- Left: Cinematic Closing Invitation -->
+        <div class="contact-invitation-col reveal-on-scroll">
+          <span class="section-kicker">&mdash; 07 / INITIATE ENGAGEMENT</span>
+          <h2 class="contact-headline">
+            Let's Build<br>
+            <span class="headline-italic">What's Next.</span>
+          </h2>
+          <p class="contact-lead-p">
+            Have an ambitious idea? Let's turn it into meaningful progress.
+          </p>
+          
+          <div class="contact-office-hubs">
+            <div class="office-hub-row">
+              <span class="hub-city">ZURICH (HQ)</span>
+              <span class="hub-address">Gotthardstrasse 26, 8002 Zurich</span>
+            </div>
+            <div class="office-hub-row">
+              <span class="hub-city">LONDON</span>
+              <span class="hub-address">100 Bishopsgate, EC2N 4AG London</span>
+            </div>
+            <div class="office-hub-row">
+              <span class="hub-city">SINGAPORE</span>
+              <span class="hub-address">Marina Bay Financial Centre Tower 2</span>
+            </div>
+            <div class="office-hub-row">
+              <span class="hub-city">NEW YORK</span>
+              <span class="hub-address">One Vanderbilt Avenue, NY 10017</span>
+            </div>
+          </div>
+
+          <div class="contact-direct-line">
+            <span class="direct-label">DIRECT ADVISORY DESK</span>
+            <a href="mailto:advisory@nexora-strategy.com" class="direct-email">advisory@nexora-strategy.com</a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="contact-form-col reveal-on-scroll">
+          <form class="nexora-form" id="contactForm" novalidate>
+            <div class="form-header-line">
+              <span>ENGAGEMENT BRIEF // STAGE 01</span>
+              <span>RESPONSE WITHIN 24 HOURS</span>
+            </div>
+
+            <div class="form-group">
+              <label for="clientName" class="form-label">Full Name *</label>
+              <input type="text" id="clientName" name="name" class="form-input" placeholder="e.g. Marcus Vance" required>
+              <span class="form-error-msg" id="nameError">Please enter your name</span>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="clientEmail" class="form-label">Corporate Email *</label>
+                <input type="email" id="clientEmail" name="email" class="form-input" placeholder="e.g. m.vance@enterprise.com" required>
+                <span class="form-error-msg" id="emailError">Please enter a valid work email</span>
+              </div>
+              <div class="form-group">
+                <label for="clientCompany" class="form-label">Company / Organization *</label>
+                <input type="text" id="clientCompany" name="company" class="form-input" placeholder="e.g. Vance Horizon AG" required>
+                <span class="form-error-msg" id="companyError">Please enter your company</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="clientSolution" class="form-label">Primary Practice Area</label>
+              <select id="clientSolution" name="solution" class="form-select">
+                <option value="business-strategy">Business Strategy &amp; Capital Allocation</option>
+                <option value="digital-transformation">Digital &amp; Cloud Transformation</option>
+                <option value="technology-consulting">Technology Consulting &amp; AI Integration</option>
+                <option value="growth-innovation">Growth, Venture Building &amp; GTM</option>
+                <option value="comprehensive-audit">Comprehensive Strategic Advisory</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="clientMessage" class="form-label">Project Objectives &amp; Timeline</label>
+              <textarea id="clientMessage" name="message" class="form-textarea" rows="4" placeholder="Outline key challenges, target horizon, or transformation objectives..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn" id="submitFormBtn">
+              <span>Start a Conversation</span>
+              <span class="submit-arrow">&rarr;</span>
+            </button>
+
+            <!-- Form Feedback Notice -->
+            <div class="form-feedback-msg" id="formFeedback"></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER & COLOPHON
+       ========================================================================= -->
+  <footer class="nexora-footer">
+    <div class="nexora-container">
+      <div class="footer-top-row">
+        <div>
+          <span class="footer-brand-title">N E X O R A</span>
+          <p class="footer-brand-blurb">
+            Strategic advisory and technological transformation consultancy for generational enterprise compounding.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <span class="footer-col-title">PRACTICES</span>
+          <ul class="footer-list">
+            <li><a href="#solutions">Business Strategy</a></li>
+            <li><a href="#solutions">Digital Transformation</a></li>
+            <li><a href="#solutions">Technology Consulting</a></li>
+            <li><a href="#solutions">Growth &amp; Innovation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <span class="footer-col-title">SECTORS</span>
+          <ul class="footer-list">
+            <li><a href="#industries">Technology</a></li>
+            <li><a href="#industries">Finance &amp; PE</a></li>
+            <li><a href="#industries">Healthcare</a></li>
+            <li><a href="#industries">Sustainability</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <span class="footer-col-title">CONNECT</span>
+          <ul class="footer-list">
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter &nearr;</a></li>
+            <li><a href="#contact">Client Portal &nearr;</a></li>
+            <li><a href="#contact">Press &amp; Media</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span class="footer-copy">&copy; 2026 NEXORA Strategy Group. All rights reserved. Created for VERHOST Digital Works.</span>
+        <div class="footer-legal-links">
+          <span>Privacy Architecture</span>
+          <span>&bull;</span>
+          <span>Terms of Engagement</span>
+          <span>&bull;</span>
+          <span>Security Governance</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL DIALOGS (VIDEO & ARTICLES)
+       ========================================================================= -->
+  <!-- Video Player Modal -->
+  <div class="nexora-modal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card modal-video-card">
+      <div class="modal-card-header">
+        <div class="modal-header-meta">
+          <span class="modal-pretag">COMPANY OVERVIEW</span>
+          <h3 class="modal-title">NEXORA: A Higher Perspective</h3>
+        </div>
+        <button type="button" class="modal-close-icon" id="closeVideoModal" aria-label="Close video">&times;</button>
+      </div>
+      <div class="modal-video-viewport">
+        <div class="simulated-video-player">
+          <img src="assets/images/hero-bg.jpg" alt="Cinematic video backdrop" class="video-still-img">
+          <div class="simulated-video-controls">
+            <div class="simulated-progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="simulated-ctrls-row">
+              <span class="play-pause-btn">&#10074;&#10074;</span>
+              <span class="time-readout">00:48 / 01:24</span>
+              <span class="hd-badge">4K CINEMATIC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Reader Modal -->
+  <div class="nexora-modal-overlay" id="articleModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card modal-article-card">
+      <div class="modal-card-header">
+        <div class="modal-header-meta">
+          <span class="modal-pretag" id="artModalCategory">EDITORIAL MONOGRAPH</span>
+          <h3 class="modal-title" id="artModalTitle">Article Title</h3>
+          <span class="modal-subdate" id="artModalDate">OCT 2026 &bull; 6 MIN READ</span>
+        </div>
+        <button type="button" class="modal-close-icon" id="closeArticleModal" aria-label="Close article">&times;</button>
+      </div>
+      <div class="modal-card-body" id="artModalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

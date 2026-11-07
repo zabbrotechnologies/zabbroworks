@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALENCE CAPITAL — Private Investment House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #FDFDFD;
+      color: #121212;
+      line-height: 1.6;
+    }
+    .top-bar {
+      border-bottom: 1px solid #E6E6E2;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .nav-items {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-items a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-items a:hover { color: #111; }
+    .portal-link {
+      font-weight: 600;
+      text-decoration: none;
+      color: #121212;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .portal-link:hover { color: #1F8F4C; }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 3rem 4rem;
+      border-bottom: 1px solid #E6E6E2;
+      max-width: 1280px;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #1F8F4C;
+      display: inline-block;
+      border-radius: 50%;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 2rem;
+    }
+    .hero-title strong {
+      font-weight: 700;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: #4A4A46;
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    /* Metrics Strip */
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #E6E6E2;
+    }
+    .metric-cell {
+      padding: 2.5rem 3rem;
+      border-right: 1px solid #E6E6E2;
+    }
+    .metric-cell:last-child { border-right: none; }
+    .metric-val {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.4rem;
+    }
+    .metric-lbl {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #777;
+    }
+
+    /* Pillars */
+    .pillars-section {
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      border-bottom: 1px solid #E6E6E2;
+    }
+    .pillar-intro h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .pillar-intro p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .pillar-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .pillar-card {
+      padding: 1.75rem;
+      border: 1px solid #E6E6E2;
+      background: #FAFAF8;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .pillar-card:hover {
+      border-color: #111;
+      background: #fff;
+      transform: translateY(-2px);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .card-cat {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #1F8F4C;
+      font-weight: 600;
+    }
+    .card-yr {
+      font-size: 0.78rem;
+      color: #888;
+    }
+    .card-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    @media (max-width: 900px) {
+      .metrics-strip { grid-template-columns: 1fr 1fr; }
+      .metric-cell:nth-child(2n) { border-right: none; }
+      .pillars-section { grid-template-columns: 1fr; gap: 2rem; }
+      .top-bar { padding: 1rem 1.5rem; }
+      .hero { padding: 3rem 1.5rem; }
+      .metrics-strip .metric-cell { padding: 1.5rem; }
+      .pillars-section { padding: 3rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; }
+      .nav-items { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="brand">Valence Capital</div>
+    <ul class="nav-items">
+      <li><a href="#">Thesis</a></li>
+      <li><a href="#">Deployments</a></li>
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">Governance</a></li>
+    </ul>
+    <a href="#" class="portal-link" onclick="alert('Valence LP Investor Portal: Authentication Required')">
+      LP Portal &rarr;
+    </a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-eyebrow">Institutional Multi-Stage Fund IV</div>
+    <h1 class="hero-title">
+      Capital allocated to <strong>foundational breakthroughs</strong> in science and computing.
+    </h1>
+    <p class="hero-sub">
+      We partner alongside research scientists and systems architects building generational infrastructure across sovereign computing, bio-synthetic catalysts, and robotics.
+    </p>
+  </section>
+
+  <div class="metrics-strip">
+    <div class="metric-cell">
+      <div class="metric-val">$1.85B</div>
+      <div class="metric-lbl">Assets Under Management</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-val">34</div>
+      <div class="metric-lbl">Active Portfolio Co's</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-val">12</div>
+      <div class="metric-lbl">Global Research Hubs</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-val">4.2x</div>
+      <div class="metric-lbl">Historical Net DPI</div>
+    </div>
+  </div>
+
+  <section class="pillars-section">
+    <div class="pillar-intro">
+      <h3>Active Allocation Themes</h3>
+      <p>
+        Concentrated bets on non-consensus architectural shifts where deep physics intersects scalable software.
+      </p>
+    </div>
+    <div class="pillar-cards">
+      <div class="pillar-card" onclick="alert('Viewing Thesis: Superconducting Logic Fabric')">
+        <div class="card-top">
+          <span class="card-cat">Quantum &amp; Compute</span>
+          <span class="card-yr">Series B &bull; 2026</span>
+        </div>
+        <div class="card-name">Aether Logic Systems</div>
+        <div class="card-desc">Sub-Kelvin CMOS cryo-controllers delivering 100x efficiency gains in superconducting quantum interconnects.</div>
+      </div>
+      <div class="pillar-card" onclick="alert('Viewing Thesis: Precision Enzymatic Synthesis')">
+        <div class="card-top">
+          <span class="card-cat">Bio-Synthetic</span>
+          <span class="card-yr">Series A &bull; 2025</span>
+        </div>
+        <div class="card-name">Helix Foundry</div>
+        <div class="card-desc">Generative structural protein design for continuous industrial carbon mineralization and high-performance polymers.</div>
+      </div>
+      <div class="pillar-card" onclick="alert('Viewing Thesis: Sovereign Grid Autonomy')">
+        <div class="card-top">
+          <span class="card-cat">Energy Systems</span>
+          <span class="card-yr">Seed Extension &bull; 2025</span>
+        </div>
+        <div class="card-name">Vorticity Dynamics</div>
+        <div class="card-desc">Decentralized frequency regulation and solid-state energy buffering for gigawatt-class data center microgrids.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Valence Capital Partners LP. Zurich &bull; London &bull; Singapore</div>
+    <div>Strictly for Qualified Institutional Buyers</div>
+  </footer>
+</body>
+</html>

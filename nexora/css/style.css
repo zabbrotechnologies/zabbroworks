@@ -1,0 +1,1900 @@
+/* ============================================================================
+   NEXORA — IMMERSIVE & CINEMATIC BUSINESS WEBSITE
+   Primary Style Architecture (style.css)
+   ============================================================================ */
+
+:root {
+  /* Core Cinematic Color Palette */
+  --nexora-bg-obsidian: #080B0B;
+  --nexora-bg-charcoal: #111615;
+  --nexora-bg-card: rgba(17, 22, 21, 0.7);
+  --nexora-text-ivory: #F3F0E8;
+  --nexora-text-muted: #A5AAA5;
+  --nexora-text-faint: rgba(165, 170, 165, 0.5);
+  
+  /* Delicate Accents (No bright neon green) */
+  --nexora-accent-sage: #C1D9B5;
+  --nexora-accent-champagne: #C6B99C;
+  --nexora-accent-sage-soft: rgba(193, 217, 181, 0.15);
+  
+  /* Hairline Borders */
+  --nexora-border-subtle: rgba(255, 255, 255, 0.08);
+  --nexora-border-medium: rgba(255, 255, 255, 0.14);
+  --nexora-border-sage: rgba(193, 217, 181, 0.35);
+
+  /* Typography System */
+  --nexora-font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --nexora-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Fluid Transitions */
+  --nexora-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nexora-duration: 0.4s;
+}
+
+/* ----------------------------------------------------------------------------
+   Reset & Baseline
+   ---------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--nexora-bg-obsidian);
+  color: var(--nexora-text-ivory);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.nexora-body {
+  font-family: var(--nexora-font-body);
+  background-color: var(--nexora-bg-obsidian);
+  color: var(--nexora-text-ivory);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Atmosphere: Ambient Glow & Subtle Film Grain */
+.nexora-ambient-glow {
+  position: fixed;
+  top: 0;
+  right: 15%;
+  width: 60vw;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(193, 217, 181, 0.045) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nexora-film-grain {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nexora-container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================================
+   HEADER & NAVIGATION
+   ============================================================================ */
+.nexora-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.75rem 0;
+  transition: all 0.4s var(--nexora-ease);
+  background: transparent;
+}
+
+.nexora-header.is-scrolled {
+  padding: 1.1rem 0;
+  background: rgba(8, 11, 11, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--nexora-border-subtle);
+}
+
+.nexora-header-container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Wordmark & Descriptor */
+.nexora-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.nexora-wordmark {
+  font-family: var(--nexora-font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--nexora-text-ivory);
+  text-transform: uppercase;
+}
+
+.nexora-descriptor {
+  font-family: var(--nexora-font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  color: var(--nexora-text-muted);
+  text-transform: uppercase;
+}
+
+/* Nav Links */
+.nexora-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+  list-style: none;
+}
+
+.nexora-nav-link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(243, 240, 232, 0.7);
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 0.35rem;
+}
+
+.nexora-nav-link:hover,
+.nexora-nav-link.active {
+  color: var(--nexora-text-ivory);
+}
+
+.nexora-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--nexora-text-ivory);
+}
+
+/* Header Actions */
+.nexora-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nexora-touch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--nexora-border-medium);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--nexora-text-ivory);
+  transition: all 0.35s var(--nexora-ease);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.nexora-touch-btn:hover {
+  border-color: var(--nexora-accent-sage);
+  color: var(--nexora-accent-sage);
+  background: var(--nexora-accent-sage-soft);
+  transform: translateY(-1px);
+}
+
+.nexora-arrow-diag {
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.nexora-touch-btn:hover .nexora-arrow-diag {
+  transform: translate(2px, -2px);
+}
+
+/* Circular Menu Toggle */
+.nexora-menu-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--nexora-border-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.nexora-menu-toggle:hover {
+  border-color: var(--nexora-accent-sage);
+  background: var(--nexora-accent-sage-soft);
+}
+
+.menu-bar {
+  width: 16px;
+  height: 1.5px;
+  background-color: var(--nexora-text-ivory);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile Menu Panel */
+.nexora-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+}
+
+.nexora-mobile-menu.is-active {
+  display: block;
+}
+
+.mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 11, 11, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 440px;
+  background-color: #0c1010;
+  border-left: 1px solid var(--nexora-border-medium);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-close-btn {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--nexora-text-ivory);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.mobile-nav-link {
+  font-family: var(--nexora-font-display);
+  font-size: 1.6rem;
+  color: var(--nexora-text-ivory);
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--nexora-accent-sage);
+}
+
+.mobile-menu-footer {
+  font-size: 0.65rem;
+  color: var(--nexora-text-muted);
+  letter-spacing: 0.14em;
+}
+
+/* ============================================================================
+   SECTION 01: CINEMATIC HERO
+   ============================================================================ */
+.nexora-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 8rem;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+  background-color: var(--nexora-bg-obsidian);
+}
+
+/* Full Hero Background & Architectural Image */
+.nexora-hero-bg-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-cinematic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  transition: transform 0.6s var(--nexora-ease);
+  filter: brightness(0.95) contrast(1.08);
+}
+
+.hero-image-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 35%, rgba(193, 217, 181, 0.05) 0%, transparent 60%),
+              linear-gradient(180deg, rgba(8, 11, 11, 0.6) 0%, rgba(8, 11, 11, 0) 30%, rgba(8, 11, 11, 0.85) 100%),
+              linear-gradient(90deg, rgba(8, 11, 11, 0.88) 0%, rgba(8, 11, 11, 0.45) 45%, rgba(8, 11, 11, 0) 80%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-horizon-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 11, 11, 0.95) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hero Content Container */
+.nexora-hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(100vh - 10.5rem);
+}
+
+.hero-top-stage {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-bottom: 5.5rem;
+}
+
+/* Left Column Headline */
+.hero-headline-col {
+  max-width: 760px;
+}
+
+.hero-section-index {
+  font-family: var(--nexora-font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--nexora-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-display-title {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(3.8rem, 6.8vw, 7.2rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  color: var(--nexora-text-ivory);
+  margin-bottom: 2rem;
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-accent-sage {
+  color: var(--nexora-accent-sage);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-lead-row {
+  max-width: 520px;
+  margin-bottom: 2.75rem;
+}
+
+.hero-lead-copy {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  color: rgba(243, 240, 232, 0.85);
+}
+
+/* Action Buttons */
+.hero-actions-cluster {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-cta-btn,
+.hero-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--nexora-text-ivory);
+  transition: all 0.35s var(--nexora-ease);
+}
+
+.cta-circle-icon,
+.video-circle-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--nexora-border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.35s var(--nexora-ease);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.video-circle-icon {
+  font-size: 0.65rem;
+  padding-left: 2px;
+}
+
+.hero-cta-btn:hover .cta-circle-icon,
+.hero-video-btn:hover .video-circle-icon {
+  border-color: var(--nexora-accent-sage);
+  background-color: var(--nexora-accent-sage);
+  color: var(--nexora-bg-obsidian);
+  transform: scale(1.06);
+}
+
+.hero-cta-btn:hover .cta-label,
+.hero-video-btn:hover .cta-label {
+  color: var(--nexora-accent-sage);
+}
+
+/* Upper Right: Featured Insight Floating Card */
+.hero-insight-card-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding-top: 1rem;
+}
+
+.hero-insight-prelabel {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  line-height: 1.6;
+  color: var(--nexora-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  max-width: 220px;
+}
+
+.hero-insight-capsule {
+  background: rgba(13, 18, 17, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--nexora-border-medium);
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 280px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.35s var(--nexora-ease);
+}
+
+.hero-insight-capsule:hover {
+  border-color: var(--nexora-accent-sage);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.insight-capsule-thumb {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+
+.insight-capsule-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--nexora-ease);
+}
+
+.hero-insight-capsule:hover .insight-capsule-thumb img {
+  transform: scale(1.06);
+}
+
+.insight-capsule-meta {
+  padding: 1.1rem;
+  position: relative;
+}
+
+.capsule-tag {
+  font-size: 0.62rem;
+  color: var(--nexora-accent-sage);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.capsule-title {
+  font-family: var(--nexora-font-display);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--nexora-text-ivory);
+  margin-bottom: 0.5rem;
+  padding-right: 1.25rem;
+}
+
+.capsule-arrow {
+  position: absolute;
+  bottom: 1.1rem;
+  right: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--nexora-accent-sage);
+  transition: transform 0.3s ease;
+}
+
+.hero-insight-capsule:hover .capsule-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Bottom Stage: Metrics Strip & Slider Navigation */
+.hero-bottom-stage {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding-top: 2rem;
+  gap: 3rem;
+}
+
+.hero-metrics-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 4.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metric-num-wrap {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(2.4rem, 3.2vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--nexora-text-ivory);
+  letter-spacing: -0.02em;
+}
+
+.metric-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-suffix {
+  color: var(--nexora-accent-sage);
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+
+.metric-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--nexora-text-muted);
+}
+
+/* Slide Navigation Controls */
+.hero-slider-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.slide-counter {
+  font-family: var(--nexora-font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--nexora-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.slide-divider {
+  opacity: 0.4;
+}
+
+.slide-arrows {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.slide-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--nexora-border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--nexora-text-ivory);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.slide-arrow-btn:hover {
+  border-color: var(--nexora-accent-sage);
+  color: var(--nexora-accent-sage);
+  background: var(--nexora-accent-sage-soft);
+}
+
+/* ============================================================================
+   SECTION 02: TRUSTED BY
+   ============================================================================ */
+.nexora-trusted-section {
+  background-color: var(--nexora-bg-obsidian);
+  border-top: 1px solid var(--nexora-border-subtle);
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  padding: 1.6rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.trusted-strip-container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.trusted-label-cell {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nexora-text-muted);
+  white-space: nowrap;
+}
+
+.trusted-logos-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.trusted-brand-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: rgba(243, 240, 232, 0.65);
+  transition: color 0.3s ease;
+}
+
+.trusted-brand-cell:hover {
+  color: var(--nexora-text-ivory);
+}
+
+.brand-glyph {
+  font-size: 0.78rem;
+  color: var(--nexora-accent-sage);
+}
+
+/* ============================================================================
+   SECTION 03: OUR APPROACH
+   ============================================================================ */
+.nexora-approach-section {
+  background-color: var(--nexora-bg-obsidian);
+  padding: 8rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+}
+
+.approach-grid-container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr 0.9fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.approach-image-frame {
+  position: relative;
+  height: 480px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--nexora-border-subtle);
+}
+
+.approach-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--nexora-ease);
+}
+
+.approach-image-frame:hover img {
+  transform: scale(1.05);
+}
+
+.approach-frame-overlay {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: rgba(8, 11, 11, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  border: 1px solid var(--nexora-border-subtle);
+}
+
+.frame-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--nexora-accent-sage);
+}
+
+/* Approach Narrative */
+.approach-section-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--nexora-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.approach-headline {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(2.8rem, 4.2vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--nexora-text-ivory);
+}
+
+.approach-lead-p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--nexora-text-ivory);
+  margin-bottom: 1.25rem;
+}
+
+.approach-body-p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--nexora-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.approach-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--nexora-accent-sage);
+  border-bottom: 1px solid var(--nexora-border-sage);
+  padding-bottom: 0.35rem;
+  transition: all 0.3s ease;
+}
+
+.approach-text-link:hover {
+  border-color: var(--nexora-accent-sage);
+  transform: translateX(4px);
+}
+
+/* Approach Video Column */
+.approach-video-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.approach-video-capsule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.circular-video-preview {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--nexora-border-medium);
+  cursor: pointer;
+  transition: all 0.4s var(--nexora-ease);
+}
+
+.circular-video-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.6s var(--nexora-ease);
+}
+
+.circular-video-preview:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.circular-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(8, 11, 11, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--nexora-accent-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nexora-accent-sage);
+  font-size: 0.75rem;
+  padding-left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.circular-video-preview:hover .circular-play-btn {
+  transform: translate(-50%, -50%) scale(1.12);
+  background-color: var(--nexora-accent-sage);
+  color: var(--nexora-bg-obsidian);
+}
+
+.video-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.video-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--nexora-text-muted);
+}
+
+.video-duration {
+  font-family: var(--nexora-font-body);
+  font-size: 0.72rem;
+  color: rgba(243, 240, 232, 0.6);
+  letter-spacing: 0.1em;
+}
+
+.watch-story-link {
+  font-size: 0.75rem;
+  color: var(--nexora-accent-sage);
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.watch-story-link:hover {
+  transform: translateX(3px);
+}
+
+/* ============================================================================
+   SECTION 04: SOLUTIONS
+   ============================================================================ */
+.nexora-solutions-section {
+  background-color: var(--nexora-bg-charcoal);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+}
+
+.solutions-header-block {
+  margin-bottom: 4.5rem;
+}
+
+.solutions-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--nexora-text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.solutions-main-title {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(2.8rem, 4.4vw, 4.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.solutions-subhead {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--nexora-text-muted);
+  max-width: 680px;
+}
+
+/* Solutions Cards Grid */
+.solutions-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.solution-card {
+  background: rgba(8, 11, 11, 0.65);
+  border: 1px solid var(--nexora-border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s var(--nexora-ease);
+}
+
+.solution-card:hover {
+  border-color: var(--nexora-border-sage);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+}
+
+.solution-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.75rem 1rem;
+}
+
+.solution-num {
+  font-family: var(--nexora-font-display);
+  font-size: 1.6rem;
+  color: var(--nexora-accent-sage);
+}
+
+.solution-code {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--nexora-text-muted);
+}
+
+.solution-card-image-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.solution-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--nexora-ease);
+}
+
+.solution-card:hover .solution-card-image-wrap img {
+  transform: scale(1.06);
+}
+
+.solution-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.solution-title {
+  font-family: var(--nexora-font-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+  color: var(--nexora-text-ivory);
+}
+
+.solution-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--nexora-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.solution-specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: rgba(243, 240, 232, 0.8);
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.solution-expand-btn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nexora-accent-sage);
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding-top: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.solution-expand-btn:hover {
+  color: var(--nexora-text-ivory);
+}
+
+/* ============================================================================
+   SECTION 05: INDUSTRIES
+   ============================================================================ */
+.nexora-industries-section {
+  background-color: var(--nexora-bg-obsidian);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+}
+
+.industries-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4.5rem;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  padding-bottom: 2rem;
+  gap: 3rem;
+}
+
+.section-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--nexora-accent-sage);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.industries-title {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.industries-intro {
+  max-width: 480px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--nexora-text-muted);
+}
+
+.industries-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+
+.industry-card {
+  position: relative;
+  height: 440px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--nexora-border-subtle);
+  cursor: pointer;
+  transition: all 0.4s var(--nexora-ease);
+}
+
+.industry-card:hover {
+  border-color: var(--nexora-border-sage);
+  transform: translateY(-4px);
+}
+
+.industry-card-img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.industry-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--nexora-ease);
+}
+
+.industry-card:hover .industry-card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.industry-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 11, 11, 0.2) 0%, rgba(8, 11, 11, 0.4) 40%, rgba(8, 11, 11, 0.95) 100%);
+}
+
+.industry-card-content {
+  position: absolute;
+  inset: 0;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.industry-num {
+  font-family: var(--nexora-font-display);
+  font-size: 1.1rem;
+  color: var(--nexora-accent-sage);
+  margin-bottom: 0.5rem;
+}
+
+.industry-name {
+  font-family: var(--nexora-font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--nexora-text-ivory);
+  margin-bottom: 0.5rem;
+}
+
+.industry-blurb {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(243, 240, 232, 0.7);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+}
+
+.industry-card:hover .industry-blurb {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================================
+   SECTION 06: FEATURED INSIGHTS
+   ============================================================================ */
+.nexora-insights-section {
+  background-color: var(--nexora-bg-charcoal);
+  padding: 8.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+}
+
+.insights-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  padding-bottom: 1.75rem;
+}
+
+.insights-title {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.insights-provenance {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--nexora-text-muted);
+}
+
+.insights-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.75rem;
+}
+
+.insight-article-card {
+  background: rgba(8, 11, 11, 0.6);
+  border: 1px solid var(--nexora-border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s var(--nexora-ease);
+}
+
+.insight-article-card:hover {
+  border-color: var(--nexora-border-sage);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.article-cover-frame {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.article-cover-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--nexora-ease);
+}
+
+.insight-article-card:hover .article-cover-frame img {
+  transform: scale(1.05);
+}
+
+.article-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(8, 11, 11, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--nexora-border-subtle);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--nexora-accent-sage);
+  text-transform: uppercase;
+}
+
+.article-content-block {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  color: var(--nexora-text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.article-card-title {
+  font-family: var(--nexora-font-display);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+  color: var(--nexora-text-ivory);
+}
+
+.article-card-excerpt {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--nexora-text-muted);
+  margin-bottom: 2rem;
+}
+
+.article-action-wrap {
+  margin-top: auto;
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding-top: 1.25rem;
+}
+
+.read-article-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nexora-accent-sage);
+  transition: all 0.3s ease;
+}
+
+.read-article-btn:hover {
+  color: var(--nexora-text-ivory);
+  transform: translateX(4px);
+}
+
+/* ============================================================================
+   SECTION 07: ABOUT NEXORA
+   ============================================================================ */
+.nexora-about-section {
+  background-color: var(--nexora-bg-obsidian);
+  padding: 9rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 5rem;
+  margin-bottom: 6rem;
+}
+
+.about-main-headline {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(3.2rem, 5vw, 5.4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--nexora-text-ivory);
+}
+
+.headline-italic {
+  font-style: italic;
+  font-family: var(--nexora-font-display);
+  color: var(--nexora-accent-sage);
+}
+
+.about-lead-statement {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: var(--nexora-text-ivory);
+  margin-bottom: 1.75rem;
+  font-weight: 300;
+}
+
+.about-supporting-text {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--nexora-text-muted);
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding-top: 3.5rem;
+}
+
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-num {
+  font-family: var(--nexora-font-display);
+  font-size: 1.4rem;
+  color: var(--nexora-accent-sage);
+  margin-bottom: 0.75rem;
+}
+
+.pillar-title {
+  font-family: var(--nexora-font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--nexora-text-ivory);
+}
+
+.pillar-text {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--nexora-text-muted);
+}
+
+/* ============================================================================
+   SECTION 08: CONTACT & CLOSING
+   ============================================================================ */
+.nexora-contact-section {
+  background-color: var(--nexora-bg-charcoal);
+  padding: 8.5rem 0;
+  position: relative;
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.35fr;
+  gap: 5.5rem;
+  align-items: flex-start;
+}
+
+.contact-headline {
+  font-family: var(--nexora-font-display);
+  font-size: clamp(3rem, 4.8vw, 5.2rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.75rem;
+}
+
+.contact-lead-p {
+  font-size: 1.15rem;
+  color: var(--nexora-text-muted);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.contact-office-hubs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-top: 1px solid var(--nexora-border-subtle);
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  padding: 2rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.office-hub-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.hub-city {
+  font-weight: 600;
+  color: var(--nexora-accent-sage);
+  letter-spacing: 0.1em;
+}
+
+.hub-address {
+  color: var(--nexora-text-muted);
+}
+
+.contact-direct-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.direct-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--nexora-text-muted);
+}
+
+.direct-email {
+  font-family: var(--nexora-font-display);
+  font-size: 1.5rem;
+  color: var(--nexora-text-ivory);
+  transition: color 0.3s ease;
+}
+
+.direct-email:hover {
+  color: var(--nexora-accent-sage);
+}
+
+/* Contact Form */
+.nexora-form {
+  background: rgba(8, 11, 11, 0.75);
+  border: 1px solid var(--nexora-border-medium);
+  border-radius: 4px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-header-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--nexora-accent-sage);
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--nexora-text-muted);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--nexora-border-medium);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  font-family: var(--nexora-font-body);
+  font-size: 0.88rem;
+  color: var(--nexora-text-ivory);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--nexora-accent-sage);
+  background: rgba(193, 217, 181, 0.04);
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+.form-select option {
+  background-color: #0c1010;
+  color: var(--nexora-text-ivory);
+}
+
+.form-error-msg {
+  font-size: 0.68rem;
+  color: #E57373;
+  display: none;
+}
+
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+  border-color: #E57373;
+}
+
+.form-group.has-error .form-error-msg {
+  display: block;
+}
+
+.form-submit-btn {
+  margin-top: 0.75rem;
+  background-color: var(--nexora-accent-sage);
+  color: #080B0B;
+  border: none;
+  border-radius: 2px;
+  padding: 1.05rem 2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.35s var(--nexora-ease);
+}
+
+.form-submit-btn:hover {
+  background-color: #D3E8CA;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(193, 217, 181, 0.25);
+}
+
+.form-feedback-msg {
+  display: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  padding: 1rem;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.form-feedback-msg.is-success {
+  display: block;
+  background: rgba(193, 217, 181, 0.15);
+  color: var(--nexora-accent-sage);
+  border: 1px solid var(--nexora-accent-sage);
+}
+
+/* ============================================================================
+   FOOTER & COLOPHON
+   ============================================================================ */
+.nexora-footer {
+  background-color: var(--nexora-bg-obsidian);
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding: 6rem 0 3.5rem;
+}
+
+.footer-top-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.footer-brand-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--nexora-text-ivory);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer-brand-blurb {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--nexora-text-muted);
+  max-width: 380px;
+}
+
+.footer-col-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--nexora-accent-sage);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-list a {
+  font-size: 0.82rem;
+  color: var(--nexora-text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+  color: var(--nexora-text-ivory);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--nexora-border-subtle);
+  padding-top: 2rem;
+  font-size: 0.72rem;
+  color: var(--nexora-text-muted);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ============================================================================
+   MODAL WINDOWS (VIDEO & ARTICLES)
+   ============================================================================ */
+.nexora-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(8, 11, 11, 0.9);
+  backdrop-filter: blur(12px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.nexora-modal-overlay.is-open {
+  display: flex;
+}
+
+.modal-card {
+  background-color: #0c1010;
+  border: 1px solid var(--nexora-border-medium);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 880px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-card-header {
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid var(--nexora-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-pretag {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--nexora-accent-sage);
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-family: var(--nexora-font-display);
+  font-size: 1.65rem;
+  margin: 0.2rem 0;
+  color: var(--nexora-text-ivory);
+}
+
+.modal-subdate {
+  font-size: 0.7rem;
+  color: var(--nexora-text-muted);
+}
+
+.modal-close-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--nexora-text-muted);
+  transition: color 0.2s ease;
+}
+
+.modal-close-icon:hover {
+  color: var(--nexora-accent-sage);
+}
+
+.modal-card-body {
+  padding: 2.5rem 2rem;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(243, 240, 232, 0.9);
+}
+
+.modal-video-viewport {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.video-still-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.simulated-video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(8, 11, 11, 0.95) 0%, transparent 100%);
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.simulated-progress-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+
+.progress-fill {
+  width: 58%;
+  height: 100%;
+  background-color: var(--nexora-accent-sage);
+}
+
+.simulated-ctrls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--nexora-text-ivory);
+}
+
+.hd-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* ============================================================================
+   REVEAL ANIMATIONS
+   ============================================================================ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s var(--nexora-ease), transform 0.85s var(--nexora-ease);
+  will-change: opacity, transform;
+}
+
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--nexora-ease), transform 0.9s var(--nexora-ease);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed,
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for hero */
+.hero-top-stage .reveal-fade:nth-child(1) { transition-delay: 0.1s; }
+.hero-top-stage .reveal-fade:nth-child(2) { transition-delay: 0.25s; }
+.hero-top-stage .reveal-fade:nth-child(3) { transition-delay: 0.4s; }
+.hero-bottom-stage.reveal-fade { transition-delay: 0.55s; }

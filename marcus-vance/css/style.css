@@ -1,0 +1,901 @@
+/* ==========================================================================
+   MARCUS VANCE — Personal Portfolio Stylesheet
+   Monolithic Design System × Architectural Minimalism × Bold Typography
+   Colors: Obsidian Charcoal, Graphite, Warm Concrete, Sandstone, Bone White
+   Typography: Space Grotesk + Inter + IBM Plex Mono
+   ========================================================================== */
+
+:root {
+  /* Architectural Monolithic Palette */
+  --c-obsidian: #171715;
+  --c-graphite: #292824;
+  --c-concrete: #A79D90;
+  --c-sandstone: #C8B49C;
+  --c-limestone: #E7DED1;
+  --c-bone: #F5F0E7;
+  --c-bronze: #A77D54;
+  --c-soft-grey: #827E77;
+
+  --c-border: rgba(245, 240, 231, 0.12);
+  --c-border-subtle: rgba(245, 240, 231, 0.06);
+  --c-border-dark: rgba(23, 23, 21, 0.15);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Layout */
+  --max-w: 1600px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --trans: all 0.4s var(--ease);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--c-obsidian);
+  color: var(--c-bone);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--c-obsidian);
+  color: var(--c-bone);
+  overflow-x: hidden;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--trans);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--trans);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-concrete);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mono-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--c-bronze);
+}
+
+.section-divider {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.section-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.hero-monolith {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 750px;
+  background-image: url('../assets/images/marcus-hero-bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 4rem 2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-monolith::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(23, 23, 21, 0.88) 0%,
+    rgba(23, 23, 21, 0.72) 40%,
+    rgba(23, 23, 21, 0.25) 75%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Top Navigation */
+.hero-nav {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+}
+
+.nav-links-center {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links-center a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  opacity: 0.75;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-links-center a:hover {
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+.nav-links-center a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--c-bronze);
+  transition: width 0.3s var(--ease);
+}
+
+.nav-links-center a:hover::after {
+  width: 100%;
+}
+
+.nav-contact-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  border: 1px solid var(--c-border);
+  padding: 0.55rem 1.25rem;
+  transition: var(--trans);
+}
+
+.nav-contact-btn:hover {
+  background-color: var(--c-bone);
+  color: var(--c-obsidian);
+  border-color: var(--c-bone);
+}
+
+/* Hero Center Content */
+.hero-body {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  margin: auto 0;
+}
+
+.hero-eyebrow {
+  margin-bottom: 1rem;
+}
+
+.hero-monumental-name {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 8.5vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  margin-bottom: 1.75rem;
+}
+
+.hero-monumental-name span {
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--c-limestone);
+  max-width: 480px;
+  margin-bottom: 2.25rem;
+  font-weight: 350;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-monolith-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--c-bone);
+  color: var(--c-obsidian);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  transition: var(--trans);
+}
+
+.btn-monolith-primary:hover {
+  background-color: var(--c-sandstone);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.btn-monolith-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: transparent;
+  color: var(--c-bone);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.95rem;
+  border: 1px solid var(--c-border);
+  transition: var(--trans);
+}
+
+.btn-monolith-secondary:hover {
+  border-color: var(--c-bone);
+  background-color: rgba(245, 240, 231, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Bottom Information Strip */
+.hero-bottom-strip {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--c-border);
+}
+
+.strip-item {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-concrete);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.strip-item::before {
+  content: '—';
+  color: var(--c-bronze);
+}
+
+/* ==========================================================================
+   2. SELECTED WORKS
+   ========================================================================== */
+.works-monolith {
+  padding: 9rem 0;
+  background-color: var(--c-obsidian);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.works-grid-asymmetric {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+}
+
+.work-card {
+  position: relative;
+  background-color: var(--c-graphite);
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+  transition: var(--trans);
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-sandstone);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.work-card.span-8 {
+  grid-column: span 8;
+}
+
+.work-card.span-4 {
+  grid-column: span 4;
+}
+
+.work-card.span-5 {
+  grid-column: span 5;
+}
+
+.work-card.span-7 {
+  grid-column: span 7;
+}
+
+.work-img-box {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #0F0F0E;
+}
+
+.span-8 .work-img-box {
+  height: 520px;
+}
+
+.span-4 .work-img-box {
+  height: 520px;
+}
+
+.span-5 .work-img-box {
+  height: 440px;
+}
+
+.span-7 .work-img-box {
+  height: 440px;
+}
+
+.work-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease), filter 0.8s var(--ease);
+}
+
+.work-card:hover .work-img-box img {
+  transform: scale(1.05);
+  filter: contrast(1.08);
+}
+
+.work-info-box {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.work-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--c-bronze);
+}
+
+.work-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--c-bone);
+  margin-bottom: 0.65rem;
+}
+
+.work-desc {
+  font-size: 0.95rem;
+  color: var(--c-concrete);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 350;
+}
+
+.work-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--c-border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--c-soft-grey);
+}
+
+.work-arrow {
+  color: var(--c-bone);
+  font-size: 1rem;
+  transition: transform 0.3s var(--ease);
+}
+
+.work-card:hover .work-arrow {
+  transform: translate(4px, -4px);
+  color: var(--c-bronze);
+}
+
+/* ==========================================================================
+   3. ABOUT / PROFILE
+   ========================================================================== */
+.about-monolith {
+  padding: 9rem 0;
+  background-color: var(--c-graphite);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-statement {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  margin-bottom: 2rem;
+}
+
+.about-p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--c-limestone);
+  margin-bottom: 2rem;
+  font-weight: 350;
+}
+
+.about-specs {
+  display: flex;
+  gap: 3rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--c-concrete);
+  border-top: 1px solid var(--c-border);
+  padding-top: 1.5rem;
+}
+
+.about-specs span {
+  display: block;
+  color: var(--c-bronze);
+  margin-bottom: 0.25rem;
+}
+
+.about-image-card {
+  position: relative;
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.about-image-card img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.about-img-tag {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(23, 23, 21, 0.85);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--c-bone);
+  border: 1px solid var(--c-border);
+}
+
+/* ==========================================================================
+   4. EXPERTISE SECTION
+   ========================================================================== */
+.expertise-monolith {
+  padding: 9rem 0;
+  background-color: var(--c-obsidian);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.expertise-table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--c-border);
+}
+
+.expertise-row {
+  display: grid;
+  grid-template-columns: 120px 2fr 3fr 40px;
+  align-items: center;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--c-border);
+  transition: var(--trans);
+  cursor: pointer;
+}
+
+.expertise-row:hover {
+  background-color: rgba(245, 240, 231, 0.03);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.exp-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--c-bronze);
+  font-weight: 600;
+}
+
+.exp-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-bone);
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  color: var(--c-concrete);
+  line-height: 1.6;
+}
+
+.exp-arrow {
+  font-family: var(--font-mono);
+  color: var(--c-soft-grey);
+  font-size: 1.25rem;
+  text-align: right;
+  transition: transform 0.3s var(--ease);
+}
+
+.expertise-row:hover .exp-arrow {
+  color: var(--c-bronze);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   5. CREATIVE PROCESS
+   ========================================================================== */
+.process-monolith {
+  padding: 9rem 0;
+  background-color: var(--c-graphite);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.process-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.process-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 15px;
+  width: 1px;
+  background-color: var(--c-border);
+}
+
+.process-step {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.step-marker {
+  width: 32px;
+  height: 32px;
+  background-color: var(--c-obsidian);
+  border: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--c-bronze);
+  font-weight: 600;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.step-body h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  margin-bottom: 0.4rem;
+}
+
+.step-body p {
+  font-size: 0.95rem;
+  color: var(--c-concrete);
+  line-height: 1.6;
+}
+
+.process-media-wrap {
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.process-media-wrap img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   6. EXPERIMENTS / VISUAL PLAYGROUND
+   ========================================================================== */
+.experiments-monolith {
+  padding: 9rem 0;
+  background-color: var(--c-obsidian);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.experiments-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.exp-mosaic-item {
+  position: relative;
+  background-color: var(--c-graphite);
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+  transition: var(--trans);
+}
+
+.exp-mosaic-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-sandstone);
+}
+
+.exp-mosaic-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.exp-mosaic-item:hover img {
+  transform: scale(1.06);
+}
+
+.exp-mosaic-caption {
+  padding: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid var(--c-border-subtle);
+}
+
+.exp-mosaic-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-bone);
+  text-transform: uppercase;
+}
+
+.exp-mosaic-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--c-bronze);
+  letter-spacing: 0.12em;
+}
+
+/* ==========================================================================
+   7. CONTACT SECTION
+   ========================================================================== */
+.contact-monolith {
+  padding: 10rem 0;
+  background-color: var(--c-obsidian);
+  position: relative;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 5rem;
+  align-items: flex-end;
+}
+
+.contact-huge-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6.5vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  margin-bottom: 2rem;
+}
+
+.contact-huge-title span {
+  display: block;
+}
+
+.contact-huge-title .color-accent {
+  color: var(--c-bronze);
+}
+
+.contact-sub {
+  font-size: 1.2rem;
+  color: var(--c-concrete);
+  max-width: 520px;
+  line-height: 1.7;
+  font-weight: 350;
+  margin-bottom: 2.5rem;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contact-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 1px solid var(--c-border);
+  padding-left: 3rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--c-concrete);
+}
+
+.contact-meta-col span {
+  display: block;
+  color: var(--c-bronze);
+  margin-bottom: 0.35rem;
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+.footer-monolith {
+  padding: 4rem 0;
+  background-color: #10100E;
+  border-top: 1px solid var(--c-border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer-nav a {
+  color: var(--c-soft-grey);
+}
+
+.footer-nav a:hover {
+  color: var(--c-bone);
+}
+
+.footer-cr {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--c-soft-grey);
+  letter-spacing: 0.1em;
+}
+

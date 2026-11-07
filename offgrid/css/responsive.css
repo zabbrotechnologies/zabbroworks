@@ -1,0 +1,255 @@
+/* ==========================================================================
+   OFFGRID® — RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Large Tablets & Small Desktops (<= 1200px) */
+@media (max-width: 1200px) {
+  .hero-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .manifesto-details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .m-left-block {
+    display: none;
+  }
+
+  .poster-tall-hero {
+    grid-column: span 6;
+  }
+
+  .poster-wide {
+    grid-column: span 6;
+  }
+
+  .poster-square {
+    grid-column: span 6;
+  }
+
+  .poster-tall-editorial {
+    grid-column: span 6;
+  }
+
+  .poster-irregular {
+    grid-column: span 6;
+  }
+
+  .philosophy-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .contact-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .nav-menu, .nav-index {
+    display: none;
+  }
+
+  .menu-toggle-btn {
+    display: flex;
+  }
+
+  .hero-content-block,
+  .manifesto-container,
+  .playground-outer,
+  .works-container,
+  .typelab-container,
+  .practice-container,
+  .philosophy-container,
+  .contact-container,
+  .footer-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .hero-poster-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+  }
+
+  .editorial-detail {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .floating-shape {
+    display: none; /* Keep hero clean on medium/smaller screens */
+  }
+
+  .practice-row {
+    grid-template-columns: 60px 1.5fr 1fr 30px;
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 66px;
+  }
+
+  .hero-print-wall {
+    padding-top: calc(var(--nav-h) + 1.5rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-reg-grid {
+    inset: 1rem;
+  }
+
+  .reg-scale-rule, .color-swatch-strip {
+    display: none;
+  }
+
+  .hero-poster-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .yellow-highlight-block {
+    transform: none;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-bold-primary, .btn-bold-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .manifesto-sentence {
+    font-size: 2.5rem;
+  }
+
+  .manifesto-details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .board-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .interactive-stage {
+    height: 440px;
+  }
+
+  .poster-wall-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-tall-hero,
+  .poster-wide,
+  .poster-square,
+  .poster-tall-editorial,
+  .poster-irregular {
+    grid-column: span 1;
+  }
+
+  .poster-tall-hero .poster-frame,
+  .poster-wide .poster-frame,
+  .poster-square .poster-frame,
+  .poster-tall-editorial .poster-frame,
+  .poster-irregular .poster-frame {
+    height: 380px;
+  }
+
+  .type-controls-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1rem;
+  }
+
+  .type-display-board {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .type-display-inner {
+    font-size: 2.2rem;
+  }
+
+  .practice-row {
+    grid-template-columns: 40px 1fr 30px;
+    gap: 10px;
+  }
+
+  .row-desc {
+    display: none;
+  }
+
+  .row-hover-thumb {
+    display: none;
+  }
+
+  .contact-bold-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .offgrid-form {
+    padding: 1.5rem;
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-poster-preview {
+    height: 240px;
+  }
+}
+
+/* Small Screens (<= 480px) */
+@media (max-width: 480px) {
+  .hero-poster-title {
+    font-size: 2.5rem;
+  }
+
+  .manifesto-sentence {
+    font-size: 2rem;
+  }
+
+  .playground-title,
+  .works-headline,
+  .typelab-headline,
+  .practice-title,
+  .phil-title,
+  .c-headline {
+    font-size: 2.2rem;
+  }
+
+  .btn-nav-project span:first-child {
+    display: none;
+  }
+}
+

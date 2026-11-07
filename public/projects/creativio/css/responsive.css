@@ -1,0 +1,299 @@
+/* ============================================================================
+   CREATIVIO — RESPONSIVE STYLESHEET (responsive.css)
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   Laptop & Medium Displays (<= 1440px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1440px) {
+  .creativio-container,
+  .header-container {
+    padding: 0 2.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 4.8vw, 4.4rem);
+  }
+
+  .featured-glass-card {
+    max-width: 380px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Tablet Landscape (<= 1200px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-featured-card-wrapper {
+    justify-content: flex-start;
+  }
+
+  .featured-glass-card {
+    max-width: 100%;
+  }
+
+  .featured-thumb-container {
+    height: 180px;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .projects-asymmetric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-large-featured {
+    grid-column: span 2;
+  }
+
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand-side {
+    grid-column: span 2;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Tablet Portrait (<= 992px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  .creativio-header {
+    padding: 1.1rem 0;
+  }
+
+  .glass-stats-strip {
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    padding: 1.8rem;
+  }
+
+  .stat-unit {
+    flex: 1 1 calc(50% - 1.75rem);
+    min-width: 160px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .cta-glass-banner {
+    padding: 3rem 2rem;
+  }
+
+  .testimonial-slider-container {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Mobile Devices (<= 768px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .creativio-container,
+  .header-container {
+    padding: 0 1.25rem;
+  }
+
+  .creativio-hero {
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 8.5vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .hero-supporting-copy {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .btn-primary-white,
+  .btn-glass-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .projects-asymmetric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large-featured {
+    grid-column: span 1;
+  }
+
+  .card-large-featured .project-media-frame {
+    height: 240px;
+  }
+
+  .strengths-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand-side {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .quote-body {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .approach-img {
+    height: 320px;
+  }
+
+  .frame-caption-glass {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .ambient-glow {
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Small Mobile (<= 480px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.85rem, 8vw, 2.4rem);
+    word-break: break-word;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .btn-talk-cta span:first-child {
+    display: none;
+  }
+
+  .btn-talk-cta {
+    padding: 0.55rem 0.85rem;
+  }
+
+  .stat-unit {
+    flex: 1 1 100%;
+  }
+
+  .stat-number {
+    font-size: 1.85rem;
+  }
+
+  .cta-headline {
+    font-size: clamp(1.6rem, 7.5vw, 2.2rem);
+    word-break: break-word;
+  }
+
+  .cta-glass-banner {
+    padding: 2.25rem 1.25rem;
+  }
+}
+
+/* Extra Small Phones (<= 360px) */
+@media (max-width: 360px) {
+  .creativio-container,
+  .header-container {
+    padding: 0 0.85rem;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .cta-glass-banner {
+    padding: 1.75rem 0.85rem;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Accessibility: Reduced Motion
+   ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ambient-glow {
+    display: none !important;
+  }
+
+  .reveal-on-scroll,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

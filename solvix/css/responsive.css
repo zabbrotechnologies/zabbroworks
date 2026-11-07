@@ -1,0 +1,267 @@
+/* ============================================================================
+   SOLVIX — VIVID GRADIENTS / IMMERSIVE DIGITAL EXPERIENCE
+   Responsive Stylesheet (responsive.css)
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   Laptop & Medium Displays (<= 1440px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1440px) {
+  .solvix-hero-container,
+  .solvix-container {
+    padding: 0 2.5rem;
+  }
+
+  .hero-main-title {
+    font-size: clamp(3.2rem, 5.2vw, 4.8rem);
+  }
+
+  .hero-featured-project-card {
+    max-width: 440px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Tablet Landscape (<= 1200px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero-main-stage {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-card-side {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .industries-tiles-grid,
+  .insights-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .solvix-inquiry-form {
+    max-width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Tablet Portrait (<= 992px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .solvix-header-container {
+    padding: 1.2rem 2rem;
+  }
+
+  .solvix-nav {
+    display: none;
+  }
+
+  .solvix-menu-btn {
+    display: flex;
+  }
+
+  .hero-stats-row {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .stat-cell {
+    flex: 1 1 calc(50% - 1.5rem);
+    min-width: 160px;
+  }
+
+  .trusted-logos-list {
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    justify-content: flex-start;
+  }
+
+  .step-dossier-card {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand-side {
+    grid-column: span 2;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Mobile Devices (<= 768px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .solvix-hero-container,
+  .solvix-container {
+    padding: 0 1.25rem;
+  }
+
+  .solvix-header-container {
+    padding: 1rem 1.25rem;
+  }
+
+  .solvix-start-project-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .solvix-hero {
+    padding-top: 6.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2.4rem, 9vw, 3.4rem);
+    line-height: 1.05;
+  }
+
+  .hero-cta-cluster {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .hero-primary-pill-btn,
+  .hero-video-play-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .work-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industries-tiles-grid,
+  .insights-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps-nav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+  .process-steps-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-btn {
+    flex: 0 0 auto;
+    min-width: 90px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand-side {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .solvix-gradient-orb {
+    filter: blur(80px);
+    opacity: 0.2;
+  }
+
+  .orb-primary {
+    width: 90vw;
+    height: 90vw;
+    right: -20vw;
+  }
+
+  .orb-secondary {
+    width: 80vw;
+    height: 80vw;
+    left: -30vw;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Small Mobile (<= 480px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .solvix-logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .solvix-start-project-btn span:first-child {
+    display: none;
+  }
+
+  .solvix-start-project-btn {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .hero-main-title {
+    font-size: 2.2rem;
+  }
+
+  .stat-number {
+    font-size: 1.9rem;
+  }
+
+  .stat-cell {
+    flex: 1 1 100%;
+  }
+
+  .modal-box-header {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .modal-article-body {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .drawer-panel {
+    width: 85vw;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Accessibility: Reduced Motion
+   ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .solvix-gradient-orb {
+    display: none !important;
+  }
+
+  .reveal-on-scroll,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

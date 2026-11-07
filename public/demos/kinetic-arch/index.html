@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINETIC ARCHITECTURE — Monolithic Spatial Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      background: #0E0F10;
+      color: #F0F0EE;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      mix-blend-mode: difference;
+    }
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+    .header-coords {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #aaa;
+    }
+    .contact-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 0.4rem 1rem;
+      transition: all 0.3s;
+    }
+    .contact-link:hover {
+      background: #fff;
+      color: #0E0F10;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4rem 3rem;
+      position: relative;
+      background: linear-gradient(to top, rgba(14,15,16,0.92) 10%, rgba(14,15,16,0.2) 80%),
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #A0A09C;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 1.5rem;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 7.5vw, 8rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+      text-transform: uppercase;
+      max-width: 1200px;
+    }
+
+    /* Manifesto section */
+    .manifesto {
+      padding: 7rem 3rem;
+      background: #141517;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .manifesto-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #1F8F4C;
+    }
+    .manifesto-text {
+      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: #E2E2DF;
+    }
+    .manifesto-text strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Works Index */
+    .works-section {
+      padding: 4rem 3rem;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 3rem;
+    }
+    .section-head h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .works-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .work-item {
+      display: grid;
+      grid-template-columns: 80px 2fr 1.5fr 1fr auto;
+      align-items: center;
+      padding: 2.2rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .work-item:hover {
+      background: rgba(255,255,255,0.03);
+      padding-left: 2rem;
+    }
+    .work-num {
+      font-size: 0.85rem;
+      color: #1F8F4C;
+      font-weight: 600;
+    }
+    .work-name {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .work-loc {
+      font-size: 0.88rem;
+      color: #888;
+    }
+    .work-year {
+      font-size: 0.88rem;
+      color: #888;
+    }
+    .work-arrow {
+      font-size: 1.2rem;
+      transform: translateX(0);
+      transition: transform 0.2s, color 0.2s;
+    }
+    .work-item:hover .work-arrow {
+      transform: translateX(8px);
+      color: #1F8F4C;
+    }
+
+    /* Featured Visual Gallery */
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      padding: 2rem 3rem 6rem;
+    }
+    .visual-card {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+      background: #1A1B1E;
+    }
+    .visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .visual-card:hover img {
+      transform: scale(1.05);
+    }
+    .visual-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      padding: 4rem 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .work-item {
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem;
+      }
+      .work-loc, .work-year { display: none; }
+      .manifesto { grid-template-columns: 1fr; gap: 1.5rem; padding: 4rem 1.5rem; }
+      .visual-grid { grid-template-columns: 1fr; padding: 1rem 1.5rem 4rem; }
+      header { padding: 1.2rem 1.5rem; }
+      .hero-container { padding: 3rem 1.5rem; }
+      .works-section { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Kinetic &bull; Arch</a>
+    <div class="header-coords">47.3769&deg; N, 8.5417&deg; E &mdash; Z&Uuml;RICH</div>
+    <a href="#inquiry" class="contact-link">Inquire</a>
+  </header>
+
+  <section class="hero-container">
+    <div class="hero-meta">
+      <div>Monograph 2026</div>
+      <div>Structural Brutalism &amp; Light</div>
+      <div>14 Global Commisions</div>
+    </div>
+    <h1 class="hero-title">Monolithic Space. Engineered Equilibrium.</h1>
+  </section>
+
+  <section class="manifesto">
+    <div class="manifesto-label">Architectural Thesis</div>
+    <div class="manifesto-text">
+      We conceive physical envelopes that <strong>harness natural gravitas</strong>. Through exposed raw aggregates, monolithic volumes, and unyielding acoustic geometry, our structures create sanctuary from the transient world.
+    </div>
+  </section>
+
+  <section class="works-section">
+    <div class="section-head">
+      <h2>Selected Commissions</h2>
+      <span style="font-size:0.85rem; color:#888;">Archival Index / 2023&ndash;2026</span>
+    </div>
+
+    <div class="works-list">
+      <div class="work-item" onclick="alert('Viewing: House of Seven Horizons — Zurich')">
+        <span class="work-num">01</span>
+        <span class="work-name">House of Seven Horizons</span>
+        <span class="work-loc">Lake Zurich, Switzerland</span>
+        <span class="work-year">2026</span>
+        <span class="work-arrow">&rarr;</span>
+      </div>
+      <div class="work-item" onclick="alert('Viewing: Pavilion for Acoustic Void — Kyoto')">
+        <span class="work-num">02</span>
+        <span class="work-name">Pavilion for Acoustic Void</span>
+        <span class="work-loc">Kyoto Prefecture, Japan</span>
+        <span class="work-year">2025</span>
+        <span class="work-arrow">&rarr;</span>
+      </div>
+      <div class="work-item" onclick="alert('Viewing: Obsidian Tower Headquarters — Oslo')">
+        <span class="work-num">03</span>
+        <span class="work-name">Obsidian Tower Atrium</span>
+        <span class="work-loc">Oslo Fjord, Norway</span>
+        <span class="work-year">2025</span>
+        <span class="work-arrow">&rarr;</span>
+      </div>
+      <div class="work-item" onclick="alert('Viewing: Cantilever Research Facility — Atacama')">
+        <span class="work-num">04</span>
+        <span class="work-name">Cantilever Research Center</span>
+        <span class="work-loc">Atacama Desert, Chile</span>
+        <span class="work-year">2024</span>
+        <span class="work-arrow">&rarr;</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="visual-grid">
+    <div class="visual-card">
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Minimal concrete interior">
+      <div class="visual-caption">
+        <span>Curved Monolithic Light Well</span>
+        <span>Zurich Atelier</span>
+      </div>
+    </div>
+    <div class="visual-card">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Brutalist architectural angles">
+      <div class="visual-caption">
+        <span>Faceted Facade System</span>
+        <span>Oslo HQ</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Kinetic Architecture Group. All rights reserved.</div>
+    <div>Zurich &bull; Tokyo &bull; Oslo</div>
+  </footer>
+</body>
+</html>

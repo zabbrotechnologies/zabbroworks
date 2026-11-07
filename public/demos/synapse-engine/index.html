@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNAPSE ENGINE — Cognitive Graph Orchestration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0C0D0E;
+      color: #E6E8EA;
+      line-height: 1.5;
+    }
+    header {
+      border-bottom: 1px solid #1E2024;
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0C0D0E;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #1F8F4C;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #1F8F4C;
+    }
+    .links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.82rem;
+      color: #8C929D;
+    }
+    .links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .links a:hover { color: #fff; }
+    .cta-btn {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #E0E0E0; }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 2.5rem 3rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid #23272E;
+      background: #131518;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: #9BA3AF;
+      margin-bottom: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span {
+      background: linear-gradient(180deg, #FFFFFF 0%, #8C94A0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #8E96A4;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Live Interactive Console Simulation */
+    .console-box {
+      max-width: 1000px;
+      margin: 0 auto 5rem;
+      background: #111317;
+      border: 1px solid #23272F;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .console-header {
+      background: #17191F;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #23272F;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #8C94A0;
+    }
+    .console-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #2A2E38; }
+    .console-body {
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+    .node-chain {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .node-card {
+      background: #15181E;
+      border: 1px solid #282D37;
+      padding: 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+    .node-active {
+      border-color: #1F8F4C;
+    }
+    .node-tag {
+      font-size: 0.65rem;
+      color: #1F8F4C;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .node-name {
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+    .node-lat {
+      font-size: 0.7rem;
+      color: #717885;
+      margin-top: 0.4rem;
+    }
+
+    .output-stream {
+      background: #0B0C0E;
+      border: 1px solid #1E222A;
+      padding: 1.25rem;
+      border-radius: 6px;
+      color: #A3ACB9;
+      min-height: 120px;
+      white-space: pre-wrap;
+    }
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .run-btn {
+      background: #1F8F4C;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .run-btn:hover { background: #18773e; }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #1E2024;
+      border-bottom: 1px solid #1E2024;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feat-col {
+      padding: 3rem 2rem;
+      border-right: 1px solid #1E2024;
+    }
+    .feat-col:last-child { border-right: none; }
+    .feat-num {
+      color: #1F8F4C;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .feat-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .feat-p {
+      color: #8C929D;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 3rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    @media (max-width: 800px) {
+      .node-chain { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .feat-col { border-right: none; border-bottom: 1px solid #1E2024; }
+      header { padding: 1rem 1.5rem; }
+      .hero { padding: 3rem 1.5rem 2rem; }
+      .links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="status-dot"></span>
+      SYNAPSE // ENGINE v4.2
+    </div>
+    <div class="links">
+      <a href="#">Architecture</a>
+      <a href="#">Graph Kernels</a>
+      <a href="#">Benchmarks</a>
+      <a href="#">Docs</a>
+    </div>
+    <button class="cta-btn" onclick="alert('API Console Access: Provisioning key...')">Deploy Node &rarr;</button>
+  </header>
+
+  <section class="hero">
+    <div class="badge">
+      <span>STATELESS INFERENCE PIPELINES &bull; 4.1ms P99</span>
+    </div>
+    <h1 class="hero-title">
+      Deterministic AI Routing for <span>Sub-Millisecond Multi-Agent</span> Meshes.
+    </h1>
+    <p class="hero-desc">
+      Compile high-cardinality reasoning graphs into bare-metal WASM kernels. Synapse dispatches zero-overhead LLM topologies with cryptographic guarantees.
+    </p>
+
+    <!-- Interactive Console -->
+    <div class="console-box">
+      <div class="console-header">
+        <div class="console-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <span>pipeline: topology_alpha_v4.syn</span>
+        <span>cluster: eu-central-fra-1</span>
+      </div>
+      <div class="console-body">
+        <div class="node-chain">
+          <div class="node-card node-active">
+            <div class="node-tag">Ingest &bull; Step 01</div>
+            <div class="node-name">Vector Embedding Buffer</div>
+            <div class="node-lat">0.8ms &bull; 1536 dim</div>
+          </div>
+          <div class="node-card node-active">
+            <div class="node-tag">Reasoning &bull; Step 02</div>
+            <div class="node-name">Speculative Multi-Draft</div>
+            <div class="node-lat">3.1ms &bull; 8 streams</div>
+          </div>
+          <div class="node-card">
+            <div class="node-tag">Verifier &bull; Step 03</div>
+            <div class="node-name">Formal Logic Proof</div>
+            <div class="node-lat">0.4ms &bull; Zero Hallucination</div>
+          </div>
+        </div>
+
+        <div class="output-stream" id="streamLog">> Synapse runtime initialized. Ready to execute graph...</div>
+
+        <div class="action-row">
+          <span style="font-size:0.75rem; color:#777;">Benchmark: 1,840 tok/sec throughput</span>
+          <button class="run-btn" id="runPipelineBtn" onclick="simulatePipeline()">Run Pipeline Test &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-grid">
+    <div class="feat-col">
+      <div class="feat-num">01 / REASONING</div>
+      <h3 class="feat-title">Deterministic Routing</h3>
+      <p class="feat-p">Guaranteed acyclic graph topology execution with zero runtime overhead and sub-microsecond state branching.</p>
+    </div>
+    <div class="feat-col">
+      <div class="feat-num">02 / HARDWARE</div>
+      <h3 class="feat-title">Bare-Metal C++ Kernels</h3>
+      <p class="feat-p">Direct CUDA / ROCm primitives optimized for speculative multi-agent consensus verification.</p>
+    </div>
+    <div class="feat-col">
+      <div class="feat-num">03 / SECURITY</div>
+      <h3 class="feat-title">Cryptographic Attestation</h3>
+      <p class="feat-p">Every inference step receives an auditable zero-knowledge proof verifying weights and state transition fidelity.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Synapse Engine Inc. Zurich &bull; San Francisco</div>
+    <div>SOC-2 Type II Certified</div>
+  </footer>
+
+  <script>
+    function simulatePipeline() {
+      const log = document.getElementById('streamLog');
+      const btn = document.getElementById('runPipelineBtn');
+      btn.disabled = true;
+      btn.textContent = 'Processing Graph...';
+      
+      log.textContent = '> [0.00ms] Initializing graph execution on 4 H100 clusters...\n';
+      
+      setTimeout(() => {
+        log.textContent += '> [1.20ms] Embedded query token tensor [1x1536] created.\n';
+      }, 300);
+
+      setTimeout(() => {
+        log.textContent += '> [2.85ms] Speculative draft accepted. Confidence score: 0.9984.\n';
+      }, 700);
+
+      setTimeout(() => {
+        log.textContent += '> [4.10ms] Formal logic verification PASSED (0 constraints violated).\n';
+        log.textContent += '> Response payload dispatched in 4.10ms. [OK 200]';
+        btn.disabled = false;
+        btn.textContent = 'Run Pipeline Test →';
+      }, 1100);
+    }
+  </script>
+</body>
+</html>

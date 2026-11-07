@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPACEN — Futuristic Space Exploration &amp; Discovery Platform</title>
+  <meta name="description" content="SPACEN is an aerospace exploration and scientific discovery platform featuring a tactile skeuomorphic console interface, curved 3D mission carousel, and deep planetary archives.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="spacen-body">
+
+  <!-- =========================================================================
+       HEADER & FLOATING SKEUOMORPHIC NAVIGATION
+       ========================================================================= -->
+  <header class="spacen-header" id="spacenHeader">
+    <div class="nav-console-pod">
+      <!-- Metallic Corner Screws -->
+      <span class="screw screw-tl"></span>
+      <span class="screw screw-tr"></span>
+      <span class="screw screw-bl"></span>
+      <span class="screw screw-br"></span>
+
+      <!-- Left: Logo & Planetary Symbol -->
+      <a href="#hero" class="brand-pod" aria-label="SPACEN Home">
+        <div class="planetary-emblem" aria-hidden="true">
+          <div class="planet-sphere"></div>
+          <div class="orbit-ring"></div>
+        </div>
+        <span class="brand-text">SPACEN</span>
+      </a>
+
+      <!-- Center: Nav Items -->
+      <nav class="desktop-nav-recessed" aria-label="Main Navigation">
+        <ul class="nav-pills-strip">
+          <li><a href="#hero" class="nav-pill active">Home</a></li>
+          <li><a href="#missions" class="nav-pill">Missions</a></li>
+          <li><a href="#discover" class="nav-pill">Discover</a></li>
+          <li><a href="#planets" class="nav-pill">Planets</a></li>
+          <li><a href="#research" class="nav-pill">Research</a></li>
+          <li><a href="#about" class="nav-pill">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Search & Action Buttons -->
+      <div class="header-action-cluster">
+        <button class="btn-raised-icon" id="searchToggleBtn" aria-label="Open search dialog">
+          <svg viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5" stroke="#101B32" stroke-width="1.8"/><path d="M12 12L16 16" stroke="#101B32" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+
+        <a href="#join" class="btn-raised-orange">
+          <span>Join the Mission</span>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="spacen-mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-code">SYS_MENU // REVISION 4.8</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close navigation">&times;</button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li><a href="#hero" class="drawer-link active">01 // Home</a></li>
+      <li><a href="#missions" class="drawer-link">02 // Missions</a></li>
+      <li><a href="#discover" class="drawer-link">03 // Discover</a></li>
+      <li><a href="#planets" class="drawer-link">04 // Planets</a></li>
+      <li><a href="#research" class="drawer-link">05 // Research</a></li>
+      <li><a href="#about" class="drawer-link">06 // About SPACEN</a></li>
+      <li><a href="#join" class="drawer-link drawer-highlight">07 // Join the Mission &rarr;</a></li>
+    </ul>
+    <div class="drawer-telemetry">
+      <span>ORBITAL SYNC: NOMINAL</span>
+      <span>STATUS: READY</span>
+    </div>
+  </div>
+
+  <!-- Search Overlay Modal -->
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-modal-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal-panel">
+      <div class="search-recessed-box">
+        <svg viewBox="0 0 18 18" fill="none" class="search-icon"><circle cx="8" cy="8" r="5" stroke="#F36B21" stroke-width="2"/><path d="M12 12L16 16" stroke="#F36B21" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Search missions, planets, observatories, or telemetry..." autocomplete="off">
+        <button class="search-clear-btn" id="searchClearBtn">&times;</button>
+      </div>
+      <div class="search-results-viewport" id="searchResults">
+        <div class="search-initial-hint">Type keywords like "Mars", "James Webb", "Apollo 11", or "Europa"...</div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 01: HERO & CURVED 3D PERSPECTIVE CAROUSEL
+         Aerospace Console with Physical 3D Spacecraft Stage
+         ========================================================================= -->
+    <section class="hero-console-section" id="hero">
+      <div class="console-stage-container">
+        
+        <!-- Hero Information Block -->
+        <div class="hero-meta-panel">
+          <h1 class="hero-headline">
+            Explore Beyond <span class="highlight-orange">Earth.</span>
+          </h1>
+
+          <p class="hero-description">
+            Discover the wonders of our universe through space missions, planetary exploration, scientific discoveries, and the future of human spaceflight.
+          </p>
+
+          <div class="hero-button-cluster">
+            <a href="#missions" class="btn-raised-orange hero-cta">
+              <span>Explore Missions</span>
+              <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </a>
+            <a href="#discover" class="btn-raised-porcelain">
+              <span>Discover the Universe</span>
+            </a>
+          </div>
+
+          <!-- Physical Telemetry Pod -->
+          <div class="telemetry-recessed-bar">
+            <div class="telem-item">
+              <span class="t-label">STATION ALTITUDE</span>
+              <span class="t-value">408.2 KM</span>
+            </div>
+            <div class="telem-divider"></div>
+            <div class="telem-item">
+              <span class="t-label">VELOCITY</span>
+              <span class="t-value">27,600 KM/H</span>
+            </div>
+            <div class="telem-divider"></div>
+            <div class="telem-item">
+              <span class="t-label">SIGNAL LOCK</span>
+              <span class="t-value text-orange">DEEP_SPACE_OK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             MAIN FEATURE: CURVED 3D PERSPECTIVE CAROUSEL
+             ===================================================================== -->
+        <div class="carousel-3d-viewport" id="carouselViewport">
+          
+          <!-- 3D Transform Track -->
+          <div class="carousel-3d-stage" id="carouselStage" style="perspective: 1200px;">
+            <div class="carousel-3d-track" id="carouselTrack">
+              
+              <!-- Card 1: Orbital Research -->
+              <article class="carousel-card card-0" data-index="0">
+                <div class="card-metallic-bevel"></div>
+                <div class="card-image-wrap">
+                  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" alt="International Space Station and Orbital Laboratories" loading="eager">
+                  <div class="card-depth-overlay"></div>
+                </div>
+                <div class="card-content-tray">
+                  <span class="card-cat-tag">ORBITAL STATION</span>
+                  <h3 class="card-title">Orbital Research</h3>
+                  <p class="card-desc">Discover the laboratories and scientific research platforms operating beyond Earth's atmosphere.</p>
+                  <div class="card-action-bar">
+                    <span class="card-code">EXP_SYS // 01</span>
+                    <a href="#missions" class="card-circle-arrow" aria-label="Explore Orbital Research details">
+                      <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Mars Exploration -->
+              <article class="carousel-card card-1" data-index="1">
+                <div class="card-metallic-bevel"></div>
+                <div class="card-image-wrap">
+                  <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1200&auto=format&fit=crop" alt="Mars Surface and Planetary Exploration" loading="eager">
+                  <div class="card-depth-overlay"></div>
+                </div>
+                <div class="card-content-tray">
+                  <span class="card-cat-tag">PLANETARY MISSION</span>
+                  <h3 class="card-title">Mars Exploration</h3>
+                  <p class="card-desc">Explore the red planet through robotic exploration, surface discoveries, and future human missions.</p>
+                  <div class="card-action-bar">
+                    <span class="card-code">EXP_SYS // 02</span>
+                    <a href="#missions" class="card-circle-arrow" aria-label="Explore Mars Exploration details">
+                      <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: Human Missions (Initial Center Active) -->
+              <article class="carousel-card card-2" data-index="2">
+                <div class="card-metallic-bevel"></div>
+                <div class="card-image-wrap">
+                  <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="Astronaut in detailed space suit during extravehicular activity" loading="eager">
+                  <div class="card-depth-overlay"></div>
+                </div>
+                <div class="card-content-tray">
+                  <span class="card-cat-tag">CREWED FLIGHT</span>
+                  <h3 class="card-title">Human Missions</h3>
+                  <p class="card-desc">Follow the journey of astronauts as humanity continues exploring beyond our home planet.</p>
+                  <div class="card-action-bar">
+                    <span class="card-code">EXP_SYS // 03</span>
+                    <a href="#missions" class="card-circle-arrow" aria-label="Explore Human Missions details">
+                      <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 4: Lunar Programs -->
+              <article class="carousel-card card-3" data-index="3">
+                <div class="card-metallic-bevel"></div>
+                <div class="card-image-wrap">
+                  <img src="https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?q=80&w=1200&auto=format&fit=crop" alt="Detailed surface of the Moon and landing zones" loading="lazy">
+                  <div class="card-depth-overlay"></div>
+                </div>
+                <div class="card-content-tray">
+                  <span class="card-cat-tag">LUNAR GATEWAY</span>
+                  <h3 class="card-title">Lunar Programs</h3>
+                  <p class="card-desc">Explore lunar science, surface exploration, and the next generation of Moon missions.</p>
+                  <div class="card-action-bar">
+                    <span class="card-code">EXP_SYS // 04</span>
+                    <a href="#missions" class="card-circle-arrow" aria-label="Explore Lunar Programs details">
+                      <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5: Deep Space Discovery -->
+              <article class="carousel-card card-4" data-index="4">
+                <div class="card-metallic-bevel"></div>
+                <div class="card-image-wrap">
+                  <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop" alt="Deep Space Nebula and Distant Galaxies" loading="lazy">
+                  <div class="card-depth-overlay"></div>
+                </div>
+                <div class="card-content-tray">
+                  <span class="card-cat-tag">DEEP OBSERVATORY</span>
+                  <h3 class="card-title">Deep Space Discovery</h3>
+                  <p class="card-desc">Travel beyond our solar system and discover distant galaxies, nebulae, and the mysteries of deep space.</p>
+                  <div class="card-action-bar">
+                    <span class="card-code">EXP_SYS // 05</span>
+                    <a href="#missions" class="card-circle-arrow" aria-label="Explore Deep Space Discovery details">
+                      <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Carousel Skeuomorphic Control Base Platform -->
+          <div class="carousel-base-platform">
+            <div class="platform-orange-line" aria-hidden="true"></div>
+            
+            <div class="platform-controls-cluster">
+              <!-- Raised Previous Button -->
+              <button class="btn-platform-arrow prev" id="carouselPrevBtn" aria-label="Previous space mission card">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="#101B32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <!-- Active Dot Indicators -->
+              <div class="platform-dot-pills" id="carouselDots" role="tablist">
+                <button class="dot-pill" data-index="0" aria-label="Slide 1"></button>
+                <button class="dot-pill" data-index="1" aria-label="Slide 2"></button>
+                <button class="dot-pill active" data-index="2" aria-label="Slide 3"></button>
+                <button class="dot-pill" data-index="3" aria-label="Slide 4"></button>
+                <button class="dot-pill" data-index="4" aria-label="Slide 5"></button>
+              </div>
+
+              <!-- Raised Next Button -->
+              <button class="btn-platform-arrow next" id="carouselNextBtn" aria-label="Next space mission card">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="#101B32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 10: SECONDARY DISCOVERY CATEGORIES (Recessed Console Bar)
+         ========================================================================= -->
+    <section class="discovery-categories-bar">
+      <div class="site-container">
+        <div class="recessed-categories-tray">
+          <!-- Screws -->
+          <span class="tray-screw s-tl"></span>
+          <span class="tray-screw s-tr"></span>
+          <span class="tray-screw s-bl"></span>
+          <span class="tray-screw s-br"></span>
+
+          <div class="categories-grid">
+            <!-- Cat 1: Missions -->
+            <a href="#missions" class="category-block">
+              <div class="cat-raised-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5C12 2.5 17 6.5 17 14L19 16.5V18.5H15L12 16L9 18.5H5V16.5L7 14C7 6.5 12 2.5 12 2.5Z" stroke="#F36B21" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2" fill="#101B32"/></svg>
+              </div>
+              <div class="cat-text">
+                <h4 class="cat-title">Missions</h4>
+                <p class="cat-sub">Ongoing &amp; Upcoming</p>
+              </div>
+            </a>
+
+            <!-- Cat 2: Planets -->
+            <a href="#planets" class="category-block">
+              <div class="cat-raised-icon">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#101B32" stroke-width="2"/><ellipse cx="12" cy="12" rx="11" ry="4" stroke="#F36B21" stroke-width="1.8" transform="rotate(-20 12 12)"/></svg>
+              </div>
+              <div class="cat-text">
+                <h4 class="cat-title">Planets</h4>
+                <p class="cat-sub">Explore Our Solar System</p>
+              </div>
+            </a>
+
+            <!-- Cat 3: Research -->
+            <a href="#research" class="category-block">
+              <div class="cat-raised-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 19L9 14M9 14L18 5L21 8L12 17L9 14Z" stroke="#101B32" stroke-width="2" stroke-linejoin="round"/><path d="M12 17L10 21L14 21L12 17Z" fill="#F36B21"/></svg>
+              </div>
+              <div class="cat-text">
+                <h4 class="cat-title">Research</h4>
+                <p class="cat-sub">Space Science &amp; Innovation</p>
+              </div>
+            </a>
+
+            <!-- Cat 4: Community -->
+            <a href="#join" class="category-block">
+              <div class="cat-raised-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8.5L22 9.5L17 14.5L18.5 21.5L12 18L5.5 21.5L7 14.5L2 9.5L9 8.5L12 2Z" stroke="#F36B21" stroke-width="2" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="cat-text">
+                <h4 class="cat-title">Community</h4>
+                <p class="cat-sub">Join Space Enthusiasts</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION A: DISCOVER THE UNIVERSE
+         Editorial Discovery Layout
+         ========================================================================= -->
+    <section class="section-discover" id="discover">
+      <div class="site-container">
+        <div class="section-console-header">
+          <div class="console-tag">
+            <span class="tag-bracket">[</span>
+            <span>OBSERVATION SECTOR 01</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">A Universe Waiting to Be Explored.</h2>
+          <p class="section-lead">
+            From nearby planets to distant galaxies, explore the discoveries and scientific questions shaping our understanding of the universe.
+          </p>
+        </div>
+
+        <div class="discover-bento-grid">
+          <!-- Large Feature: Deep Space -->
+          <article class="discover-card feature-galaxy">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop" alt="Deep space cosmic star nursery" loading="lazy">
+            <div class="card-scrim"></div>
+            <div class="discover-meta-overlay">
+              <span class="mono-badge">DEEP SPACE // 13.8 BILLION LIGHT YEARS</span>
+              <h3 class="discover-heading">Galaxies &amp; Primordial Gas Clouds</h3>
+              <p class="discover-summary">How gravitational lenses unveil early star formation epochs just hundreds of millions of years after cosmic dawn.</p>
+            </div>
+          </article>
+
+          <!-- Medium Card: Exoplanets -->
+          <article class="discover-card">
+            <img src="https://images.unsplash.com/photo-1545156521-77bd85671d30?q=80&w=800&auto=format&fit=crop" alt="Atmospheric rendering of terrestrial exoplanet" loading="lazy">
+            <div class="card-scrim"></div>
+            <div class="discover-meta-overlay">
+              <span class="mono-badge">EXOPLANETARY SCIENCE</span>
+              <h3 class="discover-heading">Atmospheric Spectroscopy</h3>
+              <p class="discover-summary">Detecting water vapor, carbon dioxide, and potential methane signatures on planets orbiting distant M-dwarf stars.</p>
+            </div>
+          </article>
+
+          <!-- Medium Card: Black Holes -->
+          <article class="discover-card">
+            <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=800&auto=format&fit=crop" alt="Stellar accretion disk and event horizon" loading="lazy">
+            <div class="card-scrim"></div>
+            <div class="discover-meta-overlay">
+              <span class="mono-badge">ASTROPHYSICS</span>
+              <h3 class="discover-heading">Event Horizon Dynamics</h3>
+              <p class="discover-summary">Analyzing extreme relativistic accretion disks and supermassive gravitational singularities.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION B: SPACE MISSIONS
+         Real Documented Space Exploration Programs
+         ========================================================================= -->
+    <section class="section-missions" id="missions">
+      <div class="site-container">
+        <div class="section-console-header">
+          <div class="console-tag">
+            <span class="tag-bracket">[</span>
+            <span>MISSION REGISTRY &bull; VERIFIED DATA</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Humanity's Journey Beyond Earth.</h2>
+          <p class="section-lead">A comprehensive archival index of pioneering spaceflight programs, orbital platforms, and automated robotic expeditions.</p>
+        </div>
+
+        <div class="missions-console-grid">
+          <!-- Mission 1: Apollo 11 -->
+          <article class="mission-panel-card">
+            <div class="mission-status-led active"></div>
+            <div class="mission-header-row">
+              <span class="mission-code">NASA // HISTORICAL</span>
+              <span class="mission-year">1969</span>
+            </div>
+            <h3 class="mission-name">Apollo 11 Lunar Landing</h3>
+            <p class="mission-desc">The first crewed mission to touch down on the lunar surface at the Sea of Tranquility, returning foundational geological core samples to Earth.</p>
+            <div class="mission-footer-specs">
+              <span>TARGET: MOON</span>
+              <span>CREW: 3</span>
+              <span class="status-confirmed">MISSION SUCCESS</span>
+            </div>
+          </article>
+
+          <!-- Mission 2: International Space Station -->
+          <article class="mission-panel-card">
+            <div class="mission-status-led ongoing"></div>
+            <div class="mission-header-row">
+              <span class="mission-code">NASA / ESA / JAXA / CSA</span>
+              <span class="mission-year">1998 &ndash; PRESENT</span>
+            </div>
+            <h3 class="mission-name">International Space Station</h3>
+            <p class="mission-desc">Over two decades of continuous human presence conducting microgravity biotechnology, fluid dynamics, and long-duration physiological experiments.</p>
+            <div class="mission-footer-specs">
+              <span>ORBIT: LEO (400 KM)</span>
+              <span>CREW: 7</span>
+              <span class="status-active">OPERATIONAL</span>
+            </div>
+          </article>
+
+          <!-- Mission 3: James Webb Space Telescope -->
+          <article class="mission-panel-card">
+            <div class="mission-status-led ongoing"></div>
+            <div class="mission-header-row">
+              <span class="mission-code">NASA / ESA / CSA</span>
+              <span class="mission-year">2021 &ndash; PRESENT</span>
+            </div>
+            <h3 class="mission-name">James Webb Space Telescope</h3>
+            <p class="mission-desc">Premier infrared space observatory stationed at Sun-Earth Lagrange Point 2, examining the earliest stars, nebular chemistry, and exoplanet atmospheres.</p>
+            <div class="mission-footer-specs">
+              <span>ORBIT: SUN-EARTH L2</span>
+              <span>MIRROR: 6.5M</span>
+              <span class="status-active">SCIENCE MODE</span>
+            </div>
+          </article>
+
+          <!-- Mission 4: Mars Perseverance Rover -->
+          <article class="mission-panel-card">
+            <div class="mission-status-led ongoing"></div>
+            <div class="mission-header-row">
+              <span class="mission-code">NASA / JPL</span>
+              <span class="mission-year">2020 &ndash; PRESENT</span>
+            </div>
+            <h3 class="mission-name">Perseverance Rover &amp; Ingenuity</h3>
+            <p class="mission-desc">Seeking signs of ancient microbial life in Jezero Crater and caching geological core samples for prospective Mars Sample Return missions.</p>
+            <div class="mission-footer-specs">
+              <span>TARGET: MARS</span>
+              <span>PAYLOAD: 1,025 KG</span>
+              <span class="status-active">ACTIVE TRAVERSE</span>
+            </div>
+          </article>
+
+          <!-- Mission 5: Artemis Program -->
+          <article class="mission-panel-card">
+            <div class="mission-status-led active"></div>
+            <div class="mission-header-row">
+              <span class="mission-code">NASA / GLOBAL PARTNERS</span>
+              <span class="mission-year">2022 &ndash; PRESENT</span>
+            </div>
+            <h3 class="mission-name">Artemis Lunar Architecture</h3>
+            <p class="mission-desc">Establishing a sustainable, long-term human presence on the Moon's South Pole to test technologies for human missions to Mars.</p>
+            <div class="mission-footer-specs">
+              <span>TARGET: LUNAR SOUTH POLE</span>
+              <span>CREW: 4</span>
+              <span class="status-confirmed">DEPLOYMENT PHASE</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION C: PLANETARY EXPLORATION
+         Our Solar System Portfolio
+         ========================================================================= -->
+    <section class="section-planets" id="planets">
+      <div class="site-container">
+        <div class="section-console-header">
+          <div class="console-tag">
+            <span class="tag-bracket">[</span>
+            <span>SOLAR SYSTEM ATLAS</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Explore Our Solar System.</h2>
+          <p class="section-lead">Eight distinctive worlds governed by gravitational balance around our G-type central star.</p>
+        </div>
+
+        <div class="planets-carousel-grid">
+          <!-- Planet 1: Mercury -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-mercury"></div>
+            <span class="planet-index">01</span>
+            <h3 class="planet-name">Mercury</h3>
+            <p class="planet-brief">Extreme temperature fluctuations, cratered silicate crust, and thin exosphere.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 57.9M KM</span>
+              <span>TEMP: 430&deg;C / -180&deg;C</span>
+            </div>
+          </div>
+
+          <!-- Planet 2: Venus -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-venus"></div>
+            <span class="planet-index">02</span>
+            <h3 class="planet-name">Venus</h3>
+            <p class="planet-brief">Super-critical CO2 greenhouse atmosphere and crushing surface pressures.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 108.2M KM</span>
+              <span>TEMP: 465&deg;C</span>
+            </div>
+          </div>
+
+          <!-- Planet 3: Earth -->
+          <div class="planet-skeuo-card highlighted">
+            <div class="planet-orb orb-earth"></div>
+            <span class="planet-index">03</span>
+            <h3 class="planet-name">Earth</h3>
+            <p class="planet-brief">Our vibrant home world with dynamic liquid oceans, protective magnetosphere, and thriving biosphere.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 149.6M KM</span>
+              <span>LIFE: CONFIRMED</span>
+            </div>
+          </div>
+
+          <!-- Planet 4: Mars -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-mars"></div>
+            <span class="planet-index">04</span>
+            <h3 class="planet-name">Mars</h3>
+            <p class="planet-brief">Iron-oxide desert with massive shield volcanoes and evidence of ancient river valleys.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 227.9M KM</span>
+              <span>MOONS: 2</span>
+            </div>
+          </div>
+
+          <!-- Planet 5: Jupiter -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-jupiter"></div>
+            <span class="planet-index">05</span>
+            <h3 class="planet-name">Jupiter</h3>
+            <p class="planet-brief">Massive gas giant with atmospheric storm bands and over 90 satellite moons.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 778.5M KM</span>
+              <span>MASS: 318 EARTHS</span>
+            </div>
+          </div>
+
+          <!-- Planet 6: Saturn -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-saturn"></div>
+            <span class="planet-index">06</span>
+            <h3 class="planet-name">Saturn</h3>
+            <p class="planet-brief">Intricate ring system composed of billions of water-ice and rock particles.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 1.43B KM</span>
+              <span>RINGS: 7 MAJOR</span>
+            </div>
+          </div>
+
+          <!-- Planet 7: Uranus -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-uranus"></div>
+            <span class="planet-index">07</span>
+            <h3 class="planet-name">Uranus</h3>
+            <p class="planet-brief">Tilted ice giant with unique axial orientation and methane atmosphere.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 2.87B KM</span>
+              <span>TILT: 97.8&deg;</span>
+            </div>
+          </div>
+
+          <!-- Planet 8: Neptune -->
+          <div class="planet-skeuo-card">
+            <div class="planet-orb orb-neptune"></div>
+            <span class="planet-index">08</span>
+            <h3 class="planet-name">Neptune</h3>
+            <p class="planet-brief">Supersonic atmospheric winds, deep azure hue, and cryovolcanic moon Triton.</p>
+            <div class="planet-stat-strip">
+              <span>DIST: 4.50B KM</span>
+              <span>WINDS: 2,100 KM/H</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION D: SPACE SCIENCE & RESEARCH
+         ========================================================================= -->
+    <section class="section-research" id="research">
+      <div class="site-container">
+        <div class="section-console-header">
+          <div class="console-tag">
+            <span class="tag-bracket">[</span>
+            <span>SCIENTIFIC DOMAINS</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Understanding the Universe Through Science.</h2>
+          <p class="section-lead">The rigorous foundational disciplines driving aerospace engineering and cosmological discoveries.</p>
+        </div>
+
+        <div class="research-domains-grid">
+          <!-- Domain 1 -->
+          <div class="domain-card">
+            <span class="domain-num">01</span>
+            <h3 class="domain-title">Astrophysics &amp; Cosmology</h3>
+            <p class="domain-text">Modeling dark matter haloes, dark energy acceleration, cosmic microwave background fluctuations, and stellar nucleosynthesis.</p>
+          </div>
+
+          <!-- Domain 2 -->
+          <div class="domain-card">
+            <span class="domain-num">02</span>
+            <h3 class="domain-title">Orbital Mechanics</h3>
+            <p class="domain-text">Gravity-assist trajectories, low-thrust ion propulsion pathways, and three-body halo orbits around planetary libration points.</p>
+          </div>
+
+          <!-- Domain 3 -->
+          <div class="domain-card">
+            <span class="domain-num">03</span>
+            <h3 class="domain-title">Planetary Geology</h3>
+            <p class="domain-text">Comparative planetology examining tectonic scarring, cryovolcanism on icy moons, and sub-surface ocean hydrology.</p>
+          </div>
+
+          <!-- Domain 4 -->
+          <div class="domain-card">
+            <span class="domain-num">04</span>
+            <h3 class="domain-title">Astrobiology</h3>
+            <p class="domain-text">Investigating extremophile survivability, hydrothermal vents on Enceladus, and atmospheric biomarkers across habitable exoplanets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION F: ABOUT SPACEN
+         Curiosity Is Our Launchpad
+         ========================================================================= -->
+    <section class="section-about" id="about">
+      <div class="site-container">
+        <div class="about-skeuo-console">
+          <div class="about-text-area">
+            <span class="console-tag">
+              <span class="tag-bracket">[</span>
+              <span>MANIFESTO // PLATFORM OVERVIEW</span>
+              <span class="tag-bracket">]</span>
+            </span>
+            <h2 class="about-title">Curiosity Is Our Launchpad.</h2>
+            <p class="about-body">
+              SPACEN is a space discovery experience designed to make the universe easier to explore, understand, and appreciate. We bring together space missions, planetary science, scientific discoveries, and educational exploration in one immersive destination.
+            </p>
+            <p class="about-body secondary">
+              Built with a deep respect for physical aerospace instrumentation, our platform organizes telemetry, planetary photography, and historical spaceflight milestones into an intuitive, tactile environment accessible to curious minds everywhere.
+            </p>
+
+            <div class="about-badge-cluster">
+              <span class="badge-item">EDUCATIONAL ACCESS</span>
+              <span class="badge-item">REAL TELEMETRY</span>
+              <span class="badge-item">OPEN ASTRONOMY</span>
+            </div>
+          </div>
+
+          <div class="about-visual-pod">
+            <div class="space-viewport-frame">
+              <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800&auto=format&fit=crop" alt="Martian horizon landscape" loading="lazy">
+              <div class="frame-scanline"></div>
+              <div class="frame-overlay-stamp">SYS_VIEWPORT // 4K TELEMETRY FEED</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION G: JOIN THE MISSION (Interactive Community Intake)
+         ========================================================================= -->
+    <section class="section-join" id="join">
+      <div class="site-container">
+        <div class="join-console-panel">
+          <span class="screw screw-tl"></span>
+          <span class="screw screw-tr"></span>
+          <span class="screw screw-bl"></span>
+          <span class="screw screw-br"></span>
+
+          <div class="join-header-block">
+            <span class="console-tag">
+              <span class="tag-bracket">[</span>
+              <span>CREW ENROLLMENT</span>
+              <span class="tag-bracket">]</span>
+            </span>
+            <h2 class="join-title">The Universe Is Bigger Than We Imagine.</h2>
+            <p class="join-sub">Stay curious. Discover more. Be part of the journey beyond Earth.</p>
+          </div>
+
+          <form class="join-form" id="joinForm" novalidate>
+            <div class="form-inputs-row">
+              <div class="input-recessed-field">
+                <input type="text" id="crewName" placeholder="Your Name or Explorer Handle *" required>
+              </div>
+              <div class="input-recessed-field">
+                <input type="email" id="crewEmail" placeholder="Comm Frequency (Email) *" required>
+              </div>
+              <button type="submit" class="btn-raised-orange submit-join" id="joinSubmitBtn">
+                <span>Join Community</span>
+                <svg viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </div>
+            <div class="form-feedback" id="joinFeedback" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION H: FOOTER
+       ========================================================================= -->
+  <footer class="spacen-footer">
+    <div class="site-container">
+      <div class="footer-console-grid">
+        <!-- Logo & Summary -->
+        <div class="footer-brand-pod">
+          <a href="#hero" class="brand-pod footer-brand">
+            <div class="planetary-emblem">
+              <div class="planet-sphere"></div>
+              <div class="orbit-ring"></div>
+            </div>
+            <span class="brand-text">SPACEN</span>
+          </a>
+          <p class="footer-desc">
+            Independent space exploration, discovery, and scientific education console platform. Curated for explorers and researchers globally.
+          </p>
+          <div class="footer-status-indicator">
+            <span class="green-dot"></span>
+            <span>GROUND SYSTEMS NOMINAL &bull; 24/7 FEED</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col">
+          <h4 class="footer-heading">// DIRECTORY</h4>
+          <ul class="footer-nav">
+            <li><a href="#hero">Home Console</a></li>
+            <li><a href="#missions">Mission Registry</a></li>
+            <li><a href="#discover">Cosmic Discovery</a></li>
+            <li><a href="#planets">Solar Atlas</a></li>
+            <li><a href="#research">Scientific Research</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Missions -->
+        <div class="footer-col">
+          <h4 class="footer-heading">// PROGRAMS</h4>
+          <ul class="footer-nav">
+            <li><a href="#missions">Apollo Program</a></li>
+            <li><a href="#missions">International Space Station</a></li>
+            <li><a href="#missions">James Webb Telescope</a></li>
+            <li><a href="#missions">Perseverance Rover</a></li>
+            <li><a href="#missions">Artemis Lunar Gateway</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Telemetry -->
+        <div class="footer-col">
+          <h4 class="footer-heading">// STATION COORDS</h4>
+          <p class="mono-coords">GEO: 28.5721&deg; N, 80.6480&deg; W</p>
+          <p class="mono-coords">FREQ: 2.215 GHz (S-BAND)</p>
+          <p class="mono-coords">INQUIRIES: contact@spacen.org</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; <span id="currentYear">2026</span> SPACEN Space Platform. All rights reserved.</span>
+        <span class="footer-subtext">Curiosity Is Our Launchpad &bull; Non-Governmental Educational Archive</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

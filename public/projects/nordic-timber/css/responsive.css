@@ -1,0 +1,458 @@
+/* ==========================================================================
+   NORDIC TIMBER® — RESPONSIVE & MOBILE DESIGN SYSTEM
+   ========================================================================== */
+
+/* Mobile Drawer Overlay & Panel */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -360px;
+  width: 320px;
+  height: 100%;
+  background-color: var(--green-deep);
+  color: var(--text-on-dark);
+  z-index: 105;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+  transition: right var(--transition-medium);
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 102;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.drawer-brand {
+  font-family: var(--font-nav);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.drawer-close {
+  font-size: 2rem;
+  color: var(--text-on-dark);
+  line-height: 1;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.drawer-link {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-on-dark-dim);
+  transition: color var(--transition-fast);
+}
+
+.drawer-link:hover,
+.drawer-link.active {
+  color: var(--bg-cream);
+}
+
+.drawer-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--timber-brown);
+  color: var(--bg-cream);
+  font-family: var(--font-nav);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 6px;
+}
+
+.drawer-footer {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-on-dark-dim);
+  border-top: 1px solid var(--border-dark);
+  padding-top: 1.25rem;
+}
+
+.drawer-coords {
+  display: block;
+  color: var(--timber-ochre);
+  margin-bottom: 0.25rem;
+}
+
+/* ==================== 1440px BREAKPOINT ==================== */
+@media (max-width: 1440px) {
+  .hero-featured-card-wrapper {
+    width: 480px;
+    margin-top: -90px;
+  }
+  
+  .featured-title {
+    font-size: 1.45rem;
+  }
+  
+  .study-grid {
+    gap: 1.6rem;
+  }
+  
+  .study-name {
+    font-size: 0.72rem;
+  }
+
+  .nav-container {
+    padding: 0 2.5rem;
+  }
+
+  .hero-content-wrapper {
+    padding-left: 6.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .green-content-container {
+    padding-left: 6.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .hero-vertical-coords {
+    left: 2rem;
+  }
+
+  .hero-section-nav {
+    right: 2rem;
+  }
+}
+
+/* ==================== 1200px BREAKPOINT ==================== */
+@media (max-width: 1200px) {
+  .nav-menu {
+    gap: 1.8rem;
+  }
+
+  .hero-section {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .hero-cream-scrim {
+    background: linear-gradient(
+      to right,
+      var(--bg-cream) 0%,
+      rgba(244, 235, 221, 0.96) 50%,
+      rgba(244, 235, 221, 0.55) 75%,
+      transparent 100%
+    );
+  }
+
+  .green-content-container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .hero-featured-card-wrapper {
+    width: 100%;
+    max-width: 540px;
+    margin-top: -60px;
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-grid,
+  .species-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .codex-display-panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ==================== 1024px BREAKPOINT ==================== */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-section-nav {
+    display: none;
+  }
+
+  .hero-vertical-coords {
+    display: none;
+  }
+
+  .hero-content-wrapper {
+    padding: 6.5rem 2rem 6.5rem 2rem;
+    position: relative;
+    z-index: 30;
+  }
+
+  .hero-cta-row {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 35;
+  }
+
+  .green-content-container {
+    padding: 1.5rem 2rem 2rem 2rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+  }
+
+  .study-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .study-item {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0.85rem;
+  }
+
+  .study-name {
+    text-align: left;
+  }
+
+  .section-container {
+    padding: 5rem 2rem;
+  }
+
+  .contact-card {
+    padding: 2.5rem;
+  }
+}
+
+/* ==================== 768px BREAKPOINT ==================== */
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .nav-container {
+    padding: 0 1.25rem;
+  }
+
+  .hero-content-wrapper {
+    padding: 5.5rem 1.25rem 6.5rem 1.25rem !important;
+  }
+
+  .green-content-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 2rem !important;
+    padding: 1.5rem 1.25rem 2rem 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    word-break: break-word;
+  }
+
+  .headline-line.line-3 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .headline-dash {
+    display: inline-block;
+    color: var(--timber-ochre);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .hero-cta-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem !important;
+    position: relative !important;
+    z-index: 15 !important;
+  }
+
+  .hero-featured-card-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .featured-research-card {
+    flex-direction: column;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .featured-image-col {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .joinery-photo-box {
+    min-height: 160px;
+  }
+
+  .card-layer.layer-secondary {
+    display: block !important;
+    inset: -4px 6px auto !important;
+    height: 100% !important;
+    opacity: 0.5 !important;
+    transform: rotate(-1deg) !important;
+  }
+
+  .card-layer.layer-tertiary {
+    display: block !important;
+    inset: -8px 12px auto !important;
+    height: 100% !important;
+    opacity: 0.3 !important;
+    transform: rotate(0.8deg) !important;
+  }
+
+  .study-areas-block {
+    width: 100% !important;
+  }
+
+  .study-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .projects-grid,
+  .species-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .journal-row .j-action {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .nordic-footer {
+    padding: 3.5rem 1.5rem 2rem 1.5rem;
+  }
+}
+
+/* ==================== 480px BREAKPOINT ==================== */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: clamp(1.85rem, 8.5vw, 2.4rem);
+    word-break: break-word;
+  }
+
+  .study-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .hero-featured-card-wrapper {
+    width: 100%;
+  }
+
+  .featured-research-card {
+    padding: 1.25rem;
+  }
+
+  .featured-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==================== 360px BREAKPOINT ==================== */
+@media (max-width: 360px) {
+  .nav-container {
+    padding: 0 0.85rem;
+  }
+
+  .hero-content-wrapper {
+    padding: 5rem 0.85rem 1.5rem 0.85rem;
+  }
+
+  .green-content-container {
+    padding: 1rem 0.85rem 1.5rem 0.85rem;
+  }
+
+  .hero-headline {
+    font-size: 1.65rem;
+  }
+
+  .section-container {
+    padding: 3.5rem 0.85rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem 1rem;
+  }
+}
+

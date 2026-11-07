@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELENA ROSTOVA &mdash; Creative Direction &amp; Spatial Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #F8F7F4;
+      color: #1A1A1A;
+      line-height: 1.5;
+    }
+    nav {
+      padding: 1.75rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #E6E4DE;
+    }
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #777;
+    }
+    .nav-contact {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px solid #111;
+      padding-bottom: 2px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 3rem 4rem;
+      border-bottom: 1px solid #E6E4DE;
+    }
+    .hero-pre {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 6.5vw, 6.5rem);
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      max-width: 1100px;
+    }
+    .hero-title span {
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* Index Grid */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid #E6E4DE;
+    }
+    .work-box {
+      border-right: 1px solid #E6E4DE;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 440px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .work-box:nth-child(3n) { border-right: none; }
+    .work-box:hover {
+      background: #EFECE6;
+    }
+    .box-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+    .box-img-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: #E0DDD6;
+    }
+    .box-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .work-box:hover .box-img-wrap img {
+      transform: scale(1.06);
+    }
+    .box-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .box-client {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* Selected Clients Marquee */
+    .clients-strip {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #E6E4DE;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #666;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .clients-strip span strong {
+      color: #111;
+    }
+
+    footer {
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    @media (max-width: 900px) {
+      .works-grid { grid-template-columns: 1fr; }
+      .work-box { border-right: none; border-bottom: 1px solid #E6E4DE; min-height: auto; }
+      nav, .hero, .clients-strip, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">Elena Rostova</div>
+    <div class="role">Creative Direction &amp; Scenography</div>
+    <a href="mailto:studio@rostova.design" class="nav-contact">Inquiries &rarr;</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-pre">Paris / Berlin &mdash; Monograph 2026</div>
+    <h1 class="hero-title">
+      Intersecting <span>tactile scenography</span>, temporal installations, and high fashion imagery.
+    </h1>
+  </section>
+
+  <main class="works-grid">
+    <article class="work-box" onclick="alert('Viewing Case Study: Vena Serpentine Pavilion')">
+      <div>
+        <div class="box-top">
+          <span>Scenography</span>
+          <span>Venice &bull; 2026</span>
+        </div>
+        <div class="box-img-wrap">
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Exhibition pavilion">
+        </div>
+      </div>
+      <div>
+        <h2 class="box-title">Vena Serpentine Pavilion</h2>
+        <div class="box-client">Biennale Architettura Exhibition</div>
+      </div>
+    </article>
+
+    <article class="work-box" onclick="alert('Viewing Case Study: L’Ombre Chromatique')">
+      <div>
+        <div class="box-top">
+          <span>Art Direction</span>
+          <span>Paris &bull; 2025</span>
+        </div>
+        <div class="box-img-wrap">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Haute couture campaign">
+        </div>
+      </div>
+      <div>
+        <h2 class="box-title">L’Ombre Chromatique</h2>
+        <div class="box-client">Maison Margiela Runway Spatial Identity</div>
+      </div>
+    </article>
+
+    <article class="work-box" onclick="alert('Viewing Case Study: The Ephemeral Room')">
+      <div>
+        <div class="box-top">
+          <span>Publication</span>
+          <span>Berlin &bull; 2025</span>
+        </div>
+        <div class="box-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Editorial typography book">
+        </div>
+      </div>
+      <div>
+        <h2 class="box-title">The Ephemeral Room</h2>
+        <div class="box-client">Hardcover Monograph &bull; Steidl Verlag</div>
+      </div>
+    </article>
+  </main>
+
+  <div class="clients-strip">
+    <span>Collaborations: <strong>Hermès</strong></span>
+    <span><strong>Fondation Cartier</strong></span>
+    <span><strong>Vitra</strong></span>
+    <span><strong>Acne Studios</strong></span>
+    <span><strong>Rimowa</strong></span>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Studio Elena Rostova. Represented worldwide by Art &amp; Commerce.</div>
+    <div>Paris &bull; Zurich</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* ============================================================================
+   DEVFLOW — RESPONSIVE STYLESHEET (responsive.css)
+   Breakpoints: 1280px, 1024px, 768px, 480px, 375px & prefers-reduced-motion
+   ============================================================================ */
+
+/* Large Laptops / Screens (max 1280px) */
+@media (max-width: 1280px) {
+  .bento-main-grid {
+    grid-template-columns: 1.25fr 1.1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .bento-secondary-grid {
+    grid-template-columns: 1fr 1.8fr 0.8fr;
+    gap: 1.25rem;
+  }
+
+  .why-bento-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .why-lead-card {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+/* Tablets (max 1024px) */
+@media (max-width: 1024px) {
+  .nav-links-list {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .hero-bento-section {
+    padding-top: 6.5rem;
+  }
+
+  /* Rearrange primary Bento grid: 2 columns on tablet */
+  .bento-main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-hero-text {
+    grid-column: span 2;
+    min-height: auto;
+    padding: 2.75rem 2.25rem;
+  }
+
+  .card-visual-artwork {
+    min-height: 420px;
+  }
+
+  .bento-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .projects-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-stages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile Devices (max 768px) */
+@media (max-width: 768px) {
+  .site-container, .bento-container {
+    padding: 0 1.25rem;
+  }
+
+  .devflow-header {
+    top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .nav-pill-container {
+    padding: 0.5rem 0.75rem 0.5rem 1rem;
+  }
+
+  .btn-talk {
+    display: none; /* Accessible in mobile drawer */
+  }
+
+  .hero-bento-section {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Stack into single column */
+  .bento-main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card-hero-text {
+    grid-column: span 1;
+    padding: 2.25rem 1.65rem;
+  }
+
+  .card-main-title {
+    font-size: 2.2rem;
+  }
+
+  .card-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .btn-primary-cobalt, .btn-secondary-border {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card-visual-artwork {
+    min-height: 360px;
+    padding: 1.5rem;
+  }
+
+  .floating-panel.panel-code {
+    width: 100%;
+  }
+
+  .services-tiles-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .card-featured-project {
+    padding: 2.25rem 1.65rem;
+  }
+
+  .services-deep-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-stages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-bento-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .why-lead-card {
+    grid-column: span 1;
+  }
+
+  .contact-card-wrapper {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .form-grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  .form-submit-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-strip {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* Small Phones (max 480px & 375px) */
+@media (max-width: 480px) {
+  .card-main-title {
+    font-size: 1.85rem;
+  }
+
+  .about-headline, .section-title-large, .contact-title {
+    font-size: 1.85rem;
+  }
+
+  .about-core-metrics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card-compact {
+    padding: 1.35rem;
+  }
+
+  .project-media-stage {
+    height: 190px;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .mouse-wheel, .scroll-arrow-icon svg {
+    animation: none !important;
+  }
+}

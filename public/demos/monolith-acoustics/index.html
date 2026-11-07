@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONOLITH ACOUSTICS &mdash; Spatial Sound Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #090A0B;
+      color: #EDECE8;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1C1E22;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-mark {
+      width: 14px;
+      height: 14px;
+      background: #1F8F4C;
+      display: inline-block;
+    }
+    .header-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .header-links a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .header-links a:hover { color: #fff; }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 3rem 4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      border-bottom: 1px solid #1C1E22;
+    }
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #1F8F4C;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.96;
+      margin-bottom: 1.5rem;
+    }
+    .hero-p {
+      color: #90949C;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    /* Interactive Audio Visualizer Box */
+    .audio-card {
+      background: #111317;
+      border: 1px solid #23272F;
+      padding: 2rem;
+      border-radius: 4px;
+    }
+    .audio-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #777;
+      margin-bottom: 1.5rem;
+    }
+    canvas {
+      width: 100%;
+      height: 120px;
+      background: #090A0B;
+      border: 1px solid #1C1E22;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .audio-ctrls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .play-btn {
+      background: #1F8F4C;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .play-btn:hover { background: #167a3f; }
+    .freq-readout {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* Sound chambers */
+    .chambers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid #1C1E22;
+    }
+    .chamber-card {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid #1C1E22;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .chamber-card:last-child { border-right: none; }
+    .chamber-card:hover { background: #121417; }
+    .chamber-idx {
+      font-family: 'JetBrains Mono', monospace;
+      color: #1F8F4C;
+      font-size: 0.78rem;
+      margin-bottom: 1rem;
+    }
+    .chamber-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .chamber-desc {
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+      .chambers-grid { grid-template-columns: 1fr; }
+      .chamber-card { border-right: none; border-bottom: 1px solid #1C1E22; }
+      header { padding: 1.25rem 1.5rem; }
+      .header-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="brand-mark"></span>
+      Monolith Acoustics
+    </div>
+    <div class="header-links">
+      <a href="#">Spatial Rig</a>
+      <a href="#">Aero-Acoustics</a>
+      <a href="#">Hardware</a>
+      <a href="#">Lab</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">FIELD ARCHIVE // REVERB CHAMBER 09</div>
+      <h1 class="hero-title">Acoustic Purity in Infinite Space.</h1>
+      <p class="hero-p">
+        We architect custom spatial sound environments and anechoic listening spheres for cinematic productions, luxury automotive cabins, and architectural pavilions.
+      </p>
+    </div>
+
+    <div class="audio-card">
+      <div class="audio-meta">
+        <span>TONE GENERATOR: 432.0 HZ</span>
+        <span id="stateLbl">PAUSED</span>
+      </div>
+      <canvas id="waveCanvas" width="400" height="120"></canvas>
+      <div class="audio-ctrls">
+        <button class="play-btn" id="playBtn" onclick="toggleAudio()">
+          <span id="playIcon">&#9654;</span> <span id="btnText">Simulate Waveform</span>
+        </button>
+        <span class="freq-readout" id="freqVal">432.00 Hz Pure Sine</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="chambers-grid">
+    <div class="chamber-card" onclick="alert('Viewing: Anechoic Hemispherical Array')">
+      <div class="chamber-idx">SYSTEM 01</div>
+      <h3 class="chamber-title">Anechoic Sphere</h3>
+      <p class="chamber-desc">96-channel ambisonic dome engineered for zero-reflection psychoacoustic spatial testing.</p>
+    </div>
+    <div class="chamber-card" onclick="alert('Viewing: Sub-Bass Resonant Tuner')">
+      <div class="chamber-idx">SYSTEM 02</div>
+      <h3 class="chamber-title">Infra-Sonic Bass Well</h3>
+      <p class="chamber-desc">Coupled folded horn chambers delivering clean 14Hz tactile energy without structural vibration.</p>
+    </div>
+    <div class="chamber-card" onclick="alert('Viewing: Dynamic Wave Field Synthesis')">
+      <div class="chamber-idx">SYSTEM 03</div>
+      <h3 class="chamber-title">Wave Field Rig</h3>
+      <p class="chamber-desc">Continuous holographic acoustic projection focusing discrete audio beams to individual listeners.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Monolith Acoustics Group. Zurich &bull; Berlin</div>
+    <div>Patented Ambisonic Spatial Arrays</div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+    let isPlaying = false;
+    let phase = 0;
+    let animId;
+
+    function drawWave() {
+      ctx.fillStyle = '#090A0B';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.strokeStyle = isPlaying ? '#1F8F4C' : '#33373F';
+      ctx.lineWidth = 2;
+
+      const midY = canvas.height / 2;
+      for (let x = 0; x < canvas.width; x++) {
+        const freq = isPlaying ? 0.04 : 0.02;
+        const amp = isPlaying ? 35 : 8;
+        const y = midY + Math.sin(x * freq + phase) * amp * Math.cos(x * 0.01);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      if (isPlaying) {
+        phase += 0.12;
+      }
+      animId = requestAnimationFrame(drawWave);
+    }
+    drawWave();
+
+    function toggleAudio() {
+      isPlaying = !isPlaying;
+      document.getElementById('stateLbl').textContent = isPlaying ? 'ACTIVE OSCILLATOR' : 'PAUSED';
+      document.getElementById('playIcon').innerHTML = isPlaying ? '&#10074;&#10074;' : '&#9654;';
+      document.getElementById('btnText').textContent = isPlaying ? 'Pause Waveform' : 'Simulate Waveform';
+    }
+  </script>
+</body>
+</html>

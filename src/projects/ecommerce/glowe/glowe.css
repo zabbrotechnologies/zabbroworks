@@ -1,0 +1,2583 @@
+/* ============================================================================
+   GLOWÉ — Botanical Science & High-Fashion Beauty Editorial Stylesheet
+   REBUILT DESIGN ARCHITECTURE: Magazine Masthead, Campaign Canvas,
+   Horizontal Ticker, Asymmetric Product Wall, Central Ingredient Explorer
+   ============================================================================ */
+
+:root {
+  --glowe-porcelain: #F7F3ED;
+  --glowe-porcelain-warm: #EFE9DF;
+  --glowe-stone: #E6DFD5;
+  --glowe-blush-translucent: rgba(234, 216, 206, 0.45);
+  --glowe-ink: #25231F;
+  --glowe-ink-muted: #59544C;
+  --glowe-ink-subtle: #8C867C;
+  --glowe-terracotta: #BD806A;
+  --glowe-terracotta-dark: #9E6350;
+  --glowe-olive: #74785A;
+  --glowe-olive-soft: #EDF0E6;
+  --glowe-white: #FFFFFF;
+  --glowe-border: rgba(37, 35, 31, 0.12);
+  --glowe-border-light: rgba(37, 35, 31, 0.07);
+  --glowe-border-dark: rgba(37, 35, 31, 0.28);
+
+  --glowe-font-serif: 'Cormorant Garamond', 'Playfair Display', Didot, 'Times New Roman', serif;
+  --glowe-font-sans: 'Manrope', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --glowe-font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --glowe-ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --glowe-shadow-subtle: 0 4px 20px rgba(37, 35, 31, 0.05);
+  --glowe-shadow-elevated: 0 16px 40px rgba(37, 35, 31, 0.08);
+  --glowe-shadow-modal: 0 24px 60px rgba(37, 35, 31, 0.22);
+}
+
+/* Base Store Container */
+.glowe-store-root {
+  background-color: var(--glowe-porcelain);
+  color: var(--glowe-ink);
+  font-family: var(--glowe-font-sans);
+  line-height: 1.55;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  display: block;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glowe-store-root *,
+.glowe-store-root *::before,
+.glowe-store-root *::after {
+  box-sizing: border-box;
+}
+
+/* Toast */
+.glowe-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  background-color: var(--glowe-ink);
+  color: var(--glowe-porcelain);
+  padding: 0.9rem 1.5rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 32px rgba(37, 35, 31, 0.25);
+  border-left: 3px solid var(--glowe-terracotta);
+  animation: gloweToastSlide 0.35s var(--glowe-ease-editorial) forwards;
+}
+
+@keyframes gloweToastSlide {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================================
+   1. MAGAZINE MASTHEAD HEADER (COMPLETELY REPLACES STANDARD E-COMMERCE NAVBAR)
+   ============================================================================ */
+.glowe-masthead-wrapper {
+  background-color: var(--glowe-porcelain);
+  border-bottom: 1px solid var(--glowe-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Top Announcement Wire */
+.glowe-announcement-wire {
+  border-bottom: 1px solid var(--glowe-border-light);
+  padding: 0.4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glowe-ink-muted);
+  font-family: var(--glowe-font-mono);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.glowe-announcement-wire::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.glowe-wire-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.glowe-wire-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.glowe-wire-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--glowe-olive);
+}
+
+/* The Grand Magazine Masthead */
+.glowe-masthead-main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--glowe-border-light);
+}
+
+.glowe-masthead-meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.glowe-meta-vol {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+}
+
+.glowe-meta-origin {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--glowe-ink-subtle);
+}
+
+.glowe-masthead-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.glowe-masthead-logo {
+  font-family: var(--glowe-font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  line-height: 0.9;
+  color: var(--glowe-ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.glowe-masthead-subline {
+  font-size: 0.6rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--glowe-terracotta);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+.glowe-masthead-controls-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.glowe-header-action-btn {
+  background: none;
+  border: none;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.glowe-header-action-btn:hover {
+  color: var(--glowe-terracotta);
+  background-color: var(--glowe-porcelain-warm);
+}
+
+.glowe-bag-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--glowe-terracotta);
+  color: var(--glowe-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left: 0.2rem;
+}
+
+/* Category Index Bar (Under Masthead) */
+.glowe-category-index-bar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.65rem 2.5rem 0.65rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent 100%);
+}
+.glowe-category-index-bar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.glowe-index-links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.glowe-index-link {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-ink-muted);
+  cursor: pointer;
+  padding: 0.2rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.glowe-index-link:hover,
+.glowe-index-link.active {
+  color: var(--glowe-ink);
+}
+
+.glowe-index-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--glowe-terracotta);
+  transition: width 0.25s ease;
+}
+
+.glowe-index-link:hover::after,
+.glowe-index-link.active::after {
+  width: 100%;
+}
+
+.glowe-index-cta-pill {
+  background-color: var(--glowe-olive);
+  color: var(--glowe-white);
+  border: none;
+  padding: 0.45rem 1.15rem;
+  border-radius: 2px;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.glowe-index-cta-pill:hover {
+  background-color: var(--glowe-ink);
+}
+
+/* Search Dropdown Panel */
+.glowe-search-tray {
+  background-color: var(--glowe-white);
+  border-bottom: 1px solid var(--glowe-border);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: var(--glowe-shadow-subtle);
+  animation: gloweTrayDrop 0.25s ease forwards;
+}
+
+@keyframes gloweTrayDrop {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glowe-tray-input {
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid var(--glowe-border);
+  padding: 0.65rem 1.25rem;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.glowe-tray-input:focus {
+  border-color: var(--glowe-terracotta);
+}
+
+/* ============================================================================
+   2. ART-DIRECTED CAMPAIGN HERO CANVAS (FULL-WIDTH, OVERLAPPING TYPOGRAPHY)
+   ============================================================================ */
+.glowe-campaign-canvas-hero {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  overflow: visible;
+}
+
+.glowe-canvas-frame {
+  position: relative;
+  background-color: #EFE9DF;
+  border: 1px solid var(--glowe-border);
+  border-radius: 4px;
+  padding: 3rem 3rem 4rem;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: var(--glowe-shadow-elevated);
+}
+
+/* Left Vertical Accent Index */
+.glowe-canvas-edge-index {
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.glowe-edge-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--glowe-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+}
+
+.glowe-edge-divider {
+  width: 1px;
+  height: 80px;
+  background-color: var(--glowe-border-dark);
+}
+
+/* Central Full-Bleed Skincare Still Life Photograph */
+.glowe-canvas-hero-photo-wrapper {
+  position: absolute;
+  top: 15%;
+  right: 6%;
+  width: 58%;
+  height: 75%;
+  z-index: 2;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(37, 35, 31, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glowe-canvas-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 1.2s var(--glowe-ease-editorial);
+}
+
+.glowe-canvas-frame:hover .glowe-canvas-hero-img {
+  transform: scale(1.03);
+}
+
+/* Overlapping Editorial Typography Stage */
+.glowe-canvas-typography-stage {
+  position: relative;
+  z-index: 5;
+  max-width: 650px;
+  padding-left: 2.5rem;
+}
+
+.glowe-hero-editorial-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.glowe-hero-colossal-title {
+  font-family: var(--glowe-font-serif);
+  font-size: clamp(3.2rem, 6.2vw, 5.6rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--glowe-ink);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.glowe-title-em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--glowe-terracotta);
+}
+
+.glowe-hero-narrative-copy {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--glowe-ink-muted);
+  max-width: 480px;
+  margin-bottom: 2rem;
+  background-color: rgba(239, 233, 223, 0.75);
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 0.5rem;
+  border-radius: 2px;
+}
+
+.glowe-canvas-cta-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.glowe-cta-ink-block {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-porcelain);
+  border: 1px solid var(--glowe-ink);
+  padding: 0.9rem 2.2rem;
+  border-radius: 2px;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s var(--glowe-ease-editorial);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.glowe-cta-ink-block:hover {
+  background-color: var(--glowe-terracotta);
+  border-color: var(--glowe-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(189, 128, 106, 0.3);
+}
+
+.glowe-cta-text-link {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--glowe-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.glowe-cta-text-link:hover {
+  color: var(--glowe-terracotta);
+}
+
+/* Floating Precision Ingredient Annotations */
+.glowe-canvas-annotation {
+  position: absolute;
+  z-index: 8;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glowe-border);
+  padding: 0.6rem 0.95rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(37, 35, 31, 0.1);
+  transition: all 0.25s ease;
+}
+
+.glowe-canvas-annotation:hover {
+  border-color: var(--glowe-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(189, 128, 106, 0.22);
+}
+
+.glowe-annotation-num {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+}
+
+.glowe-annotation-title {
+  font-family: var(--glowe-font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  line-height: 1.15;
+}
+
+.glowe-annotation-desc {
+  font-size: 0.68rem;
+  color: var(--glowe-ink-muted);
+}
+
+.glowe-anno-pos-1 {
+  top: 14%;
+  right: 48%;
+}
+
+.glowe-anno-pos-2 {
+  bottom: 12%;
+  right: 5%;
+}
+
+.glowe-anno-pos-3 {
+  bottom: 8%;
+  left: 36%;
+}
+
+/* Canvas Bottom Specifications Strip */
+.glowe-canvas-bottom-bar {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--glowe-border);
+  padding-top: 1.5rem;
+  margin-top: 3.5rem;
+  padding-left: 2.5rem;
+}
+
+.glowe-canvas-spec-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-spec-num-heading {
+  font-family: var(--glowe-font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--glowe-olive);
+}
+
+.glowe-spec-txt-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--glowe-ink-muted);
+}
+
+/* ============================================================================
+   3. HORIZONTAL EDITORIAL CONCERN TICKER / INDEX (SWIPEABLE & INTERACTIVE)
+   ============================================================================ */
+.glowe-concern-ticker-section {
+  border-top: 1px solid var(--glowe-border);
+  border-bottom: 1px solid var(--glowe-border);
+  background-color: var(--glowe-porcelain-warm);
+  padding: 1.25rem 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
+}
+
+.glowe-ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  overflow-x: auto;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  padding: 0 3.5rem 0 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.glowe-ticker-track::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.glowe-ticker-item {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.glowe-ticker-item:hover {
+  background-color: var(--glowe-white);
+}
+
+.glowe-ticker-item.active {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-white);
+}
+
+.glowe-ticker-num {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  color: var(--glowe-olive);
+  font-weight: 700;
+}
+
+.glowe-ticker-item.active .glowe-ticker-num {
+  color: var(--glowe-terracotta);
+}
+
+.glowe-ticker-label {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.glowe-ticker-sep {
+  color: var(--glowe-border-dark);
+  font-size: 1.2rem;
+}
+
+/* ============================================================================
+   4. ASYMMETRICAL EDITORIAL PRODUCT WALL (NOT A 4-CARD REPETITIVE GRID!)
+   ============================================================================ */
+.glowe-product-wall-section {
+  max-width: 1440px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.glowe-wall-top-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--glowe-border);
+  padding-bottom: 1.5rem;
+}
+
+.glowe-wall-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-wall-section-label {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--glowe-terracotta);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.glowe-wall-headline {
+  font-family: var(--glowe-font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+/* Asymmetric Wall Grid: 1 Colossal Hero Product + 2 Off-Axis Products + 1 Editorial Manifesto Card */
+.glowe-wall-mosaic-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Massive Left Flagship Product */
+.glowe-wall-flagship {
+  grid-row: span 2;
+  background-color: var(--glowe-white);
+  border: 1px solid var(--glowe-border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--glowe-shadow-subtle);
+  transition: all 0.35s var(--glowe-ease-editorial);
+}
+
+.glowe-wall-flagship:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glowe-shadow-elevated);
+}
+
+.glowe-flagship-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1.05;
+  background-color: #ECE5DC;
+  overflow: hidden;
+}
+
+.glowe-flagship-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--glowe-ease-editorial);
+}
+
+.glowe-wall-flagship:hover .glowe-flagship-photo {
+  transform: scale(1.04);
+}
+
+.glowe-flagship-award-tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background-color: var(--glowe-ink);
+  color: var(--glowe-porcelain);
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+}
+
+.glowe-flagship-info-plate {
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-flagship-cat-label {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.glowe-flagship-name {
+  font-family: var(--glowe-font-serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--glowe-ink);
+  margin-bottom: 0.85rem;
+}
+
+.glowe-flagship-formula-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--glowe-ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.glowe-flagship-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--glowe-border-light);
+  border-bottom: 1px solid var(--glowe-border-light);
+  margin-bottom: 1.75rem;
+}
+
+.glowe-matrix-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-matrix-label {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  color: var(--glowe-ink-subtle);
+}
+
+.glowe-matrix-val {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  margin-top: 0.2rem;
+}
+
+.glowe-flagship-purchase-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.glowe-flagship-price-val {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--glowe-terracotta);
+}
+
+.glowe-flagship-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Right Stacked Secondary Product Cards */
+.glowe-wall-secondary-card {
+  background-color: var(--glowe-white);
+  border: 1px solid var(--glowe-border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  box-shadow: var(--glowe-shadow-subtle);
+  transition: all 0.3s ease;
+}
+
+.glowe-wall-secondary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glowe-shadow-elevated);
+}
+
+.glowe-sec-thumb {
+  position: relative;
+  background-color: #EFE8E1;
+  overflow: hidden;
+}
+
+.glowe-sec-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glowe-sec-content {
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-sec-cat {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 700;
+}
+
+.glowe-sec-title {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  line-height: 1.2;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.glowe-sec-desc {
+  font-size: 0.8rem;
+  color: var(--glowe-ink-muted);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+.glowe-sec-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.glowe-sec-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--glowe-terracotta);
+}
+
+.glowe-sec-btn-add {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-white);
+  border: none;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.glowe-sec-btn-add:hover {
+  background-color: var(--glowe-terracotta);
+}
+
+/* Embedded Editorial Manifesto Card */
+.glowe-wall-manifesto-card {
+  background-color: var(--glowe-porcelain-warm);
+  border: 1px dashed var(--glowe-border-dark);
+  border-radius: 4px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.glowe-manifesto-quote {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--glowe-ink);
+  margin-bottom: 1rem;
+}
+
+.glowe-manifesto-author {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 700;
+}
+
+/* Horizontal Rail of Additional Formulations */
+.glowe-wall-rail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3.5rem 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glowe-border);
+}
+
+.glowe-rail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ============================================================================
+   5. SIGNATURE INTERACTION: CENTRAL INGREDIENT EXPLORER (MACRO CANVAS)
+   ============================================================================ */
+.glowe-ingredient-explorer-section {
+  background-color: var(--glowe-white);
+  border-top: 1px solid var(--glowe-border);
+  border-bottom: 1px solid var(--glowe-border);
+  padding: 6rem 2rem;
+}
+
+.glowe-explorer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.glowe-explorer-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.glowe-explorer-stage-layout {
+  display: grid;
+  grid-template-columns: 320px 1.4fr 340px;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Left: Interactive Selectable Molecule List */
+.glowe-molecules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.glowe-molecule-nav-item {
+  background: var(--glowe-porcelain);
+  border: 1px solid var(--glowe-border);
+  padding: 1rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s var(--glowe-ease-editorial);
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-molecule-nav-item:hover {
+  border-color: var(--glowe-terracotta);
+  transform: translateX(4px);
+}
+
+.glowe-molecule-nav-item.active {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-white);
+  border-color: var(--glowe-ink);
+  box-shadow: 0 4px 16px rgba(37, 35, 31, 0.15);
+}
+
+.glowe-mol-code {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 700;
+}
+
+.glowe-molecule-nav-item.active .glowe-mol-code {
+  color: var(--glowe-terracotta);
+}
+
+.glowe-mol-name {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+/* Center: Large High-Resolution Macro Photography Canvas */
+.glowe-central-macro-stage {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--glowe-shadow-elevated);
+  border: 1px solid var(--glowe-border);
+  background-color: #EFE8E1;
+}
+
+.glowe-central-macro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--glowe-ease-editorial);
+}
+
+.glowe-central-macro-stage:hover .glowe-central-macro-img {
+  transform: scale(1.05);
+}
+
+.glowe-macro-watermark {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 0.85rem;
+  border-radius: 2px;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-ink);
+  border: 1px solid var(--glowe-border);
+}
+
+/* Right: Molecule Details & Associated Formulation Card */
+.glowe-explorer-detail-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-panel-inci {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.glowe-panel-title {
+  font-family: var(--glowe-font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.glowe-panel-bio-mechanism {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--glowe-ink-muted);
+  margin-bottom: 1.75rem;
+}
+
+.glowe-associated-product-card {
+  background-color: var(--glowe-porcelain);
+  border: 1px solid var(--glowe-border);
+  padding: 1.25rem;
+  border-radius: 4px;
+}
+
+.glowe-assoc-label {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-terracotta);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.glowe-assoc-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.glowe-assoc-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.glowe-assoc-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.glowe-assoc-name {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+}
+
+.glowe-assoc-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--glowe-terracotta);
+}
+
+.glowe-btn-assoc-add {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-white);
+  border: none;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.68rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.glowe-btn-assoc-add:hover {
+  background-color: var(--glowe-terracotta);
+}
+
+/* ============================================================================
+   6. EDITORIAL SKIN RITUAL BUILDER (VERTICAL PROGRESS RAIL SEQUENCE)
+   ============================================================================ */
+.glowe-ritual-builder-section {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+.glowe-builder-frame {
+  background-color: var(--glowe-white);
+  border: 1px solid var(--glowe-border);
+  border-radius: 4px;
+  padding: 3.5rem;
+  box-shadow: var(--glowe-shadow-elevated);
+}
+
+.glowe-builder-rail-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3.5rem;
+}
+
+/* Left Vertical Progress Rail */
+.glowe-vertical-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-right: 1px solid var(--glowe-border-light);
+  padding-right: 2rem;
+}
+
+.glowe-rail-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--glowe-ink-subtle);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.glowe-rail-step-indicator.active {
+  color: var(--glowe-ink);
+}
+
+.glowe-rail-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--glowe-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.glowe-rail-step-indicator.active .glowe-rail-circle {
+  border-color: var(--glowe-terracotta);
+  background-color: var(--glowe-terracotta);
+  color: var(--glowe-white);
+}
+
+/* Right Content Canvas */
+.glowe-rail-content-canvas {
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-builder-question-heading {
+  font-family: var(--glowe-font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+/* Builder Step 1: Concern Choice Tiles */
+.glowe-builder-tiles-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.glowe-builder-concern-box {
+  background-color: var(--glowe-porcelain);
+  border: 1.5px solid var(--glowe-border);
+  border-radius: 4px;
+  padding: 1.75rem;
+  cursor: pointer;
+  transition: all 0.25s var(--glowe-ease-editorial);
+}
+
+.glowe-builder-concern-box:hover {
+  border-color: var(--glowe-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(189, 128, 106, 0.15);
+}
+
+.glowe-builder-concern-box.selected {
+  border-color: var(--glowe-ink);
+  background-color: var(--glowe-porcelain-warm);
+  box-shadow: 0 0 0 2px var(--glowe-ink);
+}
+
+.glowe-box-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.glowe-box-title {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  margin-bottom: 0.35rem;
+}
+
+.glowe-box-desc {
+  font-size: 0.8rem;
+  color: var(--glowe-ink-muted);
+  line-height: 1.5;
+}
+
+/* Step 2: Routine Pacing Options */
+.glowe-builder-pacing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.glowe-pacing-card {
+  background-color: var(--glowe-porcelain);
+  border: 2px solid var(--glowe-border);
+  border-radius: 4px;
+  padding: 2.25rem 2rem;
+  cursor: pointer;
+  transition: all 0.25s var(--glowe-ease-editorial);
+}
+
+.glowe-pacing-card:hover {
+  border-color: var(--glowe-terracotta);
+}
+
+.glowe-pacing-card.selected {
+  border-color: var(--glowe-olive);
+  background-color: var(--glowe-olive-soft);
+}
+
+/* Step 3: Recommendation Suite */
+.glowe-curated-suite-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--glowe-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.glowe-suite-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.glowe-suite-card {
+  background-color: var(--glowe-porcelain);
+  border: 1px solid var(--glowe-border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.glowe-suite-thumb {
+  position: relative;
+  aspect-ratio: 1/1;
+  background-color: #EFE8E1;
+}
+
+.glowe-suite-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glowe-suite-step-tag {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  background-color: var(--glowe-ink);
+  color: var(--glowe-porcelain);
+  font-family: var(--glowe-font-mono);
+  font-size: 0.6rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.glowe-suite-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.glowe-suite-name {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.glowe-suite-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--glowe-terracotta);
+  margin-bottom: 1rem;
+}
+
+.glowe-suite-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* ============================================================================
+   7. DAILY RITUAL (CIRCADIAN AM / PM TIMELINE)
+   ============================================================================ */
+.glowe-circadian-timeline-section {
+  background-color: var(--glowe-porcelain-warm);
+  border-top: 1px solid var(--glowe-border);
+  border-bottom: 1px solid var(--glowe-border);
+  padding: 6rem 2rem;
+}
+
+.glowe-circadian-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.glowe-circadian-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.glowe-circadian-toggle {
+  display: inline-flex;
+  background-color: var(--glowe-white);
+  border: 1px solid var(--glowe-border);
+  padding: 0.3rem;
+  border-radius: 2px;
+}
+
+.glowe-circadian-btn {
+  background: none;
+  border: none;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.glowe-circadian-btn.active {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-white);
+}
+
+.glowe-vertical-timeline-stack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  position: relative;
+}
+
+.glowe-vertical-timeline-stack::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 2%;
+  right: 2%;
+  height: 1px;
+  background-color: var(--glowe-border-dark);
+  z-index: 1;
+}
+
+.glowe-circadian-step-card {
+  position: relative;
+  z-index: 2;
+  background-color: var(--glowe-white);
+  border: 1px solid var(--glowe-border);
+  border-radius: 4px;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--glowe-shadow-subtle);
+  transition: transform 0.25s ease;
+}
+
+.glowe-circadian-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glowe-shadow-elevated);
+}
+
+.glowe-step-time-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--glowe-ink);
+  color: var(--glowe-white);
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 0 4px var(--glowe-white);
+}
+
+.glowe-step-time-label {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.glowe-step-headline {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--glowe-ink);
+  margin-bottom: 0.5rem;
+}
+
+.glowe-step-instruction {
+  font-size: 0.8rem;
+  color: var(--glowe-ink-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.glowe-step-product-snip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glowe-border-light);
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.glowe-snip-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.glowe-snip-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.glowe-snip-price {
+  font-size: 0.7rem;
+  color: var(--glowe-terracotta);
+  font-weight: 600;
+}
+
+/* ============================================================================
+   8. TEXTURE STUDIO COLLAGE
+   ============================================================================ */
+.glowe-texture-studio-collage {
+  max-width: 1440px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+.glowe-texture-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.glowe-mosaic-item {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 1/1.2;
+  box-shadow: var(--glowe-shadow-subtle);
+  transition: all 0.35s ease;
+}
+
+.glowe-mosaic-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glowe-shadow-elevated);
+}
+
+.glowe-mosaic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--glowe-ease-editorial);
+}
+
+.glowe-mosaic-item:hover .glowe-mosaic-img {
+  transform: scale(1.06);
+}
+
+.glowe-mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(37, 35, 31, 0.92) 0%, rgba(37, 35, 31, 0.2) 60%, rgba(37, 35, 31, 0) 100%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--glowe-white);
+}
+
+.glowe-mosaic-tag {
+  font-family: var(--glowe-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--glowe-terracotta);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.glowe-mosaic-title {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.glowe-mosaic-desc {
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   9. BRAND STORY EDITORIAL
+   ============================================================================ */
+.glowe-brand-story-editorial {
+  background-color: var(--glowe-white);
+  border-top: 1px solid var(--glowe-border);
+  border-bottom: 1px solid var(--glowe-border);
+  padding: 7rem 2rem;
+}
+
+.glowe-story-editorial-grid {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.glowe-editorial-frame {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--glowe-shadow-elevated);
+  aspect-ratio: 4/3.2;
+}
+
+.glowe-editorial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glowe-editorial-colophon {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(247, 243, 237, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.85rem 1.25rem;
+  border-radius: 2px;
+  border: 1px solid var(--glowe-border);
+}
+
+/* ============================================================================
+   10. NEWSLETTER & COLOPHON FOOTER
+   ============================================================================ */
+.glowe-newsletter-plate {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 4rem 2.5rem;
+  background-color: var(--glowe-porcelain-warm);
+  border: 1px solid var(--glowe-border-dark);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.glowe-newsletter-plate h3 {
+  font-family: var(--glowe-font-serif);
+  font-size: 2.3rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.glowe-newsletter-plate p {
+  font-size: 0.9rem;
+  color: var(--glowe-ink-muted);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.glowe-editorial-footer {
+  background-color: var(--glowe-ink);
+  color: var(--glowe-porcelain);
+  padding: 5rem 2rem 3rem;
+}
+
+.glowe-footer-inner-colophon {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.glowe-colophon-bottom {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--glowe-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(247, 243, 237, 0.5);
+}
+
+/* ============================================================================
+   11. SLIDE-OUT SHOPPING BAG DRAWER & PRODUCT MODAL
+   ============================================================================ */
+.glowe-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(37, 35, 31, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+.glowe-editorial-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  max-width: 100vw;
+  background-color: var(--glowe-porcelain);
+  border-left: 1px solid var(--glowe-border);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 36px rgba(37, 35, 31, 0.18);
+  animation: gloweDrawerIn 0.35s var(--glowe-ease-editorial) forwards;
+}
+
+@keyframes gloweDrawerIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.glowe-modal-glass-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(37, 35, 31, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.glowe-editorial-modal {
+  background-color: var(--glowe-porcelain);
+  border-radius: 4px;
+  max-width: 920px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--glowe-shadow-modal);
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  position: relative;
+  border: 1px solid var(--glowe-border);
+}
+
+/* ============================================================================
+   12. CARD PREVIEW FOR SHOWCASE GALLERY (GlowePreview.jsx)
+   ============================================================================ */
+.glowe-card-preview-root {
+  background-color: var(--glowe-porcelain);
+  color: var(--glowe-ink);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--glowe-font-sans);
+}
+
+.preview-glowe-masthead-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--glowe-border);
+  background-color: var(--glowe-porcelain-warm);
+}
+
+.preview-masthead-title {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.preview-canvas-overlap {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  flex-grow: 1;
+  overflow: hidden;
+  background-color: #EFE9DF;
+  position: relative;
+}
+
+.preview-canvas-copy {
+  padding: 1.25rem 1rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.preview-canvas-headline {
+  font-family: var(--glowe-font-serif);
+  font-size: 1.45rem;
+  line-height: 1.05;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.preview-canvas-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-canvas-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-bottom-editorial-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 1rem;
+  border-top: 1px solid var(--glowe-border);
+  font-family: var(--glowe-font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--glowe-olive);
+  background-color: var(--glowe-white);
+}
+
+/* ============================================================================
+   13. COMPREHENSIVE RESPONSIVE DESIGN (Standard Viewports + VERHOST Viewer)
+   ============================================================================ */
+@media (max-width: 1024px) {
+  .glowe-store-root {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .glowe-category-index-bar {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .glowe-canvas-edge-index {
+    display: none;
+  }
+
+  .glowe-wall-mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glowe-explorer-stage-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .glowe-vertical-timeline-stack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glowe-story-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .glowe-store-root {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .glowe-announcement-wire {
+    display: flex;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.55rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    scrollbar-width: none;
+  }
+  .glowe-announcement-wire::-webkit-scrollbar {
+    display: none;
+  }
+
+  .glowe-masthead-meta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .glowe-meta-vol {
+    font-size: 0.55rem;
+  }
+
+  .glowe-meta-origin {
+    font-size: 0.52rem;
+  }
+
+  .glowe-canvas-edge-index {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .glowe-edge-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.55rem;
+  }
+
+  .glowe-edge-divider {
+    width: 30px;
+    height: 1px;
+  }
+
+  .glowe-masthead-main {
+    grid-template-columns: auto 1fr auto;
+    padding: 0.85rem 1rem;
+  }
+
+  .glowe-masthead-logo {
+    font-size: 1.75rem;
+    letter-spacing: 0.16em;
+  }
+
+  .glowe-masthead-subline {
+    font-size: 0.52rem;
+    letter-spacing: 0.18em;
+  }
+
+  .glowe-category-index-bar {
+    padding: 0.45rem 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .glowe-category-index-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .glowe-index-links {
+    gap: 1.15rem;
+    flex-shrink: 0;
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .glowe-index-cta-pill {
+    display: none;
+  }
+
+  .glowe-campaign-canvas-hero {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .glowe-canvas-frame {
+    padding: 1.5rem 1rem 2rem;
+    min-height: auto;
+  }
+
+  .glowe-canvas-hero-photo-wrapper {
+    position: static;
+    width: 100%;
+    height: 220px;
+    margin: 1.25rem 0;
+  }
+
+  .glowe-canvas-typography-stage {
+    padding-left: 0;
+  }
+
+  .glowe-hero-colossal-title {
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    line-height: 1.0;
+  }
+
+  .glowe-canvas-annotation {
+    position: static;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .glowe-canvas-cta-cluster {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .glowe-cta-ink-block {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.95rem 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .glowe-cta-text-link {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .glowe-canvas-bottom-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .glowe-concern-ticker-section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0.85rem 0;
+  }
+
+  .glowe-ticker-track {
+    padding: 0 1rem;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glowe-ticker-label {
+    font-size: 0.85rem;
+  }
+
+  .glowe-wall-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0 1rem;
+  }
+
+  .glowe-product-wall-section {
+    padding: 2.5rem 0;
+  }
+
+  .glowe-wall-mosaic-grid,
+  .glowe-rail-grid,
+  .glowe-explorer-stage-layout,
+  .glowe-builder-rail-layout,
+  .glowe-builder-tiles-2x2,
+  .glowe-builder-pacing-grid,
+  .glowe-vertical-timeline-stack,
+  .glowe-texture-mosaic,
+  .glowe-story-editorial-grid,
+  .glowe-footer-inner-colophon {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .glowe-ingredient-explorer-section,
+  .glowe-builder-section,
+  .glowe-circadian-section,
+  .glowe-textures-section,
+  .glowe-story-section {
+    padding: 3rem 0;
+  }
+
+  .glowe-footer-colophon {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .glowe-wall-secondary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .glowe-vertical-timeline-stack::before {
+    display: none;
+  }
+
+  .glowe-editorial-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glowe-editorial-modal {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+    max-height: 85vh;
+  }
+
+  .glowe-circadian-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .glowe-circadian-toggle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .glowe-circadian-btn {
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .glowe-wall-rail-header,
+  .glowe-suite-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .glowe-progress-nav-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .glowe-progress-nav-bar button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .glowe-newsletter-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .glowe-newsletter-input,
+  .glowe-newsletter-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .glowe-hero-colossal-title {
+    font-size: 1.85rem;
+  }
+  .glowe-masthead-logo {
+    font-size: 1.35rem;
+  }
+  .glowe-canvas-bottom-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================================
+   14. SPECIFIC MODAL VIEWER OVERRIDES (VERHOST Live Showcase Frames)
+   Consolidated, Non-Redundant Device Rules
+   ============================================================================ */
+
+/* Universal Scrollbar Elimination for all Horizontal Glowé Surfaces */
+.glowe-announcement-wire,
+.glowe-category-index-bar,
+.glowe-ticker-track,
+.glowe-products-filter-pills,
+.viewer-container-frame .glowe-announcement-wire,
+.viewer-container-frame .glowe-category-index-bar,
+.viewer-container-frame .glowe-ticker-track {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.glowe-announcement-wire::-webkit-scrollbar,
+.glowe-category-index-bar::-webkit-scrollbar,
+.glowe-ticker-track::-webkit-scrollbar,
+.glowe-products-filter-pills::-webkit-scrollbar,
+.viewer-container-frame .glowe-announcement-wire::-webkit-scrollbar,
+.viewer-container-frame .glowe-category-index-bar::-webkit-scrollbar,
+.viewer-container-frame .glowe-ticker-track::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Mobile Viewport Mode (390px Frame) */
+.viewer-container-frame[style*="390px"] .glowe-store-root {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-announcement-wire {
+  display: flex !important;
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.55rem !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  justify-content: flex-start !important;
+  gap: 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-masthead-meta-left {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.15rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-edge-index {
+  display: flex !important;
+  position: static !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-masthead-main {
+  grid-template-columns: auto 1fr auto !important;
+  padding: 0.85rem 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-masthead-logo {
+  font-size: 1.75rem !important;
+  letter-spacing: 0.16em !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-masthead-subline {
+  font-size: 0.52rem !important;
+  letter-spacing: 0.18em !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-category-index-bar {
+  padding: 0.45rem 1rem !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  width: 100% !important;
+  mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent 100%) !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-index-links {
+  gap: 1.15rem !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  white-space: nowrap !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-index-cta-pill {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-campaign-canvas-hero {
+  padding: 1rem 1rem 2rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-frame {
+  padding: 1.5rem 1rem 2rem !important;
+  min-height: auto !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-hero-photo-wrapper {
+  position: static !important;
+  width: 100% !important;
+  height: 220px !important;
+  margin: 1.25rem 0 !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-typography-stage {
+  padding-left: 0 !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-hero-colossal-title {
+  font-size: 2.2rem !important;
+  line-height: 1.0 !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-annotation {
+  position: static !important;
+  margin-top: 0.5rem !important;
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-cta-cluster {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0.85rem !important;
+  width: 100% !important;
+  margin-top: 1.5rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-cta-ink-block {
+  width: 100% !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 0.95rem 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-cta-text-link {
+  width: 100% !important;
+  text-align: center !important;
+  justify-content: center !important;
+  display: block !important;
+  padding: 0.5rem 0 !important;
+  box-sizing: border-box !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-bottom-bar {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1rem !important;
+  padding-left: 0 !important;
+  margin-top: 2rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-canvas-spec-col {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-concern-ticker-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  padding: 0.85rem 0 !important;
+  mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent 100%) !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-ticker-track {
+  padding: 0 2.5rem 0 1rem !important;
+  gap: 1.25rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-ticker-label {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.03em !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-ticker-item {
+  padding: 0.35rem 0.65rem !important;
+  gap: 0.5rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-wall-top-bar {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.4rem !important;
+  padding: 0 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-product-wall-section {
+  padding: 2.5rem 0 !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-wall-mosaic-grid,
+.viewer-container-frame[style*="390px"] .glowe-rail-grid,
+.viewer-container-frame[style*="390px"] .glowe-explorer-stage-layout,
+.viewer-container-frame[style*="390px"] .glowe-builder-rail-layout,
+.viewer-container-frame[style*="390px"] .glowe-builder-tiles-2x2,
+.viewer-container-frame[style*="390px"] .glowe-builder-pacing-grid,
+.viewer-container-frame[style*="390px"] .glowe-vertical-timeline-stack,
+.viewer-container-frame[style*="390px"] .glowe-texture-mosaic,
+.viewer-container-frame[style*="390px"] .glowe-story-editorial-grid,
+.viewer-container-frame[style*="390px"] .glowe-footer-inner-colophon {
+  grid-template-columns: 1fr !important;
+  padding: 0 1rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-ingredient-explorer-section,
+.viewer-container-frame[style*="390px"] .glowe-builder-section,
+.viewer-container-frame[style*="390px"] .glowe-circadian-section,
+.viewer-container-frame[style*="390px"] .glowe-textures-section,
+.viewer-container-frame[style*="390px"] .glowe-story-section {
+  padding: 3rem 0 !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-footer-colophon {
+  padding: 3rem 0 1.5rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-wall-secondary-card {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-vertical-timeline-stack::before {
+  display: none !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-circadian-top {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 1.25rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-circadian-toggle {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-circadian-btn {
+  text-align: center !important;
+  padding: 0.5rem 0.5rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-wall-rail-header,
+.viewer-container-frame[style*="390px"] .glowe-suite-top-bar {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-progress-nav-bar {
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  align-items: stretch !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-progress-nav-bar button {
+  width: 100% !important;
+  justify-content: center !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-newsletter-box {
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-newsletter-input,
+.viewer-container-frame[style*="390px"] .glowe-newsletter-btn {
+  width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-editorial-drawer {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.viewer-container-frame[style*="390px"] .glowe-editorial-modal {
+  grid-template-columns: 1fr !important;
+  margin: 1rem !important;
+  max-height: 85vh !important;
+}
+
+/* Tablet Viewport Mode (768px Frame) */
+.viewer-container-frame[style*="768px"] .glowe-store-root {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.viewer-container-frame[style*="768px"] .glowe-category-index-bar {
+  overflow-x: auto !important;
+  mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 2.5rem), transparent 100%) !important;
+}
+
+.viewer-container-frame[style*="768px"] .glowe-wall-mosaic-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="768px"] .glowe-explorer-stage-layout {
+  grid-template-columns: 1fr !important;
+}
+
+.viewer-container-frame[style*="768px"] .glowe-vertical-timeline-stack {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.viewer-container-frame[style*="768px"] .glowe-story-editorial-grid {
+  grid-template-columns: 1fr !important;
+}

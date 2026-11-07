@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SONORA® — Experimental Music, Frequency &amp; Audio-Visual Experience</title>
+  <meta name="description" content="Independent electronic music label and audio-visual creative studio exploring sound, rhythm, frequency and digital expression. Feel the Frequency.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230B0C10'/><circle cx='16' cy='16' r='10' fill='none' stroke='%23FF6B35' stroke-width='3'/><path d='M10 16 Q13 10 16 16 T22 16' stroke='%23C5F467' stroke-width='2' fill='none'/></svg>">
+
+  <!-- Google Fonts: Syne, Space Grotesk, Inter, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="sonora-body">
+
+  <!-- Background Ambient Noise Scrim -->
+  <div class="audio-noise-overlay" aria-hidden="true"></div>
+
+  <!-- ==================== GLOBAL NAVIGATION ==================== -->
+  <header class="sonora-nav" id="sonoraNav">
+    <div class="nav-container">
+      
+      <!-- Left: Wordmark -->
+      <a href="#hero" class="sonora-brand" aria-label="SONORA Studio Home">
+        <span class="brand-text">SONORA<span class="brand-trademark">®</span></span>
+        <span class="brand-tagline">AUDIO-VISUAL SYSTEM</span>
+      </a>
+
+      <!-- Center: Section Anchors -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#release" class="nav-link">RELEASES</a>
+        <a href="#soundlab" class="nav-link">SOUND LAB</a>
+        <a href="#archive" class="nav-link">ARCHIVE</a>
+        <a href="#artists" class="nav-link">ARTISTS</a>
+        <a href="#sessions" class="nav-link">SESSIONS</a>
+      </nav>
+
+      <!-- Right: Live Indicator & Audio Toggle -->
+      <div class="nav-controls">
+        <div class="status-live-pill">
+          <span class="live-signal-dot"></span>
+          <span class="live-text">44.1 kHz / LIVE</span>
+        </div>
+
+        <button class="btn-sound-toggle" id="globalSoundToggle" aria-label="Toggle Global Sound Engine">
+          <span class="sound-wave-icon" id="soundWaveIcon">
+            <span class="bar b1"></span>
+            <span class="bar b2"></span>
+            <span class="bar b3"></span>
+            <span class="bar b4"></span>
+          </span>
+          <span class="sound-state-label" id="soundStateLabel">AUDIO OFF</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Navigation Menu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="sonora-drawer" id="mobileDrawer">
+    <div class="drawer-top">
+      <span class="drawer-title">SONORA // 001</span>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <a href="#hero" class="d-link"><span class="d-idx">00</span> Frequency Apex</a>
+      <a href="#release" class="d-link"><span class="d-idx">01</span> Latest Frequency</a>
+      <a href="#soundlab" class="d-link"><span class="d-idx">02</span> Sound Lab Simulator</a>
+      <a href="#archive" class="d-link"><span class="d-idx">03</span> Release Archive</a>
+      <a href="#artists" class="d-link"><span class="d-idx">04</span> Creators of Sound</a>
+      <a href="#sessions" class="d-link"><span class="d-idx">05</span> Live Sessions</a>
+      <a href="#philosophy" class="d-link"><span class="d-idx">06</span> Our Frequency</a>
+    </div>
+    <div class="drawer-bottom">
+      <p class="drawer-tag">“FEEL THE FREQUENCY.”</p>
+      <span class="drawer-coords">BERLIN &bull; TOKYO &bull; LONDON</span>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- ==================== 01. HERO SECTION: ENTER THE FREQUENCY ==================== -->
+  <section class="sonora-hero" id="hero">
+    
+    <!-- Generative Frequency Wave Canvas Background -->
+    <div class="hero-canvas-wrap">
+      <canvas id="heroWaveCanvas"></canvas>
+      <div class="hero-glow-vignette"></div>
+    </div>
+
+    <!-- Hero Content Layout -->
+    <div class="hero-content-container">
+      
+      <!-- Top Technical Eyebrow -->
+      <div class="hero-meta-strip">
+        <span class="meta-badge-orange">FREQUENCY 001</span>
+        <span class="meta-label">AUDIO-VISUAL LABORATORY // ACTIVE</span>
+        <span class="meta-badge-dark">EST. 2026</span>
+      </div>
+
+      <!-- Main Typographic Headline -->
+      <div class="hero-title-wrap">
+        <h1 class="hero-headline">
+          <span class="h-row row-1">FEEL THE</span>
+          <span class="h-row row-2">
+            <span class="accent-orange-word">FREQUENCY</span>
+            <span class="orange-frequency-line"></span>
+            <span class="acid-sparkle">✦</span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- Supporting Statement & Actions -->
+      <div class="hero-footer-grid">
+        <div class="hero-copy-col">
+          <p class="hero-description">
+            Sound is more than something you hear. It’s an immersive architecture of movement, resonance and digital expression.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#release" class="btn-sonora-primary">
+              <span>EXPLORE RELEASES</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <a href="#soundlab" class="btn-sonora-secondary">
+              <span>ENTER SOUND LAB</span>
+              <span class="btn-plus">+</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical Telemetry Widget -->
+        <div class="hero-telemetry-col">
+          <div class="telemetry-card">
+            <div class="tc-header">
+              <span class="tc-title">CURRENT SIGNAL</span>
+              <span class="tc-dot"></span>
+            </div>
+            <div class="tc-spectrum" id="heroMiniSpectrum">
+              <span class="spec-bar" style="--h: 40%"></span>
+              <span class="spec-bar" style="--h: 85%"></span>
+              <span class="spec-bar" style="--h: 60%"></span>
+              <span class="spec-bar" style="--h: 95%"></span>
+              <span class="spec-bar" style="--h: 30%"></span>
+              <span class="spec-bar" style="--h: 70%"></span>
+              <span class="spec-bar" style="--h: 50%"></span>
+              <span class="spec-bar" style="--h: 90%"></span>
+            </div>
+            <div class="tc-specs">
+              <span>BPM: 124 &bull; KEY: F#m</span>
+              <span>SYNTHESIS: HYBRID ANALOG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Vertical Frequency Marker Cue -->
+    <a href="#release" class="hero-scroll-marker" aria-label="Scroll to Featured Release">
+      <span class="sm-line"></span>
+      <span class="sm-text">FREQUENCY DESCENT</span>
+    </a>
+
+  </section>
+
+  <!-- ==================== 02. FEATURED RELEASE: LATEST FREQUENCY ==================== -->
+  <section class="featured-release-section" id="release">
+    <div class="section-container">
+      
+      <!-- Section Identifier -->
+      <div class="section-badge-row">
+        <span class="sect-num">01</span>
+        <span class="sect-divider"></span>
+        <span class="sect-name">FEATURED RELEASE // LATEST FREQUENCY</span>
+      </div>
+
+      <!-- Editorial Split Composition -->
+      <div class="release-showcase-grid">
+        
+        <!-- Left: Large Album Artwork -->
+        <div class="release-artwork-col">
+          <div class="album-cover-frame" id="featuredArtworkCard">
+            <div class="cover-image-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=85" 
+                alt="AFTER HOURS — SONORA SELECTS Album Art" 
+                class="cover-img"
+              />
+              <div class="cover-vinyl-peek"></div>
+              <div class="cover-frequency-watermark">SONORA.001</div>
+            </div>
+            <div class="artwork-spec-strip">
+              <span class="as-cat">VINYL MASTER 180G &bull; STEREO 24/96</span>
+              <span class="as-code">CAT: SNR-001-LP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Release Metadata & Interactive Functional Player -->
+        <div class="release-player-col">
+          
+          <div class="release-header-meta">
+            <span class="release-tag">CATALOGUE 001</span>
+            <span class="release-genre-pill">DEEP ELECTRONIC</span>
+          </div>
+
+          <h2 class="featured-track-title">AFTER HOURS</h2>
+          <span class="featured-artist-name">SONORA SELECTS</span>
+
+          <div class="track-technical-pills">
+            <span class="t-pill">BPM: 124</span>
+            <span class="t-pill">KEY: F# MINOR</span>
+            <span class="t-pill">DURATION: 04:32</span>
+            <span class="t-pill">RES: 24-BIT / 96kHz</span>
+          </div>
+
+          <p class="release-synopsis">
+            A hypnotic nocturnal exploration of sub-bass frequencies, syncopated polyrhythms, and modular synthesizer textures designed for late-night sensory immersion.
+          </p>
+
+          <!-- Interactive Web Audio Player Console -->
+          <div class="audio-player-console">
+            
+            <!-- Controls & Progress -->
+            <div class="player-top-row">
+              <button class="btn-play-pause" id="btnPlayFeaturedTrack" aria-label="Play or Pause Track">
+                <span class="play-icon" id="playIcon">▶</span>
+                <span class="pause-icon" id="pauseIcon" style="display:none;">❚❚</span>
+              </button>
+
+              <div class="player-track-info">
+                <div class="track-status-line">
+                  <span class="ts-status" id="playerStatusLabel">READY TO TRANSMIT</span>
+                  <div class="ts-time">
+                    <span id="playerCurrentTime">00:00</span> / <span id="playerDuration">04:32</span>
+                  </div>
+                </div>
+
+                <!-- Scrubbable Progress Bar -->
+                <div class="player-progress-bar-track" id="playerProgressBarTrack">
+                  <div class="player-progress-fill" id="playerProgressFill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Reactive Visualizer & Volume Control -->
+            <div class="player-bottom-row">
+              <div class="player-mini-visualizer" id="playerReactiveVisualizer">
+                <!-- 16 dynamic reactive bars generated by JS -->
+              </div>
+
+              <div class="player-volume-control">
+                <span class="vol-icon">VOL</span>
+                <input type="range" id="playerVolumeSlider" min="0" max="1" step="0.05" value="0.8" class="vol-slider" aria-label="Adjust Volume">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Purchase / Stream Links -->
+          <div class="release-cta-actions">
+            <a href="#archive" class="btn-sonora-primary">
+              <span>EXPLORE ENTIRE ARCHIVE</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <button class="btn-download-stems" id="btnDownloadStems">
+              <span>DOWNLOAD AUDIO STEMS (.WAV)</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 03. SIGNATURE FEATURE: INTERACTIVE SOUND LAB ==================== -->
+  <section class="soundlab-section" id="soundlab">
+    <div class="section-container">
+      
+      <!-- Section Identifier -->
+      <div class="section-badge-row">
+        <span class="sect-num">02</span>
+        <span class="sect-divider"></span>
+        <span class="sect-name">SIGNATURE EXPERIMENT // AUDIO-VISUAL WORKBENCH</span>
+      </div>
+
+      <div class="soundlab-header-row">
+        <div>
+          <h2 class="soundlab-title">THE SOUND LAB</h2>
+          <p class="soundlab-subtitle">
+            An interactive frequency synthesizer and visual oscillator. Manipulate mathematical waveforms, adjust harmonics, mutate color spectrums, and generate live acoustic geometry.
+          </p>
+        </div>
+        
+        <div class="soundlab-badge">
+          <span class="slb-icon">∿</span>
+          <span>REAL-TIME GENERATIVE OSCILLATOR</span>
+        </div>
+      </div>
+
+      <!-- Main Workbench Console Surface -->
+      <div class="soundlab-workbench">
+        
+        <!-- Interactive Canvas Screen Viewport -->
+        <div class="lab-viewport-wrap">
+          <canvas id="soundLabCanvas"></canvas>
+          
+          <div class="lab-canvas-overlay-specs">
+            <div class="lco-item"><span>WAVEFORM:</span> <strong id="specWaveform">SINE</strong></div>
+            <div class="lco-item"><span>FREQUENCY:</span> <strong id="specFreq">124.0 Hz</strong></div>
+            <div class="lco-item"><span>AMPLITUDE:</span> <strong id="specAmp">0.65</strong></div>
+            <div class="lco-item"><span>DISTORTION:</span> <strong id="specDist">0.15 THD</strong></div>
+          </div>
+
+          <div class="lab-canvas-hint">
+            <span>✥ DRAG ACROSS CANVAS TO MODULATE FREQUENCY &amp; AMPLITUDE</span>
+          </div>
+        </div>
+
+        <!-- Comprehensive Laboratory Control Rack -->
+        <div class="lab-controls-rack">
+          
+          <!-- Control 1: Waveform Type Selector -->
+          <div class="rack-unit">
+            <span class="rack-label">1. WAVEFORM TYPE:</span>
+            <div class="rack-btn-group" id="waveformCluster">
+              <button class="rack-btn active" data-wave="sine">SINE</button>
+              <button class="rack-btn" data-wave="square">SQUARE</button>
+              <button class="rack-btn" data-wave="triangle">TRIANGLE</button>
+              <button class="rack-btn" data-wave="noise">NOISE</button>
+            </div>
+          </div>
+
+          <!-- Control 2: Frequency Slider -->
+          <div class="rack-unit">
+            <div class="rack-label-row">
+              <span class="rack-label">2. FREQUENCY:</span>
+              <span class="rack-val" id="valFreq">124 Hz</span>
+            </div>
+            <input type="range" id="sliderFreq" min="20" max="440" value="124" class="sonora-slider">
+          </div>
+
+          <!-- Control 3: Amplitude Slider -->
+          <div class="rack-unit">
+            <div class="rack-label-row">
+              <span class="rack-label">3. AMPLITUDE:</span>
+              <span class="rack-val" id="valAmp">65%</span>
+            </div>
+            <input type="range" id="sliderAmp" min="10" max="100" value="65" class="sonora-slider">
+          </div>
+
+          <!-- Control 4: Distortion / Harmonic Folding -->
+          <div class="rack-unit">
+            <div class="rack-label-row">
+              <span class="rack-label">4. DISTORTION:</span>
+              <span class="rack-val" id="valDist">15%</span>
+            </div>
+            <input type="range" id="sliderDist" min="0" max="100" value="15" class="sonora-slider">
+          </div>
+
+          <!-- Control 5: Color Spectrum -->
+          <div class="rack-unit">
+            <span class="rack-label">5. COLOR SPECTRUM:</span>
+            <div class="rack-color-cluster" id="colorCluster">
+              <button class="color-dot active" data-color="orange" style="background: #FF6B35;" title="Electric Orange"></button>
+              <button class="color-dot" data-color="acid" style="background: #C5F467;" title="Acid Green"></button>
+              <button class="color-dot" data-color="ice" style="background: #F1F1ED;" title="Ice White"></button>
+              <button class="color-dot" data-color="violet" style="background: #6554A4;" title="Deep Violet"></button>
+            </div>
+          </div>
+
+          <!-- Control 6: Motion Speed -->
+          <div class="rack-unit">
+            <span class="rack-label">6. MOTION SPEED:</span>
+            <div class="rack-btn-group" id="speedCluster">
+              <button class="rack-btn" data-speed="slow">SLOW</button>
+              <button class="rack-btn active" data-speed="balanced">BALANCED</button>
+              <button class="rack-btn" data-speed="fast">FAST</button>
+            </div>
+          </div>
+
+          <!-- Control 7: Audio Synth Tone Toggle & Reset -->
+          <div class="rack-actions-unit">
+            <button class="btn-lab-synth" id="btnLabSynthToggle">
+              <span class="synth-indicator"></span>
+              <span id="synthToggleLabel">AUDIBLE TONE: OFF</span>
+            </button>
+            <button class="btn-lab-reset" id="btnLabReset">
+              <span>RESET LAB ↺</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 04. RELEASE ARCHIVE: EXPLORE THE SOUND ==================== -->
+  <section class="archive-section" id="archive">
+    <div class="section-container">
+      
+      <!-- Section Identifier -->
+      <div class="section-badge-row">
+        <span class="sect-num">03</span>
+        <span class="sect-divider"></span>
+        <span class="sect-name">THE ARCHIVE // DISCOGRAPHY</span>
+      </div>
+
+      <div class="archive-header-row">
+        <div>
+          <h2 class="archive-title">SOUNDS WITHOUT BOUNDARIES.</h2>
+          <p class="archive-subtitle">
+            A curated catalogue of independent releases, sonic experiments and electronic compositions.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="archive-filter-tabs" id="archiveFilterTabs">
+          <button class="filter-tab active" data-filter="all">ALL</button>
+          <button class="filter-tab" data-filter="electronic">ELECTRONIC</button>
+          <button class="filter-tab" data-filter="ambient">AMBIENT</button>
+          <button class="filter-tab" data-filter="experimental">EXPERIMENTAL</button>
+          <button class="filter-tab" data-filter="techno">TECHNO</button>
+        </div>
+      </div>
+
+      <!-- Asymmetrical Editorial Releases Grid -->
+      <div class="releases-grid" id="releasesGrid">
+        
+        <!-- Release 01: Oversized Featured -->
+        <article class="release-item item-oversized" data-category="electronic" data-release-id="01">
+          <div class="release-card">
+            <div class="rc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=85" 
+                alt="AFTER HOURS cover" 
+                loading="lazy"
+              />
+              <div class="rc-hover-play">
+                <span class="play-pill">PREVIEW FREQUENCY ▶</span>
+              </div>
+            </div>
+            <div class="rc-meta">
+              <div class="rc-meta-top">
+                <span class="rc-cat-tag">DEEP ELECTRONIC</span>
+                <span class="rc-bpm">124 BPM</span>
+              </div>
+              <h3 class="rc-title">AFTER HOURS</h3>
+              <span class="rc-artist">SONORA SELECTS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release 02: Medium -->
+        <article class="release-item item-medium" data-category="ambient" data-release-id="02">
+          <div class="release-card">
+            <div class="rc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=85" 
+                alt="NEON MEMORY cover" 
+                loading="lazy"
+              />
+              <div class="rc-hover-play">
+                <span class="play-pill">PREVIEW FREQUENCY ▶</span>
+              </div>
+            </div>
+            <div class="rc-meta">
+              <div class="rc-meta-top">
+                <span class="rc-cat-tag">AMBIENT ELECTRONICA</span>
+                <span class="rc-bpm">98 BPM</span>
+              </div>
+              <h3 class="rc-title">NEON MEMORY</h3>
+              <span class="rc-artist">LENA FORM</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release 03: Medium -->
+        <article class="release-item item-medium" data-category="techno" data-release-id="03">
+          <div class="release-card">
+            <div class="rc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=85" 
+                alt="STATIC BLOOM cover" 
+                loading="lazy"
+              />
+              <div class="rc-hover-play">
+                <span class="play-pill">PREVIEW FREQUENCY ▶</span>
+              </div>
+            </div>
+            <div class="rc-meta">
+              <div class="rc-meta-top">
+                <span class="rc-cat-tag">EXPERIMENTAL TECHNO</span>
+                <span class="rc-bpm">138 BPM</span>
+              </div>
+              <h3 class="rc-title">STATIC BLOOM</h3>
+              <span class="rc-artist">KAI STATIC</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release 04: Compact -->
+        <article class="release-item item-compact" data-category="electronic" data-release-id="04">
+          <div class="release-card">
+            <div class="rc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=85" 
+                alt="LOW FREQUENCY cover" 
+                loading="lazy"
+              />
+              <div class="rc-hover-play">
+                <span class="play-pill">PREVIEW FREQUENCY ▶</span>
+              </div>
+            </div>
+            <div class="rc-meta">
+              <div class="rc-meta-top">
+                <span class="rc-cat-tag">MINIMAL ELECTRONIC</span>
+                <span class="rc-bpm">118 BPM</span>
+              </div>
+              <h3 class="rc-title">LOW FREQUENCY</h3>
+              <span class="rc-artist">NOAH VEL</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release 05: Compact -->
+        <article class="release-item item-compact" data-category="experimental" data-release-id="05">
+          <div class="release-card">
+            <div class="rc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=85" 
+                alt="SIGNAL LOST cover" 
+                loading="lazy"
+              />
+              <div class="rc-hover-play">
+                <span class="play-pill">PREVIEW FREQUENCY ▶</span>
+              </div>
+            </div>
+            <div class="rc-meta">
+              <div class="rc-meta-top">
+                <span class="rc-cat-tag">ATMOSPHERIC</span>
+                <span class="rc-bpm">110 BPM</span>
+              </div>
+              <h3 class="rc-title">SIGNAL LOST</h3>
+              <span class="rc-artist">MIRA SONIC</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release 06: Compact -->
+        <article class="release-item item-compact" data-category="electronic" data-release-id="06">
+          <div class="release-card">
+            <div class="rc-media">
+              <img 
+                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=85" 
+                alt="SOFT COLLISION cover" 
+                loading="lazy"
+              />
+              <div class="rc-hover-play">
+                <span class="play-pill">PREVIEW FREQUENCY ▶</span>
+              </div>
+            </div>
+            <div class="rc-meta">
+              <div class="rc-meta-top">
+                <span class="rc-cat-tag">FUTURE GARAGE</span>
+                <span class="rc-bpm">130 BPM</span>
+              </div>
+              <h3 class="rc-title">SOFT COLLISION</h3>
+              <span class="rc-artist">NOAH VEL &times; LENA FORM</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 05. ARTIST ARCHIVE: CREATORS OF SOUND ==================== -->
+  <section class="artists-section" id="artists">
+    <div class="section-container">
+      
+      <!-- Section Identifier -->
+      <div class="section-badge-row">
+        <span class="sect-num">04</span>
+        <span class="sect-divider"></span>
+        <span class="sect-name">ARTIST ARCHIVE // RESIDENTS &amp; COLLABORATORS</span>
+      </div>
+
+      <div class="artists-header-row">
+        <h2 class="artists-title">CREATORS OF SOUND.</h2>
+        <p class="artists-subtitle">
+          Independent producers and sound designers exploring unmapped territories of electronic music.
+        </p>
+      </div>
+
+      <!-- Asymmetrical Editorial Artist List -->
+      <div class="artist-grid">
+        
+        <!-- Artist 1 -->
+        <article class="artist-showcase-card" data-artist="noah">
+          <div class="asc-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=85" 
+              alt="Noah Vel profile" 
+              loading="lazy"
+            />
+            <span class="asc-number">01</span>
+          </div>
+          <div class="asc-info">
+            <span class="asc-discipline">ELECTRONIC PRODUCER &bull; BERLIN</span>
+            <h3 class="asc-name">NOAH VEL</h3>
+            <p class="asc-bio">
+              Architect of subterranean modular basslines, micro-percussions and minimalist drum choreography.
+            </p>
+            <div class="asc-footer">
+              <span class="asc-track">LATEST: LOW FREQUENCY</span>
+              <button class="btn-artist-inspect" data-artist="noah">VIEW PROFILE ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artist 2 -->
+        <article class="artist-showcase-card" data-artist="lena">
+          <div class="asc-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85" 
+              alt="Lena Form profile" 
+              loading="lazy"
+            />
+            <span class="asc-number">02</span>
+          </div>
+          <div class="asc-info">
+            <span class="asc-discipline">SOUND ARTIST &bull; LONDON</span>
+            <h3 class="asc-name">LENA FORM</h3>
+            <p class="asc-bio">
+              Weaving generative ambient tape loops, spectral vocal granulations and delicate atmospheric textures.
+            </p>
+            <div class="asc-footer">
+              <span class="asc-track">LATEST: NEON MEMORY</span>
+              <button class="btn-artist-inspect" data-artist="lena">VIEW PROFILE ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artist 3 -->
+        <article class="artist-showcase-card" data-artist="kai">
+          <div class="asc-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85" 
+              alt="Kai Static profile" 
+              loading="lazy"
+            />
+            <span class="asc-number">03</span>
+          </div>
+          <div class="asc-info">
+            <span class="asc-discipline">EXPERIMENTAL COMPOSER &bull; TOKYO</span>
+            <h3 class="asc-name">KAI STATIC</h3>
+            <p class="asc-bio">
+              Pushing the limits of distortion, industrial rhythm algorithms and high-velocity modular percussion.
+            </p>
+            <div class="asc-footer">
+              <span class="asc-track">LATEST: STATIC BLOOM</span>
+              <button class="btn-artist-inspect" data-artist="kai">VIEW PROFILE ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artist 4 -->
+        <article class="artist-showcase-card" data-artist="mira">
+          <div class="asc-visual">
+            <img 
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=85" 
+              alt="Mira Sonic profile" 
+              loading="lazy"
+            />
+            <span class="asc-number">04</span>
+          </div>
+          <div class="asc-info">
+            <span class="asc-discipline">AUDIO-VISUAL ARTIST &bull; AMSTERDAM</span>
+            <h3 class="asc-name">MIRA SONIC</h3>
+            <p class="asc-bio">
+              Exploring the optical translation of audio frequency through 3D particle simulations and laser dome experiences.
+            </p>
+            <div class="asc-footer">
+              <span class="asc-track">LATEST: SIGNAL LOST</span>
+              <button class="btn-artist-inspect" data-artist="mira">VIEW PROFILE ↗</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 06. LIVE SESSIONS: BEYOND THE STUDIO ==================== -->
+  <section class="sessions-section" id="sessions">
+    <div class="section-container">
+      
+      <!-- Section Identifier -->
+      <div class="section-badge-row">
+        <span class="sect-num">05</span>
+        <span class="sect-divider"></span>
+        <span class="sect-name">AUDIO-VISUAL PERFORMANCES // LIVE</span>
+      </div>
+
+      <div class="sessions-header-row">
+        <h2 class="sessions-title">BEYOND THE STUDIO.</h2>
+        <p class="sessions-subtitle">
+          Recorded live modular synthesizers, warehouse performances and immersive 360-degree sonic broadcasts.
+        </p>
+      </div>
+
+      <!-- Wide Cinematic Media Rows -->
+      <div class="sessions-media-list">
+        
+        <!-- Session 1 -->
+        <article class="session-card" data-session="01">
+          <div class="session-media-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=85" 
+              alt="Frequency Room performance" 
+              loading="lazy"
+            />
+            <span class="session-duration-tag">48:15 MIN</span>
+            <div class="session-play-overlay">
+              <span class="session-play-btn">▶</span>
+            </div>
+          </div>
+          <div class="session-info-wrap">
+            <div class="session-meta-top">
+              <span class="session-type">EXPERIMENTAL LIVE MODULAR</span>
+              <span class="session-loc">KRAFTWERK &bull; BERLIN</span>
+            </div>
+            <h3 class="session-heading">01 // FREQUENCY ROOM</h3>
+            <span class="session-artist">NOAH VEL &times; LENA FORM</span>
+            <p class="session-desc">An improvisational hardware live set recorded straight to 2-track master tape using vintage analog oscillators.</p>
+          </div>
+        </article>
+
+        <!-- Session 2 -->
+        <article class="session-card" data-session="02">
+          <div class="session-media-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=85" 
+              alt="After Dark performance" 
+              loading="lazy"
+            />
+            <span class="session-duration-tag">62:40 MIN</span>
+            <div class="session-play-overlay">
+              <span class="session-play-btn">▶</span>
+            </div>
+          </div>
+          <div class="session-info-wrap">
+            <div class="session-meta-top">
+              <span class="session-type">WAREHOUSE DJ TRANSMISSION</span>
+              <span class="session-loc">SUB CLUB &bull; GLASGOW</span>
+            </div>
+            <h3 class="session-heading">02 // AFTER DARK</h3>
+            <span class="session-artist">KAI STATIC</span>
+            <p class="session-desc">Hypnotic 138 BPM peak-time techno session driven by mechanical percussion and sub-bass spatial pulses.</p>
+          </div>
+        </article>
+
+        <!-- Session 3 -->
+        <article class="session-card" data-session="03">
+          <div class="session-media-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85" 
+              alt="Signal Space performance" 
+              loading="lazy"
+            />
+            <span class="session-duration-tag">35:20 MIN</span>
+            <div class="session-play-overlay">
+              <span class="session-play-btn">▶</span>
+            </div>
+          </div>
+          <div class="session-info-wrap">
+            <div class="session-meta-top">
+              <span class="session-type">AUDIO-VISUAL DOME BROADCAST</span>
+              <span class="session-loc">SAT DOME &bull; MONTREAL</span>
+            </div>
+            <h3 class="session-heading">03 // SIGNAL / SPACE</h3>
+            <span class="session-artist">MIRA SONIC</span>
+            <p class="session-desc">Full-dome 360-degree laser diffraction and generative frequency particles synchronized to ambient drone synthesis.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 07. OUR FREQUENCY: BRAND PHILOSOPHY ==================== -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="section-container">
+      
+      <div class="philosophy-layout">
+        
+        <div class="philosophy-statement-box">
+          <div class="section-badge-row">
+            <span class="sect-num">06</span>
+            <span class="sect-divider"></span>
+            <span class="sect-name">OUR FREQUENCY // MANIFESTO</span>
+          </div>
+
+          <h2 class="phil-giant-statement">
+            WE DON'T FOLLOW THE RHYTHM.<br>
+            <span class="phil-orange-highlight">WE CREATE IT.</span>
+          </h2>
+
+          <p class="phil-lead-copy">
+            SONORA exists at the intersection of sound, technology and creative experimentation. We explore the invisible patterns that connect music and visual expression.
+          </p>
+
+          <p class="phil-body-copy">
+            We reject the disposable nature of modern algorithmic playlists. Every release on SONORA is engineered with dynamic range, textural tension and physical gravitas. Sound is an electromagnetic wave that commands human movement.
+          </p>
+
+          <div class="phil-telemetry-row">
+            <div class="ptr-item">
+              <span class="ptr-val">100%</span>
+              <span class="ptr-lbl">INDEPENDENT CURATION</span>
+            </div>
+            <div class="ptr-item">
+              <span class="ptr-val">24/96</span>
+              <span class="ptr-lbl">LOSSLESS MASTERING</span>
+            </div>
+            <div class="ptr-item">
+              <span class="ptr-val">00</span>
+              <span class="ptr-lbl">COMMERCIAL FORMULAS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="philosophy-graphic-col">
+          <div class="concentric-frequency-visual">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+            <div class="ring r4"></div>
+            <div class="freq-center-node">
+              <span>SONORA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 08. FINAL SECTION: STAY IN FREQUENCY ==================== -->
+  <section class="stay-frequency-section" id="stay">
+    <div class="section-container">
+      
+      <div class="stay-frequency-card">
+        <div class="sf-content">
+          <span class="sf-eyebrow">SONORA DISPATCH // TRANSMISSION NETWORK</span>
+          <h2 class="sf-title">
+            STAY IN<br>
+            <span class="sf-highlight">FREQUENCY.</span>
+          </h2>
+          <p class="sf-copy">
+            Discover new releases, explore sound experiments and experience the next wave of electronic culture.
+          </p>
+          
+          <div class="sf-cta-row">
+            <a href="#release" class="btn-sonora-primary">
+              <span>EXPLORE SONORA</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <a href="#soundlab" class="btn-sonora-secondary">
+              <span>EXPERIMENT IN LAB</span>
+              <span class="btn-plus">+</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sf-waveform-art" aria-hidden="true">
+          <svg viewBox="0 0 400 120" class="sf-svg">
+            <path d="M 0 60 Q 50 10, 100 60 T 200 60 T 300 60 T 400 60" fill="none" stroke="#FF6B35" stroke-width="3"/>
+            <path d="M 0 60 Q 50 100, 100 60 T 200 60 T 300 60 T 400 60" fill="none" stroke="#C5F467" stroke-width="1.5" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 09. FOOTER: SONORA SIGNAL ==================== -->
+  <footer class="sonora-footer">
+    <div class="section-container">
+      
+      <div class="footer-top-grid">
+        
+        <div class="footer-brand-col">
+          <span class="f-brand">SONORA®</span>
+          <p class="f-tagline">“FEEL THE FREQUENCY.”</p>
+          <p class="f-desc">
+            Independent electronic music label and audio-visual creative studio exploring sound, rhythm, frequency and digital expression.
+          </p>
+          <div class="f-live-stream-badge">
+            <span class="flsb-dot"></span>
+            <span>TRANSMITTING FREQUENCY: 44.1 kHz / 24-BIT</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="f-col-title">NAVIGATION</span>
+          <a href="#hero">00 // Frequency Apex</a>
+          <a href="#release">01 // Latest Frequency</a>
+          <a href="#soundlab">02 // Sound Lab</a>
+          <a href="#archive">03 // Release Archive</a>
+          <a href="#artists">04 // Creators of Sound</a>
+          <a href="#sessions">05 // Live Sessions</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="f-col-title">CATALOGUE</span>
+          <span>SNR-001 &bull; After Hours</span>
+          <span>SNR-002 &bull; Neon Memory</span>
+          <span>SNR-003 &bull; Static Bloom</span>
+          <span>SNR-004 &bull; Low Frequency</span>
+          <span>SNR-005 &bull; Signal Lost</span>
+          <span>SNR-006 &bull; Soft Collision</span>
+        </div>
+
+        <div class="footer-col">
+          <span class="f-col-title">SIGNAL</span>
+          <span>Berlin &bull; London &bull; Tokyo</span>
+          <span>Vinyl Pressing: Optimal Media</span>
+          <span>Mastering: D&amp;M Berlin</span>
+          <a href="mailto:transmission@sonora-sound.io">transmission@sonora-sound.io</a>
+        </div>
+
+      </div>
+
+      <!-- Giant Monolithic Brand Wordmark -->
+      <div class="footer-giant-wordmark" aria-hidden="true">
+        <span>SONORA</span>
+      </div>
+
+      <!-- Bottom Strip -->
+      <div class="footer-bottom-strip">
+        <span>&copy; 2026 SONORA AUDIO-VISUAL RECORDINGS. ALL RIGHTS RESERVED.</span>
+        <span class="f-coord">52.5200° N, 13.4050° E &bull; BERLIN</span>
+        <a href="#hero" class="f-apex-btn">RETURN TO APEX ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== RELEASE DETAIL MODAL ==================== -->
+  <div class="sonora-modal" id="releaseModal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="btnCloseReleaseModal">&times;</button>
+      <div class="modal-split-layout">
+        <div class="modal-cover-wrap">
+          <img src="" alt="" id="modalReleaseImg" class="modal-cover-img" />
+        </div>
+        <div class="modal-content-wrap">
+          <span class="modal-tag" id="modalReleaseCat">DEEP ELECTRONIC</span>
+          <h3 class="modal-title" id="modalReleaseTitle">AFTER HOURS</h3>
+          <span class="modal-artist" id="modalReleaseArtist">SONORA SELECTS</span>
+          <p class="modal-desc" id="modalReleaseDesc">Description</p>
+          
+          <div class="modal-track-specs">
+            <div class="mts-item"><span>BPM:</span> <strong id="modalReleaseBpm">124</strong></div>
+            <div class="mts-item"><span>KEY:</span> <strong id="modalReleaseKey">F#m</strong></div>
+            <div class="mts-item"><span>FORMAT:</span> <strong>12" VINYL &bull; DIGITAL</strong></div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn-sonora-primary" id="btnModalPlayTrack">PLAY SAMPLE ▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/player.js"></script>
+  <script src="js/soundlab.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
