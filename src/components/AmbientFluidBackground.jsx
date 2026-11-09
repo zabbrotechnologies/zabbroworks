@@ -210,44 +210,8 @@ export default function AmbientFluidBackground() {
         cursorGlowRef.current.style.transform = `translate3d(${Math.round(currentClientX)}px, ${Math.round(currentClientY)}px, 0)`;
       }
 
-      // 4. Draw Living Guilloche Wavy Wireframe Pattern (Image 2, 3)
+      // 4. Clear canvas and render elegant ambient floating particles
       ctx.clearRect(0, 0, width, height);
-
-      const ribbonBands = [
-        { isUpper: true, baseY: height * 0.24, amp1: 44, amp2: 20, lines: isMobile ? 10 : 18, freq: 2.2 },
-        { isUpper: false, baseY: height * 0.72, amp1: 52, amp2: 24, lines: isMobile ? 10 : 16, freq: 2.0 },
-      ];
-
-      for (let r = 0; r < ribbonBands.length; r++) {
-        const band = ribbonBands[r];
-        const steps = isMobile ? 28 : 52;
-        const stepX = width / steps;
-
-        for (let li = 0; li < band.lines; li++) {
-          const t = li / (band.lines - 1);
-          const linePhase = t * 1.35 + timeSec * 0.42;
-          const spread = (t - 0.5) * (band.isUpper ? 78 : 98);
-          const alpha = (0.05 + 0.18 * Math.sin(t * Math.PI)).toFixed(3);
-
-          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-          ctx.lineWidth = 0.7;
-          ctx.beginPath();
-
-          for (let s = 0; s <= steps; s++) {
-            const u = s / steps;
-            const x = s * stepX;
-            const w1 = Math.sin(u * Math.PI * band.freq - 0.3 + linePhase) * band.amp1;
-            const w2 = Math.cos(u * Math.PI * 3.8 + linePhase * 1.4) * band.amp2;
-            const mouseDistX = Math.abs(currentClientX - x);
-            const mousePerturb = mouseDistX < 140 ? (1 - mouseDistX / 140) * 12 * Math.sin(timeSec * 3 + u * 10) : 0;
-            const y = band.baseY + w1 + w2 + spread + mousePerturb;
-
-            if (s === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        }
-      }
 
       // Fast proximity connecting lines between nearby particles
       const maxDist = isMobile ? 48 : 68;
@@ -306,15 +270,13 @@ export default function AmbientFluidBackground() {
     <div className="verhost-ambient-background-system" aria-hidden="true">
       {/* =========================================================
        * PARALLAX STAGE: Smoothly responds to mouse & scroll
+       * Single unified guilloche wireframe wave background layer
        * ========================================================= */}
       <div ref={bgParallaxRef} className="verhost-bg-parallax-stage">
-        {/* Layer 1: Base artwork with continuous organic wave drift */}
+        {/* Single Wave Layer: Guilloche wireframe wave with organic drift */}
         <div className="verhost-bg-image-layer verhost-wave-drift-base" />
 
-        {/* Layer 2: Continuous Flowing Wave Morph Overlay (Screen Blend) */}
-        <div className="verhost-bg-image-layer verhost-wave-fluid-overlay" />
-
-        {/* Layer 3: Atmospheric Ambient Wave Luminescence & Pulse */}
+        {/* Atmospheric Ambient Wave Luminescence & Soft Glow */}
         <div className="verhost-wave-ambient-shimmer" />
       </div>
 
