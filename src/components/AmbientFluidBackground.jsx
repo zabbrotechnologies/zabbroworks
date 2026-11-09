@@ -210,8 +210,61 @@ export default function AmbientFluidBackground() {
         cursorGlowRef.current.style.transform = `translate3d(${Math.round(currentClientX)}px, ${Math.round(currentClientY)}px, 0)`;
       }
 
-      // 4. Clear canvas and render elegant ambient floating particles
+      // 4. Render Living Guilloche String Waves (Single Unified Wave with Left-to-Right Loop & Optical Illusion)
       ctx.clearRect(0, 0, width, height);
+
+      const lineCount = isMobile ? 36 : 62;
+      const steps = isMobile ? 90 : 160;
+      const speed = 0.52; // Hypnotic continuous left-to-right flow speed
+
+      for (let i = 0; i < lineCount; i++) {
+        const p = i / (lineCount - 1);
+        const pCentered = (p - 0.5) * 2; // -1 to 1
+
+        // Core line luminous gradient (densely packed optical glow in center)
+        const coreWeight = Math.exp(-pCentered * pCentered * 2.8);
+        const lineAlpha = 0.07 + 0.40 * coreWeight;
+        ctx.lineWidth = 0.60 + 0.55 * coreWeight;
+
+        ctx.beginPath();
+        for (let s = 0; s <= steps; s++) {
+          const u = s / steps;
+          const x = u * width;
+
+          // Progressive left-to-right traveling wave phase
+          // Subtracting (timeSec * speed) creates the continuous left-to-right travelling optical illusion
+          const phaseMain = u * Math.PI * 2.1 - timeSec * speed;
+          const phaseHarmonic = u * Math.PI * 4.2 - timeSec * speed * 1.25;
+          const phaseLow = u * Math.PI * 1.1 - timeSec * speed * 0.65;
+
+          // Flowing ribbon backbone with mouse & scroll parallax influence
+          const mousePerturbY = (currentClientY / height - 0.5) * 22;
+          const scrollPerturbY = currentScroll * -0.012;
+          const yBase = height * (0.50 + 0.19 * Math.sin(phaseMain - 0.25) + 0.09 * Math.cos(phaseHarmonic + 0.4) - 0.07 * Math.sin(phaseLow)) + mousePerturbY + scrollPerturbY;
+
+          // Guilloche optical dispersion - variable fanning & waist pinch
+          const pinch = Math.sin(u * Math.PI * 2.5 - timeSec * speed * 0.85);
+          const ribbonSpread = 175 + 105 * pinch;
+
+          // 3D twist & optical moire interference along strings
+          const stringTwistPhase = pCentered * Math.PI * 1.75;
+          const ribbonTwist = Math.sin(phaseMain * 1.35 + stringTwistPhase) * (ribbonSpread * 0.54);
+          const microMoire = Math.cos(u * 17.0 + stringTwistPhase * 1.9 - timeSec * speed * 1.95) * (22 * (1 - Math.abs(pCentered) * 0.75));
+
+          // Interactive subtle mouse wave perturbation (only ripples strings near cursor)
+          const mouseDistX = Math.abs(currentClientX - x);
+          const cursorRipple = mouseDistX < 160 ? (1 - mouseDistX / 160) * 14 * Math.sin(timeSec * 3.5 + u * 12) * coreWeight : 0;
+
+          // Final coordinate for string i at column x
+          const y = yBase + pCentered * (ribbonSpread * 0.55) + ribbonTwist + microMoire + cursorRipple;
+
+          if (s === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+
+        ctx.strokeStyle = `rgba(255, 255, 255, ${lineAlpha.toFixed(3)})`;
+        ctx.stroke();
+      }
 
       // Fast proximity connecting lines between nearby particles
       const maxDist = isMobile ? 48 : 68;
@@ -269,31 +322,19 @@ export default function AmbientFluidBackground() {
   return (
     <div className="verhost-ambient-background-system" aria-hidden="true">
       {/* =========================================================
-       * PARALLAX STAGE: Smoothly responds to mouse & scroll
-       * Single unified guilloche wireframe wave background layer
-       * ========================================================= */}
-      <div ref={bgParallaxRef} className="verhost-bg-parallax-stage">
-        {/* Single Wave Layer: Guilloche wireframe wave with organic drift */}
-        <div className="verhost-bg-image-layer verhost-wave-drift-base" />
-
-        {/* Atmospheric Ambient Wave Luminescence & Soft Glow */}
-        <div className="verhost-wave-ambient-shimmer" />
-      </div>
-
-      {/* =========================================================
-       * LAYER 4: LIVING FLOWING PARTICLE MESH CANVAS
-       * Streams continuously along the wave trajectories with
-       * organic wave oscillation and delicate interconnecting networks.
+       * SINGLE LIVING GUILLOCHE STRING WAVE CANVAS
+       * Continuously streams in a loop from left to right with
+       * hypnotic 3D optical illusion moire interference.
        * ========================================================= */}
       <canvas 
         ref={canvasRef} 
         className="verhost-particles-canvas"
       />
 
-      {/* =========================================================
-       * LAYER 5: INTERACTIVE SOFT CURSOR GLOW
-       * Restrained, non-blinding emerald light perturbation.
-       * ========================================================= */}
+      {/* Atmospheric Ambient Soft Luminescence & Depth */}
+      <div className="verhost-wave-ambient-shimmer" />
+
+      {/* Interactive soft monochrome cursor glow */}
       <div 
         ref={cursorGlowRef} 
         className="verhost-cursor-ambient-glow"
