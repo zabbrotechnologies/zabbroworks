@@ -1,7 +1,7 @@
 import React from 'react';
 import { projects } from '../data/projects';
 
-export default function Hero() {
+function Hero() {
   const scrollToSection = (sectionSlug) => {
     const el = document.getElementById(`section-${sectionSlug}`) || document.getElementById('works-gallery-start');
     if (el) {
@@ -77,3 +77,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default React.memo(Hero);

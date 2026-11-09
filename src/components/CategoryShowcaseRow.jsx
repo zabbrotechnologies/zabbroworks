@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ProjectMockup from './ProjectMockup';
 
-export default function CategoryShowcaseRow({ section, projects, onSelectProject }) {
+function CategoryShowcaseRow({ section, projects, onSelectProject }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
   const thumbRefs = useRef([]);
@@ -186,6 +186,7 @@ export default function CategoryShowcaseRow({ section, projects, onSelectProject
                       alt={activeProject.title}
                       className="perspective-cover-full-img"
                       decoding="async"
+                      loading="lazy"
                     />
                   ) : (
                     <ProjectMockup project={activeProject} isExpanded={false} />
@@ -298,3 +299,5 @@ export default function CategoryShowcaseRow({ section, projects, onSelectProject
     </section>
   );
 }
+
+export default React.memo(CategoryShowcaseRow);

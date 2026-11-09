@@ -116,7 +116,7 @@ body {
   animation: verhostBaseWaveDrift 22s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
-/* Atmospheric Ambient Wave Luminescence & Pulse (Subtle Monochrome Shimmer) */
+/* Atmospheric Ambient Wave Luminescence & Soft Depth */
 .verhost-wave-ambient-shimmer {
   position: absolute;
   inset: 0;
@@ -125,11 +125,9 @@ body {
   pointer-events: none;
   z-index: 3;
   background: 
-    radial-gradient(circle 650px at 76% 20%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 75%),
-    radial-gradient(ellipse 1100px 480px at 50% 76%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 50%, transparent 80%);
-  mix-blend-mode: screen;
-  will-change: opacity, transform;
-  animation: verhostWaveShimmer 10s ease-in-out infinite alternate;
+    radial-gradient(circle 650px at 76% 20%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 45%, transparent 75%),
+    radial-gradient(ellipse 1100px 480px at 50% 76%, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 80%);
+  opacity: 0.85;
 }
 
 @keyframes verhostBaseWaveDrift {
@@ -183,9 +181,14 @@ body {
   height: 360px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0.01) 60%, transparent 75%);
-  mix-blend-mode: screen;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 35%, rgba(255, 255, 255, 0.01) 60%, transparent 75%);
   will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .verhost-cursor-ambient-glow {
+    display: none !important;
+  }
 }
 
 /* Reduced Motion Override */
