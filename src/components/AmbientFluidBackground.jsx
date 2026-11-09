@@ -194,18 +194,20 @@ export default function AmbientFluidBackground() {
       // Scrolling UP moves wave backward
       const scrollPhase = currentScroll * 0.0030 + scrollVelocity * 0.0009;
 
-      const lineCount = isMobile ? 36 : 62;
-      const steps = isMobile ? 90 : 170;
-      const speed = 0.48; // Graceful, hypnotic continuous idle drift speed
+      // Curated Airy Guilloche Wave (matching User Reference Images 2 & 3)
+      // Open, airy lines with clean spacing, avoiding harsh grid mesh/fishnet clumping
+      const lineCount = isMobile ? 22 : 36;
+      const steps = isMobile ? 90 : 180;
+      const speed = 0.42; // Hypnotic, elegant continuous left-to-right flow speed
 
       for (let i = 0; i < lineCount; i++) {
         const p = i / (lineCount - 1);
         const pCentered = (p - 0.5) * 2; // -1 to 1
 
-        // Core line luminous gradient (densely packed optical glow in center)
-        const coreWeight = Math.exp(-pCentered * pCentered * 2.8);
-        const lineAlpha = 0.08 + 0.42 * coreWeight;
-        ctx.lineWidth = 0.60 + 0.55 * coreWeight;
+        // Core line luminous gradient (subtle glow along center strings, sheer tapering edges)
+        const coreWeight = Math.exp(-pCentered * pCentered * 2.4);
+        const lineAlpha = 0.09 + 0.44 * coreWeight;
+        ctx.lineWidth = 0.70 + 0.55 * coreWeight;
 
         ctx.beginPath();
         for (let s = 0; s <= steps; s++) {
@@ -213,23 +215,18 @@ export default function AmbientFluidBackground() {
           const x = u * width;
 
           // Progressive wave phase: continuous left-to-right flow + dynamic scroll forward/backward motion
-          const phaseMain = u * Math.PI * 2.1 - (timeSec * speed + scrollPhase);
-          const phaseHarmonic = u * Math.PI * 4.2 - (timeSec * speed * 1.25 + scrollPhase * 1.25);
-          const phaseLow = u * Math.PI * 1.1 - (timeSec * speed * 0.65 + scrollPhase * 0.65);
+          const phaseMain = u * Math.PI * 1.9 - (timeSec * speed + scrollPhase);
+          const phaseHarmonic = u * Math.PI * 3.6 - (timeSec * speed * 1.2 + scrollPhase * 1.15);
+          const phaseLow = u * Math.PI * 0.95 - (timeSec * speed * 0.55 + scrollPhase * 0.6);
 
-          // Liquid-smooth vertical parallax derived from scroll & mouse tilt (sub-pixel floating point)
-          const mouseTiltY = (currentClientY / height - 0.5) * 28;
-          const scrollParallaxY = -currentScroll * 0.035;
-          const yBase = height * (0.50 + 0.19 * Math.sin(phaseMain - 0.25) + 0.09 * Math.cos(phaseHarmonic + 0.4) - 0.07 * Math.sin(phaseLow)) + mouseTiltY + scrollParallaxY;
+          // Liquid-smooth vertical parallax derived from scroll & mouse tilt
+          const mouseTiltY = (currentClientY / height - 0.5) * 24;
+          const scrollParallaxY = -currentScroll * 0.032;
+          const yBase = height * (0.48 + 0.17 * Math.sin(phaseMain - 0.3) + 0.08 * Math.cos(phaseHarmonic) - 0.06 * Math.sin(phaseLow)) + mouseTiltY + scrollParallaxY;
 
-          // Guilloche optical dispersion - variable fanning & waist pinch
-          const pinch = Math.sin(u * Math.PI * 2.5 - (timeSec * speed * 0.85 + scrollPhase * 0.85));
-          const ribbonSpread = 175 + 105 * pinch;
-
-          // 3D twist & optical moire interference along strings
-          const stringTwistPhase = pCentered * Math.PI * 1.75;
-          const ribbonTwist = Math.sin(phaseMain * 1.35 + stringTwistPhase) * (ribbonSpread * 0.54);
-          const microMoire = Math.cos(u * 17.0 + stringTwistPhase * 1.9 - (timeSec * speed * 1.95 + scrollPhase * 1.95)) * (22 * (1 - Math.abs(pCentered) * 0.75));
+          // Airy Guilloche optical dispersion - wide, breathing fan without harsh pinching
+          const spread = (210 + 95 * Math.sin(u * Math.PI * 2.1 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35));
+          const twist = Math.sin(phaseMain * 1.25 + p * Math.PI * 1.45) * (spread * 0.36);
 
           // BUTTERY-SMOOTH TANGIBLE HOVER DEFLECTION & ELASTIC STRING RIPPLE
           const dx = currentClientX - x;
@@ -240,14 +237,14 @@ export default function AmbientFluidBackground() {
           if (dist < 260) {
             const hoverFactor = Math.pow(1 - dist / 260, 2.2);
             // Continuous magnetic push/pull perpendicular to string flow (100% smooth, zero kinks)
-            const pushY = (dy / (dist + 50)) * hoverFactor * 32 * (0.4 + 0.6 * coreWeight);
+            const pushY = (dy / (dist + 50)) * hoverFactor * 30 * (0.4 + 0.6 * coreWeight);
             // Dynamic travelling acoustic harmonic ripple radiating outward
             const ripple = Math.sin(dist * 0.045 - timeSec * 4.5) * 14 * hoverFactor;
             hoverDeflect = pushY + ripple;
           }
 
           // Final coordinate for string i at column x
-          const y = yBase + pCentered * (ribbonSpread * 0.55) + ribbonTwist + microMoire + hoverDeflect;
+          const y = yBase + pCentered * (spread * 0.46) + twist + hoverDeflect;
 
           if (s === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
