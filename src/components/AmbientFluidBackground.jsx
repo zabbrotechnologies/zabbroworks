@@ -11,7 +11,6 @@ import React, { useEffect, useRef } from 'react';
  * - Layer 5: Interactive cursor ambient soft monochrome glow.
  */
 export default function AmbientFluidBackground() {
-  const bgParallaxRef = useRef(null);
   const canvasRef = useRef(null);
   const cursorGlowRef = useRef(null);
 
@@ -29,11 +28,7 @@ export default function AmbientFluidBackground() {
 
     let targetScroll = window.scrollY || 0;
     let currentScroll = targetScroll;
-
-    let prevBgX = -999;
-    let prevBgY = -999;
-    let prevPX = -999;
-    let prevPY = -999;
+    let scrollVelocity = 0;
 
     let animId;
     let isTabVisible = true;
@@ -176,46 +171,32 @@ export default function AmbientFluidBackground() {
 
       const timeSec = time * 0.001;
 
-      // Spring-like easing
-      currentNormX += (targetNormX - currentNormX) * 0.045;
-      currentNormY += (targetNormY - currentNormY) * 0.045;
-      currentClientX += (targetClientX - currentClientX) * 0.05;
-      currentClientY += (targetClientY - currentClientY) * 0.05;
-      currentScroll += (targetScroll - currentScroll) * 0.05;
+      // Liquid-smooth dual-damped spring interpolation for buttery, jitter-free parallax
+      currentNormX += (targetNormX - currentNormX) * 0.055;
+      currentNormY += (targetNormY - currentNormY) * 0.055;
+      currentClientX += (targetClientX - currentClientX) * 0.065;
+      currentClientY += (targetClientY - currentClientY) * 0.065;
 
-      // 1. Layer 1-3 Parallax Stage (only update style if moved > 0.08px)
-      if (bgParallaxRef.current) {
-        const bgX = currentNormX * 5.2;
-        const bgY = currentNormY * 4.0 + currentScroll * -0.014;
-        if (Math.abs(bgX - prevBgX) > 0.05 || Math.abs(bgY - prevBgY) > 0.05) {
-          bgParallaxRef.current.style.transform = `translate3d(${bgX.toFixed(1)}px, ${bgY.toFixed(1)}px, 0)`;
-          prevBgX = bgX;
-          prevBgY = bgY;
-        }
-      }
+      const scrollDelta = targetScroll - currentScroll;
+      currentScroll += scrollDelta * 0.065;
+      scrollVelocity += (scrollDelta - scrollVelocity) * 0.15;
 
-      // 2. Layer 4: Particle Mesh Canvas Parallax
-      if (canvas) {
-        const pX = currentNormX * 9.8;
-        const pY = currentNormY * 7.6 + currentScroll * -0.026;
-        if (Math.abs(pX - prevPX) > 0.05 || Math.abs(pY - prevPY) > 0.05) {
-          canvas.style.transform = `translate3d(${pX.toFixed(1)}px, ${pY.toFixed(1)}px, 0)`;
-          prevPX = pX;
-          prevPY = pY;
-        }
-      }
-
-      // 3. Layer 5: Interactive Cursor Glow
+      // 1. Layer 1: Atmospheric Ambient Glow follows cursor seamlessly
       if (cursorGlowRef.current) {
-        cursorGlowRef.current.style.transform = `translate3d(${Math.round(currentClientX)}px, ${Math.round(currentClientY)}px, 0)`;
+        cursorGlowRef.current.style.transform = `translate3d(${currentClientX.toFixed(1)}px, ${currentClientY.toFixed(1)}px, 0)`;
       }
 
-      // 4. Render Living Guilloche String Waves (Single Unified Wave with Left-to-Right Loop & Optical Illusion)
+      // 2. Clear canvas for single living Guilloche string wave render
       ctx.clearRect(0, 0, width, height);
 
+      // Scroll phase progression:
+      // Scrolling DOWN advances wave forward (left-to-right)
+      // Scrolling UP moves wave backward
+      const scrollPhase = currentScroll * 0.0030 + scrollVelocity * 0.0009;
+
       const lineCount = isMobile ? 36 : 62;
-      const steps = isMobile ? 90 : 160;
-      const speed = 0.52; // Hypnotic continuous left-to-right flow speed
+      const steps = isMobile ? 90 : 170;
+      const speed = 0.48; // Graceful, hypnotic continuous idle drift speed
 
       for (let i = 0; i < lineCount; i++) {
         const p = i / (lineCount - 1);
@@ -223,7 +204,7 @@ export default function AmbientFluidBackground() {
 
         // Core line luminous gradient (densely packed optical glow in center)
         const coreWeight = Math.exp(-pCentered * pCentered * 2.8);
-        const lineAlpha = 0.07 + 0.40 * coreWeight;
+        const lineAlpha = 0.08 + 0.42 * coreWeight;
         ctx.lineWidth = 0.60 + 0.55 * coreWeight;
 
         ctx.beginPath();
@@ -231,32 +212,42 @@ export default function AmbientFluidBackground() {
           const u = s / steps;
           const x = u * width;
 
-          // Progressive left-to-right traveling wave phase
-          // Subtracting (timeSec * speed) creates the continuous left-to-right travelling optical illusion
-          const phaseMain = u * Math.PI * 2.1 - timeSec * speed;
-          const phaseHarmonic = u * Math.PI * 4.2 - timeSec * speed * 1.25;
-          const phaseLow = u * Math.PI * 1.1 - timeSec * speed * 0.65;
+          // Progressive wave phase: continuous left-to-right flow + dynamic scroll forward/backward motion
+          const phaseMain = u * Math.PI * 2.1 - (timeSec * speed + scrollPhase);
+          const phaseHarmonic = u * Math.PI * 4.2 - (timeSec * speed * 1.25 + scrollPhase * 1.25);
+          const phaseLow = u * Math.PI * 1.1 - (timeSec * speed * 0.65 + scrollPhase * 0.65);
 
-          // Flowing ribbon backbone with mouse & scroll parallax influence
-          const mousePerturbY = (currentClientY / height - 0.5) * 22;
-          const scrollPerturbY = currentScroll * -0.012;
-          const yBase = height * (0.50 + 0.19 * Math.sin(phaseMain - 0.25) + 0.09 * Math.cos(phaseHarmonic + 0.4) - 0.07 * Math.sin(phaseLow)) + mousePerturbY + scrollPerturbY;
+          // Liquid-smooth vertical parallax derived from scroll & mouse tilt (sub-pixel floating point)
+          const mouseTiltY = (currentClientY / height - 0.5) * 28;
+          const scrollParallaxY = -currentScroll * 0.035;
+          const yBase = height * (0.50 + 0.19 * Math.sin(phaseMain - 0.25) + 0.09 * Math.cos(phaseHarmonic + 0.4) - 0.07 * Math.sin(phaseLow)) + mouseTiltY + scrollParallaxY;
 
           // Guilloche optical dispersion - variable fanning & waist pinch
-          const pinch = Math.sin(u * Math.PI * 2.5 - timeSec * speed * 0.85);
+          const pinch = Math.sin(u * Math.PI * 2.5 - (timeSec * speed * 0.85 + scrollPhase * 0.85));
           const ribbonSpread = 175 + 105 * pinch;
 
           // 3D twist & optical moire interference along strings
           const stringTwistPhase = pCentered * Math.PI * 1.75;
           const ribbonTwist = Math.sin(phaseMain * 1.35 + stringTwistPhase) * (ribbonSpread * 0.54);
-          const microMoire = Math.cos(u * 17.0 + stringTwistPhase * 1.9 - timeSec * speed * 1.95) * (22 * (1 - Math.abs(pCentered) * 0.75));
+          const microMoire = Math.cos(u * 17.0 + stringTwistPhase * 1.9 - (timeSec * speed * 1.95 + scrollPhase * 1.95)) * (22 * (1 - Math.abs(pCentered) * 0.75));
 
-          // Interactive subtle mouse wave perturbation (only ripples strings near cursor)
-          const mouseDistX = Math.abs(currentClientX - x);
-          const cursorRipple = mouseDistX < 160 ? (1 - mouseDistX / 160) * 14 * Math.sin(timeSec * 3.5 + u * 12) * coreWeight : 0;
+          // BUTTERY-SMOOTH TANGIBLE HOVER DEFLECTION & ELASTIC STRING RIPPLE
+          const dx = currentClientX - x;
+          const dy = currentClientY - yBase;
+          const dist = Math.hypot(dx, dy);
+          let hoverDeflect = 0;
+
+          if (dist < 260) {
+            const hoverFactor = Math.pow(1 - dist / 260, 2.2);
+            // Continuous magnetic push/pull perpendicular to string flow (100% smooth, zero kinks)
+            const pushY = (dy / (dist + 50)) * hoverFactor * 32 * (0.4 + 0.6 * coreWeight);
+            // Dynamic travelling acoustic harmonic ripple radiating outward
+            const ripple = Math.sin(dist * 0.045 - timeSec * 4.5) * 14 * hoverFactor;
+            hoverDeflect = pushY + ripple;
+          }
 
           // Final coordinate for string i at column x
-          const y = yBase + pCentered * (ribbonSpread * 0.55) + ribbonTwist + microMoire + cursorRipple;
+          const y = yBase + pCentered * (ribbonSpread * 0.55) + ribbonTwist + microMoire + hoverDeflect;
 
           if (s === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
