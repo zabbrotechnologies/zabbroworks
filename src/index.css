@@ -1592,6 +1592,7 @@ body.verhost-modal-open {
     max-width: 100%;
     font-size: 0.92rem;
     line-height: 1.55;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 8px #000000;
   }
 
   .hero-stat-zone {
@@ -1658,6 +1659,7 @@ body.verhost-modal-open {
     font-size: clamp(1.75rem, 6.5vw, 2.25rem);
     line-height: 1.08;
     margin-bottom: 0.65rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.98), 0 0 10px #000000;
   }
 
   .category-lead-desc {
@@ -1666,6 +1668,7 @@ body.verhost-modal-open {
     max-width: 100%;
     margin-bottom: 1.25rem;
     color: #C2CFC8;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 8px #000000;
   }
 
   .category-cta-group {

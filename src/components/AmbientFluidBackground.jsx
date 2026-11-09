@@ -41,8 +41,8 @@ export default function AmbientFluidBackground() {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 14 : 26;
+    let isMobile = window.innerWidth < 768;
+    let particleCount = isMobile ? 10 : 26;
 
     // Palette: Monochrome Pure White #FFFFFF, Platinum #E4E4E7, Radiant Silver #D4D4D8
     const particleColors = [
@@ -141,6 +141,7 @@ export default function AmbientFluidBackground() {
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
+      isMobile = window.innerWidth < 768;
       particles.forEach((p) => p.reset(true));
     };
 
@@ -195,38 +196,56 @@ export default function AmbientFluidBackground() {
       const scrollPhase = currentScroll * 0.0030 + scrollVelocity * 0.0009;
 
       // Curated Airy Guilloche Wave (matching User Reference Images 2 & 3)
-      // Open, airy lines with clean spacing, avoiding harsh grid mesh/fishnet clumping
-      const lineCount = isMobile ? 22 : 36;
+      // Open, airy lines with clean spacing, scaled and positioned dynamically for mobile & desktop
+      const lineCount = isMobile ? 18 : 36;
       const steps = isMobile ? 90 : 180;
-      const speed = 0.42; // Hypnotic, elegant continuous left-to-right flow speed
+      const speed = isMobile ? 0.32 : 0.42; // Hypnotic, elegant continuous left-to-right flow speed
 
       for (let i = 0; i < lineCount; i++) {
         const p = i / (lineCount - 1);
         const pCentered = (p - 0.5) * 2; // -1 to 1
 
         // Core line luminous gradient (subtle glow along center strings, sheer tapering edges)
+        // On mobile: sheer silk opacity so white text always maintains supreme legibility
         const coreWeight = Math.exp(-pCentered * pCentered * 2.4);
-        const lineAlpha = 0.09 + 0.44 * coreWeight;
-        ctx.lineWidth = 0.70 + 0.55 * coreWeight;
+        const lineAlpha = isMobile 
+          ? (0.035 + 0.16 * coreWeight)
+          : (0.09 + 0.44 * coreWeight);
+        ctx.lineWidth = isMobile
+          ? (0.50 + 0.30 * coreWeight)
+          : (0.70 + 0.55 * coreWeight);
 
         ctx.beginPath();
         for (let s = 0; s <= steps; s++) {
           const u = s / steps;
           const x = u * width;
 
-          // Progressive wave phase: continuous left-to-right flow + dynamic scroll forward/backward motion
-          const phaseMain = u * Math.PI * 1.9 - (timeSec * speed + scrollPhase);
-          const phaseHarmonic = u * Math.PI * 3.6 - (timeSec * speed * 1.2 + scrollPhase * 1.15);
-          const phaseLow = u * Math.PI * 0.95 - (timeSec * speed * 0.55 + scrollPhase * 0.6);
+          // Progressive wave phase: frequency tuned to viewport aspect ratio
+          // Mobile uses gentle horizontal sweeps (~0.95 PI) preventing steep vertical cliff plunging
+          const freqMain = isMobile ? (u * Math.PI * 0.95) : (u * Math.PI * 1.9);
+          const freqHarmonic = isMobile ? (u * Math.PI * 1.8) : (u * Math.PI * 3.6);
+          const freqLow = isMobile ? (u * Math.PI * 0.5) : (u * Math.PI * 0.95);
+
+          const phaseMain = freqMain - (timeSec * speed + scrollPhase);
+          const phaseHarmonic = freqHarmonic - (timeSec * speed * 1.2 + scrollPhase * 1.15);
+          const phaseLow = freqLow - (timeSec * speed * 0.55 + scrollPhase * 0.6);
 
           // Liquid-smooth vertical parallax derived from scroll & mouse tilt
-          const mouseTiltY = (currentClientY / height - 0.5) * 24;
-          const scrollParallaxY = -currentScroll * 0.032;
-          const yBase = height * (0.48 + 0.17 * Math.sin(phaseMain - 0.3) + 0.08 * Math.cos(phaseHarmonic) - 0.06 * Math.sin(phaseLow)) + mouseTiltY + scrollParallaxY;
+          const mouseTiltY = (currentClientY / height - 0.5) * (isMobile ? 12 : 24);
+          const scrollParallaxY = -currentScroll * (isMobile ? 0.040 : 0.032);
 
-          // Airy Guilloche optical dispersion - wide, breathing fan without harsh pinching
-          const spread = (210 + 95 * Math.sin(u * Math.PI * 2.1 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35));
-          const twist = Math.sin(phaseMain * 1.25 + p * Math.PI * 1.45) * (spread * 0.36);
+          const ampMain = isMobile ? 0.06 : 0.17;
+          const ampHarmonic = isMobile ? 0.025 : 0.08;
+          const ampLow = isMobile ? 0.020 : 0.06;
+          const yCenter = isMobile ? 0.18 : 0.48;
+
+          const yBase = height * (yCenter + ampMain * Math.sin(phaseMain - 0.3) + ampHarmonic * Math.cos(phaseHarmonic) - ampLow * Math.sin(phaseLow)) + mouseTiltY + scrollParallaxY;
+
+          // Airy Guilloche optical dispersion - scaled gracefully for mobile viewport
+          const spread = isMobile
+            ? (62 + 24 * Math.sin(freqMain * 1.4 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35))
+            : (210 + 95 * Math.sin(u * Math.PI * 2.1 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35));
+          const twist = Math.sin(phaseMain * 1.25 + p * Math.PI * 1.45) * (spread * (isMobile ? 0.25 : 0.36));
 
           // BUTTERY-SMOOTH TANGIBLE HOVER DEFLECTION & ELASTIC STRING RIPPLE
           const dx = currentClientX - x;
@@ -234,12 +253,13 @@ export default function AmbientFluidBackground() {
           const dist = Math.hypot(dx, dy);
           let hoverDeflect = 0;
 
-          if (dist < 260) {
-            const hoverFactor = Math.pow(1 - dist / 260, 2.2);
+          const hoverMaxDist = isMobile ? 120 : 260;
+          if (dist < hoverMaxDist) {
+            const hoverFactor = Math.pow(1 - dist / hoverMaxDist, 2.2);
             // Continuous magnetic push/pull perpendicular to string flow (100% smooth, zero kinks)
-            const pushY = (dy / (dist + 50)) * hoverFactor * 30 * (0.4 + 0.6 * coreWeight);
+            const pushY = (dy / (dist + 40)) * hoverFactor * (isMobile ? 16 : 30) * (0.4 + 0.6 * coreWeight);
             // Dynamic travelling acoustic harmonic ripple radiating outward
-            const ripple = Math.sin(dist * 0.045 - timeSec * 4.5) * 14 * hoverFactor;
+            const ripple = Math.sin(dist * 0.045 - timeSec * 4.5) * (isMobile ? 7 : 14) * hoverFactor;
             hoverDeflect = pushY + ripple;
           }
 
