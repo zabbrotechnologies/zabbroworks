@@ -231,19 +231,24 @@ export default function AmbientFluidBackground() {
           const phaseLow = freqLow - (timeSec * speed * 0.55 + scrollPhase * 0.6);
 
           // Liquid-smooth vertical parallax derived from scroll & mouse tilt
-          const mouseTiltY = (currentClientY / height - 0.5) * (isMobile ? 12 : 24);
-          const scrollParallaxY = -currentScroll * (isMobile ? 0.040 : 0.032);
+          const mouseTiltY = (currentClientY / height - 0.5) * (isMobile ? 14 : 24);
+          // On mobile: undulates smoothly across the active viewport as user scrolls instead of getting stuck
+          const scrollParallaxY = isMobile 
+            ? Math.sin(currentScroll * 0.0018) * 35 
+            : -currentScroll * 0.032;
 
-          const ampMain = isMobile ? 0.06 : 0.17;
-          const ampHarmonic = isMobile ? 0.025 : 0.08;
-          const ampLow = isMobile ? 0.020 : 0.06;
-          const yCenter = isMobile ? 0.18 : 0.48;
+          const ampMain = isMobile ? 0.11 : 0.17;
+          const ampHarmonic = isMobile ? 0.045 : 0.08;
+          const ampLow = isMobile ? 0.030 : 0.06;
+          // Natural organic viewport centering: moves freely, no longer pinned to the top
+          const mobileBreathing = isMobile ? 0.04 * Math.sin(timeSec * 0.4 + currentScroll * 0.0015) : 0;
+          const yCenter = isMobile ? (0.46 + mobileBreathing) : 0.48;
 
           const yBase = height * (yCenter + ampMain * Math.sin(phaseMain - 0.3) + ampHarmonic * Math.cos(phaseHarmonic) - ampLow * Math.sin(phaseLow)) + mouseTiltY + scrollParallaxY;
 
           // Airy Guilloche optical dispersion - scaled gracefully for mobile viewport
           const spread = isMobile
-            ? (62 + 24 * Math.sin(freqMain * 1.4 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35))
+            ? (66 + 26 * Math.sin(freqMain * 1.4 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35))
             : (210 + 95 * Math.sin(u * Math.PI * 2.1 - (timeSec * speed * 0.75 + scrollPhase * 0.8))) * (0.35 + 0.65 * (1 - Math.abs(pCentered) * 0.35));
           const twist = Math.sin(phaseMain * 1.25 + p * Math.PI * 1.45) * (spread * (isMobile ? 0.25 : 0.36));
 
